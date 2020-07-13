@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CVBufferRef.resize(from:to:):CVPixelBufferExtension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "rect.size.width / rect.size.height - source.size.width / source.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CameraFeedManager.checkCameraConfigurationAndStartSession():CameraFeedManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.previewView.previewLayer.connection?.videoOrientation = .landscapeLeft">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CameraFeedManager.init(previewView:):CameraFeedManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.previewView.previewLayer.connection?">
+            </PersistentString>
+            <PersistentString
+               value = "self.previewView">
+            </PersistentString>
+            <PersistentString
+               value = "self.previewView.previewLayer.connection?.videoOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "self.previewView.previewLayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CameraFeedManager.addVideoDataOutput():CameraFeedManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoDataOutput.connection(with: .video)?.videoOrientation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.previewView.previewLayer.connection?">
+            </PersistentString>
+            <PersistentString
+               value = "previewView.previewLayer.connection?">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

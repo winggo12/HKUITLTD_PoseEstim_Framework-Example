@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQb-GG-seM" customClass="PreviewView" customModule="HKUITLTD_PoseEstim_Framework">
+                                <rect key="frame" x="110.33333333333331" y="0.0" width="515.33333333333348" height="414"/>
+                                <subviews>
+                                    <view opaque="NO" alpha="0.33000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wS-JDh" customClass="OverlayView" customModule="HKUITLTD_PoseEstim_Framework">
+                                        <rect key="frame" x="7.9999999999999716" y="24.666666666666657" width="499.33333333333326" height="365"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="qgO-wS-JDh" firstAttribute="width" secondItem="KQb-GG-seM" secondAttribute="width" multiplier="0.968952" id="IBZ-0J-A8e"/>
+                                    <constraint firstItem="qgO-wS-JDh" firstAttribute="height" secondItem="KQb-GG-seM" secondAttribute="height" multiplier="0.881643" id="MAb-cX-ZKg"/>
+                                    <constraint firstItem="qgO-wS-JDh" firstAttribute="centerX" secondItem="KQb-GG-seM" secondAttribute="centerX" id="jzu-eN-Qia"/>
+                                    <constraint firstItem="qgO-wS-JDh" firstAttribute="centerY" secondItem="KQb-GG-seM" secondAttribute="centerY" id="m9q-Em-W05"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KQb-GG-seM" secondAttribute="bottom" id="Hnz-6U-DEN"/>
+                            <constraint firstItem="KQb-GG-seM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jl9-Nf-KeB"/>
+                            <constraint firstItem="KQb-GG-seM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="N2N-vy-NcR"/>
+                            <constraint firstItem="KQb-GG-seM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="aDG-2g-eTw"/>
+                            <constraint firstItem="KQb-GG-seM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.700181" id="o4E-os-de8"/>
+                            <constraint firstItem="KQb-GG-seM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uba-pu-Uvg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="overlayView" destination="qgO-wS-JDh" id="9fN-3K-DK4"/>
+                        <outlet property="previewView" destination="KQb-GG-seM" id="RF7-fw-9H0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.25" y="137.68115942028987"/>
+        </scene>
+    </scenes>
+</document>
