@@ -7,102 +7,62 @@
 //
 
 import Foundation
-func get_bujangasana_score(kps:Array<Array<Double>>) -> Double{
 
-    func straight_arm(kps:Array<Array<Double>>)->Int{
+class Bujangasana {
 
-        let left_elbow = kps[3]
+    private let utilities: FeedbackUtilities = FeedbackUtilities()
 
-        let left_shoulder = kps[1]
+    /** output */
+    private var comment: Array<String>? = nil
+    private var score: Double? = nil
 
-        let left_wrist = kps[5]
+    /** input */
+    private var result: Result? = nil
+    private var resultArray: Array<Array<Double>>? = nil
 
-        let arm_angle = get_angle(center_coord: left_elbow, coord1: left_shoulder, coord2: left_wrist)
+    /** constant */
+    private let waist_ratio = 0.7
+    private let arm_ratio = 0.3
 
-        if arm_angle > 70{
+    /** score of body parts */
+    private var arm_score = -1.0
+    private var waist_score = -1.0
 
-            return 100
-
-        }
-
-        if arm_angle > 50{
-
-            return 90
-
-        }
-
-        if arm_angle > 30{
-
-            return 80
-
-        }
-
-        if arm_angle > 10{
-
-            return 70
-
-        }
-
-        else{
-
-            return 60
-
-        }
-
+    private var l_arm_angle = 0.0
+    private var r_arm_angle = 0.0
+    private var waist_angle = 0.0
+    
+    /** constructor */
+    init(result: Result) {
+        self.result = result
+        resultArray = result.classToArray()
+        calculateScore()
+        makeComment()
     }
 
-    func straight_waist(kps:Array<Array<Double>>) -> Int {
+    /** getter */
+    func getScore()-> Double { return self.score! }
+    func getComment()-> Array<String> { return self.comment! }
+    func getResult()-> Result { return self.result! }
 
-        let left_shoulder = kps[2]
-
-        let left_hip = kps[8]
-
-        let left_knee = kps[10]
-
-        let angle = get_angle(center_coord: left_hip, coord1: left_shoulder, coord2: left_knee)
-
-        if angle < 100{
-
-            return 100
-
-        }
-
-        if angle >= 100 && angle < 120 {
-
-            return 90
-
-        }
-
-        if angle >= 120 && angle < 140 {
-
-            return 80
-
-        }
-
-        if angle >= 140 && angle < 160 {
-
-            return 70
-
-        }
-
-        else{
-
-            return 60
-
-        }
-
+    /** private method */
+    private func makeComment()-> Array<String>{
+        comment = Array<String>(arrayLiteral:
+            "l_arm_angle: $l_arm_angle, r_arm_angle: $r_arm_angle, score: $arm_score, Arms " + utilities.comment(arm_score),
+            "waist_angle: $waist_angle, $waist_score, Waist" + utilities.comment(waist_score))
+        return comment!
     }
 
-    let waist_ratio = 0.7
+    private func calculateScore()-> Double{
+        let l_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, true)
+        let r_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, true)
+        arm_score = 0.5 * (l_arm_score + r_arm_score)
+        waist_score = utilities.right_waist(resultArray!,120.0, 20.0, true)
 
-    let arm_ratio = 0.3
+        score = arm_ratio * arm_score + waist_ratio *  waist_score
 
+        return score!
+    }
 
-
-    let arm_score = arm_ratio * Double(straight_arm(kps:kps))
-
-    let dis_score = waist_ratio * Double(straight_waist(kps:kps))
-
-    return arm_score + dis_score
 
 }

@@ -1,15 +1,15 @@
 //
-//  ParivrttaPashvakonasana.swift
-//  PoseEstim
+//  UbhayaPadangushtasana.swift
+//  HKUITLTD_PoseEstim_Framework
 //
-//  Created by iosuser111 on 9/6/2020.
-//  Copyright © 2020 tensorflow. All rights reserved.
+//  Created by iosuser111 on 20/8/2020.
+//  Copyright © 2020 Hong Kong Univisual Intelligent Technology Limited. All rights reserved.
 //
 
 import Foundation
- 
-class ParivrttaPashvaKonasana  {
 
+class UbhayaPadangushtasana{
+    
     private let utilities: FeedbackUtilities = FeedbackUtilities()
 
     /** output */
@@ -22,14 +22,11 @@ class ParivrttaPashvaKonasana  {
 
     /** constant */
 
-    private let leg_ratio = 0.4
-    private let waist_ratio = 0.4
-    private let arm_ratio = 0.2
 
     /** score of body parts */
     private var arm_score: Double = 0.0
-    private var waist_score: Double = 0.0
-    private var leg_score: Double = 0.0
+    private var leg_score1: Double = 0.0
+    private var leg_score2: Double = 0.0
 
     /** constructor */
     init(result: Result){
@@ -38,7 +35,6 @@ class ParivrttaPashvaKonasana  {
         calculateScore()
         makeComment()
     }
-
     /** getter */
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
@@ -46,14 +42,16 @@ class ParivrttaPashvaKonasana  {
 
     /** private method */
     private func calculateScore()->Double{
-        let right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, false)
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
-        leg_score = 0.5 * (right_leg_score + left_leg_score)
 
-        arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
+        let r_score = utilities.right_waist(resultArray!, 30.0, 20.0, true)
+        let l_score = utilities.left_waist(resultArray!, 30.0, 20.0, true)
 
-        score = arm_ratio * arm_score +  leg_ratio * leg_score + waist_ratio * waist_score
+        if(l_score > r_score){
+            score = l_score
+        }else{
+            score = r_score
+        }
+
         return score!
     }
 
@@ -61,10 +59,11 @@ class ParivrttaPashvaKonasana  {
 
         comment =  Array<String>()
         comment!.append("The Straightness of the Arms " + utilities.comment( arm_score))
-        comment!.append("The Waist-to-Thigh Distance " + utilities.comment( waist_score))
-        comment!.append("The Straightness of the Legs " + utilities.comment( leg_score))
+        comment!.append("The Waist-to-Thigh Distance " + utilities.comment( leg_score1))
+        comment!.append("The Straightness of the Legs " + utilities.comment( leg_score2))
 
         return comment!
     }
+
 
 }

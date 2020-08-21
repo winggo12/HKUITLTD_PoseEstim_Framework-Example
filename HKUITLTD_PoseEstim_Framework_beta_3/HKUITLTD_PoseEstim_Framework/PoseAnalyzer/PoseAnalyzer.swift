@@ -28,19 +28,19 @@ public class GiveFeedBack{
     private func generateFeedback(){
         switch currentPose {
         case Pose.navasana:
-            var YogaPose = Navasana(user_input_result: self.result)
-            score = YogaPose.get_score()
-            comments = YogaPose.get_recommendation()
+            let YogaPose = Navasana(result: self.result)
+            score = YogaPose.getScore()
+            comments = YogaPose.getComment()
             
         case Pose.ustrasana:
-            var YogaPose = Ustrasana(user_input_result: self.result)
-            score = YogaPose.get_score()
-            comments = YogaPose.get_recommendation()
+            let YogaPose = Ustrasana(result: self.result)
+            score = YogaPose.getScore()
+            comments = YogaPose.getComment()
 
         case Pose.ardha_uttanasana:
-            var YogaPose = ArdhaUttanasana(user_input_result: self.result)
-            score = YogaPose.get_score()
-            comments = YogaPose.get_recommendation()
+            let YogaPose = ArdhaUttanasana(result: self.result)
+            score = YogaPose.getScore()
+            comments = YogaPose.getComment()
 
         }
 

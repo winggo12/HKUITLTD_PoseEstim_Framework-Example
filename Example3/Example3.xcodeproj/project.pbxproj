@@ -14,8 +14,8 @@
 		43CD546224B4881500AD95D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CD546124B4881500AD95D7 /* Assets.xcassets */; };
 		43CD546524B4881500AD95D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD546324B4881500AD95D7 /* LaunchScreen.storyboard */; };
 		43CD547024B4881500AD95D7 /* Example3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD546F24B4881500AD95D7 /* Example3UITests.swift */; };
-		43CD54CB24B4883B00AD95D7 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CD54CA24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.framework */; };
-		43CD54CC24B4883B00AD95D7 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43CD54CA24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4616D72324EE82DB00992513 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4616D72224EE82D500992513 /* HKUITLTD_PoseEstim_Framework.framework */; };
+		4616D72424EE82DB00992513 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4616D72224EE82D500992513 /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +26,9 @@
 			remoteGlobalIDString = 43CD545424B4881300AD95D7;
 			remoteInfo = Example3;
 		};
-		43CD54C924B4883600AD95D7 /* PBXContainerItemProxy */ = {
+		4616D72124EE82D500992513 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 43CD54C524B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
+			containerPortal = 4616D71D24EE82D500992513 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4358BFE024738DA2008B4656;
 			remoteInfo = HKUITLTD_PoseEstim_Framework;
@@ -36,13 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		43CD54CD24B4883B00AD95D7 /* Embed Frameworks */ = {
+		4616D72524EE82DB00992513 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43CD54CC24B4883B00AD95D7 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
+				4616D72424EE82DB00992513 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,59 +61,68 @@
 		43CD546B24B4881500AD95D7 /* Example3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Example3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD546F24B4881500AD95D7 /* Example3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example3UITests.swift; sourceTree = "<group>"; };
 		43CD547124B4881500AD95D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43CD547E24B4883600AD95D7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		43CD547F24B4883600AD95D7 /* tfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
-		43CD548024B4883600AD95D7 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
-		43CD548224B4883600AD95D7 /* RunThisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
-		43CD548424B4883600AD95D7 /* PoseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAnalyzer.swift; sourceTree = "<group>"; };
-		43CD548624B4883600AD95D7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		43CD548724B4883600AD95D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		43CD548D24B4883600AD95D7 /* QuantizationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantizationParameters.swift; sourceTree = "<group>"; };
-		43CD548E24B4883600AD95D7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		43CD548F24B4883600AD95D7 /* Tensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
-		43CD549024B4883600AD95D7 /* TensorFlowLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorFlowLite.swift; sourceTree = "<group>"; };
-		43CD549124B4883600AD95D7 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
-		43CD549224B4883600AD95D7 /* InterpreterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterError.swift; sourceTree = "<group>"; };
-		43CD549324B4883600AD95D7 /* CoreMLDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLDelegate.swift; sourceTree = "<group>"; };
-		43CD549424B4883600AD95D7 /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
-		43CD549524B4883600AD95D7 /* MetalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDelegate.swift; sourceTree = "<group>"; };
-		43CD549624B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
-		43CD549824B4883600AD95D7 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
-		43CD549A24B4883600AD95D7 /* CalAngleDist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalAngleDist.swift; sourceTree = "<group>"; };
-		43CD549B24B4883600AD95D7 /* ResultToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultToArray.swift; sourceTree = "<group>"; };
-		43CD549C24B4883600AD95D7 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
-		43CD549D24B4883600AD95D7 /* GetCGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCGRect.swift; sourceTree = "<group>"; };
-		43CD549E24B4883600AD95D7 /* CommentOfPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOfPose.swift; sourceTree = "<group>"; };
-		43CD54A024B4883600AD95D7 /* TimeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeResult.swift; sourceTree = "<group>"; };
-		43CD54A124B4883600AD95D7 /* Keypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypoint.swift; sourceTree = "<group>"; };
-		43CD54A224B4883600AD95D7 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
-		43CD54A324B4883600AD95D7 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		43CD54A524B4883600AD95D7 /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
-		43CD54A624B4883600AD95D7 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
-		43CD54A724B4883600AD95D7 /* TFLiteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFLiteExtension.swift; sourceTree = "<group>"; };
-		43CD54A924B4883600AD95D7 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite; sourceTree = "<group>"; };
-		43CD54AA24B4883600AD95D7 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
-		43CD54AE24B4883600AD95D7 /* TensorFlowLiteC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TensorFlowLiteC.framework; sourceTree = "<group>"; };
-		43CD54B024B4883600AD95D7 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
-		43CD54B124B4883600AD95D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43CD54B324B4883600AD95D7 /* Halasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halasana.swift; sourceTree = "<group>"; };
-		43CD54B424B4883600AD95D7 /* PurnaShalabhasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurnaShalabhasana.swift; sourceTree = "<group>"; };
-		43CD54B524B4883600AD95D7 /* CaturangaDandasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaturangaDandasana.swift; sourceTree = "<group>"; };
-		43CD54B624B4883600AD95D7 /* UrdhvaDhanurasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrdhvaDhanurasana.swift; sourceTree = "<group>"; };
-		43CD54B724B4883600AD95D7 /* Ustrasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ustrasana.swift; sourceTree = "<group>"; };
-		43CD54B824B4883600AD95D7 /* Dandasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dandasana.swift; sourceTree = "<group>"; };
-		43CD54B924B4883600AD95D7 /* ParivrttaTrikonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParivrttaTrikonasana.swift; sourceTree = "<group>"; };
-		43CD54BA24B4883600AD95D7 /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
-		43CD54BB24B4883600AD95D7 /* Natarajasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Natarajasana.swift; sourceTree = "<group>"; };
-		43CD54BC24B4883600AD95D7 /* ArdhaUttanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasana.swift; sourceTree = "<group>"; };
-		43CD54BD24B4883600AD95D7 /* Vrkshasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vrkshasana.swift; sourceTree = "<group>"; };
-		43CD54BE24B4883600AD95D7 /* Navasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navasana.swift; sourceTree = "<group>"; };
-		43CD54BF24B4883600AD95D7 /* ParivrttaPashvakonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParivrttaPashvakonasana.swift; sourceTree = "<group>"; };
-		43CD54C024B4883600AD95D7 /* UttanaPadasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UttanaPadasana.swift; sourceTree = "<group>"; };
-		43CD54C124B4883600AD95D7 /* Bujangasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bujangasana.swift; sourceTree = "<group>"; };
-		43CD54C324B4883600AD95D7 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
-		43CD54C424B4883600AD95D7 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
-		43CD54C524B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
+		4616D6CD24EE82D500992513 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4616D6CE24EE82D500992513 /* tfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
+		4616D6CF24EE82D500992513 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		4616D6D124EE82D500992513 /* RunThisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
+		4616D6D324EE82D500992513 /* PoseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAnalyzer.swift; sourceTree = "<group>"; };
+		4616D6D524EE82D500992513 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4616D6D624EE82D500992513 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4616D6DC24EE82D500992513 /* QuantizationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantizationParameters.swift; sourceTree = "<group>"; };
+		4616D6DD24EE82D500992513 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4616D6DE24EE82D500992513 /* Tensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
+		4616D6DF24EE82D500992513 /* TensorFlowLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorFlowLite.swift; sourceTree = "<group>"; };
+		4616D6E024EE82D500992513 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		4616D6E124EE82D500992513 /* InterpreterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterError.swift; sourceTree = "<group>"; };
+		4616D6E224EE82D500992513 /* CoreMLDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLDelegate.swift; sourceTree = "<group>"; };
+		4616D6E324EE82D500992513 /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
+		4616D6E424EE82D500992513 /* MetalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDelegate.swift; sourceTree = "<group>"; };
+		4616D6E524EE82D500992513 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
+		4616D6E724EE82D500992513 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
+		4616D6E924EE82D500992513 /* CalAngleDist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalAngleDist.swift; sourceTree = "<group>"; };
+		4616D6EA24EE82D500992513 /* ResultToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultToArray.swift; sourceTree = "<group>"; };
+		4616D6EB24EE82D500992513 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
+		4616D6EC24EE82D500992513 /* FeedbackUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUtilities.swift; sourceTree = "<group>"; };
+		4616D6ED24EE82D500992513 /* GetCGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCGRect.swift; sourceTree = "<group>"; };
+		4616D6EE24EE82D500992513 /* CommentOfPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOfPose.swift; sourceTree = "<group>"; };
+		4616D6F024EE82D500992513 /* TimeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeResult.swift; sourceTree = "<group>"; };
+		4616D6F124EE82D500992513 /* Keypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypoint.swift; sourceTree = "<group>"; };
+		4616D6F224EE82D500992513 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		4616D6F324EE82D500992513 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		4616D6F524EE82D500992513 /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
+		4616D6F624EE82D500992513 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		4616D6F724EE82D500992513 /* TFLiteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFLiteExtension.swift; sourceTree = "<group>"; };
+		4616D6F924EE82D500992513 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite; sourceTree = "<group>"; };
+		4616D6FA24EE82D500992513 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
+		4616D6FE24EE82D500992513 /* TensorFlowLiteC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TensorFlowLiteC.framework; sourceTree = "<group>"; };
+		4616D70024EE82D500992513 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		4616D70124EE82D500992513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4616D70324EE82D500992513 /* Tuladandasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuladandasana.swift; sourceTree = "<group>"; };
+		4616D70424EE82D500992513 /* Halasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halasana.swift; sourceTree = "<group>"; };
+		4616D70524EE82D500992513 /* ArdhaChandarasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaChandarasana.swift; sourceTree = "<group>"; };
+		4616D70624EE82D500992513 /* PurnaShalabhasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurnaShalabhasana.swift; sourceTree = "<group>"; };
+		4616D70724EE82D500992513 /* UbhayaPadangushtasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbhayaPadangushtasana.swift; sourceTree = "<group>"; };
+		4616D70824EE82D500992513 /* CaturangaDandasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaturangaDandasana.swift; sourceTree = "<group>"; };
+		4616D70924EE82D500992513 /* UrdhvaDhanurasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrdhvaDhanurasana.swift; sourceTree = "<group>"; };
+		4616D70A24EE82D500992513 /* Ustrasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ustrasana.swift; sourceTree = "<group>"; };
+		4616D70B24EE82D500992513 /* Dandasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dandasana.swift; sourceTree = "<group>"; };
+		4616D70C24EE82D500992513 /* ParivrttaTrikonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParivrttaTrikonasana.swift; sourceTree = "<group>"; };
+		4616D70D24EE82D500992513 /* UtthitaParsvakonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasana.swift; sourceTree = "<group>"; };
+		4616D70E24EE82D500992513 /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
+		4616D70F24EE82D500992513 /* Natarajasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Natarajasana.swift; sourceTree = "<group>"; };
+		4616D71024EE82D500992513 /* ArdhaUttanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasana.swift; sourceTree = "<group>"; };
+		4616D71124EE82D500992513 /* BadhaKonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadhaKonasana.swift; sourceTree = "<group>"; };
+		4616D71224EE82D500992513 /* AdhoMukhaShivanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhoMukhaShivanasana.swift; sourceTree = "<group>"; };
+		4616D71324EE82D500992513 /* Vrkshasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vrkshasana.swift; sourceTree = "<group>"; };
+		4616D71424EE82D500992513 /* UtthitaHastaPadangusthasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaHastaPadangusthasanaC.swift; sourceTree = "<group>"; };
+		4616D71524EE82D500992513 /* Navasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navasana.swift; sourceTree = "<group>"; };
+		4616D71624EE82D500992513 /* ParivrttaPashvakonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParivrttaPashvakonasana.swift; sourceTree = "<group>"; };
+		4616D71724EE82D500992513 /* UtthitaHastaPadangusthasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaHastaPadangusthasanaA.swift; sourceTree = "<group>"; };
+		4616D71824EE82D500992513 /* UttanaPadasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UttanaPadasana.swift; sourceTree = "<group>"; };
+		4616D71924EE82D500992513 /* Bujangasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bujangasana.swift; sourceTree = "<group>"; };
+		4616D71B24EE82D500992513 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		4616D71C24EE82D500992513 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		4616D71D24EE82D500992513 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CD54CB24B4883B00AD95D7 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
+				4616D72324EE82DB00992513 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +150,7 @@
 				43CD545724B4881300AD95D7 /* Example3 */,
 				43CD546E24B4881500AD95D7 /* Example3UITests */,
 				43CD545624B4881300AD95D7 /* Products */,
-				43CD547A24B4883600AD95D7 /* Frameworks */,
+				4616D6C924EE82D500992513 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,247 +186,256 @@
 			path = Example3UITests;
 			sourceTree = "<group>";
 		};
-		43CD547A24B4883600AD95D7 /* Frameworks */ = {
+		4616D6C924EE82D500992513 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43CD547B24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework_beta_3 */,
+				4616D6CA24EE82D500992513 /* HKUITLTD_PoseEstim_Framework_beta_3 */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		43CD547B24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework_beta_3 */ = {
+		4616D6CA24EE82D500992513 /* HKUITLTD_PoseEstim_Framework_beta_3 */ = {
 			isa = PBXGroup;
 			children = (
-				43CD547C24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework */,
-				43CD54C524B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.xcodeproj */,
+				4616D6CB24EE82D500992513 /* HKUITLTD_PoseEstim_Framework */,
+				4616D71D24EE82D500992513 /* HKUITLTD_PoseEstim_Framework.xcodeproj */,
 			);
 			name = HKUITLTD_PoseEstim_Framework_beta_3;
 			path = ../HKUITLTD_PoseEstim_Framework_beta_3;
 			sourceTree = "<group>";
 		};
-		43CD547C24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework */ = {
+		4616D6CB24EE82D500992513 /* HKUITLTD_PoseEstim_Framework */ = {
 			isa = PBXGroup;
 			children = (
-				43CD547D24B4883600AD95D7 /* Settings */,
-				43CD548124B4883600AD95D7 /* RunThisModel */,
-				43CD548324B4883600AD95D7 /* PoseAnalyzer */,
-				43CD548524B4883600AD95D7 /* TensorFlowLiteSwift */,
-				43CD549624B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.h */,
-				43CD549724B4883600AD95D7 /* ModelAnalyzer */,
-				43CD549924B4883600AD95D7 /* Utils */,
-				43CD549F24B4883600AD95D7 /* CustomObjects */,
-				43CD54A424B4883600AD95D7 /* Extensions */,
-				43CD54A824B4883600AD95D7 /* Model */,
-				43CD54AB24B4883600AD95D7 /* RunModel */,
-				43CD54AC24B4883600AD95D7 /* TensorFlowLiteC */,
-				43CD54AF24B4883600AD95D7 /* Views */,
-				43CD54B124B4883600AD95D7 /* Info.plist */,
-				43CD54B224B4883600AD95D7 /* ScoreCalculator */,
-				43CD54C224B4883600AD95D7 /* Camera Feed */,
+				4616D6CC24EE82D500992513 /* Settings */,
+				4616D6D024EE82D500992513 /* RunThisModel */,
+				4616D6D224EE82D500992513 /* PoseAnalyzer */,
+				4616D6D424EE82D500992513 /* TensorFlowLiteSwift */,
+				4616D6E524EE82D500992513 /* HKUITLTD_PoseEstim_Framework.h */,
+				4616D6E624EE82D500992513 /* ModelAnalyzer */,
+				4616D6E824EE82D500992513 /* Utils */,
+				4616D6EF24EE82D500992513 /* CustomObjects */,
+				4616D6F424EE82D500992513 /* Extensions */,
+				4616D6F824EE82D500992513 /* Model */,
+				4616D6FB24EE82D500992513 /* RunModel */,
+				4616D6FC24EE82D500992513 /* TensorFlowLiteC */,
+				4616D6FF24EE82D500992513 /* Views */,
+				4616D70124EE82D500992513 /* Info.plist */,
+				4616D70224EE82D500992513 /* ScoreCalculator */,
+				4616D71A24EE82D500992513 /* Camera Feed */,
 			);
 			path = HKUITLTD_PoseEstim_Framework;
 			sourceTree = "<group>";
 		};
-		43CD547D24B4883600AD95D7 /* Settings */ = {
+		4616D6CC24EE82D500992513 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				43CD547E24B4883600AD95D7 /* Constants.swift */,
-				43CD547F24B4883600AD95D7 /* tfModel.swift */,
-				43CD548024B4883600AD95D7 /* DeviceType.swift */,
+				4616D6CD24EE82D500992513 /* Constants.swift */,
+				4616D6CE24EE82D500992513 /* tfModel.swift */,
+				4616D6CF24EE82D500992513 /* DeviceType.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		43CD548124B4883600AD95D7 /* RunThisModel */ = {
+		4616D6D024EE82D500992513 /* RunThisModel */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548224B4883600AD95D7 /* RunThisModel.swift */,
+				4616D6D124EE82D500992513 /* RunThisModel.swift */,
 			);
 			path = RunThisModel;
 			sourceTree = "<group>";
 		};
-		43CD548324B4883600AD95D7 /* PoseAnalyzer */ = {
+		4616D6D224EE82D500992513 /* PoseAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548424B4883600AD95D7 /* PoseAnalyzer.swift */,
+				4616D6D324EE82D500992513 /* PoseAnalyzer.swift */,
 			);
 			path = PoseAnalyzer;
 			sourceTree = "<group>";
 		};
-		43CD548524B4883600AD95D7 /* TensorFlowLiteSwift */ = {
+		4616D6D424EE82D500992513 /* TensorFlowLiteSwift */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548624B4883600AD95D7 /* LICENSE */,
-				43CD548724B4883600AD95D7 /* README.md */,
-				43CD548824B4883600AD95D7 /* tensorflow */,
+				4616D6D524EE82D500992513 /* LICENSE */,
+				4616D6D624EE82D500992513 /* README.md */,
+				4616D6D724EE82D500992513 /* tensorflow */,
 			);
 			path = TensorFlowLiteSwift;
 			sourceTree = "<group>";
 		};
-		43CD548824B4883600AD95D7 /* tensorflow */ = {
+		4616D6D724EE82D500992513 /* tensorflow */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548924B4883600AD95D7 /* lite */,
+				4616D6D824EE82D500992513 /* lite */,
 			);
 			path = tensorflow;
 			sourceTree = "<group>";
 		};
-		43CD548924B4883600AD95D7 /* lite */ = {
+		4616D6D824EE82D500992513 /* lite */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548A24B4883600AD95D7 /* experimental */,
+				4616D6D924EE82D500992513 /* experimental */,
 			);
 			path = lite;
 			sourceTree = "<group>";
 		};
-		43CD548A24B4883600AD95D7 /* experimental */ = {
+		4616D6D924EE82D500992513 /* experimental */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548B24B4883600AD95D7 /* swift */,
+				4616D6DA24EE82D500992513 /* swift */,
 			);
 			path = experimental;
 			sourceTree = "<group>";
 		};
-		43CD548B24B4883600AD95D7 /* swift */ = {
+		4616D6DA24EE82D500992513 /* swift */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548C24B4883600AD95D7 /* Sources */,
+				4616D6DB24EE82D500992513 /* Sources */,
 			);
 			path = swift;
 			sourceTree = "<group>";
 		};
-		43CD548C24B4883600AD95D7 /* Sources */ = {
+		4616D6DB24EE82D500992513 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				43CD548D24B4883600AD95D7 /* QuantizationParameters.swift */,
-				43CD548E24B4883600AD95D7 /* Model.swift */,
-				43CD548F24B4883600AD95D7 /* Tensor.swift */,
-				43CD549024B4883600AD95D7 /* TensorFlowLite.swift */,
-				43CD549124B4883600AD95D7 /* Delegate.swift */,
-				43CD549224B4883600AD95D7 /* InterpreterError.swift */,
-				43CD549324B4883600AD95D7 /* CoreMLDelegate.swift */,
-				43CD549424B4883600AD95D7 /* Interpreter.swift */,
-				43CD549524B4883600AD95D7 /* MetalDelegate.swift */,
+				4616D6DC24EE82D500992513 /* QuantizationParameters.swift */,
+				4616D6DD24EE82D500992513 /* Model.swift */,
+				4616D6DE24EE82D500992513 /* Tensor.swift */,
+				4616D6DF24EE82D500992513 /* TensorFlowLite.swift */,
+				4616D6E024EE82D500992513 /* Delegate.swift */,
+				4616D6E124EE82D500992513 /* InterpreterError.swift */,
+				4616D6E224EE82D500992513 /* CoreMLDelegate.swift */,
+				4616D6E324EE82D500992513 /* Interpreter.swift */,
+				4616D6E424EE82D500992513 /* MetalDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		43CD549724B4883600AD95D7 /* ModelAnalyzer */ = {
+		4616D6E624EE82D500992513 /* ModelAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				43CD549824B4883600AD95D7 /* ModelAnalyzer.swift */,
+				4616D6E724EE82D500992513 /* ModelAnalyzer.swift */,
 			);
 			path = ModelAnalyzer;
 			sourceTree = "<group>";
 		};
-		43CD549924B4883600AD95D7 /* Utils */ = {
+		4616D6E824EE82D500992513 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				43CD549A24B4883600AD95D7 /* CalAngleDist.swift */,
-				43CD549B24B4883600AD95D7 /* ResultToArray.swift */,
-				43CD549C24B4883600AD95D7 /* DrawResult.swift */,
-				43CD549D24B4883600AD95D7 /* GetCGRect.swift */,
-				43CD549E24B4883600AD95D7 /* CommentOfPose.swift */,
+				4616D6E924EE82D500992513 /* CalAngleDist.swift */,
+				4616D6EA24EE82D500992513 /* ResultToArray.swift */,
+				4616D6EB24EE82D500992513 /* DrawResult.swift */,
+				4616D6EC24EE82D500992513 /* FeedbackUtilities.swift */,
+				4616D6ED24EE82D500992513 /* GetCGRect.swift */,
+				4616D6EE24EE82D500992513 /* CommentOfPose.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		43CD549F24B4883600AD95D7 /* CustomObjects */ = {
+		4616D6EF24EE82D500992513 /* CustomObjects */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54A024B4883600AD95D7 /* TimeResult.swift */,
-				43CD54A124B4883600AD95D7 /* Keypoint.swift */,
-				43CD54A224B4883600AD95D7 /* BodyPart.swift */,
-				43CD54A324B4883600AD95D7 /* Line.swift */,
+				4616D6F024EE82D500992513 /* TimeResult.swift */,
+				4616D6F124EE82D500992513 /* Keypoint.swift */,
+				4616D6F224EE82D500992513 /* BodyPart.swift */,
+				4616D6F324EE82D500992513 /* Line.swift */,
 			);
 			path = CustomObjects;
 			sourceTree = "<group>";
 		};
-		43CD54A424B4883600AD95D7 /* Extensions */ = {
+		4616D6F424EE82D500992513 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54A524B4883600AD95D7 /* CGSizeExtension.swift */,
-				43CD54A624B4883600AD95D7 /* CVPixelBufferExtension.swift */,
-				43CD54A724B4883600AD95D7 /* TFLiteExtension.swift */,
+				4616D6F524EE82D500992513 /* CGSizeExtension.swift */,
+				4616D6F624EE82D500992513 /* CVPixelBufferExtension.swift */,
+				4616D6F724EE82D500992513 /* TFLiteExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		43CD54A824B4883600AD95D7 /* Model */ = {
+		4616D6F824EE82D500992513 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54A924B4883600AD95D7 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
-				43CD54AA24B4883600AD95D7 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
+				4616D6F924EE82D500992513 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
+				4616D6FA24EE82D500992513 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		43CD54AB24B4883600AD95D7 /* RunModel */ = {
+		4616D6FB24EE82D500992513 /* RunModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = RunModel;
 			sourceTree = "<group>";
 		};
-		43CD54AC24B4883600AD95D7 /* TensorFlowLiteC */ = {
+		4616D6FC24EE82D500992513 /* TensorFlowLiteC */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54AD24B4883600AD95D7 /* Frameworks */,
+				4616D6FD24EE82D500992513 /* Frameworks */,
 			);
 			path = TensorFlowLiteC;
 			sourceTree = "<group>";
 		};
-		43CD54AD24B4883600AD95D7 /* Frameworks */ = {
+		4616D6FD24EE82D500992513 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54AE24B4883600AD95D7 /* TensorFlowLiteC.framework */,
+				4616D6FE24EE82D500992513 /* TensorFlowLiteC.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		43CD54AF24B4883600AD95D7 /* Views */ = {
+		4616D6FF24EE82D500992513 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54B024B4883600AD95D7 /* OverlayView.swift */,
+				4616D70024EE82D500992513 /* OverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		43CD54B224B4883600AD95D7 /* ScoreCalculator */ = {
+		4616D70224EE82D500992513 /* ScoreCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54B324B4883600AD95D7 /* Halasana.swift */,
-				43CD54B424B4883600AD95D7 /* PurnaShalabhasana.swift */,
-				43CD54B524B4883600AD95D7 /* CaturangaDandasana.swift */,
-				43CD54B624B4883600AD95D7 /* UrdhvaDhanurasana.swift */,
-				43CD54B724B4883600AD95D7 /* Ustrasana.swift */,
-				43CD54B824B4883600AD95D7 /* Dandasana.swift */,
-				43CD54B924B4883600AD95D7 /* ParivrttaTrikonasana.swift */,
-				43CD54BA24B4883600AD95D7 /* Pose.swift */,
-				43CD54BB24B4883600AD95D7 /* Natarajasana.swift */,
-				43CD54BC24B4883600AD95D7 /* ArdhaUttanasana.swift */,
-				43CD54BD24B4883600AD95D7 /* Vrkshasana.swift */,
-				43CD54BE24B4883600AD95D7 /* Navasana.swift */,
-				43CD54BF24B4883600AD95D7 /* ParivrttaPashvakonasana.swift */,
-				43CD54C024B4883600AD95D7 /* UttanaPadasana.swift */,
-				43CD54C124B4883600AD95D7 /* Bujangasana.swift */,
+				4616D70324EE82D500992513 /* Tuladandasana.swift */,
+				4616D70424EE82D500992513 /* Halasana.swift */,
+				4616D70524EE82D500992513 /* ArdhaChandarasana.swift */,
+				4616D70624EE82D500992513 /* PurnaShalabhasana.swift */,
+				4616D70724EE82D500992513 /* UbhayaPadangushtasana.swift */,
+				4616D70824EE82D500992513 /* CaturangaDandasana.swift */,
+				4616D70924EE82D500992513 /* UrdhvaDhanurasana.swift */,
+				4616D70A24EE82D500992513 /* Ustrasana.swift */,
+				4616D70B24EE82D500992513 /* Dandasana.swift */,
+				4616D70C24EE82D500992513 /* ParivrttaTrikonasana.swift */,
+				4616D70D24EE82D500992513 /* UtthitaParsvakonasana.swift */,
+				4616D70E24EE82D500992513 /* Pose.swift */,
+				4616D70F24EE82D500992513 /* Natarajasana.swift */,
+				4616D71024EE82D500992513 /* ArdhaUttanasana.swift */,
+				4616D71124EE82D500992513 /* BadhaKonasana.swift */,
+				4616D71224EE82D500992513 /* AdhoMukhaShivanasana.swift */,
+				4616D71324EE82D500992513 /* Vrkshasana.swift */,
+				4616D71424EE82D500992513 /* UtthitaHastaPadangusthasanaC.swift */,
+				4616D71524EE82D500992513 /* Navasana.swift */,
+				4616D71624EE82D500992513 /* ParivrttaPashvakonasana.swift */,
+				4616D71724EE82D500992513 /* UtthitaHastaPadangusthasanaA.swift */,
+				4616D71824EE82D500992513 /* UttanaPadasana.swift */,
+				4616D71924EE82D500992513 /* Bujangasana.swift */,
 			);
 			path = ScoreCalculator;
 			sourceTree = "<group>";
 		};
-		43CD54C224B4883600AD95D7 /* Camera Feed */ = {
+		4616D71A24EE82D500992513 /* Camera Feed */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54C324B4883600AD95D7 /* PreviewView.swift */,
-				43CD54C424B4883600AD95D7 /* CameraFeedManager.swift */,
+				4616D71B24EE82D500992513 /* PreviewView.swift */,
+				4616D71C24EE82D500992513 /* CameraFeedManager.swift */,
 			);
 			path = "Camera Feed";
 			sourceTree = "<group>";
 		};
-		43CD54C624B4883600AD95D7 /* Products */ = {
+		4616D71E24EE82D500992513 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43CD54CA24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.framework */,
+				4616D72224EE82D500992513 /* HKUITLTD_PoseEstim_Framework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -432,7 +450,7 @@
 				43CD545124B4881300AD95D7 /* Sources */,
 				43CD545224B4881300AD95D7 /* Frameworks */,
 				43CD545324B4881300AD95D7 /* Resources */,
-				43CD54CD24B4883B00AD95D7 /* Embed Frameworks */,
+				4616D72524EE82DB00992513 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,8 +511,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 43CD54C624B4883600AD95D7 /* Products */;
-					ProjectRef = 43CD54C524B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
+					ProductGroup = 4616D71E24EE82D500992513 /* Products */;
+					ProjectRef = 4616D71D24EE82D500992513 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -506,11 +524,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		43CD54CA24B4883600AD95D7 /* HKUITLTD_PoseEstim_Framework.framework */ = {
+		4616D72224EE82D500992513 /* HKUITLTD_PoseEstim_Framework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = HKUITLTD_PoseEstim_Framework.framework;
-			remoteRef = 43CD54C924B4883600AD95D7 /* PBXContainerItemProxy */;
+			remoteRef = 4616D72124EE82D500992513 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -703,14 +721,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UVPG4K6BB;
+				DEVELOPMENT_TEAM = AANV4R9YQY;
 				INFOPLIST_FILE = Example3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = HKUITLTD.Example3;
+				PRODUCT_BUNDLE_IDENTIFIER = oscar.HKUITLTD.Example3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -722,14 +740,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UVPG4K6BB;
+				DEVELOPMENT_TEAM = AANV4R9YQY;
 				INFOPLIST_FILE = Example3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = HKUITLTD.Example3;
+				PRODUCT_BUNDLE_IDENTIFIER = oscar.HKUITLTD.Example3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
