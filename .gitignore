@@ -1,0 +1,6 @@
+*.tflite
+.DS_Store
+*.DS_Store
+Model/
+TensorFlowLiteC/
+TensorFlowLiteSwift/
