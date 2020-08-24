@@ -208,6 +208,17 @@ class FeedbackUtilities {
 
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
+    
+    func decideDirection(_ resultArray:Array<Array<Double>>)-> Int{
+        let left_wrist = resultArray[5]
+        let right_wrist = resultArray[6]
+        if(left_wrist[1] < right_wrist[1]){
+            return 5
+        }else{
+            return 6
+        }
+    }
+    
     func movePoint(_ point:Array<Double>, _ diffX: Double, _ diffY: Double)-> Array<Double>{
         return[point[0]+diffX, point[1]+diffY]
     }

@@ -18,7 +18,7 @@ class AdhoMukhaShivanasana {
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
     /** constant */
-    private let ratio = 0.25
+    private let ratio = 1.0 / 3
 
     /** score of body parts */
     private var arm_score: Double = 0.0

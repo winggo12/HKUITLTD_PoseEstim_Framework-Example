@@ -114,7 +114,7 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.AdhoMukhaShivanasana
+        let userselectedpose: Pose = Pose.ParivrttaTrikonasana
         let givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
         let score: Double = givefeedback.getScore()
         let comments: [String] = givefeedback.getComments()

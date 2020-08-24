@@ -15,6 +15,8 @@ class BaddhaKonasana {
     private var comment: Array<String>? = nil
     private var score: Double? = nil
 
+    private var left_leg_score: Double = 0.0
+    private var right_leg_score: Double = 0.0
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -40,12 +42,13 @@ class BaddhaKonasana {
     private func makeComment(){
         comment =  Array<String>()
         comment!.append("The Curvature of the Legs " + utilities.comment(score!))
-
+        comment!.append("Right leg: " + String(right_leg_score))
+        comment!.append("left leg: " + String(left_leg_score))
     }
 
     private func calculateScore(){
-        let left_leg_score = utilities.left_leg(resultArray!, 0.0, 10.0, false)
-        let right_leg_score = utilities.right_leg(resultArray!, 0.0, 10.0, false)
+        left_leg_score = utilities.left_leg(resultArray!, 0.0, 20.0, false)
+        right_leg_score = utilities.right_leg(resultArray!, 0.0, 20.0, false)
         score = 0.5 * (left_leg_score + right_leg_score)
 
     }

@@ -45,9 +45,9 @@ public class ArdhaUttanasana {
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
-        comment!.append("$hand_on_grd_score, The Hand-to-Ground Distance " + utilities.comment(hand_on_grd_score))
-        comment!.append("$waist_score, The Waist-to-Thigh Distance " + utilities.comment(waist_score))
-        comment!.append("$leg_score, The Straightness of the Legs " + utilities.comment(leg_score))
+        comment!.append("The Hand-to-Ground Distance " + utilities.comment(hand_on_grd_score))
+        comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
+        comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
 
     }
 

@@ -62,8 +62,8 @@ class Natarajasana{
         } else {
             leg_score = left_leg_score
         }
-
-        waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, true)
+        //TO BE MODIFIED
+        waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, true) // 100
 
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
 
