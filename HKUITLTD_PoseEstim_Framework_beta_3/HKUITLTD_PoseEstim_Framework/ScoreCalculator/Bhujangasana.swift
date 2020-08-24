@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Bujangasana {
+class Bhujangasana {
 
     private let utilities: FeedbackUtilities = FeedbackUtilities()
 
@@ -27,10 +27,6 @@ class Bujangasana {
     /** score of body parts */
     private var arm_score = -1.0
     private var waist_score = -1.0
-
-    private var l_arm_angle = 0.0
-    private var r_arm_angle = 0.0
-    private var waist_angle = 0.0
     
     /** constructor */
     init(result: Result) {
@@ -46,22 +42,20 @@ class Bujangasana {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
         comment = Array<String>(arrayLiteral:
-            "l_arm_angle: $l_arm_angle, r_arm_angle: $r_arm_angle, score: $arm_score, Arms " + utilities.comment(arm_score),
-            "waist_angle: $waist_angle, $waist_score, Waist" + utilities.comment(waist_score))
-        return comment!
+            "Arms " + utilities.comment(arm_score),
+            "Body " + utilities.comment(waist_score))
     }
 
-    private func calculateScore()-> Double{
+    private func calculateScore(){
         let l_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, true)
         let r_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, true)
         arm_score = 0.5 * (l_arm_score + r_arm_score)
-        waist_score = utilities.right_waist(resultArray!,120.0, 20.0, true)
+        waist_score = utilities.right_waist(resultArray!,100.0, 20.0, true)
 
         score = arm_ratio * arm_score + waist_ratio *  waist_score
 
-        return score!
     }
 
 

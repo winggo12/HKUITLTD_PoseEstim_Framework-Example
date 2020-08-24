@@ -9,7 +9,7 @@
 import UIKit
 import HKUITLTD_PoseEstim_Framework
 import AVFoundation
-
+import os
 class ViewController: UIViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
@@ -114,10 +114,10 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        var userselectedpose: Pose = Pose.ardha_uttanasana
-        var givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
-        var score: Double = givefeedback.getScore()
-        var comments: [String] = givefeedback.getComments()
+        let userselectedpose: Pose = Pose.AdhoMukhaShivanasana
+        let givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
+        let score: Double = givefeedback.getScore()
+        let comments: [String] = givefeedback.getComments()
         
             DispatchQueue.main.async {
                 if result.score < self.minimumScore {
@@ -127,6 +127,13 @@ extension ViewController: CameraFeedManagerDelegate {
                 self.overlayView.drawResult(result: result)
 
             }
+        os_log("Pose: %s", userselectedpose.rawValue)
+        os_log("Score: %f", score)
+        os_log("Comments: ")
+        for comment in comments {
+            os_log("%s", comment)
+        }
+
   }
     
 }

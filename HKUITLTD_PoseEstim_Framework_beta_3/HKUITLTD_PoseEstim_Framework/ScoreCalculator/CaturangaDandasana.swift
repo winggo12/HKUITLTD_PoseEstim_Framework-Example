@@ -41,15 +41,15 @@ class CaturangaDandasana{
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
         comment =  Array<String>()
         comment!.append("$arm_score, The Curvature of the Arms " + utilities.comment(arm_score))
         comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
-        return comment!
+
     }
 
-    private func calculateScore()->Double{
+    private func calculateScore(){
         let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
         let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
         if(right_leg_score > left_leg_score){
@@ -59,8 +59,8 @@ class CaturangaDandasana{
             
         }
 
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
+        let right_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, false)
+        let left_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, false)
         if(right_arm_score > left_arm_score){
             arm_score = right_arm_score
         }else{
@@ -69,7 +69,7 @@ class CaturangaDandasana{
 
         waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
-        return score!
+
     }
 
 

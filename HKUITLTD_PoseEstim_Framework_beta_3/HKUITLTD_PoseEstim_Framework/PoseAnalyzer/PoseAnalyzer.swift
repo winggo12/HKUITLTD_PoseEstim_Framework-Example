@@ -27,24 +27,102 @@ public class GiveFeedBack{
     
     private func generateFeedback(){
         switch currentPose {
-        case Pose.navasana:
-            let YogaPose = Navasana(result: self.result)
-            score = YogaPose.getScore()
-            comments = YogaPose.getComment()
-            
-        case Pose.ustrasana:
-            let YogaPose = Ustrasana(result: self.result)
-            score = YogaPose.getScore()
-            comments = YogaPose.getComment()
-
-        case Pose.ardha_uttanasana:
-            let YogaPose = ArdhaUttanasana(result: self.result)
-            score = YogaPose.getScore()
-            comments = YogaPose.getComment()
+            case Pose.ArdhaUttanasana:
+                let YogaPose = ArdhaUttanasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.ArdhaChandarasana:
+                let YogaPose = ArdhaChandarasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.AdhoMukhaShivanasana:
+                let YogaPose = AdhoMukhaShivanasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.BaddhaKonasana:
+                let YogaPose = BaddhaKonasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Bhujangasana:
+                let YogaPose = Bhujangasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.CaturangaDandasana:
+                let YogaPose = CaturangaDandasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Dandasana:
+                let YogaPose = Dandasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Halasana:
+                let YogaPose = Halasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Natarajasana:
+                let YogaPose = Natarajasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Navasana:
+                let YogaPose = Navasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.ParivrttaPashvaKonasana:
+                let YogaPose = ParivrttaPashvaKonasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.ParivrttaTrikonasana:
+                let YogaPose = ParivrttaTrikonasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.PurnaShalabhasana:
+                let YogaPose = PurnaShalabhasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Tuladandasana:
+                let YogaPose = Tuladandasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.UbhayaPadangushtasana:
+                let YogaPose = UbhayaPadangushtasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.UrdhvaDhanurasana:
+                let YogaPose = UrdhvaDhanurasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Ustrasana:
+                let YogaPose = Ustrasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.UttanaPadasana:
+                let YogaPose = UttanaPadasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.UtthitaHastaPadangusthasanaB:
+                let YogaPose = UtthitaHastaPadangusthasanaA(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.UtthitaHastaPadangusthasanaA:
+                let YogaPose = UtthitaHastaPadangusthasanaA(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.UtthitaHastaPadangusthasanaC:
+                let YogaPose = UtthitaHastaPadangusthasanaC(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            case Pose.Vrksasana:
+                let YogaPose = Vrksasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+            default:
+                let YogaPose = Navasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
 
         }
 
-
+        
 }
     public func getScore() -> Double {return self.score}
     public func getComments() -> [String] {return self.comments}

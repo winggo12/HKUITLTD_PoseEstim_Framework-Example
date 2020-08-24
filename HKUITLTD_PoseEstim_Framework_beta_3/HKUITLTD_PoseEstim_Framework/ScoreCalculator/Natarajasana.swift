@@ -29,7 +29,7 @@ class Natarajasana{
     private var leg_score: Double = 0.0
 
     /** constructor */
-    func setResult(result: Result){
+    init(result: Result){
         self.result = result
         resultArray = result.classToArray()
         calculateScore()
@@ -42,15 +42,15 @@ class Natarajasana{
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
         comment =  Array<String>()
         comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
         comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
-        return comment!
+
     }
 
-    private func calculateScore()-> Double {
+    private func calculateScore(){
         let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
         let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
         arm_score = (left_arm_score + right_arm_score) * 0.5
@@ -66,7 +66,7 @@ class Natarajasana{
         waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, true)
 
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
-        return score!
+
     }
 
 }

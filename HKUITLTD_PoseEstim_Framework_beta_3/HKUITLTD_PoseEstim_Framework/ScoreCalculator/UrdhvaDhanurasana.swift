@@ -31,7 +31,7 @@ class UrdhvaDhanurasana {
     private var waist_score: Double = 0.0
 
     /** setter */
-    func setResult(result: Result){
+    init(result: Result){
         self.result = result
         resultArray = result.classToArray()
         calculateScore()

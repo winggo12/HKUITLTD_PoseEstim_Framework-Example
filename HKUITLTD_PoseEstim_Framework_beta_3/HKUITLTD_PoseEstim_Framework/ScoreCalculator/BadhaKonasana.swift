@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BadhaKonasana {
+class BaddhaKonasana {
 
     private let utilities: FeedbackUtilities = FeedbackUtilities()
     /** output */
@@ -37,19 +37,17 @@ class BadhaKonasana {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
         comment =  Array<String>()
         comment!.append("The Curvature of the Legs " + utilities.comment(score!))
 
-        return comment!
     }
 
-    private func calculateScore()->Double{
-        let left_leg_score = utilities.left_leg(resultArray!, 0.0, 20.0, false)
-        let right_leg_score = utilities.right_leg(resultArray!, 0.0, 20.0, false)
+    private func calculateScore(){
+        let left_leg_score = utilities.left_leg(resultArray!, 0.0, 10.0, false)
+        let right_leg_score = utilities.right_leg(resultArray!, 0.0, 10.0, false)
         score = 0.5 * (left_leg_score + right_leg_score)
 
-        return score!
     }
 
 

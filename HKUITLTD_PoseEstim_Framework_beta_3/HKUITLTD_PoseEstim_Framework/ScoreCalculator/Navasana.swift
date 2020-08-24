@@ -44,7 +44,7 @@ class Navasana {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func calculateScore()->Double{
+    private func calculateScore(){
         let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
         let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
         arm_score = (left_arm_score + right_arm_score) * 0.5
@@ -56,18 +56,17 @@ class Navasana {
         leg_score = 0.5 * (right_leg_score + left_leg_score)
 
         score = arm_ratio * arm_score + waist_ratio * waist_score + leg_ratio * leg_score
-        return score!
+
     }
 
 
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
 
         comment =  Array<String>()
         comment!.append("The Straightness of the Arms " + utilities.comment( arm_score))
         comment!.append("The Waist-to-Thigh Distance " + utilities.comment( waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment( leg_score))
 
-        return comment!
     }
 }
 

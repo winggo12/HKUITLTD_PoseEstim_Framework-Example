@@ -41,14 +41,14 @@ class Dandasana {
     func getResult()-> Result {return self.result! }
 
     /** private method */
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
         comment =  Array<String>()
         comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
-        return comment!
+
     }
 
-    private func calculateScore()-> Double{
+    private func calculateScore() {
 
         let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
         let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
@@ -57,10 +57,10 @@ class Dandasana {
         }else{
             leg_score = right_leg_score
         }
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
+        waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, false)
 
         score = leg_ratio *  leg_score + waist_ratio * waist_score
-        return score!
+
     }
 
 }

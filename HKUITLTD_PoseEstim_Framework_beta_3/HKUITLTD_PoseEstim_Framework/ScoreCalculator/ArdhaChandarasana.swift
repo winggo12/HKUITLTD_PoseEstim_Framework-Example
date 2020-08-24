@@ -31,6 +31,8 @@ class ArdhaChandarasana {
     private var waist_score: Double = 0.0
     private var leg_score: Double = 0.0
 
+    private var direction: Int = -1
+
     /** constructor */
     init(result: Result){
         self.result = result
@@ -45,15 +47,15 @@ class ArdhaChandarasana {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func makeComment()-> Array<String>{
+    private func makeComment(){
         comment =  Array<String>()
         comment!.append("$arm_score, The Straightness of the Arms " + utilities.comment(arm_score))
         comment!.append("$waist_score, The Waist-to-Thigh Distance " + utilities.comment(waist_score))
         comment!.append("$leg_score, The Straightness of the Legs " + utilities.comment(leg_score))
-        return comment!
+
     }
 
-    private func calculateScore()->Double{
+    private func calculateScore(){
 
         let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
         let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
@@ -71,11 +73,23 @@ class ArdhaChandarasana {
             
         }
 
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
-
+        direction = decideDirection()
+        switch(direction){
+            case 5: waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
+            default: waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, false)
+        }
+        
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
-        return score!
+
     }
 
-
+    private func decideDirection()-> Int{
+        let left_wrist = resultArray![5]
+        let right_wrist = resultArray![6]
+        if(left_wrist[1] > right_wrist[1]){
+            return 5
+        }else{
+            return 6
+        }
+    }
 }
