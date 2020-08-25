@@ -20,12 +20,12 @@ public class ArdhaUttanasana {
     private var resultArray: Array<Array<Double>>? = nil
 
     /** constant */
-    private var leg_ratio: Double = 0.333
-    private var hand_on_grd_ratio: Double = 0.333
-    private var waist_ratio: Double = 0.333
+    private var leg_ratio: Double = 0.5
+    private var hand_on_grd_ratio: Double = 0.5
+//    private var waist_ratio: Double = 0.333
 
     /** score of body parts */
-    private var waist_score: Double = 0.0
+//    private var waist_score: Double = 0.0
     private var leg_score: Double = 0.0
     private var hand_on_grd_score: Double = 0.0
 
@@ -46,7 +46,8 @@ public class ArdhaUttanasana {
     private func makeComment(){
         comment =  Array<String>()
         comment!.append("The Hand-to-Ground Distance " + utilities.comment(hand_on_grd_score))
-        comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
+        comment!.append("The angle between legs and floor " + utilities.comment(hand_on_grd_score))
+//        comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
 
     }
@@ -61,10 +62,10 @@ public class ArdhaUttanasana {
             leg_score = right_leg_score
         }
 
-        waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, false)
+//        waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, false)
 
-        hand_on_grd_score = leg_floor()
-        score = leg_ratio * leg_score + waist_ratio * waist_score + hand_on_grd_ratio *  hand_on_grd_score
+        hand_on_grd_score = leg_floor_arm()
+        score = leg_ratio * leg_score + hand_on_grd_ratio *  hand_on_grd_score
 
     }
 
@@ -111,6 +112,23 @@ public class ArdhaUttanasana {
         let right_angle = utilities.getAngle(right_ankle, right_knee, right_floot_pt)
         let left_leg_floor_score = utilities.angleToScore(left_angle, 90.0, 10.0, false)
         let right_leg_floor_score = utilities.angleToScore(right_angle, 90.0, 10.0, false)
+        return 0.5 * (left_leg_floor_score + right_leg_floor_score)
+    }
+    
+    private func leg_floor_arm()-> Double{
+        let left_knee = resultArray![9]
+        let right_knee = resultArray![10]
+        let left_ankle = resultArray![11]
+        let right_ankle = resultArray![12]
+        let l_wrist = resultArray![5]
+        let r_wrist = resultArray![6]
+
+
+        //find angle between leg and floor
+        let left_angle = utilities.getAngle(left_ankle, left_knee, l_wrist)
+        let right_angle = utilities.getAngle(right_ankle, right_knee, r_wrist)
+        let left_leg_floor_score = utilities.angleToScore(left_angle, 90.0, 10.0, true)
+        let right_leg_floor_score = utilities.angleToScore(right_angle, 90.0, 10.0, true)
         return 0.5 * (left_leg_floor_score + right_leg_floor_score)
     }
 }

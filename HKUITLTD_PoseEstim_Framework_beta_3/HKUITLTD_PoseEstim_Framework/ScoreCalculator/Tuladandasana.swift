@@ -44,40 +44,38 @@ class Tuladandasana {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func calculateScore()->Double{
+    private func calculateScore(){
         let standing_leg: Int = self.standing_leg()
         leg_score = 0.0
 
         if(standing_leg == 11){
-            standing_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
-            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
+            standing_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, ture)
+            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, ture)
         }else{
-            standing_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
-            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
+            standing_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, ture)
+            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, ture)
         }
 
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, ture)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, ture)
         arm_score = 0.5 * (left_arm_score + right_arm_score)
 
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
-        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, false)
-        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, false)
+        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, ture)
+        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, ture)
+        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, ture)
         let shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         score = leg_arm_waist_ratio / 4 * (leg_score + arm_score + waist_score + shoulder_score) + standing_leg_ratio * standing_leg_score
 
-        return score!
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
 
         comment =  Array<String>()
         comment!.append("The Straightness of the Arms" + utilities.comment( arm_score))
-        comment!.append("The Straightness of the back " + utilities.comment( waist_score))
+        comment!.append("The Straightness of the body " + utilities.comment( waist_score))
         comment!.append("The Straightness of the horizontal leg " + utilities.comment( leg_score))
         comment!.append("The Straightness of the standing leg " + utilities.comment( standing_leg_score))
 
-        return comment!
     }
 
     private func standing_leg()-> Int{

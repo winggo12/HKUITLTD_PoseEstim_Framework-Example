@@ -48,11 +48,11 @@ class ParivrttaTrikonasana {
         
         direction = utilities.decideDirection(resultArray!)
 
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
 
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
 
         if(left_leg_score > right_leg_score){
             leg_score = left_leg_score
@@ -60,16 +60,18 @@ class ParivrttaTrikonasana {
             leg_score = right_leg_score
         }
         arm_score = 0.5 * (left_arm_score + right_arm_score)
-
+        let left_waist_score: Double
+        let right_waist_score: Double
         
         switch(direction){
-        case 5:
-            waist_score = utilities.left_waist(resultArray!, 135.0, 20.0, false)
-            waist_score = utilities.left_waist(resultArray!, 135.0, 20.0, false)
-        default:
-            waist_score = utilities.right_waist(resultArray!, 135.0, 20.0, false)
+            case 5:
+                left_waist_score = utilities.left_waist(resultArray!, 135.0, 20.0, true)
+                right_waist_score = utilities.right_waist(resultArray!, 45.0, 20.0, true)
+            default:
+                left_waist_score = utilities.left_waist(resultArray!, 45, 20.0, true)
+                right_waist_score = utilities.right_waist(resultArray!, 135.0, 20.0, true)
         }
-
+        waist_score = 0.5 * (left_waist_score + right_waist_score)
 
         score = arm_ratio * arm_score +  leg_ratio * leg_score + waist_ratio * waist_score
 

@@ -51,12 +51,12 @@ class Natarajasana{
     }
 
     private func calculateScore(){
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = (left_arm_score + right_arm_score) * 0.5
 
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
         if(right_leg_score > left_leg_score){
             leg_score = right_leg_score
         } else {

@@ -44,22 +44,25 @@ class UrdhvaDhanurasana {
     func getResult()-> Result {return self.result!}
 
     /** private method */
-    private func calculateScore()->Double{
-        arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
-        leg_score =  utilities.left_leg(resultArray!, 180.0, 20.0, false)
-        waist_score = utilities.right_waist(resultArray!, 100.0, 20.0, false)
+    private func calculateScore(){
+        let l_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let r_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
+        arm_score = 0.5 * (l_arm_score + r_arm_score)
+        
+        let l_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let r_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        leg_score = 0.5 * (l_leg_score + r_leg_score)
+        waist_score = utilities.right_waist(resultArray!, 100.0, 20.0, true)
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
-        return score!
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
 
         comment =  Array<String>()
         comment!.append("The Straightness of the Arms " + utilities.comment( arm_score))
         comment!.append("The Waist-to-Thigh Distance " + utilities.comment( waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment( leg_score))
 
-        return comment!
     }
 
 

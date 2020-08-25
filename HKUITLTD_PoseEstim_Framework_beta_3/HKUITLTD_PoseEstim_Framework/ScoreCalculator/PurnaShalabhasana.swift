@@ -44,7 +44,7 @@ class PurnaShalabhasana {
     func getResult()-> Result {return self.result!}
 
     /** private method */
-    private func calculateScore()->Double{
+    private func calculateScore(){
         let left_leg_score = utilities.left_leg(resultArray!, 120.0, 20.0, false)
         let right_leg_score = utilities.right_leg(resultArray!, 120.0, 20.0, false)
 
@@ -55,17 +55,16 @@ class PurnaShalabhasana {
         waist_score = utilities.right_waist(resultArray!, 120.0, 20.0, true)
 
         score =  arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
-        return score!
+
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
 
         comment =  Array<String>()
         comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
         comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
         comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
 
-        return comment!
     }
 
 

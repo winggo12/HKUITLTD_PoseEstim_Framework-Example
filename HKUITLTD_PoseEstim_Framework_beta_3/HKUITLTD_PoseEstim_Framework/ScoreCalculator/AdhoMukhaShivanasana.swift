@@ -48,18 +48,18 @@ class AdhoMukhaShivanasana {
 
     private func calculateScore(){
 
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
 
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = 0.5 * (left_arm_score + right_arm_score)
 
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
 
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
         leg_score = 0.5 * (left_leg_score + right_leg_score)
         
-        let left_waist = utilities.left_waist(resultArray!, 90.0, 10.0, false)
-        let right_waist = utilities.right_waist(resultArray!, 90.0, 10.0, false)
+        let left_waist = utilities.left_waist(resultArray!, 90.0, 10.0, true)
+        let right_waist = utilities.right_waist(resultArray!, 90.0, 10.0, true)
         waist_score = 0.5 * (left_waist + right_waist)
         score = ratio * (arm_score + leg_score + waist_score)
         

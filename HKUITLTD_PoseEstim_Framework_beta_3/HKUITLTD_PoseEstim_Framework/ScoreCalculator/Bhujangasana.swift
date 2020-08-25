@@ -50,10 +50,10 @@ class Bhujangasana {
 
     private func calculateScore(){
         //TO BE MODIFIED
-        let l_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, true) //100
-        let r_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, true)//100
+        let l_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, false) //100
+        let r_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, false)//100
         arm_score = 0.5 * (l_arm_score + r_arm_score)
-        waist_score = utilities.right_waist(resultArray!,100.0, 20.0, true) //120
+        waist_score = utilities.right_waist(resultArray!,100.0, 20.0, false) //120
 
         score = arm_ratio * arm_score + waist_ratio *  waist_score
 

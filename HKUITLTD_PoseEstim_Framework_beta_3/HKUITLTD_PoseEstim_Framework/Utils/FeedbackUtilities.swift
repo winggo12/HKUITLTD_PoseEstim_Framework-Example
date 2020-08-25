@@ -86,7 +86,7 @@ class FeedbackUtilities {
 
     func angleToScore(_ angle: Double, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         if(excat) {
-            if(abs(angle - fullMarkAngle) < 5){
+            if(abs(angle - fullMarkAngle) < 2){
                 return 100.0
             }else if(abs(angle - fullMarkAngle) < step){
                 return 90.0

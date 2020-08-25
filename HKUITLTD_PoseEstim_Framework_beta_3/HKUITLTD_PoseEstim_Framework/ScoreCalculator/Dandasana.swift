@@ -50,14 +50,14 @@ class Dandasana {
 
     private func calculateScore() {
 
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
         if(left_leg_score > right_leg_score){
             leg_score = left_leg_score
         }else{
             leg_score = right_leg_score
         }
-        waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, false)
+        waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, true)
 
         score = leg_ratio *  leg_score + waist_ratio * waist_score
 

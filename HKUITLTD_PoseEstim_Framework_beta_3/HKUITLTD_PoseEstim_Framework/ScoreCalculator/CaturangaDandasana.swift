@@ -50,8 +50,8 @@ class CaturangaDandasana{
     }
 
     private func calculateScore(){
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
         if(right_leg_score > left_leg_score){
             leg_score = right_leg_score
         } else {
@@ -59,15 +59,15 @@ class CaturangaDandasana{
             
         }
 
-        let right_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, false)
-        let left_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, false)
+        let right_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, true)
+        let left_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, true)
         if(right_arm_score > left_arm_score){
             arm_score = right_arm_score
         }else{
             arm_score = left_arm_score
         }
 
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
+        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
 
     }
