@@ -49,20 +49,20 @@ class Tuladandasana {
         leg_score = 0.0
 
         if(standing_leg == 11){
-            standing_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, ture)
-            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, ture)
+            standing_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
         }else{
-            standing_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, ture)
-            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, ture)
+            standing_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
         }
 
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, ture)
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, ture)
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = 0.5 * (left_arm_score + right_arm_score)
 
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, ture)
-        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, ture)
-        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, ture)
+        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
+        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, true)
+        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
         let shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         score = leg_arm_waist_ratio / 4 * (leg_score + arm_score + waist_score + shoulder_score) + standing_leg_ratio * standing_leg_score
 

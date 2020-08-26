@@ -13,8 +13,6 @@ class UtthitaParsvakonasana {
     
     private let utilities: FeedbackUtilities = FeedbackUtilities()
 
-    private let TAG = "GivePoseFeedback"
-
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
@@ -34,7 +32,7 @@ class UtthitaParsvakonasana {
     private var arm_score: Double = 0.0
     private var right_angle_leg_score: Double = 0.0
     private var shoulder_score: Double = 0.0
-    private var right_angle_leg: Int = -1
+    private var direction: Int = -1
 
     /** constructor */
     init(result: Result){
@@ -50,72 +48,45 @@ class UtthitaParsvakonasana {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func calculateScore()->Double{
+    private func calculateScore(){
 
-        right_angle_leg = self.find_right_angle_leg()
-        if(right_angle_leg == -1){
-            print(TAG + ":" + "Cannot detriment the posture direction.")
-            score = 0.0
-            return score!
-        }else if(right_angle_leg == 6){
-            right_angle_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, false)
-            leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
-            arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
-            shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, false)
-            waist_score =  utilities.right_waist(resultArray!, 180.0, 20.0, false)
-            score = arm_ratio / 2 * (leg_score + shoulder_score) + waist_ratio * waist_score + leg_ratio / 2 * (right_angle_leg_score + leg_score)
-        }else{
-            right_angle_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, false)
-            leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
-            arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
-            shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, false)
-            waist_score =  utilities.left_waist(resultArray!, 180.0, 20.0, false)
-
+        direction = utilities.decideDirection(resultArray!)
+        switch(direction){
+            case 6:
+                right_angle_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, false)
+                leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
+                arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
+                shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, false)
+                waist_score =  utilities.right_waist(resultArray!, 180.0, 20.0, false)
+            default:
+                right_angle_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, false)
+                leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
+                arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
+                shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, false)
+                waist_score =  utilities.left_waist(resultArray!, 180.0, 20.0, false)
         }
         score = arm_ratio / 2 * (leg_score + shoulder_score) + waist_ratio * waist_score + leg_ratio / 2 * (right_angle_leg_score + leg_score)
-        return score!
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
         comment = Array<String>()
-
-        if(right_angle_leg == -1){
-            comment!.append("")
-        }else{
-            var str: String
-            var str1: String
-            if(right_angle_leg == 6){
+        
+        var str: String
+        var str1: String
+        switch(direction){
+            case 6:
                 str = "right"
                 str1 = "left"
-            }else{
+            default:
                 str = "left"
                 str1 = "right"
-            }
-
-            comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
-            comment!.append("The Straightness from shoulder to knee " + utilities.comment(waist_score))
-            comment!.append("The Straightness of the " + str + " leg " + utilities.comment(leg_score))
-            comment!.append("The Curvature of the " + str1 + " leg " + utilities.comment(right_angle_leg_score))
         }
-
-        return comment!
+        comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
+        comment!.append("The Straightness from shoulder to knee " + utilities.comment(waist_score))
+        comment!.append("The Straightness of the " + str + " leg " + utilities.comment(leg_score))
+        comment!.append("The Curvature of the " + str1 + " leg " + utilities.comment(right_angle_leg_score))
     }
 
-    private func find_right_angle_leg()-> Int{
-        let left_hip = resultArray![7]
-        let right_wrist = resultArray![6]
 
-        let right_hip = resultArray![8]
-        let left_wrist = resultArray![5]
-
-        if(right_wrist[0] < left_hip[0]){
-            return 6
-        }
-        if(left_wrist[0] > right_hip[0]){
-            return 5
-        }else{
-            return -1
-        }
-    }
 
 }

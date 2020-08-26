@@ -16,16 +16,18 @@ public class GiveFeedBack{
     private var currentPose: Pose
     private var score: Double
     private var comments: [String] = [String]()
-    
+    private var vrksasana: Vrksasana? = nil
     public init(user_input_result :Result,user_input_pose :Pose){
         self.result = user_input_result
         self.currentPose = user_input_pose
         self.score = 0
         self.comments = [String]()
-        self.generateFeedback()
+        self.generateFeedback(user_input_result :user_input_result, user_input_pose :user_input_pose)
     }
     
-    private func generateFeedback(){
+    public func generateFeedback(user_input_result :Result,user_input_pose :Pose){
+        self.result = user_input_result
+        self.currentPose = user_input_pose
         switch currentPose {
             case Pose.ArdhaUttanasana:
                 let YogaPose = ArdhaUttanasana(result: self.result)
@@ -112,7 +114,15 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
             case Pose.Vrksasana:
-                let YogaPose = Vrksasana(result: self.result)
+                if(vrksasana == nil){
+                    vrksasana = Vrksasana(result: self.result)
+                }else{
+                    vrksasana!.setResult(result: self.result)
+                }
+                score = vrksasana!.getScore()
+                comments = vrksasana!.getComment()
+            case Pose.UtthitaParsvakonasana:
+                let YogaPose = UtthitaParsvakonasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
             default:
@@ -120,10 +130,9 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
 
+            }
         }
 
-        
-}
-    public func getScore() -> Double {return self.score}
-    public func getComments() -> [String] {return self.comments}
+        public func getScore() -> Double {return self.score}
+        public func getComments() -> [String] {return self.comments}
 }

@@ -47,7 +47,7 @@ class FeedbackUtilities {
 
     func comment(_ score: Double)-> String{
         if(score < 79.0){
-            return " not ideal"
+            return " is not ideal"
         }else if(score > 81.0){
             return " is great"
         }else{

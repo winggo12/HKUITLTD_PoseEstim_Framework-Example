@@ -32,6 +32,11 @@ class UtthitaHastaPadangusthasanaA {
     private var leg_score: Double = 0.0
     private var arm_score: Double = 0.0
 
+    private var side: Int = -1
+    
+    private var leg_lenth: Double = 0.0
+    private var wrist_to_ankle_distance: Double = 0.0
+    
     /** constructor */
     init(result: Result){
         self.result = result
@@ -46,39 +51,70 @@ class UtthitaHastaPadangusthasanaA {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func calculateScore()->Double{
+    private func calculateScore(){
+        side = detectSide()
         arm_score = arm()
-        leg_score = utilities.right_left_leg(resultArray!, 160.0, 20.0, true)
-        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        leg_score = 0.5 * (left_leg_score + right_leg_score)
 
+        switch(side){
+        case 11:
+            waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
+        default:
+            waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
+        }
         score = leg_ratio * leg_score + waist_ratio * waist_score + arm_ratio * arm_score
 
-        return score!
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
         comment = Array<String>()
-        comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
+        comment!.append("The Wrist-To-Ankle distance " + comment_wrist_ankle_distance(arm_score))
         comment!.append("The Curvature of the Body " + utilities.comment(waist_score))
         comment!.append("The Curvature of the Legs " + utilities.comment(leg_score))
 
-        return comment!
     }
 
     private func arm()-> Double {
-        //TO BE MIDIFIED
+
         let r_wrist = resultArray![6]
         let r_ankle = resultArray![12]
+        let r_knee = resultArray![10]
         let l_wrist = resultArray![5]
         let l_ankle = resultArray![11]
+        let l_knee = resultArray![9]
+        switch(side){
+        case 11:
+            leg_lenth = utilities.cal_dis(coor1: l_ankle, coor2: l_knee)
+            wrist_to_ankle_distance = utilities.cal_dis(coor1: l_ankle, coor2: l_wrist)
+        default:
+            leg_lenth = utilities.cal_dis(coor1: r_ankle, coor2: r_knee)
+            wrist_to_ankle_distance = utilities.cal_dis(coor1: r_ankle, coor2: r_wrist)
+        }
 
-        //if(abs(r_ankle[1] - r_wrist[1]) < MODEL_HEIGHT * 0.03 || abs(l_ankle[1] - l_wrist[1]) < MODEL_HEIGHT * 0.03){
-        if(abs(r_ankle[1] - r_wrist[1]) < 100 * 0.03 || abs(l_ankle[1] - l_wrist[1]) < 100 * 0.03){
+
+        if(wrist_to_ankle_distance < leg_lenth * 0.2){
             return 100.0
         }else {
             return 90.0
         }
 
     }
-
+    private func detectSide()-> Int{
+        let l_ankle = resultArray![11]
+        let r_ankle = resultArray![12]
+        if(l_ankle[1] < r_ankle[1]){
+            return 11
+        }else{
+            return 12
+        }
+    }
+    private func comment_wrist_ankle_distance(_ score: Double)-> String{
+        if(score == 100.0){
+            return " is great"
+        }else{
+            return " is not ideal"
+        }
+    }
 }

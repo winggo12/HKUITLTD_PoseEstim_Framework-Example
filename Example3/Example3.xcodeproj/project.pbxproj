@@ -65,7 +65,7 @@
 		4616D73924F3728000992513 /* tfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
 		4616D73A24F3728000992513 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		4616D73C24F3728000992513 /* RunThisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
-		4616D73E24F3728000992513 /* PoseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAnalyzer.swift; sourceTree = "<group>"; };
+		4616D73E24F3728000992513 /* GiveFeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveFeedBack.swift; sourceTree = "<group>"; };
 		4616D74024F3728000992513 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4616D74124F3728000992513 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4616D74724F3728000992513 /* QuantizationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantizationParameters.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		4616D73D24F3728000992513 /* PoseAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				4616D73E24F3728000992513 /* PoseAnalyzer.swift */,
+				4616D73E24F3728000992513 /* GiveFeedBack.swift */,
 			);
 			path = PoseAnalyzer;
 			sourceTree = "<group>";

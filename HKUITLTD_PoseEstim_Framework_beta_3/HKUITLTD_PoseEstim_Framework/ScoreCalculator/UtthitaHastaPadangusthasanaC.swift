@@ -27,8 +27,9 @@ class UtthitaHastaPadangusthasanaC {
     /** score of body parts */
     private var waist_score: Double = 0.0
     private var leg_score: Double = 0.0
-    private var arm_score: Double = 0.0
 
+    private var side: Int = -1
+    
     /** constructor */
     init(result: Result){
         self.result = result
@@ -43,54 +44,43 @@ class UtthitaHastaPadangusthasanaC {
     func getResult()-> Result { return self.result! }
 
     /** private method */
-    private func calculateScore()->Double{
+    private func calculateScore(){
+        side = detectSide()
+        
+        let l_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let r_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        leg_score = 0.5 * (l_leg_score + r_leg_score)
+        
+        var l_waist_score: Double = 0.0
+        var r_waist_score: Double = 0.0
+        switch(side){
+            case 11:
+                l_waist_score = utilities.left_waist(resultArray!, 0.0, 20.0, false)
+                r_waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, false)
+            default:
+                l_waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, false)
+                r_waist_score = utilities.right_waist(resultArray!, 0.0, 20.0, false)
+        }
 
-        let leg_score = right_left_leg()
-
-        let waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, false)
-
+        waist_score = 0.5 * (l_waist_score + r_waist_score)
         score = leg_ratio * leg_score + waist_ratio * waist_score
-
-        return score!
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
         comment = Array<String>()
-        comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
-        comment!.append("The Curvature of the Body " + utilities.comment(waist_score))
-        comment!.append("The Curvature of the Legs " + utilities.comment(leg_score))
 
-        return comment!
+        comment!.append("The straightness of the Body " + utilities.comment(waist_score))
+        comment!.append("The straightness of the Legs " + utilities.comment(leg_score))
+
     }
 
-    func right_left_leg()-> Double{
-        let left_hip = resultArray![7]
-        let left_knee = resultArray![9]
-        let right_hip = resultArray![8]
-        let right_knee = resultArray![10]
-
-        /** move line between right_hip and right_knee to make the above two lines intersect */
-        let diffX = left_hip[0] - right_hip[0]
-        let diffY = left_hip[1] - right_hip[1]
-        let movedLine = utilities.moveLine(right_hip, right_knee, diffX, diffY)
-        let new_right_hip = movedLine[0]
-        let new_right_knee = movedLine[1]
-
-        let angle = utilities.getAngle(new_right_hip, new_right_knee, left_knee)
-
-        return angleToScore(angle)
-    }
-    private func angleToScore(_ angle:Double)-> Double{
-        if(angle >= 90  && angle <= 120)  {
-            return 100.0
-        } else if(angle >= 70 ) {
-            return 90.0
-        } else if(angle >= 50)  {
-            return 80.0
-        } else if(angle >= 30)  {
-            return 70.0
-        } else{
-            return 60.0
+    private func detectSide()-> Int{
+        let l_ankle = resultArray![11]
+        let r_ankle = resultArray![12]
+        if(l_ankle[1] < r_ankle[1]){
+            return 11
+        }else{
+            return 12
         }
     }
 }

@@ -44,12 +44,12 @@ class UttanaPadasana {
     func getResult()-> Result {return self.result!}
 
     /** private method */
-    private func calculateScore()->Double{
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
+    private func calculateScore(){
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
 
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
 
 
         if(left_leg_score > right_leg_score){
@@ -57,21 +57,19 @@ class UttanaPadasana {
         }else{
             leg_score = right_leg_score
         }
-        arm_score = (right_arm_score + left_arm_score)
+        arm_score = 0.5 * (right_arm_score + left_arm_score)
 
-        waist_score = utilities.right_waist(resultArray!, 100.0, 20.0, false)
+        waist_score = utilities.right_waist(resultArray!, 100.0, 20.0, true)
         score = arm_ratio  * arm_score + leg_ratio * leg_score +  waist_ratio * waist_score
 
-        return score!
     }
 
-    private func makeComment()->Array<String>{
+    private func makeComment(){
         comment = Array<String>()
         comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
         comment!.append("The Curvature of the Body " + utilities.comment(waist_score))
-        comment!.append("The Curvature of the Legs " + utilities.comment(leg_score))
+        comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
 
-        return comment!
     }
 
 

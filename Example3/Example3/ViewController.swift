@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     // Minimum score to render the skelton keypoints.
     private let minimumScore: Float = 0.5
     
+    private var givefeedback: GiveFeedBack? = nil
 
     
     override func viewDidLoad() {
@@ -114,19 +115,24 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.ParivrttaTrikonasana
-        let givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
-        let score: Double = givefeedback.getScore()
-        let comments: [String] = givefeedback.getComments()
-        
-            DispatchQueue.main.async {
-                if result.score < self.minimumScore {
-                    self.overlayView.clear()
-                    return
-                }
-                self.overlayView.drawResult(result: result)
+        let userselectedpose: Pose = Pose.Vrksasana
+        if(givefeedback == nil){
+            givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
+        }else{
+            givefeedback!.generateFeedback(user_input_result: result, user_input_pose: userselectedpose)
+        }
 
+        let score: Double = givefeedback!.getScore()
+        let comments: [String] = givefeedback!.getComments()
+        
+        DispatchQueue.main.async {
+            if result.score < self.minimumScore {
+                self.overlayView.clear()
+                return
             }
+            self.overlayView.drawResult(result: result)
+
+        }
         os_log("Pose: %s", userselectedpose.rawValue)
         os_log("Score: %f", score)
         os_log("Comments: ")

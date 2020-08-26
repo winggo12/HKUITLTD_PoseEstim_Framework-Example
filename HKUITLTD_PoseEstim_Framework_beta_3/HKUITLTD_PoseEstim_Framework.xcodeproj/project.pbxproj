@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4315E68024A5A6BE00B81FC3 /* PoseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E67F24A5A6BE00B81FC3 /* PoseAnalyzer.swift */; };
 		4315E69224A5D82600B81FC3 /* Navasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E68424A5D82600B81FC3 /* Navasana.swift */; };
 		4315E69324A5D82600B81FC3 /* Ustrasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E68524A5D82600B81FC3 /* Ustrasana.swift */; };
 		4315E69724A5D82600B81FC3 /* ArdhaUttanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E68924A5D82600B81FC3 /* ArdhaUttanasana.swift */; };
@@ -67,10 +66,10 @@
 		4616D63B24EE287800992513 /* UtthitaParsvakonasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D63A24EE287800992513 /* UtthitaParsvakonasana.swift */; };
 		4616D72C24F36E6300992513 /* BadhaKonasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D72A24F36E6300992513 /* BadhaKonasana.swift */; };
 		4616D73224F3715000992513 /* Bhujangasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D73124F3715000992513 /* Bhujangasana.swift */; };
+		4616D7CD24F62A9F00992513 /* GiveFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4315E67F24A5A6BE00B81FC3 /* PoseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAnalyzer.swift; sourceTree = "<group>"; };
 		4315E68424A5D82600B81FC3 /* Navasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navasana.swift; sourceTree = "<group>"; };
 		4315E68524A5D82600B81FC3 /* Ustrasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ustrasana.swift; sourceTree = "<group>"; };
 		4315E68924A5D82600B81FC3 /* ArdhaUttanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasana.swift; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		4616D63A24EE287800992513 /* UtthitaParsvakonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasana.swift; sourceTree = "<group>"; };
 		4616D72A24F36E6300992513 /* BadhaKonasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadhaKonasana.swift; sourceTree = "<group>"; };
 		4616D73124F3715000992513 /* Bhujangasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bhujangasana.swift; sourceTree = "<group>"; };
+		4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveFeedBack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 		4315E67E24A5A6B200B81FC3 /* PoseAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				4315E67F24A5A6BE00B81FC3 /* PoseAnalyzer.swift */,
+				4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */,
 			);
 			path = PoseAnalyzer;
 			sourceTree = "<group>";
@@ -513,9 +513,9 @@
 				4358C00A24738FC9008B4656 /* MetalDelegate.swift in Sources */,
 				4616D61F24EBF4BA00992513 /* Dandasana.swift in Sources */,
 				4315E6C624A60D6700B81FC3 /* ResultToArray.swift in Sources */,
-				4315E68024A5A6BE00B81FC3 /* PoseAnalyzer.swift in Sources */,
 				4315E69324A5D82600B81FC3 /* Ustrasana.swift in Sources */,
 				4616D62024EBF4BA00992513 /* UrdhvaDhanurasana.swift in Sources */,
+				4616D7CD24F62A9F00992513 /* GiveFeedBack.swift in Sources */,
 				4358C01B247390F4008B4656 /* PreviewView.swift in Sources */,
 				4315E69224A5D82600B81FC3 /* Navasana.swift in Sources */,
 				4358C00624738FC9008B4656 /* Delegate.swift in Sources */,
