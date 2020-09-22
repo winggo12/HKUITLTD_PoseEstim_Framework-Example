@@ -115,7 +115,7 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.Vrksasana
+        let userselectedpose: Pose = Pose.TPose
         if(givefeedback == nil){
             givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
         }else{
@@ -134,12 +134,12 @@ extension ViewController: CameraFeedManagerDelegate {
             self.overlayView.drawResult(result: result)
 
         }
-//        os_log("Pose: %s", userselectedpose.rawValue)
-//        os_log("Score: %f", score)
-        os_log("Detailed Score: ")
-        for s in detailedscore {
-            os_log("%f",s)
-        }
+        os_log("Pose: %s", userselectedpose.rawValue)
+        os_log("Score: %f", score)
+//        os_log("Detailed Score: ")
+//        for s in detailedscore {
+//            os_log("%f",s)
+//        }
 //        os_log("Comments: ")
 //        for comment in comments {
 //            os_log("%s", comment)
