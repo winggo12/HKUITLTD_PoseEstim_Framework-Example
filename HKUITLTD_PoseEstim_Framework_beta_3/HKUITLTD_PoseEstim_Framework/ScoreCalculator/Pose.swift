@@ -45,4 +45,5 @@ public enum Pose:String {
     case UtthitaParsvakonasana = "Utthita Parsvakonasana"
 
     case Vrksasana = "Vrksasana"
+    case TPose = "TPose"
 }

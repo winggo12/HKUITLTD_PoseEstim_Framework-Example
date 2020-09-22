@@ -66,7 +66,7 @@ class Tuladandasana {
         let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
         let shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         score = leg_arm_waist_ratio / 4 * (leg_score + arm_score + waist_score + shoulder_score) + standing_leg_ratio * standing_leg_score
-        detailedscore = [arm_score, waist_score, leg_score]
+        detailedscore = [arm_score, waist_score, leg_score, standing_leg_score]
     }
 
     private func makeComment(){
