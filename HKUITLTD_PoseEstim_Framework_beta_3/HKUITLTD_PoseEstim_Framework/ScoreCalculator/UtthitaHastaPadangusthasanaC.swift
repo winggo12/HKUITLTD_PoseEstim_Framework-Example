@@ -15,6 +15,7 @@ class UtthitaHastaPadangusthasanaC {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -42,7 +43,7 @@ class UtthitaHastaPadangusthasanaC {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func calculateScore(){
         side = detectSide()
@@ -64,6 +65,7 @@ class UtthitaHastaPadangusthasanaC {
 
         waist_score = 0.5 * (l_waist_score + r_waist_score)
         score = leg_ratio * leg_score + waist_ratio * waist_score
+        detailedscore = [waist_score, leg_score]
     }
 
     private func makeComment(){

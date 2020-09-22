@@ -14,6 +14,7 @@ class Navasana {
     /** output */
     private var comment : Array<String>? = nil
     private var score : Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -39,6 +40,7 @@ class Navasana {
 
     /** getter */
     func getScore()-> Double { return  self.score! }
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     func getComment()-> Array<String> { return self.comment! }
 
     func getResult()-> Result { return self.result! }
@@ -56,7 +58,7 @@ class Navasana {
         leg_score = 0.5 * (right_leg_score + left_leg_score)
 
         score = arm_ratio * arm_score + waist_ratio * waist_score + leg_ratio * leg_score
-
+        detailedscore = [arm_score, waist_score, leg_score]
     }
 
 

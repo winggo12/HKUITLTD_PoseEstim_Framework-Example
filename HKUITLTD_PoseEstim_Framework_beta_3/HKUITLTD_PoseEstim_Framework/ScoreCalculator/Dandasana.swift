@@ -14,7 +14,8 @@ class Dandasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
-
+    private var detailedscore: Array<Double>? = nil
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -39,7 +40,7 @@ class Dandasana {
     func getScore()-> Double {return self.score!}
     func getComment()-> Array<String> {return self.comment!}
     func getResult()-> Result {return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
@@ -60,7 +61,7 @@ class Dandasana {
         waist_score = utilities.right_waist(resultArray!, 90.0, 10.0, true)
 
         score = leg_ratio *  leg_score + waist_ratio * waist_score
-
+        detailedscore = [waist_score, leg_score]
     }
 
 }

@@ -16,6 +16,7 @@ class UtthitaParsvakonasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -46,7 +47,7 @@ class UtthitaParsvakonasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func calculateScore(){
 
@@ -66,6 +67,7 @@ class UtthitaParsvakonasana {
                 waist_score =  utilities.left_waist(resultArray!, 180.0, 20.0, false)
         }
         score = arm_ratio / 2 * (leg_score + shoulder_score) + waist_ratio * waist_score + leg_ratio / 2 * (right_angle_leg_score + leg_score)
+        detailedscore = [arm_score, waist_score, leg_score, right_angle_leg_score]
     }
 
     private func makeComment(){

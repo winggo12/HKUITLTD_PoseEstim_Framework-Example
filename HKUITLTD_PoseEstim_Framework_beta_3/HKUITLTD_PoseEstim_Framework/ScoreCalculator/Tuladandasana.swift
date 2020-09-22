@@ -15,6 +15,7 @@ class Tuladandasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -42,7 +43,7 @@ class Tuladandasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func calculateScore(){
         let standing_leg: Int = self.standing_leg()
@@ -65,7 +66,7 @@ class Tuladandasana {
         let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
         let shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         score = leg_arm_waist_ratio / 4 * (leg_score + arm_score + waist_score + shoulder_score) + standing_leg_ratio * standing_leg_score
-
+        detailedscore = [arm_score, waist_score, leg_score]
     }
 
     private func makeComment(){

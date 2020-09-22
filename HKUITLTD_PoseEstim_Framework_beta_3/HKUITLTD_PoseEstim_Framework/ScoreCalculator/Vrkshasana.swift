@@ -15,6 +15,7 @@ class Vrksasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -56,7 +57,7 @@ class Vrksasana {
     func getScore()-> Double {return self.score!}
     func getComment()-> Array<String> {return self.comment!}
     func getResult()-> Result {return self.result!}
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
 
     /** private method */
     private func calculateScore(){
@@ -65,6 +66,7 @@ class Vrksasana {
         time_score = cal_time_score(start_time)
         left_right_thigh_score = utilities.right_left_leg(resultArray!, 90.0, 20.0, false)
         score = left_right_thigh_ratio * left_right_thigh_score + time_ratio * time_score
+        detailedscore = [left_right_thigh_score, time_score, (Double(timer_ns) / 1_000_000_000) ]
 
     }
 

@@ -16,6 +16,7 @@ class ArdhaChandarasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -45,7 +46,8 @@ class ArdhaChandarasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
@@ -80,6 +82,7 @@ class ArdhaChandarasana {
         }
         
         score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
+        detailedscore = [arm_score, waist_score, leg_score]
 
     }
 

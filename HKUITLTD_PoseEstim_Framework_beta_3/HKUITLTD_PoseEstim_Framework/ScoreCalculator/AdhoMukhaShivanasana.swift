@@ -13,6 +13,7 @@ class AdhoMukhaShivanasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -36,12 +37,13 @@ class AdhoMukhaShivanasana {
     func getScore()-> Double{ return score! }
     func getComment()-> Array<String>{return comment!}
     func getResult()-> Result{ return result!}
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    
     /** private method */
     private func makeComment(){
         comment = Array<String>()
         comment!.append("$arm_score, The Straightness of the Arms " + utilities.comment(arm_score))
-        comment!.append("$arm_score, The Straightness of the Arms " + utilities.comment(arm_score))
+        comment!.append("$arm_score, The Curvature of the Waist " + utilities.comment(waist_score))
         comment!.append("$leg_score, The Straightness of the Legs " + utilities.comment(leg_score))
 
     }
@@ -62,6 +64,7 @@ class AdhoMukhaShivanasana {
         let right_waist = utilities.right_waist(resultArray!, 90.0, 10.0, true)
         waist_score = 0.5 * (left_waist + right_waist)
         score = ratio * (arm_score + leg_score + waist_score)
+        detailedscore = [arm_score, waist_score, leg_score]
         
 
     }

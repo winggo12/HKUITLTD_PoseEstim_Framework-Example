@@ -15,7 +15,8 @@ class Bhujangasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
-
+    private var detailedscore: Array<Double>? = nil
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -40,12 +41,12 @@ class Bhujangasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func makeComment(){
         comment = Array<String>(arrayLiteral:
-            "Arms " + utilities.comment(arm_score),
-            "Body " + utilities.comment(waist_score))
+            "The Curvature of the Arms " + utilities.comment(arm_score),
+            "The Curvature of the Body " + utilities.comment(waist_score))
     }
 
     private func calculateScore(){
@@ -56,7 +57,7 @@ class Bhujangasana {
         waist_score = utilities.right_waist(resultArray!,100.0, 20.0, false) //120
 
         score = arm_ratio * arm_score + waist_ratio *  waist_score
-
+        detailedscore = [arm_score, waist_score]
     }
 
 

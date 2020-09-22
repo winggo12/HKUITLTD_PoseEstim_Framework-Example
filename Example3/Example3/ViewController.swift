@@ -123,6 +123,7 @@ extension ViewController: CameraFeedManagerDelegate {
         }
 
         let score: Double = givefeedback!.getScore()
+        let detailedscore: [Double] = givefeedback!.getDetailedScore()
         let comments: [String] = givefeedback!.getComments()
         
         DispatchQueue.main.async {
@@ -133,12 +134,16 @@ extension ViewController: CameraFeedManagerDelegate {
             self.overlayView.drawResult(result: result)
 
         }
-        os_log("Pose: %s", userselectedpose.rawValue)
-        os_log("Score: %f", score)
-        os_log("Comments: ")
-        for comment in comments {
-            os_log("%s", comment)
+//        os_log("Pose: %s", userselectedpose.rawValue)
+//        os_log("Score: %f", score)
+        os_log("Detailed Score: ")
+        for s in detailedscore {
+            os_log("%f",s)
         }
+//        os_log("Comments: ")
+//        for comment in comments {
+//            os_log("%s", comment)
+//        }
 
   }
     

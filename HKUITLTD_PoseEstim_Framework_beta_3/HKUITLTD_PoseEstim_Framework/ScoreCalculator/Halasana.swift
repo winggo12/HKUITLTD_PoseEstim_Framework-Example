@@ -14,7 +14,8 @@ class Halasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
-
+    private var detailedscore: Array<Double>? = nil
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -41,7 +42,7 @@ class Halasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
@@ -68,6 +69,7 @@ class Halasana {
         waist_score = utilities.right_waist(resultArray!, 45.0, 20.0, true)
 
         score = arm_ratio * arm_score +  leg_ratio * leg_score + waist_ratio * waist_score
+        detailedscore = [arm_score, waist_score, leg_score]
     }
 
 

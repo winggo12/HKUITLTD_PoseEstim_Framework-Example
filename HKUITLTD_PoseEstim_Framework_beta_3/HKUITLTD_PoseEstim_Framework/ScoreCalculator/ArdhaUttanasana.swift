@@ -14,7 +14,7 @@ public class ArdhaUttanasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
-
+    private var detailedscore: Array<Double>? = nil
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -41,7 +41,7 @@ public class ArdhaUttanasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
@@ -66,6 +66,7 @@ public class ArdhaUttanasana {
 
         hand_on_grd_score = leg_floor_arm()
         score = leg_ratio * leg_score + hand_on_grd_ratio *  hand_on_grd_score
+        detailedscore = [hand_on_grd_score, hand_on_grd_score, leg_score]
 
     }
 

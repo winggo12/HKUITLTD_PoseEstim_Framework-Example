@@ -15,6 +15,7 @@ class UbhayaPadangushtasana{
     /** output */
     private var comment : Array<String>? = nil
     private var score : Double? = nil
+    private var detailedscore: Array<Double>? = nil
 
     /** input */
     private var result: Result? = nil
@@ -38,7 +39,7 @@ private var waist_score: Double = 0.0
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func calculateScore(){
         //TO BE MODIFIED
@@ -55,6 +56,7 @@ private var waist_score: Double = 0.0
         let r_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
         leg_score = 0.5 * (l_leg_score + r_leg_score)
         score = ratio * (waist_score + leg_score)
+        detailedscore = [waist_score, leg_score]
     }
 
     private func makeComment(){

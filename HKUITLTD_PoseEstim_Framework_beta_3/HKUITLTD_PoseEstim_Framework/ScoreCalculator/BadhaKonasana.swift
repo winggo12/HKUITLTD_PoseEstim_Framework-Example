@@ -14,7 +14,8 @@ class BaddhaKonasana {
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
-
+    private var detailedscore: Array<Double>? = nil
+    
     private var left_leg_score: Double = 0.0
     private var right_leg_score: Double = 0.0
     /** input */
@@ -37,7 +38,7 @@ class BaddhaKonasana {
     func getScore()-> Double { return self.score! }
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
-
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
@@ -50,7 +51,7 @@ class BaddhaKonasana {
         left_leg_score = utilities.left_leg(resultArray!, 0.0, 20.0, false)
         right_leg_score = utilities.right_leg(resultArray!, 0.0, 20.0, false)
         score = 0.5 * (left_leg_score + right_leg_score)
-
+        detailedscore = [right_leg_score, left_leg_score]
     }
 
 
