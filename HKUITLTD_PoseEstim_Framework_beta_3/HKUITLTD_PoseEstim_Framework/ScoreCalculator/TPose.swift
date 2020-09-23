@@ -47,7 +47,7 @@ class TPose {
         let left_leg_score = self.straight_right_leg(kps: resultArray!)
 
         score = left_leg_ratio * left_leg_score + right_leg_ratio * right_leg_score + left_arm_score * left_arm_ratio + right_arm_ratio * right_arm_score
-
+        detailedscore = [0]
     }
     
     private func T_right_arm(kps:Array<Array<Double>>)->Double{
