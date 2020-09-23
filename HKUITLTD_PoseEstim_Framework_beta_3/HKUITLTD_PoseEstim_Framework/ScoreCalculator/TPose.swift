@@ -1,5 +1,5 @@
 import Foundation
-
+import os
 class TPose {
 
     private let utilities: FeedbackUtilities = FeedbackUtilities()
@@ -14,10 +14,10 @@ class TPose {
     private var detailedscore: Array<Double>? = nil
 
     /** constant */
-    private let right_leg_ratio: Double = 0.4
-    private let left_leg_ratio: Double = 0.4
-    private let left_arm_ratio: Double = 0.1
-    private let right_arm_ratio: Double = 0.1
+    private let right_leg_ratio: Double = 0.1
+    private let left_leg_ratio: Double = 0.1
+    private let left_arm_ratio: Double = 0.4
+    private let right_arm_ratio: Double = 0.4
 
     /** score of body parts */
     private var left_arm_score: Double = 0.0
@@ -51,48 +51,50 @@ class TPose {
     }
     
     private func T_right_arm(kps:Array<Array<Double>>)->Double{
-        let r_elbow = kps[4]
-        let r_shoulder = kps[2]
-        let r_wrist = kps[6]
+        let r_elbow = kps[2]
+        let r_shoulder = kps[4]
+        let r_wrist = kps[8]
         let arm_angle = utilities.getAngle(r_elbow, r_shoulder, r_wrist)
+        os_log("Right arm angle: %f",arm_angle)
         
         if arm_angle > 85 && arm_angle < 95 {
             return 100
         }
+        if arm_angle > 80 && arm_angle < 100 {
+            return 90
+        }
         if arm_angle > 75 && arm_angle < 105 {
-            return 90
+            return 70
         }
-        if arm_angle > 65 && arm_angle < 115 {
-            return 90
-        }
-        if arm_angle > 55 && arm_angle < 125 {
-            return 90
+        if arm_angle > 70 && arm_angle < 110 {
+            return 60
         }
         else{
-            return 60
+            return 40
         }
     }
 
     private func T_left_arm(kps:Array<Array<Double>>)->Double{
-        let l_elbow = kps[3]
-        let l_shoulder = kps[1]
-        let l_wrist = kps[5]
+        let l_elbow = kps[1]
+        let l_shoulder = kps[3]
+        let l_wrist = kps[7]
         let arm_angle = utilities.getAngle(l_elbow, l_shoulder, l_wrist)
-        
+        os_log("Left arm angle: %f",arm_angle)
+
         if arm_angle > 85 && arm_angle < 95 {
             return 100
         }
-        if arm_angle > 75 && arm_angle < 105 {
+        if arm_angle > 80 && arm_angle < 100 {
             return 90
         }
-        if arm_angle > 65 && arm_angle < 115 {
-            return 80
-        }
-        if arm_angle > 55 && arm_angle < 125 {
+        if arm_angle > 75 && arm_angle < 105 {
             return 70
         }
-        else{
+        if arm_angle > 70 && arm_angle < 110 {
             return 60
+        }
+        else{
+            return 40
         }
     }
 
@@ -101,20 +103,22 @@ class TPose {
         let left_hip = kps[7]
         let left_ankle = kps[11]
         let leg_angle = utilities.getAngle(left_knee, left_ankle, left_hip)
+        os_log("Left leg angle: %f",leg_angle)
+
         if leg_angle > 170{
             return 100
         }
-        if leg_angle > 150{
-            return 90
-        }
-        if leg_angle>120{
+        if leg_angle > 160{
             return 80
         }
-        if leg_angle > 90{
+        if leg_angle > 150{
             return 70
         }
-        else{
+        if leg_angle > 140{
             return 60
+        }
+        else{
+            return 40
         }
     }
     
@@ -123,20 +127,22 @@ class TPose {
         let right_hip = kps[8]
         let right_ankle = kps[12]
         let leg_angle = utilities.getAngle(right_knee, right_ankle, right_hip)
+        os_log("Right leg angle: %f",leg_angle)
+        
         if leg_angle > 170{
             return 100
         }
-        if leg_angle > 150{
-            return 90
-        }
-        if leg_angle>120{
+        if leg_angle > 160{
             return 80
         }
-        if leg_angle > 90{
+        if leg_angle > 150{
             return 70
         }
-        else{
+        if leg_angle > 140{
             return 60
+        }
+        else{
+            return 40
         }
     }
 
