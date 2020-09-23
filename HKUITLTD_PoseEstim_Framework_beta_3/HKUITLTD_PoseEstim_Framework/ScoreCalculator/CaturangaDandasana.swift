@@ -6,83 +6,72 @@
 //  Copyright © 2020 tensorflow. All rights reserved.
 //
 import Foundation
+class CaturangaDandasana{
 
-func cd_straight_leg(kps:Array<Array<Double>>) -> Double{
-    let left_elbow = kps[3]
-    let left_shoulder = kps[1]
-    let left_wrist = kps[5]
-    let leg_angle = get_angle(center_coord: left_elbow, coord1: left_shoulder, coord2: left_wrist)
-    if leg_angle > 170{
-        return 100
-    }
-    if leg_angle > 150{
-        return 90
-    }
-    if leg_angle > 130{
-        return 80
-    }
-    if leg_angle > 110{
-        return 70
-    }
-    else{
-        return 60
-    }
-}
+    private let utilities: FeedbackUtilities = FeedbackUtilities()
 
-
-func cd_arm_angle(kps:Array<Array<Double>>) -> Double{
-    let left_elbow = kps[3]
-    let left_shoulder = kps[1]
-    let left_wrist = kps[5]
-    let arm_angle = get_angle(center_coord: left_elbow, coord1: left_shoulder, coord2: left_wrist)
-    if abs(arm_angle - 90) < 5{
-        return 100
-    }
-    if abs(arm_angle - 90) < 15 && abs(arm_angle - 90) >= 5{
-        return 90
-    }
-    if abs(arm_angle - 90) < 25 && abs(arm_angle - 90) >= 15{
-        return 80
-    }
-    if abs(arm_angle - 90) < 35 && abs(arm_angle - 90) >= 25{
-        return 70
-    }
-    else{
-        return 60
-    }
-}
-
-func cd_straight_waist(kps:Array<Array<Double>>) -> Double {
-    let left_shoulder = kps[2]
-    let left_hip = kps[8]
-    let left_knee = kps[10]
-    let angle = get_angle(center_coord: left_hip, coord1: left_shoulder, coord2: left_knee)
-    if angle < 100{
-        return 100
-    }
-    if angle >= 100 && angle < 120 {
-        return 90
-    }
-    if angle >= 120 && angle < 140 {
-        return 80
-    }
-    if angle >= 140 && angle < 160 {
-        return 70
-    }
-    else{
-        return 60
-    }
-}
-
-
-func get_caturanga_dandasana_score(kps:Array<Array<Double>>) -> Double{
+    /** output */
+    private var comment: Array<String>? = nil
+    private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
     
-    let leg_ratio = 0.4
-    let arm_ratio = 0.3
-    let waist_ratio = 0.3
-    let leg_score = leg_ratio * Double(cd_straight_leg(kps:kps))
-    let arm_score = arm_ratio * Double(cd_arm_angle(kps:kps))
-    let waist_score = waist_ratio * Double(cd_straight_waist(kps:kps))
-    return arm_score + leg_score + waist_score
+    /** input */
+    private var result: Result? = nil
+    private var resultArray: Array<Array<Double>>? = nil
+
+    /** constant */
+    private var leg_ratio: Double = 0.4
+    private var arm_ratio: Double  = 0.3
+    private var waist_ratio: Double  = 0.3
+    private var arm_score: Double = 0.0
+    private var waist_score: Double = 0.0
+    private var leg_score: Double = 0.0
+
+    /** constructor */
+    init(result: Result){
+        self.result = result
+        resultArray = result.classToArray()
+        calculateScore()
+        makeComment()
+
+    }
+
+    /** getter */
+    func getScore()-> Double { return self.score! }
+    func getComment()-> Array<String> { return self.comment! }
+    func getResult()-> Result { return self.result! }
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    /** private method */
+    private func makeComment(){
+        comment =  Array<String>()
+        comment!.append("$arm_score, The Curvature of the Arms " + utilities.comment(arm_score))
+        comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
+        comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
+
+    }
+
+    private func calculateScore(){
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        if(right_leg_score > left_leg_score){
+            leg_score = right_leg_score
+        } else {
+            leg_score = left_leg_score
+            
+        }
+
+        let right_arm_score = utilities.right_arm(resultArray!, 90.0, 20.0, true)
+        let left_arm_score = utilities.left_arm(resultArray!, 90.0, 20.0, true)
+        if(right_arm_score > left_arm_score){
+            arm_score = right_arm_score
+        }else{
+            arm_score = left_arm_score
+        }
+
+        waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
+        score = arm_ratio * arm_score + leg_ratio * leg_score + waist_ratio * waist_score
+        detailedscore = [arm_score, waist_score, leg_score]
+    }
+
 
 }

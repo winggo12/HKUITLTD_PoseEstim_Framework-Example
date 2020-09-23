@@ -7,100 +7,79 @@
 //
 
 import Foundation
+ 
+class ParivrttaPashvaKonasana  {
 
-//func paripashva_straight_waist(kps:Array<Array<Double>>) -> Double {
-//
-//    let left_shoulder = kps[2]
-//    let left_hip = kps[8]
-//    let left_knee = kps[10]
-//    let angle = get_angle(center_coord: left_hip, coord1: left_shoulder, coord2: left_knee)
-//    
-//    if angle > 170{                    return 100  }
-//
-//    if angle >= 160 && angle < 180 {    return 90   }
-//
-//    if angle >= 140 && angle < 160 {    return 80   }
-//
-//    if angle >= 120 && angle < 140 {    return 70   }
-//    else{                               return 60   }
-//}
-//
-//func paripashva_straight_left_leg(kps:Array<Array<Double>>) -> Double {
-//
-//    let left_knee = kps[9]
-//    let left_hip = kps[7]
-//    let left_ankle = kps[11]
-//    let angle = get_angle(center_coord: left_knee, coord1: left_ankle, coord2: left_hip)
-//    
-//    if angle > 170 {                    return 100  }
-//
-//    if angle >= 160 && angle < 180 {    return 90   }
-//
-//    if angle >= 140 && angle < 160 {    return 80   }
-//
-//    if angle >= 120 && angle < 140 {    return 70   }
-//    else{                               return 60   }
-//}
-//
-//func paripashva_straight_right_leg(kps:Array<Array<Double>>) -> Double {
-//
-//    let right_knee = kps[10]
-//    let right_hip = kps[8]
-//    let right_ankle = kps[12]
-//    let angle = get_angle(center_coord: right_knee, coord1: right_ankle, coord2: right_hip)
-//    
-//    if angle > 90 {                    return 100  }
-//
-//    if angle >= 70 && angle < 90 {    return 90   }
-//
-//    if angle >= 50 && angle < 70 {    return 80   }
-//
-//    if angle >= 30 && angle < 50 {    return 70   }
-//    else{                               return 60   }
-//}
-//func paripashva_leg_score(right_leg_score:Int, left_leg_score:Int) -> Double{
-//    if right_leg_score == 100 && left_leg_score == 100 {
-//        return 100
-//    }else if right_leg_score == 90 && left_leg_score == 90 {
-//        return 90
-//    }else if right_leg_score == 80 && left_leg_score == 80 {
-//        return 80
-//    }else if right_leg_score == 70 && left_leg_score == 70 {
-//        return 70
-//    }else{
-//        return 60
-//    }
-//
-//}
-//func paripashva_straight_right_arm(kps:Array<Array<Double>>) -> Double {
-//
-//    let right_elbow = kps[4]
-//    let r_shoulder = kps[2]
-//    let r_wrist = kps[6]
-//    let angle = get_angle(center_coord: r_elbow, coord1: r_shoulder, coord2: r_wrist)
-//    
-//    if angle > 170{                    return 100  }
-//
-//    if angle >= 160 && angle < 180 {    return 90   }
-//
-//    if angle >= 140 && angle < 160 {    return 80   }
-//
-//    if angle >= 120 && angle < 140 {    return 70   }
-//    else{                               return 60   }
-//}
-//
-//func get_parivrtta_pashvakonasana_score(kps:Array<Array<Double>>) -> Double{
-//    
-//    let leg_ratio = 0.4
-//    let waist_ratio = 0.4
-//    let arm_ratio = 0.2
-//    
-//    let left_leg_score = paripashva_straight_left_leg(kps:kps)
-//    let right_leg_score = paripashva_straight_right_leg(kps: kps)
-//    
-//    let leg_score = leg_ratio * Double(paripashva_leg_score(left_leg_score, right_leg_score))
-//    let arm_score = arm_ratio * Double(paripashva_straight_right_arm(kps:kps))
-//    let dis_score = waist_ratio * Double(paripashva_straight_waist(kps:kps))
-//
-//    return arm_score + leg_score + dis_score
-//}
+    private let utilities: FeedbackUtilities = FeedbackUtilities()
+
+    /** output */
+    private var comment : Array<String>? = nil
+    private var score : Double? = nil
+    private var detailedscore: Array<Double>? = nil
+
+    /** input */
+    private var result: Result? = nil
+    private var resultArray: Array<Array<Double>>? = nil
+
+    /** constant */
+
+    private let leg_ratio = 0.4
+    private let waist_ratio = 0.4
+    private let arm_ratio = 0.2
+
+    /** score of body parts */
+    private var arm_score: Double = 0.0
+    private var waist_score: Double = 0.0
+    private var leg_score: Double = 0.0
+
+    private var direction: Int = -1
+    
+    /** constructor */
+    init(result: Result){
+        self.result = result
+        resultArray = result.classToArray()
+        calculateScore()
+        makeComment()
+    }
+
+    /** getter */
+    func getScore()-> Double { return self.score! }
+    func getComment()-> Array<String> { return self.comment! }
+    func getResult()-> Result { return self.result! }
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    /** private method */
+    private func calculateScore(){
+        direction = utilities.decideDirection(resultArray!)
+        var right_leg_score = 0.0
+        var left_leg_score = 0.0
+        switch (direction) {
+            case 5:
+                right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+                left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+                arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
+                waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
+            default:
+                right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+                left_leg_score = utilities.left_leg(resultArray!, 98.0, 20.0, true)
+                arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
+                waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
+        }
+
+        leg_score = 0.5 * (right_leg_score + left_leg_score)
+
+
+        score = arm_ratio * arm_score +  leg_ratio * leg_score + waist_ratio * waist_score
+        detailedscore = [arm_score, waist_score, leg_score]
+    }
+
+    private func makeComment(){
+
+        comment =  Array<String>()
+        comment!.append("Direction: " + String(direction))
+        comment!.append("The Straightness of the Arms " + utilities.comment( arm_score))
+        comment!.append("The Waist-to-Thigh Distance " + utilities.comment( waist_score))
+        comment!.append("The Straightness of the Legs " + utilities.comment( leg_score))
+
+    }
+    
+}

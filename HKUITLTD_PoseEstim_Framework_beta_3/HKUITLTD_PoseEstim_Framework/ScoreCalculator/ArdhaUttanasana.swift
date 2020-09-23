@@ -9,151 +9,127 @@ import Foundation
 
 public class ArdhaUttanasana {
     
-    var hand_ratio: Double
-    var leg_ratio: Double
-    var waist_ratio: Double
-    var waist_score: Double
-    var hand_score: Double
-    var leg_score: Double
-    var final_score: Double
-    var result : Result
-    var keypoints: Array<Array<Double>>
+    private let utilities: FeedbackUtilities = FeedbackUtilities()
 
-    public init(user_input_result :Result){
+    /** output */
+    private var comment: Array<String>? = nil
+    private var score: Double? = nil
+    private var detailedscore: Array<Double>? = nil
+    /** input */
+    private var result: Result? = nil
+    private var resultArray: Array<Array<Double>>? = nil
 
-    self.hand_ratio = 0.333
-    self.leg_ratio = 0.333
-    self.waist_ratio = 0.333
-    self.waist_score = 0
-    self.hand_score = 0
-    self.leg_score = 0
-    self.final_score = 0
-    self.result = user_input_result
-    self.keypoints = ResultToArray(result: self.result)
-    
+    /** constant */
+    private var leg_ratio: Double = 0.5
+    private var hand_on_grd_ratio: Double = 0.5
+//    private var waist_ratio: Double = 0.333
+
+    /** score of body parts */
+//    private var waist_score: Double = 0.0
+    private var leg_score: Double = 0.0
+    private var hand_on_grd_score: Double = 0.0
+
+    /** constructor */
+    init(result: Result) {
+        self.result = result
+        resultArray = result.classToArray()
+        calculateScore()
+        makeComment()
     }
-    
-    public func vertical_waist(kps:Array<Array<Double>>) -> Double{
-        let left_shoulder = kps[2]
-        let left_hip = kps[8]
-        let left_knee = kps[10]
-        let angle = get_angle(center_coord: left_hip, coord1: left_shoulder, coord2: left_knee)
-        if angle < 90{
-            return 100
-        }
-        if angle >= 90 && angle <= 110 {
-            return 90
-        }
-        if angle >= 110 && angle < 130 {
-            return 80
-        }
-        if angle >= 130 && angle < 150 {
-            return 70
-        }
-        else{
-            return 60
-        }
+
+    /** getter */
+    func getScore()-> Double { return self.score! }
+    func getComment()-> Array<String> { return self.comment! }
+    func getResult()-> Result { return self.result! }
+    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    /** private method */
+    private func makeComment(){
+        comment =  Array<String>()
+        comment!.append("The Hand-to-Ground Distance " + utilities.comment(hand_on_grd_score))
+        comment!.append("The angle between legs and floor " + utilities.comment(hand_on_grd_score))
+//        comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
+        comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
+
     }
-    
-    public func hand_distance(kps:Array<Array<Double>>)->Double{
-        let left_wrist = kps[5][1]
-        let left_ankle = kps[11][1]
-        let left_knee = kps[9][1]
-        
+
+    private func calculateScore(){
+
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        if(left_leg_score > right_leg_score){
+            leg_score = left_leg_score
+        }else{
+            leg_score = right_leg_score
+        }
+
+//        waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, false)
+
+        hand_on_grd_score = leg_floor_arm()
+        score = leg_ratio * leg_score + hand_on_grd_ratio *  hand_on_grd_score
+        detailedscore = [hand_on_grd_score, hand_on_grd_score, leg_score]
+
+    }
+
+    func hand_foot_horizontal()->  Double{
+        let left_wrist = resultArray![5][1]
+        let left_ankle = resultArray![11][1]
+        let left_knee = resultArray![9][1]
+
         let hand_foot_distance = abs(left_wrist - left_ankle)
         let foot_knee_distance = abs(left_ankle - left_knee)
-        
+
         let ratio = hand_foot_distance/foot_knee_distance
 
-        if ratio < 0.2{
-            return 100
+        if( ratio < 0.2){
+            return 100.0
+        }else if(ratio >= 0.2 && ratio < 0.5) {
+            return 90.0
+        }else if (ratio >= 0.5 && ratio < 0.8){
+            return 80.0
+        }else if (ratio >= 0.8 && ratio < 1.1){
+            return 70.0
+        }else{
+            return 60.0
         }
-        if ratio >= 0.2 && ratio < 0.5{
-            return 90
-        }
-        if ratio >= 0.5 && ratio < 0.8{
-            return 80
-        }
-        if ratio >= 0.8 && ratio < 1.1{
-            return 70
-        }
-        else{
-            return 60
-        }
-    }
-    
-    public func straight_right_leg(kps:Array<Array<Double>>)->Double{
-        let right_knee = kps[10]
-        let right_hip = kps[8]
-        let right_ankle = kps[12]
-        let leg_angle = get_angle(center_coord: right_knee, coord1: right_ankle, coord2: right_hip)
-        
-        if leg_angle >= 90{
-            return 100
-        }
-        if leg_angle >= 80 && leg_angle < 90 {
-            return 90
-        }
-        if leg_angle >= 70 && leg_angle < 80{
-            return 80
-        }
-        if leg_angle >= 60 && leg_angle < 70{
-            return 70
-        }
-        else{
-            return 60
-        }
-    }
 
-    public func straight_left_leg(kps:Array<Array<Double>>)->Double{
-        let left_knee = kps[9]
-        let left_hip = kps[7]
-        let left_ankle = kps[11]
-        let leg_angle = get_angle(center_coord: left_knee, coord1: left_ankle, coord2: left_hip)
-        if leg_angle >= 90{
-            return 100
-        }
-        if leg_angle >= 80 && leg_angle < 90 {
-            return 90
-        }
-        if leg_angle >= 70 && leg_angle < 80{
-            return 80
-        }
-        if leg_angle >= 60 && leg_angle < 70{
-            return 70
-        }
-        else{
-            return 60
-        }
     }
     
-    
-    public func get_score() -> Double{
-        self.keypoints = ResultToArray(result: self.result)
-        let left_leg_score = straight_left_leg(kps:self.keypoints)
-        let right_leg_score = straight_right_leg(kps: self.keypoints)
-        self.leg_score = leg_ratio * Double(left_leg_score > right_leg_score ? left_leg_score : right_leg_score)
-        
-        self.waist_score = self.waist_ratio * Double(vertical_waist(kps:self.keypoints))
-        self.hand_score = self.hand_ratio * Double(hand_distance(kps:self.keypoints))
-        self.final_score = hand_score + waist_score + leg_score
-        return self.final_score
+    private func leg_floor()-> Double{
+        let left_knee = resultArray![9]
+        let right_knee = resultArray![10]
+        let left_ankle = resultArray![11]
+        let right_ankle = resultArray![12]
+
+        //draw a line parallel to screen's x-axis
+        var left_floot_pt = Array<Double>(repeating: 0.0, count: 2)
+        left_floot_pt[0] = resultArray![11][0] + 1
+        left_floot_pt[1] = resultArray![11][1]
+        var right_floot_pt = Array<Double>(repeating: 0.0, count: 2)
+        right_floot_pt[0] = resultArray![12][0] + 1
+        right_floot_pt[1] = resultArray![12][1]
+
+        //find angle between leg and floor
+        let left_angle = utilities.getAngle(left_ankle, left_knee, left_floot_pt)
+        let right_angle = utilities.getAngle(right_ankle, right_knee, right_floot_pt)
+        let left_leg_floor_score = utilities.angleToScore(left_angle, 90.0, 10.0, false)
+        let right_leg_floor_score = utilities.angleToScore(right_angle, 90.0, 10.0, false)
+        return 0.5 * (left_leg_floor_score + right_leg_floor_score)
     }
     
-    public func get_recommendation()-> [String] {
-        var c : [String] = []
-        
-        var leg_score : Double = ((straight_left_leg(kps:self.keypoints)) + (straight_right_leg(kps:self.keypoints)))/2
-        
+    private func leg_floor_arm()-> Double{
+        let left_knee = resultArray![9]
+        let right_knee = resultArray![10]
+        let left_ankle = resultArray![11]
+        let right_ankle = resultArray![12]
+        let l_wrist = resultArray![5]
+        let r_wrist = resultArray![6]
 
-        var c1 =  "Hands-to-Ground's Distance " + comment(score: hand_distance(kps:self.keypoints))
-        
-        var c2 = "The Waist-to-Thigh's Angle " + comment(score: vertical_waist(kps:self.keypoints))
-        
-        var c3 =  "The Straightness of the Legs " + comment(score: leg_score)
 
-        c += [c1,c2,c3]
-        
-        return c
+        //find angle between leg and floor
+        let left_angle = utilities.getAngle(left_ankle, left_knee, l_wrist)
+        let right_angle = utilities.getAngle(right_ankle, right_knee, r_wrist)
+        let left_leg_floor_score = utilities.angleToScore(left_angle, 90.0, 10.0, true)
+        let right_leg_floor_score = utilities.angleToScore(right_angle, 90.0, 10.0, true)
+        return 0.5 * (left_leg_floor_score + right_leg_floor_score)
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import HKUITLTD_PoseEstim_Framework
 import AVFoundation
-
+import os
 class ViewController: UIViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     // Minimum score to render the skelton keypoints.
     private let minimumScore: Float = 0.5
     
+    private var givefeedback: GiveFeedBack? = nil
 
     
     override func viewDidLoad() {
@@ -114,19 +115,36 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        var userselectedpose: Pose = Pose.ardha_uttanasana
-        var givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
-        var score: Double = givefeedback.getScore()
-        var comments: [String] = givefeedback.getComments()
-        
-            DispatchQueue.main.async {
-                if result.score < self.minimumScore {
-                    self.overlayView.clear()
-                    return
-                }
-                self.overlayView.drawResult(result: result)
+        let userselectedpose: Pose = Pose.TPose
+        if(givefeedback == nil){
+            givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
+        }else{
+            givefeedback!.generateFeedback(user_input_result: result, user_input_pose: userselectedpose)
+        }
 
+        let score: Double = givefeedback!.getScore()
+        let detailedscore: [Double] = givefeedback!.getDetailedScore()
+        let comments: [String] = givefeedback!.getComments()
+        
+        DispatchQueue.main.async {
+            if result.score < self.minimumScore {
+                self.overlayView.clear()
+                return
             }
+            self.overlayView.drawResult(result: result)
+
+        }
+        os_log("Pose: %s", userselectedpose.rawValue)
+        os_log("Score: %f", score)
+//        os_log("Detailed Score: ")
+//        for s in detailedscore {
+//            os_log("%f",s)
+//        }
+//        os_log("Comments: ")
+//        for comment in comments {
+//            os_log("%s", comment)
+//        }
+
   }
     
 }

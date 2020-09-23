@@ -17,7 +17,9 @@ public class RunthisModel{
     private var modelAnalyzer: ModelAnalyzer?
     var threadCount: Int = Constants.defaultThreadCount
     var delegate: Delegates = Constants.defaultDelegate
-
+    
+    var overlayViewWidth: Float
+    var overlayViewHeight: Float
     
     public init(){
 
@@ -34,8 +36,8 @@ public class RunthisModel{
         os_log("Delegate is changed to: %s", delegate.description)
 
         os_log("Thread count is changed to: %d", threadCount)
-
-        
+        overlayViewWidth = 0
+        overlayViewHeight = 0
 
     }
 
@@ -47,20 +49,20 @@ public class RunthisModel{
         previewviewframe = pv
         let modelInputRange = overlayviewframe!.applying(
         previewviewframe!.size.transformKeepAspect(toFitIn: pb.size))
-
-
-    // Run PoseNet model.
-    guard
-        let (result, times) = self.modelAnalyzer?.runPoseNet(
-        on: pb,
-        from: modelInputRange,
-        to: overlayviewframe!.size)
-    else {
-      os_log("Cannot get inference result.", type: .error)
-      return (DummyResult,DummyTime)
-    }
-    print("Times: ", times)
-    return (result, times)
+        overlayViewHeight = Float(olv.height)
+        overlayViewWidth = Float(olv.width)
+        // Run PoseNet model.
+        guard
+            let (result, times) = self.modelAnalyzer?.runPoseNet(
+            on: pb,
+            from: modelInputRange,
+            to: overlayviewframe!.size)
+        else {
+          os_log("Cannot get inference result.", type: .error)
+          return (DummyResult,DummyTime)
+        }
+        print("Times: ", times)
+        return (result, times)
     }
 }
 

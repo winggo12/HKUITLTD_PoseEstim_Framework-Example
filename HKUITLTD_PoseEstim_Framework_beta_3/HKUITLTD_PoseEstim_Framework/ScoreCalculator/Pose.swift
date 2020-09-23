@@ -12,9 +12,38 @@ public var current_posture = "navasana"
 
 //This is for simplifying the name of the yoga pose
 public enum Pose:String {
-    
-    case navasana = "navasana"
-    case ustrasana = "ustrasana"
-    case ardha_uttanasana = "ardha_uttanasana"
 
+    case ArdhaUttanasana = "Ardha Uttanasana"
+    case AdhoMukhaShivanasana = "Adho Mukha Shivanasana"
+    case ArdhaChandarasana = "Ardha Chandarasana"
+
+    case BaddhaKonasana = "Baddha Konasana"
+    case Bhujangasana = "Bhujangasana"
+
+    case CaturangaDandasana = "Caturanga Dandasana"
+
+    case Dandasana = "Dandasana"
+
+    case Halasana = "Halasana"
+
+    case Natarajasana = "Natarajasana"
+    case Navasana = "Navasana"
+
+    case ParivrttaPashvaKonasana = "Parivrtta Pashvakonasana"
+    case ParivrttaTrikonasana = "Parivrtta Trikonasana"
+    case PurnaShalabhasana = "Purna Shalabhasana"
+
+    case Tuladandasana = "Tuladandasana"
+
+    case Ustrasana = "Ustrasana"
+    case UbhayaPadangushtasana = "Ubhaya Padangushtasana"
+    case UrdhvaDhanurasana = "Urdhva Dhanurasana"
+    case UttanaPadasana = "Uttana Padasana"
+    case UtthitaHastaPadangusthasanaB = "Utthita Hasta Padangusthasana B"
+    case UtthitaHastaPadangusthasanaC = "Utthita Hasta Padangusthasana C"
+    case UtthitaHastaPadangusthasanaA = "Utthita Hasta Padangusthasana A"
+    case UtthitaParsvakonasana = "Utthita Parsvakonasana"
+
+    case Vrksasana = "Vrksasana"
+    case TPose = "TPose"
 }
