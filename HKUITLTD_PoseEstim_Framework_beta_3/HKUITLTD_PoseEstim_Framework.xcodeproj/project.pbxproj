@@ -46,6 +46,7 @@
 		43A62A6324A353EF00BDBD27 /* ModelAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */; };
 		43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB382224AD8BF700D17529 /* RunThisModel.swift */; };
 		43F14E9424AEE71D000C6059 /* DrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F14E9324AEE71D000C6059 /* DrawResult.swift */; };
+		43F919B325233FDA00B6A6E0 /* TPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F919B225233FDA00B6A6E0 /* TPose.swift */; };
 		4616D61F24EBF4BA00992513 /* Dandasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D61424EBF4B900992513 /* Dandasana.swift */; };
 		4616D62024EBF4BA00992513 /* UrdhvaDhanurasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D61524EBF4B900992513 /* UrdhvaDhanurasana.swift */; };
 		4616D62124EBF4BA00992513 /* PurnaShalabhasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D61624EBF4B900992513 /* PurnaShalabhasana.swift */; };
@@ -111,6 +112,7 @@
 		43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
 		43BB382224AD8BF700D17529 /* RunThisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
 		43F14E9324AEE71D000C6059 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
+		43F919B225233FDA00B6A6E0 /* TPose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPose.swift; sourceTree = "<group>"; };
 		4616D61424EBF4B900992513 /* Dandasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dandasana.swift; sourceTree = "<group>"; };
 		4616D61524EBF4B900992513 /* UrdhvaDhanurasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrdhvaDhanurasana.swift; sourceTree = "<group>"; };
 		4616D61624EBF4B900992513 /* PurnaShalabhasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurnaShalabhasana.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		4315E68324A5B8D900B81FC3 /* ScoreCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				43F919B225233FDA00B6A6E0 /* TPose.swift */,
 				4616D73124F3715000992513 /* Bhujangasana.swift */,
 				4616D62C24ED3C6F00992513 /* AdhoMukhaShivanasana.swift */,
 				4616D62E24ED486F00992513 /* ArdhaChandarasana.swift */,
@@ -488,6 +491,7 @@
 				4616D62B24EBF6D200992513 /* FeedbackUtilities.swift in Sources */,
 				4358C01D247390F4008B4656 /* CGSizeExtension.swift in Sources */,
 				4616D62224EBF4BA00992513 /* Vrkshasana.swift in Sources */,
+				43F919B325233FDA00B6A6E0 /* TPose.swift in Sources */,
 				4616D62724EBF4BA00992513 /* ParivrttaTrikonasana.swift in Sources */,
 				4358C00524738FC9008B4656 /* TensorFlowLite.swift in Sources */,
 				4616D62124EBF4BA00992513 /* PurnaShalabhasana.swift in Sources */,
@@ -660,7 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = AANV4R9YQY;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -692,7 +696,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = AANV4R9YQY;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
