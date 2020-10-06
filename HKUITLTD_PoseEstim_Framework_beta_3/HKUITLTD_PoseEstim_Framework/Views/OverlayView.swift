@@ -3,8 +3,8 @@ import UIKit
 /// UIView for rendering inference output.
 public class OverlayView: UIView {
 
-  public var dots = [CGPoint]()
-  public var lines = [Line]()
+    public var dots = [CGPoint]()
+    public var lines = [Line]()
 
     override public func draw(_ rect: CGRect) {
         for dot in dots {
@@ -46,9 +46,27 @@ public class OverlayView: UIView {
         super.setNeedsDisplay()
     }
 
-    public func drawResult(result: Result){
-        self.dots = result.dots
-        self.lines = result.lines
+    public func drawResult(result: Result, bounds: CGRect){
+        
+        let width = bounds.maxX
+        
+        var mdots: [CGPoint] = []
+        var mlines: [Line] = []
+        
+        for dot in result.dots {
+            mdots.append(CGPoint(x: width - dot.x, y: dot.y))
+        }
+        for line in result.lines {
+            let mlineFrom = CGPoint(x: width - line.from.x, y: line.from.y)
+            let mlineTo = CGPoint(x: width - line.to.x, y: line.to.y)
+            mlines.append(Line(from: mlineFrom, to: mlineTo))
+        }
+        
+//        self.dots = result.dots
+//        self.lines = result.linesB
+        self.dots = mdots
+        self.lines = mlines
+        
         super.setNeedsDisplay()
     }
 }

@@ -60,8 +60,9 @@ public class CameraFeedManager: NSObject {
     // Initializes the session
     session.sessionPreset = .high
     self.previewView.session = session
-    self.previewView.previewLayer.connection?.videoOrientation = .landscapeLeft
-//    self.previewView.previewLayer.connection?.videoOrientation = .portrait
+//    self.previewView.previewLayer.connection?.videoOrientation = .landscapeLeft
+    self.previewView.previewLayer.connection?.videoOrientation = .portrait
+    
     self.previewView.previewLayer.videoGravity = .resizeAspectFill
     self.attemptToConfigureSession()
   }
@@ -179,7 +180,7 @@ public class CameraFeedManager: NSObject {
   private func addVideoDeviceInput() -> Bool {
     /// Tries to get the default back camera.
     guard
-      let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+      let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
       else {
         fatalError("Cannot find camera")
     }
@@ -208,7 +209,7 @@ public class CameraFeedManager: NSObject {
 
     if session.canAddOutput(videoDataOutput) {
       session.addOutput(videoDataOutput)
-      videoDataOutput.connection(with: .video)?.videoOrientation = .landscapeLeft
+      videoDataOutput.connection(with: .video)?.videoOrientation = .portrait
 
       return true
     }
@@ -309,8 +310,10 @@ extension CameraFeedManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         connection.videoOrientation = AVCaptureVideoOrientation(rawValue: orientationValue)!;
     // Converts the CMSampleBuffer to a CVPixelBuffer.
+        
     let pixelBuffer: CVPixelBuffer? = CMSampleBufferGetImageBuffer(sampleBuffer)
-
+        
+        
     guard let imagePixelBuffer = pixelBuffer else {
       return
     }
