@@ -37,18 +37,27 @@ enum CameraConfiguration {
   case permissionDenied
 }
 
+/// This enum holds the type of current camera
+// MARK: -  Current Camera Position Enum
+enum CameraInUse {
+    case back
+    case front
+    case unidentified
+}
+
 /// This class manages all camera related functionalities.
 // MARK: - Camera Related Functionalies Manager
 public class CameraFeedManager: NSObject {
   // MARK: Camera Related Instance Variables
   private let session: AVCaptureSession = AVCaptureSession()
-
   private let previewView: PreviewView
   private let sessionQueue = DispatchQueue(label: "sessionQueue")
   private var cameraConfiguration: CameraConfiguration = .failed
   private lazy var videoDataOutput = AVCaptureVideoDataOutput()
   private var isSessionRunning = false
 
+    private var currentCamera: AVCaptureDevice.Position = .unspecified
+    
   // MARK: CameraFeedManagerDelegate
   public weak var delegate: CameraFeedManagerDelegate?
 
@@ -180,13 +189,16 @@ public class CameraFeedManager: NSObject {
   private func addVideoDeviceInput() -> Bool {
     /// Tries to get the default back camera.
     guard
-      let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
+      let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
       else {
         fatalError("Cannot find camera")
     }
 
     do {
       let videoDeviceInput = try AVCaptureDeviceInput(device: camera)
+      
+        self.currentCamera = camera.position
+        
       if session.canAddInput(videoDeviceInput) {
         session.addInput(videoDeviceInput)
         return true
@@ -284,6 +296,31 @@ public class CameraFeedManager: NSObject {
       delegate?.cameraFeedManagerDidEncounterSessionRunTimeError(self)
     }
   }
+    
+    public func showCurrentInput() -> AVCaptureDevice.Position {
+        return self.currentCamera
+    }
+    
+    private func getCamera(with: AVCaptureDevice.Position) -> AVCaptureDevice {
+        guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: with) else {
+            fatalError("Cannot find camera")
+        }
+        return camera
+    }
+    
+    public func switchCamera() {
+        self.removeObservers()
+        self.session.stopRunning()
+        self.session.beginConfiguration()
+        let currentInput = self.session.inputs.first as? AVCaptureDeviceInput
+        self.session.removeInput(currentInput!)
+        let newCameraDevice = currentInput?.device.position == .back ? getCamera(with: .front) : getCamera(with: .back)
+        let newVideoInput = try? AVCaptureDeviceInput(device: newCameraDevice)
+        self.session.addInput(newVideoInput!)
+        self.session.commitConfiguration()
+        self.currentCamera = newCameraDevice.position
+        self.checkCameraConfigurationAndStartSession()
+    }
 }
 
 /// AVCaptureVideoDataOutputSampleBufferDelegate

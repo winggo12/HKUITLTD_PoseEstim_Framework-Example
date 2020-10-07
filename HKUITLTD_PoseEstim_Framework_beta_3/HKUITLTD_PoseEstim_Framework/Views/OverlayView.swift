@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 /// UIView for rendering inference output.
 public class OverlayView: UIView {
@@ -46,22 +47,26 @@ public class OverlayView: UIView {
         super.setNeedsDisplay()
     }
 
-    public func drawResult(result: Result, bounds: CGRect){
+    public func drawResult(result: Result, bounds: CGRect, position: AVCaptureDevice.Position){
         
         let width = bounds.maxX
         
         var mdots: [CGPoint] = []
         var mlines: [Line] = []
         
-        for dot in result.dots {
-            mdots.append(CGPoint(x: width - dot.x, y: dot.y))
+        if (position == .front) {
+            for dot in result.dots {
+                mdots.append(CGPoint(x: width - dot.x, y: dot.y))
+            }
+            for line in result.lines {
+                let mlineFrom = CGPoint(x: width - line.from.x, y: line.from.y)
+                let mlineTo = CGPoint(x: width - line.to.x, y: line.to.y)
+                mlines.append(Line(from: mlineFrom, to: mlineTo))
+            }
+        }   else {
+            mdots = result.dots
+            mlines = result.lines
         }
-        for line in result.lines {
-            let mlineFrom = CGPoint(x: width - line.from.x, y: line.from.y)
-            let mlineTo = CGPoint(x: width - line.to.x, y: line.to.y)
-            mlines.append(Line(from: mlineFrom, to: mlineTo))
-        }
-        
 //        self.dots = result.dots
 //        self.lines = result.linesB
         self.dots = mdots
