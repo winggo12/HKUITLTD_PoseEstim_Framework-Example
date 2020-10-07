@@ -37,18 +37,27 @@ enum CameraConfiguration {
   case permissionDenied
 }
 
+/// This enum holds the type of current camera
+// MARK: -  Current Camera Position Enum
+enum CameraInUse {
+    case back
+    case front
+    case unidentified
+}
+
 /// This class manages all camera related functionalities.
 // MARK: - Camera Related Functionalies Manager
 public class CameraFeedManager: NSObject {
   // MARK: Camera Related Instance Variables
   private let session: AVCaptureSession = AVCaptureSession()
-
   private let previewView: PreviewView
   private let sessionQueue = DispatchQueue(label: "sessionQueue")
   private var cameraConfiguration: CameraConfiguration = .failed
   private lazy var videoDataOutput = AVCaptureVideoDataOutput()
   private var isSessionRunning = false
 
+    private var currentCamera: AVCaptureDevice.Position = .unspecified
+    
   // MARK: CameraFeedManagerDelegate
   public weak var delegate: CameraFeedManagerDelegate?
 
@@ -60,8 +69,9 @@ public class CameraFeedManager: NSObject {
     // Initializes the session
     session.sessionPreset = .high
     self.previewView.session = session
-    self.previewView.previewLayer.connection?.videoOrientation = .landscapeLeft
-//    self.previewView.previewLayer.connection?.videoOrientation = .portrait
+//    self.previewView.previewLayer.connection?.videoOrientation = .landscapeLeft
+    self.previewView.previewLayer.connection?.videoOrientation = .portrait
+    
     self.previewView.previewLayer.videoGravity = .resizeAspectFill
     self.attemptToConfigureSession()
   }
@@ -186,6 +196,9 @@ public class CameraFeedManager: NSObject {
 
     do {
       let videoDeviceInput = try AVCaptureDeviceInput(device: camera)
+      
+        self.currentCamera = camera.position
+        
       if session.canAddInput(videoDeviceInput) {
         session.addInput(videoDeviceInput)
         return true
@@ -208,7 +221,7 @@ public class CameraFeedManager: NSObject {
 
     if session.canAddOutput(videoDataOutput) {
       session.addOutput(videoDataOutput)
-      videoDataOutput.connection(with: .video)?.videoOrientation = .landscapeLeft
+      videoDataOutput.connection(with: .video)?.videoOrientation = .portrait
 
       return true
     }
@@ -283,6 +296,31 @@ public class CameraFeedManager: NSObject {
       delegate?.cameraFeedManagerDidEncounterSessionRunTimeError(self)
     }
   }
+    
+    public func showCurrentInput() -> AVCaptureDevice.Position {
+        return self.currentCamera
+    }
+    
+    private func getCamera(with: AVCaptureDevice.Position) -> AVCaptureDevice {
+        guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: with) else {
+            fatalError("Cannot find camera")
+        }
+        return camera
+    }
+    
+    public func switchCamera() {
+        self.removeObservers()
+        self.session.stopRunning()
+        self.session.beginConfiguration()
+        let currentInput = self.session.inputs.first as? AVCaptureDeviceInput
+        self.session.removeInput(currentInput!)
+        let newCameraDevice = currentInput?.device.position == .back ? getCamera(with: .front) : getCamera(with: .back)
+        let newVideoInput = try? AVCaptureDeviceInput(device: newCameraDevice)
+        self.session.addInput(newVideoInput!)
+        self.session.commitConfiguration()
+        self.currentCamera = newCameraDevice.position
+        self.checkCameraConfigurationAndStartSession()
+    }
 }
 
 /// AVCaptureVideoDataOutputSampleBufferDelegate
@@ -309,8 +347,10 @@ extension CameraFeedManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         connection.videoOrientation = AVCaptureVideoOrientation(rawValue: orientationValue)!;
     // Converts the CMSampleBuffer to a CVPixelBuffer.
+        
     let pixelBuffer: CVPixelBuffer? = CMSampleBufferGetImageBuffer(sampleBuffer)
-
+        
+        
     guard let imagePixelBuffer = pixelBuffer else {
       return
     }

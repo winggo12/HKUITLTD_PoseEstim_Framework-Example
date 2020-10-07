@@ -26,7 +26,7 @@ public class GiveFeedBack{
         self.generateFeedback(user_input_result :user_input_result, user_input_pose :user_input_pose)
     }
     
-    public func generateFeedback(user_input_result :Result,user_input_pose :Pose){
+    private func generateFeedback(user_input_result :Result,user_input_pose :Pose){
         self.result = user_input_result
         self.currentPose = user_input_pose
         switch currentPose {

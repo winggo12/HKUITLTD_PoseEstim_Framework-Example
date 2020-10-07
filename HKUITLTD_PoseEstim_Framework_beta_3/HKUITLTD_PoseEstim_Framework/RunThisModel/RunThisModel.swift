@@ -23,25 +23,19 @@ public class RunthisModel{
     
     public init(){
 
-            do {
-
+        do {
           modelAnalyzer = try ModelAnalyzer(threadCount: threadCount, delegate: delegate)
-
         } catch let error {
-
           fatalError(error.localizedDescription)
-
         }
 
         os_log("Delegate is changed to: %s", delegate.description)
 
         os_log("Thread count is changed to: %d", threadCount)
+        
         overlayViewWidth = 0
         overlayViewHeight = 0
-
     }
-
-    
 
     public func Run(pb:CVPixelBuffer,olv:CGRect,pv:CGRect)-> (Result, Times)? {
 
