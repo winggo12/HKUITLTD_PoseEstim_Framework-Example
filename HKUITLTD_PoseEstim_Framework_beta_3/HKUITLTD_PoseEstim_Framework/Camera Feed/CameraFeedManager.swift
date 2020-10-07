@@ -31,18 +31,10 @@ import os
 
 /// This enum holds the state of the camera initialization.
 // MARK: - Camera Initialization State Enum
-enum CameraConfiguration {
+private enum CameraConfiguration {
   case success
   case failed
   case permissionDenied
-}
-
-/// This enum holds the type of current camera
-// MARK: -  Current Camera Position Enum
-enum CameraInUse {
-    case back
-    case front
-    case unidentified
 }
 
 /// This class manages all camera related functionalities.
@@ -110,7 +102,7 @@ public class CameraFeedManager: NSObject {
   }
 
   /// This method resumes an interrupted AVCaptureSession.
-  public func resumeInterruptedSession(withCompletion completion: @escaping (Bool) -> Void) {
+  private func resumeInterruptedSession(withCompletion completion: @escaping (Bool) -> Void) {
     sessionQueue.async {
       self.startSession()
 
