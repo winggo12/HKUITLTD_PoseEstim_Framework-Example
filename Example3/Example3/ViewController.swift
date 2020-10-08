@@ -33,6 +33,10 @@ class ViewController: UIViewController {
     
     private var givefeedback: GiveFeedBack? = nil
 
+    @IBAction func switchBtn(_ sender: Any) {
+        self.cameraCapture.switchCamera()
+    }
+
     
     override func viewDidLoad() {
         
@@ -59,15 +63,15 @@ class ViewController: UIViewController {
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         let orientation: UIDeviceOrientation = UIDevice.current.orientation
-        print(orientation)
+//        print(orientation)Label(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/, systemImage: /*@START_MENU_TOKEN@*/"42.circle"/*@END_MENU_TOKEN@*/)
 
         switch (orientation) {
         case .portrait:
             previewView.previewLayer.connection?.videoOrientation = .portrait
         case .landscapeRight:
             previewView.previewLayer.connection?.videoOrientation = .landscapeLeft
-
-            
+        case .portraitUpsideDown:
+            previewView.previewLayer.connection?.videoOrientation = .portraitUpsideDown
         case .landscapeLeft:
             previewView.previewLayer.connection?.videoOrientation = .landscapeRight
 
@@ -131,7 +135,9 @@ extension ViewController: CameraFeedManagerDelegate {
                 self.overlayView.clear()
                 return
             }
-            self.overlayView.drawResult(result: result)
+            
+            let position = self.cameraCapture.showCurrentInput()
+            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position)
 
         }
         os_log("Pose: %s", userselectedpose.rawValue)
