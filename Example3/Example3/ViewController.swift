@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     var threadCount: Int = Constants.defaultThreadCount
     var delegate: Delegates = Constants.defaultDelegate
     // Minimum score to render the skelton keypoints.
-    private let minimumScore: Float = 0.5
+    private let minimumScore: Float = 0.6
     
     private var givefeedback: GiveFeedBack? = nil
 
