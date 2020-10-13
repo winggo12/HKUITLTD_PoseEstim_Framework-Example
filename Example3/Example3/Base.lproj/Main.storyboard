@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -14,22 +14,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQb-GG-seM" customClass="PreviewView" customModule="HKUITLTD_PoseEstim_Framework">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <subviews>
                                     <view opaque="NO" alpha="0.33000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wS-JDh" customClass="OverlayView" customModule="HKUITLTD_PoseEstim_Framework">
-                                        <rect key="frame" x="82" y="243" width="250" height="250"/>
+                                        <rect key="frame" x="34" y="162" width="700" height="700"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="3JG-v0-j84"/>
-                                            <constraint firstAttribute="height" constant="250" id="Oae-X6-7fD"/>
+                                            <constraint firstAttribute="width" constant="700" id="3JG-v0-j84"/>
+                                            <constraint firstAttribute="height" constant="700" id="Oae-X6-7fD"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-7N-7Kx">
-                                        <rect key="frame" x="184" y="698" width="47" height="30"/>
+                                        <rect key="frame" x="360.5" y="986" width="47" height="30"/>
                                         <state key="normal" title="Switch"/>
                                         <connections>
                                             <action selector="switchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9e-Tw-gDo"/>
