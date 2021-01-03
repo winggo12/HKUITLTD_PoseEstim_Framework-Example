@@ -25,6 +25,7 @@ class AdhoMukhaShivanasana {
     private var arm_score: Double = 0.0
     private var leg_score: Double = 0.0
     private var waist_score: Double = 0.0
+    private var shoulder_score: Double = 0.0
     /** constructor */
     init(result: Result) {
         self.result = result
@@ -49,7 +50,11 @@ class AdhoMukhaShivanasana {
     }
 
     private func calculateScore(){
-
+        
+        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, true)
+        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
+        shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
+        
         let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
 
         let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
