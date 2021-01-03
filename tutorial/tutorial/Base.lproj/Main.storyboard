@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ope-zM-VDt" customClass="PreviewView" customModule="HKUITLTD_PoseEstim_Framework">
+                                <rect key="frame" x="0.0" y="0.0" width="820" height="1160"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Y2-An-5oK" customClass="OverlayView" customModule="HKUITLTD_PoseEstim_Framework">
+                                        <rect key="frame" x="110" y="280" width="600" height="600"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbU-7g-1O0">
+                                                <rect key="frame" x="551" y="8" width="41" height="21.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Pose">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="18"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrD-pw-BGn">
+                                                <rect key="frame" x="544" y="37.5" width="48" height="21.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Score">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="18"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.69049270480000002" green="0.98133662939999999" blue="1" alpha="0.30127640849999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yrD-pw-BGn" secondAttribute="trailing" constant="8" id="5av-C8-qqY"/>
+                                            <constraint firstAttribute="width" constant="600" id="9M2-sK-sUY"/>
+                                            <constraint firstAttribute="width" secondItem="6Y2-An-5oK" secondAttribute="height" multiplier="1:1" id="DkR-t4-RGV"/>
+                                            <constraint firstItem="xbU-7g-1O0" firstAttribute="top" secondItem="6Y2-An-5oK" secondAttribute="top" constant="8" id="Gpn-Bm-rky"/>
+                                            <constraint firstAttribute="height" constant="600" id="Lor-Cm-nck"/>
+                                            <constraint firstItem="yrD-pw-BGn" firstAttribute="top" secondItem="xbU-7g-1O0" secondAttribute="bottom" constant="8" id="dhN-NQ-Yht"/>
+                                            <constraint firstAttribute="trailing" secondItem="xbU-7g-1O0" secondAttribute="trailing" constant="8" id="hpp-yD-c8i"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACn-S0-Arg">
+                                        <rect key="frame" x="8" y="24" width="92.5" height="21.5"/>
+                                        <color key="backgroundColor" red="0.49766033430000001" green="0.95417644239999999" blue="1" alpha="0.30127640849999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.69049270480000002" green="0.98133662939999999" blue="1" alpha="0.30127640849999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Comment 1">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="18"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jj-qC-d5I">
+                                        <rect key="frame" x="8" y="53.5" width="95" height="21.5"/>
+                                        <color key="backgroundColor" red="1" green="0.86408426994611987" blue="0.75492050693761237" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Comment 2">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="18"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAK-ve-Gd5">
+                                        <rect key="frame" x="8" y="83" width="95.5" height="21.5"/>
+                                        <color key="backgroundColor" red="0.58502490992909195" green="0.8626538212435233" blue="0.48413824473448042" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Comment 3">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="18"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="6jj-qC-d5I" firstAttribute="top" secondItem="ACn-S0-Arg" secondAttribute="bottom" constant="8" id="2or-F6-iZf"/>
+                                    <constraint firstItem="ACn-S0-Arg" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="DmJ-2A-EAv"/>
+                                    <constraint firstItem="bAK-ve-Gd5" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="WjH-5u-vbe"/>
+                                    <constraint firstItem="6jj-qC-d5I" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="cde-WP-Xdc"/>
+                                    <constraint firstItem="6Y2-An-5oK" firstAttribute="centerY" secondItem="ope-zM-VDt" secondAttribute="centerY" id="jb4-1z-Ear"/>
+                                    <constraint firstItem="bAK-ve-Gd5" firstAttribute="top" secondItem="6jj-qC-d5I" secondAttribute="bottom" constant="8" id="kgc-oZ-pQ9"/>
+                                    <constraint firstItem="6Y2-An-5oK" firstAttribute="centerX" secondItem="ope-zM-VDt" secondAttribute="centerX" id="o9u-m6-L9u"/>
+                                    <constraint firstItem="ACn-S0-Arg" firstAttribute="top" secondItem="ope-zM-VDt" secondAttribute="top" constant="24" id="poI-yM-VV0"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DT8-4U-uDs">
+                                <rect key="frame" x="386.5" y="1142" width="47" height="30"/>
+                                <state key="normal" title="Switch"/>
+                                <connections>
+                                    <action selector="switchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIR-fn-nzw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7un-mE-kT3"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dtu-G8-xhv"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O5h-C3-GFw"/>
+                            <constraint firstAttribute="bottom" secondItem="DT8-4U-uDs" secondAttribute="bottom" constant="8" id="P0e-6M-QBK"/>
+                            <constraint firstItem="DT8-4U-uDs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pak-97-02b"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UQ7-Q5-3vL"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nnh-RC-q3x"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tzh-y1-Vha"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="comment1" destination="ACn-S0-Arg" id="qZL-cF-uXm"/>
+                        <outlet property="comment2" destination="6jj-qC-d5I" id="sDH-K3-oNW"/>
+                        <outlet property="comment3" destination="bAK-ve-Gd5" id="mQg-dO-Shf"/>
+                        <outlet property="overlayview" destination="6Y2-An-5oK" id="pql-61-TbE"/>
+                        <outlet property="pose" destination="xbU-7g-1O0" id="qpl-nO-jJo"/>
+                        <outlet property="previewView" destination="ope-zM-VDt" id="k80-IR-tAp"/>
+                        <outlet property="score" destination="yrD-pw-BGn" id="OJA-mO-J9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
