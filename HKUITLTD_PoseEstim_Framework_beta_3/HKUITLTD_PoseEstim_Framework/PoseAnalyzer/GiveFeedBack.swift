@@ -145,7 +145,7 @@ public class GiveFeedBack{
                 comments = vrksasana!.getComment()
                 detailedscore = vrksasana!.getDetailedScore()
             case Pose.UtthitaParsvakonasana:
-                let YogaPose = UtthitaParsvakonasana(result: self.result)
+                let YogaPose = UtthitaParsvakonasanaA(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
