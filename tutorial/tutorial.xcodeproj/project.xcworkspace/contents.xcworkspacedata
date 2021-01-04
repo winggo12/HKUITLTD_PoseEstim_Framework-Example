@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj">
+      location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework">
    </FileRef>
    <FileRef
-      location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework">
+      location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj">
    </FileRef>
    <FileRef
       location = "self:">
