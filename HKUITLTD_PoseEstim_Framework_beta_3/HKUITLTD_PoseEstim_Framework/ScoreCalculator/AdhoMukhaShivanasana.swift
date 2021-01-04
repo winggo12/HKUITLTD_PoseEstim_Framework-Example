@@ -45,7 +45,7 @@ class AdhoMukhaShivanasana {
         comment = Array<String>()
         comment!.append("$arm_score, The Straightness of the Arms " + utilities.comment(arm_score))
         comment!.append("$arm_score, The Curvature of the Waist " + utilities.comment(waist_score))
-        comment!.append("$leg_score, The Straightness of the Legs " + utilities.comment(leg_score))
+        comment!.append("$leg_score, The Distance between the Legs and the Hips " + utilities.comment(leg_score))
 
     }
 
@@ -71,7 +71,6 @@ class AdhoMukhaShivanasana {
         score = ratio * (arm_score + leg_score + waist_score)
         detailedscore = [arm_score, waist_score, leg_score]
         
-
     }
 
 }

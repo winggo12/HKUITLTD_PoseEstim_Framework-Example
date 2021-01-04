@@ -7,11 +7,11 @@ class TPose {
     /** output */
     private var comment : Array<String>? = nil
     private var score : Double? = nil
-
+    private var detailedscore: Array<Double>? = nil
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
-    private var detailedscore: Array<Double>? = nil
 
     /** constant */
     private let right_leg_ratio: Double = 0.1
@@ -41,11 +41,18 @@ class TPose {
     
     /** private method */
     private func calculateScore(){
-        let left_arm_score = self.T_left_arm(kps: resultArray!)
-        let right_arm_score = self.T_right_arm(kps: resultArray!)
-        let right_leg_score = self.straight_left_leg(kps: resultArray!)
-        let left_leg_score = self.straight_right_leg(kps: resultArray!)
-
+//        let left_arm_score = self.T_left_arm(kps: resultArray!)
+//        let right_arm_score = self.T_right_arm(kps: resultArray!)
+//        let right_leg_score = self.straight_left_leg(kps: resultArray!)
+//        let left_leg_score = self.straight_right_leg(kps: resultArray!)
+        
+        let left_arm_score = utilities.left_arm(resultArray!, 180, 10, true)
+        let right_arm_score = utilities.right_arm(resultArray!, 180, 10, true)
+        let left_shoulder_score = utilities.left_shoulder(resultArray!, 90, 10, true)
+        let right_shoulder_score = utilities.right_shoulder(resultArray!, 90, 10, true)
+        let left_leg_score = utilities.left_leg(resultArray!, 180, 10, true)
+        let right_leg_score = utilities.right_leg(resultArray!, 180, 10, true)
+        
         score = left_leg_ratio * left_leg_score + right_leg_ratio * right_leg_score + left_arm_score * left_arm_ratio + right_arm_ratio * right_arm_score
         detailedscore = [0]
     }
