@@ -12,12 +12,14 @@ import Foundation
 class Padangushthasana {
     
     private let utilities: FeedbackUtilities = FeedbackUtilities()
-
+    private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
+    
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
     private var detailedscore: Array<Double>? = nil
-
+    private var colorbit: Array<Character>? = nil
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -52,6 +54,7 @@ class Padangushthasana {
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
     func getDetailedScore()-> Array<Double>{return detailedscore!}
+    func getColorBit()->Array<Character>{return colorbit!}
     
     /** private method */
     private func calculateScore(){
@@ -73,13 +76,23 @@ class Padangushthasana {
     
     private func start_timing()
     {
-        let arm_score =  0.5*(utilities.left_arm(resultArray!, 180.0, 20.0, true) + utilities.right_arm(resultArray!, 180.0, 20.0, true))
-        let shoulder_score = 0.5*(utilities.left_shoulder(resultArray!, 180.0, 20, true)+utilities.right_shoulder(resultArray!, 180.0, 20, true))
-        let waist_score = 0.5*(utilities.left_waist(resultArray!, 180.0, 20, true)+utilities.right_waist(resultArray!, 180.0, 20, true))
-        let leg_score = 0.5*(utilities.left_leg(resultArray!, 180.0, 20, true)+utilities.right_leg(resultArray!, 180.0, 20, true))
+        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let arm_score =  0.5*( left_arm_score + right_arm_score )
+        
+        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20, true)
+        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20, true)
+        let shoulder_score = 0.5*( left_shoulder_score + right_shoulder_score)
+        
+        let left_waist_score = utilities.left_waist(resultArray!, 180.0, 20, true)
+        let right_waist_score = utilities.right_waist(resultArray!, 180.0, 20, true)
+        let waist_score = 0.5*( left_waist_score + right_shoulder_score)
+        
+        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20, true)
+        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20, true)
+        let leg_score = 0.5*( left_leg_score + right_leg_score )
         
         let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
-        
         if(body_score! > 80.0)
         {
             if(!isStartTiming)
@@ -93,6 +106,25 @@ class Padangushthasana {
                 start_time = 0
                 isStartTiming = false
         }
+        
+        let cb_ll:UInt = colorutilities.left_leg(score: left_leg_score)
+        let cb_rl:UInt = colorutilities.right_leg(score: right_leg_score)
+        
+        let cb_la:UInt = colorutilities.left_arm(score: left_arm_score)
+        let cb_ra:UInt = colorutilities.right_arm(score: right_arm_score)
+        
+        let cb_ls:UInt = colorutilities.left_shoulder(score: left_shoulder_score)
+        let cb_rs:UInt = colorutilities.right_shoulder(score: right_shoulder_score)
+        
+        let cb_lw:UInt = colorutilities.left_waist(score: left_waist_score)
+        let cb_rw:UInt = colorutilities.right_waist(score: right_waist_score)
+        
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_ls | cb_rs | cb_lw | cb_rw
+        let colorbitmergeString = String(colorbitmerge, radix: 2)
+        let intForIndex = 1
+        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        
+        colorbit = Array(colorbitmergeString.substring(from: index))
     }
     
     private func cal_time_score(_ start_time: UInt64)-> Double{

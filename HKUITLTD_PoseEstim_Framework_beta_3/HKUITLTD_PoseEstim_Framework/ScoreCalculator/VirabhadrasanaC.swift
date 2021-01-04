@@ -12,12 +12,14 @@ import os
 class VirabhadrasanaC {
 
     private let utilities: FeedbackUtilities = FeedbackUtilities()
-
+    private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
+    
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
     private var detailedscore: Array<Double>? = nil
-
+    private var colorbit: Array<Character>? = nil
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -47,6 +49,7 @@ class VirabhadrasanaC {
     func getComment()-> Array<String>{return comment!}
     func getResult()-> Result{ return result!}
     func getDetailedScore()-> Array<Double>{return detailedscore!}
+    func getColorBit()->Array<Character>{return colorbit!}
     
     /** private method */
     private func makeComment(){
@@ -77,6 +80,18 @@ class VirabhadrasanaC {
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
+        let cb_ll:UInt = colorutilities.left_leg(score: left_leg_score)
+        let cb_rl:UInt = colorutilities.right_leg(score: right_leg_score)
+        
+        let cb_lw:UInt = colorutilities.left_waist(score: left_waist_score)
+        let cb_rw:UInt = colorutilities.right_waist(score: right_waist_score)
+        
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_lw | cb_rw
+        let colorbitmergeString = String(colorbitmerge, radix: 2)
+        let intForIndex = 1
+        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        
+        colorbit = Array(colorbitmergeString.substring(from: index))
         score = leg_ratio*leg_score + waist_ratio*waist_score
         detailedscore = [waist_score, leg_score]
         
