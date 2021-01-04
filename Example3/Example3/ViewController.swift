@@ -137,7 +137,7 @@ extension ViewController: CameraFeedManagerDelegate {
             }
             
             let position = self.cameraCapture.showCurrentInput()
-            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position)
+            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: [1])
 
         }
         os_log("Pose: %s", userselectedpose.rawValue)

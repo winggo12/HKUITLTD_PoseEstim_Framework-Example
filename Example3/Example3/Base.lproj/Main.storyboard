@@ -29,11 +29,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-7N-7Kx">
-<<<<<<< Updated upstream
-                                        <rect key="frame" x="360.5" y="986" width="47" height="30"/>
-=======
                                         <rect key="frame" x="183.66666666666666" y="698" width="47" height="30"/>
->>>>>>> Stashed changes
                                         <state key="normal" title="Switch"/>
                                         <connections>
                                             <action selector="switchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9e-Tw-gDo"/>
