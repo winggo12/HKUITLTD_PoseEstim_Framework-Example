@@ -42,11 +42,11 @@ public class OverlayView: UIView {
                 Traits.line.color = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
             }
             else {
-                Traits.line.color = UIColor(red: 0, green: 1, blue: 0, alpha: 0.3)
+                Traits.line.color = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.6)
             }
         }
         else {
-            Traits.line.color = UIColor(red: 0, green: 1, blue: 0, alpha: 0.3)
+            Traits.line.color = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.6)
         }
         Traits.line.color.setStroke()
 
@@ -101,6 +101,6 @@ public class OverlayView: UIView {
 }
 
 private enum Traits {
-    static let dot = (radius: CGFloat(15), color: UIColor(red: 0, green: 0, blue: 1, alpha: 0.5))
-    static var line = (width: CGFloat(8), color: UIColor(red: 0, green: 1, blue: 0, alpha: 0.3))
+    static let dot = (radius: CGFloat(15), color: UIColor(red: 0, green: 0.3, blue: 0.6, alpha: 0.5))
+    static var line = (width: CGFloat(8), color: UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.6))
 }
