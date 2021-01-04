@@ -1,15 +1,17 @@
 //
-//  AdhoMukhaShivanasana.swift
+//  UtthitaPashvakonasanaB.swift
 //  HKUITLTD_PoseEstim_Framework
 //
-//  Created by iosuser111 on 19/8/2020.
-//  Copyright © 2020 Hong Kong Univisual Intelligent Technology Limited. All rights reserved.
+//  Created by hkuit155 on 1/1/2021.
+//  Copyright © 2021 Hong Kong Univisual Intelligent Technology Limited. All rights reserved.
 //
 
 import Foundation
+import os
+class UtthitaPashvakonasanaB {
 
-class AdhoMukhaShivanasana {
     private let utilities: FeedbackUtilities = FeedbackUtilities()
+
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
@@ -18,14 +20,16 @@ class AdhoMukhaShivanasana {
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
+
     /** constant */
-    private let ratio = 1.0 / 3
+    private var leg_ratio: Double = 0.4
+    private var waist_ratio: Double = 0.4
+    private var hand_ratio: Double = 0.2
 
     /** score of body parts */
     private var arm_score: Double = 0.0
     private var leg_score: Double = 0.0
     private var waist_score: Double = 0.0
-    private var shoulder_score: Double = 0.0
     /** constructor */
     init(result: Result) {
         self.result = result
@@ -44,34 +48,30 @@ class AdhoMukhaShivanasana {
     private func makeComment(){
         comment = Array<String>()
         comment!.append("$arm_score, The Straightness of the Arms " + utilities.comment(arm_score))
-        comment!.append("$arm_score, The Curvature of the Waist " + utilities.comment(waist_score))
-        comment!.append("$leg_score, The Straightness of the Legs " + utilities.comment(leg_score))
+        comment!.append("$waist_score, The Posture of the Waist " + utilities.comment(waist_score))
+        comment!.append("$leg_score, The  of the Legs " + utilities.comment(leg_score))
 
     }
 
     private func calculateScore(){
-        
-        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, true)
-        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
-        shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
-        
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
-
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
-        arm_score = 0.5 * (left_arm_score + right_arm_score)
 
         let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
-
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
-        leg_score = 0.5 * (left_leg_score + right_leg_score)
+        let right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+        let leg_score = 0.5*(right_leg_score + left_leg_score)
         
-        let left_waist = utilities.left_waist(resultArray!, 90.0, 10.0, true)
-        let right_waist = utilities.right_waist(resultArray!, 90.0, 10.0, true)
+        let left_waist = utilities.left_waist(resultArray!, 180.0, 10.0, true)
+        let right_waist = utilities.right_waist(resultArray!, 180.0, 10.0, true)
         waist_score = 0.5 * (left_waist + right_waist)
-        score = ratio * (arm_score + leg_score + waist_score)
+        
+        let left_arm = utilities.left_arm(resultArray!, 180.0, 10.0, true)
+        let right_arm = utilities.right_arm(resultArray!, 180.0, 10.0, true)
+        arm_score = 0.5 * (left_arm + right_arm)
+        
+        score = arm_score + leg_score + waist_score
         detailedscore = [arm_score, waist_score, leg_score]
         
 
     }
 
 }
+
