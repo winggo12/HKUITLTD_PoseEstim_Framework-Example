@@ -73,11 +73,8 @@ class Balasana{
         let cb_rw:UInt = colorutilities.right_waist(score: chest_knee_score)
         
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_lw | cb_rw
-        let colorbitmergeString = String(colorbitmerge, radix: 2)
-        let intForIndex = 1
-        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        colorbit = colorutilities.uint_to_array(colorbitmerge: colorbitmerge)
         
-        colorbit = Array(colorbitmergeString.substring(from: index))
         score = 0.5*(hip_foot_score+chest_knee_score)
         detailedscore = [hip_foot_score, chest_knee_score]
         
