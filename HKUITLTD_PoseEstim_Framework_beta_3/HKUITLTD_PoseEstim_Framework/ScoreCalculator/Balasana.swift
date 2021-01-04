@@ -11,12 +11,14 @@ import Foundation
 class Balasana{
     
     private let utilities: FeedbackUtilities = FeedbackUtilities()
-
+    private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
     /** output */
     private var comment: Array<String>? = nil
     private var score: Double? = nil
     private var detailedscore: Array<Double>? = nil
-
+    private var colorbit: Array<Character>? = nil
+    
+    
     /** input */
     private var result: Result? = nil
     private var resultArray: Array<Array<Double>>? = nil
@@ -43,6 +45,7 @@ class Balasana{
     func getComment()-> Array<String>{return comment!}
     func getResult()-> Result{ return result!}
     func getDetailedScore()-> Array<Double>{return detailedscore!}
+    func getColorBit()->Array<Character>{return colorbit!}
     
     /** private method */
     private func makeComment(){
@@ -52,6 +55,7 @@ class Balasana{
 
     }
 
+
     private func calculateScore(){
         
         let leg_length = utilities.cal_dis(coor1: resultArray![7], coor2: resultArray![11])
@@ -59,11 +63,23 @@ class Balasana{
         let hip_foot_dis = ( utilities.cal_dis(coor1: resultArray![7], coor2: resultArray![11]) + utilities.cal_dis(coor1: resultArray![8], coor2: resultArray![12]) )*0.5
         let chest_knee_dis = ( utilities.cal_dis(coor1: resultArray![1], coor2: resultArray![9]) + utilities.cal_dis(coor1: resultArray![2], coor2: resultArray![10]) )*0.5
         
+        hip_foot_score = utilities.disToScore(hip_foot_dis, 10, 5, true)
+        chest_knee_score = utilities.disToScore(chest_knee_dis, 10, 5, true)
         
+        let cb_ll:UInt = colorutilities.left_leg(score: hip_foot_score)
+        let cb_rl:UInt = colorutilities.right_leg(score: hip_foot_score)
         
+        let cb_lw:UInt = colorutilities.left_waist(score: chest_knee_score)
+        let cb_rw:UInt = colorutilities.right_waist(score: chest_knee_score)
         
-        score = 0
-        detailedscore = [0]
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_lw | cb_rw
+        let colorbitmergeString = String(colorbitmerge, radix: 2)
+        let intForIndex = 1
+        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        
+        colorbit = Array(colorbitmergeString.substring(from: index))
+        score = 0.5*(hip_foot_score+chest_knee_score)
+        detailedscore = [hip_foot_score, chest_knee_score]
         
     }
     

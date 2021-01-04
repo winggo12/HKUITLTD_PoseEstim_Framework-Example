@@ -3,7 +3,7 @@ import os
 class TPose {
 
     private let utilities: FeedbackUtilities = FeedbackUtilities()
-    
+    //private let color_
     /** output */
     private var comment : Array<String>? = nil
     private var score : Double? = nil
@@ -41,7 +41,9 @@ class TPose {
     
     /** private method */
     private func calculateScore(){
-        let left_arm_score = self.T_left_arm(kps: resultArray!)
+        let left_arm_score = utilities.left_arm(resultArray!, 180, 10, false)
+        //let left_arm_color =
+        //let left_arm_score = self.T_left_arm(kps: resultArray!)
         let right_arm_score = self.T_right_arm(kps: resultArray!)
         let right_leg_score = self.straight_left_leg(kps: resultArray!)
         let left_leg_score = self.straight_right_leg(kps: resultArray!)
