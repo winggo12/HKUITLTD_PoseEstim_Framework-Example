@@ -49,7 +49,7 @@ class UtthitaPashvakonasanaB {
         comment = Array<String>()
         comment!.append("$arm_score, The Straightness of the Arms " + utilities.comment(arm_score))
         comment!.append("$waist_score, The Posture of the Waist " + utilities.comment(waist_score))
-        comment!.append("$leg_score, The  of the Legs " + utilities.comment(leg_score))
+
 
     }
 
