@@ -16,19 +16,25 @@ public enum Pose:String {
     case ArdhaUttanasana = "Ardha Uttanasana"
     case AdhoMukhaShivanasana = "Adho Mukha Shivanasana"
     case ArdhaChandarasana = "Ardha Chandarasana"
-
+    
+    case Balasana = "Balasana"
     case BaddhaKonasana = "Baddha Konasana"
     case Bhujangasana = "Bhujangasana"
+    //case Bujangasana = "Bujangasana"
 
     case CaturangaDandasana = "Caturanga Dandasana"
 
     case Dandasana = "Dandasana"
 
     case Halasana = "Halasana"
-
+    
+    case MarjarasanaB = "MarjarasanaB"
+    case MarjarasanaC = "MarjarasanaC"
+    
     case Natarajasana = "Natarajasana"
     case Navasana = "Navasana"
-
+    
+    case Padangushthasana = "Padangushthasana"
     case ParivrttaPashvaKonasana = "Parivrtta Pashvakonasana"
     case ParivrttaTrikonasana = "Parivrtta Trikonasana"
     case PurnaShalabhasana = "Purna Shalabhasana"
@@ -38,12 +44,20 @@ public enum Pose:String {
     case Ustrasana = "Ustrasana"
     case UbhayaPadangushtasana = "Ubhaya Padangushtasana"
     case UrdhvaDhanurasana = "Urdhva Dhanurasana"
+    case Utkatasana = "Utkatasana"
     case UttanaPadasana = "Uttana Padasana"
     case UtthitaHastaPadangusthasanaB = "Utthita Hasta Padangusthasana B"
     case UtthitaHastaPadangusthasanaC = "Utthita Hasta Padangusthasana C"
     case UtthitaHastaPadangusthasanaA = "Utthita Hasta Padangusthasana A"
+    case UrdhvaMukhaSvanasana = "Urdhva Mukha Svanasana"
     case UtthitaParsvakonasana = "Utthita Parsvakonasana"
-
+    case UtthitaTrikonasana = "Utthita Trikonasana"
+    
+    case VirabhadrasanaA = "Virabhadrasana A"
+    case VirabhadrasanaB = "Virabhadrasana B"
+    case VirabhadrasanaC = "Virabhadrasana C"
+    case VirabhadrasanaD = "Virabhadrasana D"
     case Vrksasana = "Vrksasana"
+    
     case TPose = "TPose"
 }

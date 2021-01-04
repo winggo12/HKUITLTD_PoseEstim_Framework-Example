@@ -120,7 +120,44 @@ class FeedbackUtilities {
                 
             }
         }
+    }
+    
+    func disToScore(_ dis: Double, _ fullMarkDistance: Double, _ step: Double, _ excat:Bool)-> Double{
+        if(excat) {
+            if(abs(dis - fullMarkDistance) < 2){
+                return 100.0
+            }else if(abs(dis - fullMarkDistance) < step){
+                return 90.0
+                
+            }else if(abs(dis - fullMarkDistance) < 2 * step){
+                return 80.0
+                
+            }else if(abs(dis - fullMarkDistance) < 3 * step){
+                return 70.0
+                
+            }else{
+                return 60.0
+                
+            }
 
+        }else{
+            if(abs(dis - fullMarkDistance) < step){
+                return 100.0
+                
+            }else if(abs(dis - fullMarkDistance) < 2 * step){
+                return 90.0
+                
+            }else if(abs(dis - fullMarkDistance) < 3 * step){
+                return 80.0
+                
+            }else if(abs(dis - fullMarkDistance) < 4 * step){
+                return 70.0
+                
+            }else{
+                return 60.0
+                
+            }
+        }
     }
 
 

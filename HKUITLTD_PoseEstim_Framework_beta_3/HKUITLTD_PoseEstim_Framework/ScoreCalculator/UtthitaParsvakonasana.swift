@@ -9,7 +9,7 @@
 import Foundation
 
 
-class UtthitaParsvakonasanaA {
+class UtthitaParsvakonasana {
     
     private let utilities: FeedbackUtilities = FeedbackUtilities()
 

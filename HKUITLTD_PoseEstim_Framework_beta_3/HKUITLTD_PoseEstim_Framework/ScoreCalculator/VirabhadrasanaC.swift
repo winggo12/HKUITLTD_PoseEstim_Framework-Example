@@ -58,7 +58,7 @@ class VirabhadrasanaC {
 
     private func calculateScore(){
         
-        if ( utilities.left_waist_angle(resultArray!) > utilities.right_waist_angle(resultArray!) )
+        if  utilities.left_waist_angle(resultArray!) > utilities.right_waist_angle(resultArray!)
         {
             left_waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
             right_waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, true)

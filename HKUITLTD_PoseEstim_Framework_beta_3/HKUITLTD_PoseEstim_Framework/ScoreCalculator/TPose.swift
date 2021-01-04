@@ -3,7 +3,7 @@ import os
 class TPose {
 
     private let utilities: FeedbackUtilities = FeedbackUtilities()
-    
+    //private let color_
     /** output */
     private var comment : Array<String>? = nil
     private var score : Double? = nil

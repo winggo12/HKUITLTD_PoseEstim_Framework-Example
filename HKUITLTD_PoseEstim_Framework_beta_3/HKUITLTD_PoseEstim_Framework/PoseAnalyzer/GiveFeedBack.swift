@@ -45,8 +45,14 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.BaddhaKonasana:
                 let YogaPose = BaddhaKonasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.Balasana:
+                let YogaPose = Balasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
@@ -55,21 +61,36 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.CaturangaDandasana:
                 let YogaPose = CaturangaDandasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.Dandasana:
                 let YogaPose = Dandasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.Halasana:
                 let YogaPose = Halasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
+            case Pose.MarjarasanaB:
+                let YogaPose = MarjarasanaB(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.MarjarasanaC:
+                let YogaPose = MarjarasanaB(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.Natarajasana:
                 let YogaPose = Natarajasana(result: self.result)
                 score = YogaPose.getScore()
@@ -77,6 +98,12 @@ public class GiveFeedBack{
                 detailedscore = YogaPose.getDetailedScore()
             case Pose.Navasana:
                 let YogaPose = Navasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            
+            case Pose.Padangushthasana:
+                let YogaPose = Padangushthasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
@@ -95,11 +122,13 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.Tuladandasana:
                 let YogaPose = Tuladandasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             case Pose.UbhayaPadangushtasana:
                 let YogaPose = UbhayaPadangushtasana(result: self.result)
                 score = YogaPose.getScore()
@@ -135,6 +164,47 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            case Pose.UtthitaParsvakonasana:
+                let YogaPose = UtthitaParsvakonasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.Utkatasana:
+                let YogaPose = Utkatasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.UrdhvaMukhaSvanasana:
+                let YogaPose = UrdhvaMukhaSvanasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.UtthitaTrikonasana:
+                let YogaPose = UtthitaTrikonasana(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            
+            case Pose.VirabhadrasanaA:
+                let YogaPose = VirabhadrasanaA(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.VirabhadrasanaB:
+                let YogaPose = VirabhadrasanaB(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.VirabhadrasanaC:
+                let YogaPose = VirabhadrasanaC(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
+            case Pose.VirabhadrasanaD:
+                let YogaPose = VirabhadrasanaD(result: self.result)
+                score = YogaPose.getScore()
+                comments = YogaPose.getComment()
+                detailedscore = YogaPose.getDetailedScore()
             case Pose.Vrksasana:
                 if(vrksasana == nil){
                     vrksasana = Vrksasana(result: self.result)
@@ -144,16 +214,19 @@ public class GiveFeedBack{
                 score = vrksasana!.getScore()
                 comments = vrksasana!.getComment()
                 detailedscore = vrksasana!.getDetailedScore()
+
             case Pose.UtthitaParsvakonasana:
-                let YogaPose = UtthitaParsvakonasanaA(result: self.result)
+                let YogaPose = UtthitaParsvakonasana(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+
             case Pose.TPose:
                 let YogaPose = TPose(result: self.result)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+            
             default:
                 let YogaPose = Navasana(result: self.result)
                 score = YogaPose.getScore()

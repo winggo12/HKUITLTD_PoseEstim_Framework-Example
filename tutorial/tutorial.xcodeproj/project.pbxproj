@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4309A03325A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */; };
+		4309A03425A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4395B6622547B1BF000C895B /* HKUITLTD_PoseEstim_Framework in Resources */ = {isa = PBXBuildFile; fileRef = 4395B65B2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework */; };
 		43ABD6AC253046CE00C61C97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABD6AB253046CE00C61C97 /* AppDelegate.swift */; };
 		43ABD6AE253046CE00C61C97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABD6AD253046CE00C61C97 /* SceneDelegate.swift */; };
@@ -14,19 +16,7 @@
 		43ABD6B3253046CE00C61C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B1253046CE00C61C97 /* Main.storyboard */; };
 		43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B4253046D100C61C97 /* Assets.xcassets */; };
 		43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B6253046D100C61C97 /* LaunchScreen.storyboard */; };
-		43ABD6D52534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43ABD6D42534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework */; };
-		43ABD6D62534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43ABD6D42534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4395B6602547B1BF000C895B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4395B65C2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4358BFE024738DA2008B4656;
-			remoteInfo = HKUITLTD_PoseEstim_Framework;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		43ABD6C6253047C800C61C97 /* Embed Frameworks */ = {
@@ -35,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43ABD6D62534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
+				4309A03425A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,8 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4395B65B2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HKUITLTD_PoseEstim_Framework; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework; sourceTree = "<group>"; };
-		4395B65C2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HKUITLTD_PoseEstim_Framework.xcodeproj; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
 		43ABD6A8253046CE00C61C97 /* tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ABD6AB253046CE00C61C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43ABD6AD253046CE00C61C97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +43,6 @@
 		43ABD6B4253046D100C61C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43ABD6B7253046D100C61C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43ABD6B9253046D100C61C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43ABD6D42534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,29 +50,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43ABD6D52534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
+				4309A03325A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4395B65D2547B1BF000C895B /* Products */ = {
+		4309A03125A3043100F630BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4395B6612547B1BF000C895B /* HKUITLTD_PoseEstim_Framework.framework */,
+				4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		43ABD69F253046CE00C61C97 = {
 			isa = PBXGroup;
 			children = (
 				4395B65B2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework */,
-				4395B65C2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework.xcodeproj */,
 				43ABD6AA253046CE00C61C97 /* tutorial */,
 				43ABD6A9253046CE00C61C97 /* Products */,
-				43ABD6C2253047C800C61C97 /* Frameworks */,
+				4309A03125A3043100F630BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,14 +95,6 @@
 				43ABD6B9253046D100C61C97 /* Info.plist */,
 			);
 			path = tutorial;
-			sourceTree = "<group>";
-		};
-		43ABD6C2253047C800C61C97 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				43ABD6D42534069B00C61C97 /* HKUITLTD_PoseEstim_Framework.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,28 +143,12 @@
 			mainGroup = 43ABD69F253046CE00C61C97;
 			productRefGroup = 43ABD6A9253046CE00C61C97 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4395B65D2547B1BF000C895B /* Products */;
-					ProjectRef = 4395B65C2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				43ABD6A7253046CE00C61C97 /* tutorial */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4395B6612547B1BF000C895B /* HKUITLTD_PoseEstim_Framework.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HKUITLTD_PoseEstim_Framework.framework;
-			remoteRef = 4395B6602547B1BF000C895B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		43ABD6A6253046CE00C61C97 /* Resources */ = {
