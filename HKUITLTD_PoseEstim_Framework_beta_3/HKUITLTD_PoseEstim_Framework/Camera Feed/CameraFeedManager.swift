@@ -6,7 +6,10 @@ import os
 
 // MARK: - CameraFeedManagerDelegate Declaration
 @objc public protocol CameraFeedManagerDelegate: class {
-  /// This method delivers the pixel buffer of the current frame seen by the device's camera.
+  /// This method delivers the pixel buffer of the current frame seen by
+    ///
+    /// 
+    ///  the device's camera.
   @objc optional func cameraFeedManager(
     _ manager: CameraFeedManager, didOutput pixelBuffer: CVPixelBuffer
   )

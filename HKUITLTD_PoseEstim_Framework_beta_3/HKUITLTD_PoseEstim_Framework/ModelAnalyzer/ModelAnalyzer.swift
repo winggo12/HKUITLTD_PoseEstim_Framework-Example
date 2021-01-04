@@ -24,6 +24,10 @@ public class ModelAnalyzer {
   private var heatsTensor: Tensor
 //  private var offsetsTensor: Tensor
 
+    /// Constants for calculating alpha
+    private let minBound:CGFloat = 0.3
+    private let maxBound:CGFloat = 0.8
+    
   // MARK: - Initialization
 
   /// A failable initializer for `ModelDataHandler`. A new instance is created if the model is
@@ -232,17 +236,41 @@ public class ModelAnalyzer {
 
     // MARK: Transform key point position and make lines
     // Make `Result` from `keypointPosition'. Each point is adjusted to `ViewSize` to be drawn.
-    var result = Result(dots: [], lines: [], score: totalScore)
+    var result = Result(dots: [], lines: [],shapes: [], score: totalScore)
     var bodyPartToDotMap = [BodyPart: CGPoint]()
     for (index, part) in BodyPart.allCases.enumerated() {
-      let position = CGPoint(
-        x: CGFloat(coords[index].x) * viewSize.width / CGFloat(tfModel.input.width),
-        y: CGFloat(coords[index].y) * viewSize.height / CGFloat(tfModel.input.height)
-      )
-      bodyPartToDotMap[part] = position
-      result.dots.append(position)
+        if index < 13
+        {
+            let position = CGPoint(
+              x: CGFloat(coords[index].x) * viewSize.width / CGFloat(tfModel.input.width),
+              y: CGFloat(coords[index].y) * viewSize.height / CGFloat(tfModel.input.height)
+            )
+            bodyPartToDotMap[part] = position
+            result.dots.append(position)
+        }
     }
-
+    
+    /// Additional keypoints
+//    let leftArmTri = centroidV2(v1: result.dots[1], v2: result.dots[3], v3: result.dots[5])
+//    let rightArmTri = centroidV2(v1: result.dots[2], v2: result.dots[4], v3: result.dots[6])
+//    let leftLegTri = centroidV2(v1: result.dots[7], v2: result.dots[9], v3: result.dots[11])
+//    let rightLegTri = centroidV2(v1: result.dots[8], v2: result.dots[10], v3: result.dots[12])
+//    let leftBodyCen = centerPoint(p1: result.dots[1], p2: result.dots[7])
+//    let rightBodyCen = centerPoint(p1: result.dots[2], p2: result.dots[8])
+//    bodyPartToDotMap[BodyPart.LEFT_ARM_TRI] = leftArmTri
+//    result.dots.append(leftArmTri)
+//    bodyPartToDotMap[BodyPart.RIGHT_ARM_TRI] = rightArmTri
+//    result.dots.append(rightArmTri)
+//    bodyPartToDotMap[BodyPart.LEFT_LEG_TRI] = leftLegTri
+//    result.dots.append(leftLegTri)
+//    bodyPartToDotMap[BodyPart.RIGHT_LEG_TRI] = rightLegTri
+//    result.dots.append(rightLegTri)
+//    bodyPartToDotMap[BodyPart.LEFT_BODY_CEN] = leftBodyCen
+//    result.dots.append(leftBodyCen)
+//    bodyPartToDotMap[BodyPart.RIGHT_BODY_CEN] = rightBodyCen
+//    result.dots.append(rightBodyCen)
+    ///
+    
     do {
       try result.lines = BodyPart.lines.map { map throws -> Line in
         guard let from = bodyPartToDotMap[map.from] else {
@@ -260,7 +288,39 @@ public class ModelAnalyzer {
       os_log("Postprocessing error: %s", type: .error, error.localizedDescription)
       return nil
     }
-
+    
+    /// Additional shapes element
+//    // Drawing shapes
+//    let noColorShapes = BodyPart.shapes.map{ (shapes) -> (CAShapeLayer, [CGPoint]) in
+//        let layer = CAShapeLayer()
+//        let path = UIBezierPath()
+//        var points = [CGPoint]()
+//        for (index, shape) in shapes.enumerated() {
+//            if index == 0 {
+//                path.move(to: result.dots[shape])
+//                points.append(result.dots[shape])
+//            } else {
+//                path.addLine(to: result.dots[shape])
+//                points.append(result.dots[shape])
+//            }
+//        }
+//        path.close()
+//        layer.path = path.cgPath
+//        return (layer, points)
+//    }
+//    // Calculating area of each shapes
+//    var bound = [CGFloat]()
+//    noColorShapes.forEach{
+//        bound.append(findArea(polygon: $1))
+//        result.shapes.append($0)
+//    }
+//    // Normalize area
+//    let max = bound.max()
+//    let min = bound.min()
+//    // Fill the shapes corr. areas
+//    for i in 0...result.shapes.count - 1 {
+//        result.shapes[i].fillColor = UIColor(red: CGFloat(1 - result.score), green: CGFloat(0 + result.score), blue: 0, alpha: CGFloat(0.7 * (bound[i] - min!) * (maxBound - minBound) / (max! - min!) + minBound)).cgColor
+//    }
     return result
   }
 
@@ -291,6 +351,39 @@ public class ModelAnalyzer {
   private func sigmoid(_ x: Float32) -> Float32 {
     return (1.0 / (1.0 + exp(-x)))
   }
+    
+    /// additional functions 11/11/2020
+    private func orthocenter(v1: CGPoint, v2: CGPoint, v3: CGPoint)->CGPoint {
+        var ortho: CGPoint = CGPoint(x: 0, y: 0)
+        ortho.x = ((v2.x * (v1.x - v3.x) + v2.y * (v1.y - v3.y)) * (v3.y - v2.y) - (v3.y - v1.y) * (v1.x * (v2.x - v3.x) + v1.y * (v2.y - v3.y))) / ((v3.x - v2.x) * (v3.y - v1.y) - (v3.y - v2.y) * (v3.x - v1.x))
+        ortho.y = ((v2.x * (v1.x - v3.x) + v2.y * (v1.y - v3.y)) * (v3.x - v2.x) - (v3.x - v1.x) * (v1.x * (v2.x - v3.x) + v1.y * (v2.y - v3.y))) / ((v3.y - v2.y) * (v3.x - v1.x) - (v3.x - v2.x) * (v3.y - v1.y))
+        return ortho
+    }
+    
+    private func centroidV2(v1: CGPoint, v2: CGPoint, v3: CGPoint)->CGPoint {
+        var cent = CGPoint(x: 0, y: 0)
+        cent.x = ((v1.x + v2.x + v3.x) / 3 + v2.x) / 2
+        cent.y = ((v1.y + v2.y + v3.y) / 3 + v2.y) / 2
+        return cent
+    }
+    
+    private func findArea(polygon: [CGPoint]) -> CGFloat {
+        var area: CGFloat = 0.0
+        for i in 0...polygon.count - 2 {
+            area += polygon[i].x * polygon[i+1].y - polygon[i+1].x * polygon[i].y
+        }
+        area += polygon[polygon.count-1].x * polygon[0].y - polygon[0].x * polygon[polygon.count-1].y
+        area = abs(area) / 2
+        return area
+    }
+    
+    private func centerPoint(p1: CGPoint, p2: CGPoint)->CGPoint {
+        var cent = CGPoint(x: 0, y: 0)
+        cent.x = (p1.x + p2.x) / 2
+        cent.y = (p1.y + p2.y) / 2
+        return cent
+    }
+    
 }
 
 // MARK: - Custom Errors

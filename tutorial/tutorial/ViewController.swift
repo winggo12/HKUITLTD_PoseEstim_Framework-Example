@@ -11,6 +11,17 @@ import HKUITLTD_PoseEstim_Framework
 
 class ViewController: UIViewController {
 
+    /// Test Cases
+    public let la = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    public let ra = [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    public let ll = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0]
+    public let rl = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+    public let ls = [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    public let rs = [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    public let lw = [0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+    public let rw = [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+    ///
+    
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var overlayview: OverlayView!
     @IBOutlet weak var comment1: UILabel!
@@ -113,7 +124,7 @@ extension ViewController: CameraFeedManagerDelegate {
                 self.comment3.text = comments[2]
                 
                 let position = self.cameraCapture.showCurrentInput()
-                self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position)
+                self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: self.ll)
             }
             else {
                 self.overlayview.clear()

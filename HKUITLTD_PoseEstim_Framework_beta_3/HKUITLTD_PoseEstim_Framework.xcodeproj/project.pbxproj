@@ -21,6 +21,8 @@
 		4315E74024A616CE00B81FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73D24A616CE00B81FC3 /* Constants.swift */; };
 		4315E74124A616CE00B81FC3 /* tfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73E24A616CE00B81FC3 /* tfModel.swift */; };
 		4315E74224A616CE00B81FC3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73F24A616CE00B81FC3 /* DeviceType.swift */; };
+		435012AF255BC239007382F3 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435012AE255BC239007382F3 /* Shape.swift */; };
+		435012BD255CEBC2007382F3 /* mobilenetXTFalse2020-11-12-10-19-24-2.3.0.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435012BC255CEBC2007382F3 /* mobilenetXTFalse2020-11-12-10-19-24-2.3.0.tflite */; };
 		4358BFE524738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4358BFEE24738FA1008B4656 /* TensorFlowLiteC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358BFED24738FA1008B4656 /* TensorFlowLiteC.framework */; };
 		4358C00024738FC9008B4656 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4358BFF024738FC9008B4656 /* LICENSE */; };
@@ -85,6 +87,8 @@
 		4315E73D24A616CE00B81FC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4315E73E24A616CE00B81FC3 /* tfModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
 		4315E73F24A616CE00B81FC3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		435012AE255BC239007382F3 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		435012BC255CEBC2007382F3 /* mobilenetXTFalse2020-11-12-10-19-24-2.3.0.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilenetXTFalse2020-11-12-10-19-24-2.3.0.tflite"; sourceTree = "<group>"; };
 		4358BFE024738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
 		4358BFE424738DA2008B4656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				4315E6B724A609D900B81FC3 /* Keypoint.swift */,
 				4315E6B824A609D900B81FC3 /* BodyPart.swift */,
 				4315E6B924A609D900B81FC3 /* Line.swift */,
+				435012AE255BC239007382F3 /* Shape.swift */,
 			);
 			name = CustomObjects;
 			path = HKUITLTD_PoseEstim_Framework/CustomObjects;
@@ -358,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
+				435012BC255CEBC2007382F3 /* mobilenetXTFalse2020-11-12-10-19-24-2.3.0.tflite */,
 				4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
 			);
 			path = Model;
@@ -467,6 +473,7 @@
 				4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */,
 				4358C021247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
 				4358C00124738FC9008B4656 /* README.md in Resources */,
+				435012BD255CEBC2007382F3 /* mobilenetXTFalse2020-11-12-10-19-24-2.3.0.tflite in Resources */,
 				4358C00024738FC9008B4656 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +535,7 @@
 				4358C00424738FC9008B4656 /* Tensor.swift in Sources */,
 				4358C00224738FC9008B4656 /* QuantizationParameters.swift in Sources */,
 				43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */,
+				435012AF255BC239007382F3 /* Shape.swift in Sources */,
 				4616D73224F3715000992513 /* Bhujangasana.swift in Sources */,
 				4358C00324738FC9008B4656 /* Model.swift in Sources */,
 				4315E6C024A609D900B81FC3 /* Line.swift in Sources */,
@@ -685,6 +693,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HKUITLTD.HKUITLTD-PoseEstim-Framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,6 +726,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HKUITLTD.HKUITLTD-PoseEstim-Framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

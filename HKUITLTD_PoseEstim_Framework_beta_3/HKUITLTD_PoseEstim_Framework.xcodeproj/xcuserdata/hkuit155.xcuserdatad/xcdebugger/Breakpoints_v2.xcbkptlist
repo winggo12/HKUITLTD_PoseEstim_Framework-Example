@@ -14,8 +14,13 @@
             filePath = "HKUITLTD_PoseEstim_Framework/Camera Feed/CameraFeedManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< Updated upstream
             startingLineNumber = "101"
             endingLineNumber = "101"
+=======
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+>>>>>>> Stashed changes
             landmarkName = "stopSession()"
             landmarkType = "7">
          </BreakpointContent>
