@@ -11,7 +11,7 @@ import Foundation
 
 class FeedbackUtilities {
 
-    public func getAngle(_ center_coord: Array<Double>, _ coord1: Array<Double>, _ coord2: Array<Double>) -> Double{
+    static public func getAngle(_ center_coord: Array<Double>, _ coord1: Array<Double>, _ coord2: Array<Double>) -> Double{
 
         let center_dis = cal_dis(coor1: coord1, coor2: coord2)
         let dis1 = cal_dis(coor1: center_coord, coor2: coord2)
@@ -23,7 +23,7 @@ class FeedbackUtilities {
     }
 
 
-    public func cal_angle(length_center: Double, length1: Double, length2: Double) -> Double{
+    static public func cal_angle(length_center: Double, length1: Double, length2: Double) -> Double{
         let out = (pow(length1, 2) + pow(length2, 2) - pow(length_center, 2))/(2 * length1 * length2)
         do{
             let result = acos(out) * (180/Double.pi)
@@ -37,7 +37,7 @@ class FeedbackUtilities {
 
 
 
-    public func cal_dis(coor1: Array<Double>, coor2: Array<Double>) -> Double {
+    static public func cal_dis(coor1: Array<Double>, coor2: Array<Double>) -> Double {
 
         let out = pow(coor1[0]-coor2[0],2) + pow(coor1[1]-coor2[1],2)
         return sqrt(out)
@@ -45,7 +45,7 @@ class FeedbackUtilities {
     }
 
 
-    func comment(_ score: Double)-> String{
+    static func comment(_ score: Double)-> String{
         if(score < 79.0){
             return " is not ideal"
         }else if(score > 81.0){
@@ -55,7 +55,7 @@ class FeedbackUtilities {
         }
     }
 
-    func straightnessScore(_ angle:Double)-> Double{
+    static func straightnessScore(_ angle:Double)-> Double{
         if(angle > 179){
             return 100.0
         }else if(angle > 150){
@@ -69,7 +69,7 @@ class FeedbackUtilities {
         }
     }
 
-    func rightAngleScore(_ angle:Double)-> Double{
+    static func rightAngleScore(_ angle:Double)-> Double{
         if(abs(angle - 90) < 5){
             return 100.0
         }else if(abs(angle - 90) < 10){
@@ -84,7 +84,7 @@ class FeedbackUtilities {
 
     }
 
-    func angleToScore(_ angle: Double, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func angleToScore(_ angle: Double, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         if(excat) {
             if(abs(angle - fullMarkAngle) < 2){
                 return 100.0
@@ -122,7 +122,7 @@ class FeedbackUtilities {
         }
     }
     
-    func disToScore(_ dis: Double, _ fullMarkDistance: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func disToScore(_ dis: Double, _ fullMarkDistance: Double, _ step: Double, _ excat:Bool)-> Double{
         if(excat) {
             if(abs(dis - fullMarkDistance) < 2){
                 return 100.0
@@ -162,7 +162,7 @@ class FeedbackUtilities {
 
 
     /** analyze different parts of body and give a score */
-    func left_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func left_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_knee = result[9]
         let left_hip = result[7]
         let left_ankle = result[11]
@@ -171,11 +171,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func left_leg_angle(_ result:Array<Array<Double>>)-> Double{
+    static func left_leg_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[9], result[7], result[13])
     }
     
-    func right_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func right_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let r_knee = result[10]
         let r_hip = result[8]
         let r_ankle = result[12]
@@ -183,11 +183,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func right_leg_angle(_ result:Array<Array<Double>>)-> Double{
+    static func right_leg_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[10], result[8], result[12])
     }
     
-    func left_arm(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func left_arm(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_elbow = result[3]
         let left_shoulder = result[1]
         let left_wrist = result[5]
@@ -196,11 +196,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func left_arm_angle(_ result:Array<Array<Double>>)-> Double{
+    static func left_arm_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[3], result[1], result[5])
     }
     
-    func right_arm(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func right_arm(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let r_elbow = result[4]
         let r_shoulder = result[2]
         let r_wrist = result[6]
@@ -209,18 +209,18 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func right_arm_angle(_ result:Array<Array<Double>>)-> Double{
+    static func right_arm_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[4], result[2], result[6])
     }
     
-    func waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_shoulder = result[2]
         let left_hip = result[8]
         let left_knee = result[10]
         let angle = getAngle(left_hip, left_shoulder, left_knee)
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
-    func left_shoulder(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func left_shoulder(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_shoulder = result[1]
         let left_hip = result[7]
         let left_elbow = result[3]
@@ -228,11 +228,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func left_shoulder_angle(_ result:Array<Array<Double>>)-> Double{
+    static func left_shoulder_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[1], result[7], result[3])
     }
     
-    func right_shoulder(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func right_shoulder(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let right_shoulder = result[2]
         let right_hip = result[8]
         let right_elbow = result[4]
@@ -240,11 +240,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func right_shoulder_angle(_ result:Array<Array<Double>>)-> Double{
+    static func right_shoulder_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[2], result[8], result[4])
     }
     
-    func left_waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func left_waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_shoulder = result[1]
         let left_hip = result[7]
         let left_knee = result[9]
@@ -252,11 +252,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func left_waist_angle(_ result:Array<Array<Double>>)-> Double{
+    static func left_waist_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[7], result[1], result[9])
     }
     
-    func right_waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func right_waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let right_shoulder = result[2]
         let right_hip = result[8]
         let right_knee = result[10]
@@ -264,11 +264,11 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func right_waist_angle(_ result:Array<Array<Double>>)-> Double{
+    static func right_waist_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[8], result[2], result[10])
     }
     
-    func right_left_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+    static func right_left_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_hip = result[7]
         let left_knee = result[9]
         let right_hip = result[8]
@@ -286,7 +286,7 @@ class FeedbackUtilities {
         return angleToScore(angle, fullMarkAngle, step, excat)
     }
     
-    func decideDirection(_ resultArray:Array<Array<Double>>)-> Int{
+    static func decideDirection(_ resultArray:Array<Array<Double>>)-> Int{
         let left_wrist = resultArray[5]
         let right_wrist = resultArray[6]
         if(left_wrist[1] < right_wrist[1]){
@@ -296,10 +296,10 @@ class FeedbackUtilities {
         }
     }
     
-    func movePoint(_ point:Array<Double>, _ diffX: Double, _ diffY: Double)-> Array<Double>{
+    static func movePoint(_ point:Array<Double>, _ diffX: Double, _ diffY: Double)-> Array<Double>{
         return[point[0]+diffX, point[1]+diffY]
     }
-    func moveLine(_ point1:Array<Double>, _ point2:Array<Double>, _ diffX: Double, _ diffY: Double)-> Array<Array<Double>>{
+    static func moveLine(_ point1:Array<Double>, _ point2:Array<Double>, _ diffX: Double, _ diffY: Double)-> Array<Array<Double>>{
         let newPt1 = movePoint(point1, diffX, diffY)
         let newPt2 = movePoint(point2, diffX, diffY)
         return [newPt1, newPt2]

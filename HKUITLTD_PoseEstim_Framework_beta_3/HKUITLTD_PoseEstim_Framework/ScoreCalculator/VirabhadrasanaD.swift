@@ -8,21 +8,8 @@
 
 import Foundation
 import os
-class VirabhadrasanaD {
-
-    private let utilities: FeedbackUtilities = FeedbackUtilities()
-    private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
+class VirabhadrasanaD: YogaBase {
     
-    /** output */
-    private var comment: Array<String>? = nil
-    private var score: Double? = nil
-    private var detailedscore: Array<Double>? = nil
-    private var colorbit: Array<Character>? = nil
-    
-    /** input */
-    private var result: Result? = nil
-    private var resultArray: Array<Array<Double>>? = nil
-
     /** constant */
     private var leg_ratio: Double = 0.9
     private var shoulder_ratio: Double = 0.1
@@ -41,52 +28,45 @@ class VirabhadrasanaD {
     /** constructor */
     
     init(result: Result) {
+        super.init()
         self.result = result
         self.resultArray = result.classToArray()
         calculateScore()
         makeComment()
     }
-
-    /** getter */
-    func getScore()-> Double{ return score! }
-    func getComment()-> Array<String>{return comment!}
-    func getResult()-> Result{ return result!}
-    func getDetailedScore()-> Array<Double>{return detailedscore!}
-    func getColorBit()->Array<Character>{return colorbit!}
     
     /** private method */
     private func makeComment(){
         comment = Array<String>()
-        comment!.append("$waist_score, The Posture of the Waist " + utilities.comment(waist_score))
-        comment!.append("$shoulder_score, The Posture of the Arms " + utilities.comment(shoulder_score))
-
+        comment!.append("$waist_score, The Posture of the Waist " + FeedbackUtilities.comment(waist_score))
+        comment!.append("$shoulder_score, The Posture of the Arms " + FeedbackUtilities.comment(shoulder_score))
     }
 
     private func calculateScore(){
         
-        if ( utilities.left_leg_angle(resultArray!) > utilities.right_leg_angle(resultArray!) )
+        if ( FeedbackUtilities.left_leg_angle(resultArray!) > FeedbackUtilities.right_leg_angle(resultArray!) )
         {
-            left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
-            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+            left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
+            right_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 20.0, true)
             
         }
         else
         {
-            left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
-            right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+            left_leg_score = FeedbackUtilities.left_leg(resultArray!, 90.0, 20.0, true)
+            right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
         }
         
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
-        left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, true)
-        right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
+        left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 180.0, 20.0, true)
+        right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20.0, true)
         shoulder_score = 0.5*(left_shoulder_score + right_shoulder_score)
         
-        let cb_ll:UInt = colorutilities.left_leg(score: left_leg_score)
-        let cb_rl:UInt = colorutilities.right_leg(score: right_leg_score)
+        let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
+        let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
         
-        let cb_ls:UInt = colorutilities.left_shoulder(score: left_shoulder_score)
-        let cb_rs:UInt = colorutilities.right_shoulder(score: right_shoulder_score)
+        let cb_ls:UInt = ColorFeedbackUtilities.left_shoulder(score: left_shoulder_score)
+        let cb_rs:UInt = ColorFeedbackUtilities.right_shoulder(score: right_shoulder_score)
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_ls | cb_rs
         let colorbitmergeString = String(colorbitmerge, radix: 2)
         let intForIndex = 1

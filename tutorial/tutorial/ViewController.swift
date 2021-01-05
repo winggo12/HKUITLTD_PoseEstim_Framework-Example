@@ -110,7 +110,7 @@ extension ViewController: CameraFeedManagerDelegate {
         }
         
         let (result, _) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
-        let userSelectedPose = Pose.VirabhadrasanaC // select any one pose you like
+        let userSelectedPose = Pose.Utkatasana // select any one pose you like
         let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
         let score = feedback.getScore()
         let comments = feedback.getComments()

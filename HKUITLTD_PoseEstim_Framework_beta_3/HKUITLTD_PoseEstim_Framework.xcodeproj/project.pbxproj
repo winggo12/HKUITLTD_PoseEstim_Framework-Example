@@ -61,6 +61,7 @@
 		4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */; };
 		4358C023247390F4008B4656 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C018247390F4008B4656 /* OverlayView.swift */; };
 		4358C029247394FE008B4656 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358C028247394FE008B4656 /* libc++.1.tbd */; };
+		4396A97125A463E0000ECD58 /* YogaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A97025A463E0000ECD58 /* YogaBase.swift */; };
 		43A62A6324A353EF00BDBD27 /* ModelAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */; };
 		43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB382224AD8BF700D17529 /* RunThisModel.swift */; };
 		43F14E9424AEE71D000C6059 /* DrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F14E9324AEE71D000C6059 /* DrawResult.swift */; };
@@ -145,6 +146,7 @@
 		4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
 		4358C018247390F4008B4656 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4358C028247394FE008B4656 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
+		4396A97025A463E0000ECD58 /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
 		43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
 		43BB382224AD8BF700D17529 /* RunThisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
 		43F14E9324AEE71D000C6059 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				4616D63824EE275B00992513 /* UtthitaHastaPadangusthasanaC.swift */,
 				4616D63A24EE287800992513 /* UtthitaParsvakonasana.swift */,
 				4616D61724EBF4B900992513 /* Vrkshasana.swift */,
+				4396A97025A463E0000ECD58 /* YogaBase.swift */,
 			);
 			path = ScoreCalculator;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				4616D63724EE25EE00992513 /* UtthitaHastaPadangusthasanaA.swift in Sources */,
 				4309A02025A3039500F630BF /* MarjarasanaB.swift in Sources */,
 				4309A01F25A3039500F630BF /* MarjarasanaC.swift in Sources */,
+				4396A97125A463E0000ECD58 /* YogaBase.swift in Sources */,
 				4358C01E247390F4008B4656 /* CVPixelBufferExtension.swift in Sources */,
 				4616D63324EE1D5C00992513 /* Tuladandasana.swift in Sources */,
 				4315E74224A616CE00B81FC3 /* DeviceType.swift in Sources */,

@@ -7,17 +7,7 @@
 //
 import Foundation
 
-public class ArdhaUttanasana {
-    
-    private let utilities: FeedbackUtilities = FeedbackUtilities()
-
-    /** output */
-    private var comment: Array<String>? = nil
-    private var score: Double? = nil
-    private var detailedscore: Array<Double>? = nil
-    /** input */
-    private var result: Result? = nil
-    private var resultArray: Array<Array<Double>>? = nil
+class ArdhaUttanasana: YogaBase {
 
     /** constant */
     private var leg_ratio: Double = 0.5
@@ -31,40 +21,47 @@ public class ArdhaUttanasana {
 
     /** constructor */
     init(result: Result) {
+        super.init()
         self.result = result
         resultArray = result.classToArray()
         calculateScore()
         makeComment()
     }
-
-    /** getter */
-    func getScore()-> Double { return self.score! }
-    func getComment()-> Array<String> { return self.comment! }
-    func getResult()-> Result { return self.result! }
-    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    
     /** private method */
     private func makeComment(){
         comment =  Array<String>()
-        comment!.append("The Hand-to-Ground Distance " + utilities.comment(hand_on_grd_score))
-        comment!.append("The angle between legs and floor " + utilities.comment(hand_on_grd_score))
-//        comment!.append("The Waist-to-Thigh Distance " + utilities.comment(waist_score))
-        comment!.append("The Straightness of the Legs " + utilities.comment(leg_score))
+        comment!.append("The Hand-to-Ground Distance " + FeedbackUtilities.comment(hand_on_grd_score))
+        comment!.append("The angle between legs and floor " + FeedbackUtilities.comment(hand_on_grd_score))
+//        comment!.append("The Waist-to-Thigh Distance " + FeedbackUtilities.comment(waist_score))
+        comment!.append("The Straightness of the Legs " + FeedbackUtilities.comment(leg_score))
 
     }
 
     private func calculateScore(){
 
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
         if(left_leg_score > right_leg_score){
             leg_score = left_leg_score
         }else{
             leg_score = right_leg_score
         }
 
-//        waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, false)
-
+//        waist_score = FeedbackUtilities.right_waist(resultArray!, 90.0, 20.0, false)
+        
         hand_on_grd_score = leg_floor_arm()
+        
+        let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
+        let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
+        
+        let colorbitmerge: UInt = cb_ll | cb_rl
+        let colorbitmergeString = String(colorbitmerge, radix: 2)
+        let intForIndex = 1
+        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        
+        colorbit = Array(colorbitmergeString.substring(from: index))
+        
         score = leg_ratio * leg_score + hand_on_grd_ratio *  hand_on_grd_score
         detailedscore = [hand_on_grd_score, hand_on_grd_score, leg_score]
 
@@ -109,10 +106,10 @@ public class ArdhaUttanasana {
         right_floot_pt[1] = resultArray![12][1]
 
         //find angle between leg and floor
-        let left_angle = utilities.getAngle(left_ankle, left_knee, left_floot_pt)
-        let right_angle = utilities.getAngle(right_ankle, right_knee, right_floot_pt)
-        let left_leg_floor_score = utilities.angleToScore(left_angle, 90.0, 10.0, false)
-        let right_leg_floor_score = utilities.angleToScore(right_angle, 90.0, 10.0, false)
+        let left_angle = FeedbackUtilities.getAngle(left_ankle, left_knee, left_floot_pt)
+        let right_angle = FeedbackUtilities.getAngle(right_ankle, right_knee, right_floot_pt)
+        let left_leg_floor_score = FeedbackUtilities.angleToScore(left_angle, 90.0, 10.0, false)
+        let right_leg_floor_score = FeedbackUtilities.angleToScore(right_angle, 90.0, 10.0, false)
         return 0.5 * (left_leg_floor_score + right_leg_floor_score)
     }
     
@@ -126,10 +123,10 @@ public class ArdhaUttanasana {
 
 
         //find angle between leg and floor
-        let left_angle = utilities.getAngle(left_ankle, left_knee, l_wrist)
-        let right_angle = utilities.getAngle(right_ankle, right_knee, r_wrist)
-        let left_leg_floor_score = utilities.angleToScore(left_angle, 90.0, 10.0, true)
-        let right_leg_floor_score = utilities.angleToScore(right_angle, 90.0, 10.0, true)
+        let left_angle = FeedbackUtilities.getAngle(left_ankle, left_knee, l_wrist)
+        let right_angle = FeedbackUtilities.getAngle(right_ankle, right_knee, r_wrist)
+        let left_leg_floor_score = FeedbackUtilities.angleToScore(left_angle, 90.0, 10.0, true)
+        let right_leg_floor_score = FeedbackUtilities.angleToScore(right_angle, 90.0, 10.0, true)
         return 0.5 * (left_leg_floor_score + right_leg_floor_score)
     }
 }

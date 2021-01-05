@@ -9,21 +9,8 @@
 import Foundation
 
 
-class Utkatasana {
+class Utkatasana: YogaBase {
     
-    private let utilities: FeedbackUtilities = FeedbackUtilities()
-    private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
-    
-    /** output */
-    private var comment: Array<String>? = nil
-    private var score: Double? = nil
-    private var detailedscore: Array<Double>? = nil
-    private var colorbit: Array<Character>? = nil
-    
-    /** input */
-    private var result: Result? = nil
-    private var resultArray: Array<Array<Double>>? = nil
-
     /** constant */
     private let body_ratio = 0.1
     private let time_ratio = 0.9
@@ -43,18 +30,12 @@ class Utkatasana {
     
     /** constructor */
     init(result: Result){
+        super.init()
         self.result = result
         resultArray = result.classToArray()
         calculateScore()
         makeComment()
     }
-
-    /** getter */
-    func getScore()-> Double { return self.score! }
-    func getComment()-> Array<String> { return self.comment! }
-    func getResult()-> Result { return self.result! }
-    func getDetailedScore()-> Array<Double>{return detailedscore!}
-    func getColorBit()->Array<Character>{return colorbit!}
     
     /** private method */
     private func calculateScore(){
@@ -69,27 +50,27 @@ class Utkatasana {
     private func makeComment(){
         comment = Array<String>()
         
-        comment!.append("Upperbody's posture  " + utilities.comment(body_score))
+        comment!.append("Upperbody's posture  " + FeedbackUtilities.comment(body_score))
         comment!.append("The time of standing: " + String(Double(timer_ns) / 1_000_000_000))
 
     }
     
     private func start_timing()
     {
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         let arm_score =  0.5*( left_arm_score + right_arm_score )
         
-        let left_shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20, true)
-        let right_shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 180.0, 20, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20, true)
         let shoulder_score = 0.5*( left_shoulder_score + right_shoulder_score )
         
-        let left_waist_score = utilities.left_waist(resultArray!, 180.0, 20, true)
-        let right_waist_score = utilities.right_waist(resultArray!, 180.0, 20, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90.0, 10, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90.0, 10, true)
         let waist_score = 0.5*( left_waist_score + right_waist_score)
         
-        let left_leg_score = utilities.left_leg(resultArray!, 90.0, 20, true)
-        let right_leg_score = utilities.right_leg(resultArray!, 90.0, 20, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 90.0, 20, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 20, true)
         let leg_score = 0.5*( left_leg_score + right_leg_score )
         
         let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
@@ -107,17 +88,17 @@ class Utkatasana {
                 isStartTiming = false
         }
         
-        let cb_ll:UInt = colorutilities.left_leg(score: left_leg_score)
-        let cb_rl:UInt = colorutilities.right_leg(score: right_leg_score)
+        let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
+        let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
         
-        let cb_la:UInt = colorutilities.left_arm(score: left_arm_score)
-        let cb_ra:UInt = colorutilities.right_arm(score: right_arm_score)
+        let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
+        let cb_ra:UInt = ColorFeedbackUtilities.right_arm(score: right_arm_score)
         
-        let cb_ls:UInt = colorutilities.left_shoulder(score: left_shoulder_score)
-        let cb_rs:UInt = colorutilities.right_shoulder(score: right_shoulder_score)
+        let cb_ls:UInt = ColorFeedbackUtilities.left_shoulder(score: left_shoulder_score)
+        let cb_rs:UInt = ColorFeedbackUtilities.right_shoulder(score: right_shoulder_score)
         
-        let cb_lw:UInt = colorutilities.left_waist(score: left_waist_score)
-        let cb_rw:UInt = colorutilities.right_waist(score: right_waist_score)
+        let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
+        let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_ls | cb_rs | cb_lw | cb_rw
         let colorbitmergeString = String(colorbitmerge, radix: 2)
