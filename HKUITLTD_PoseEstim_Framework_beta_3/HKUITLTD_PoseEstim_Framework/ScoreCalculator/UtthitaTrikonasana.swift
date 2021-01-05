@@ -34,6 +34,9 @@ class UtthitaTrikonasana {
     private var waist_score: Double = 0.0
     private var shoulder_score: Double = 0.0
     
+    private var left_waist_score: Double = 0.0
+    private var right_waist_score: Double = 0.0
+    
     /** unit = ns */
     private var start_time: UInt64 = 0
     private var timer_ns: UInt64 = 0
@@ -56,12 +59,20 @@ class UtthitaTrikonasana {
     
     /** private method */
     private func calculateScore(){
+
         let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
         let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
         let arm_score =  0.5*( left_arm_score + right_arm_score )
         
-        let left_waist_score = utilities.left_waist(resultArray!, 180.0, 20, true)
-        let right_waist_score = utilities.right_waist(resultArray!, 180.0, 20, true)
+        if (utilities.left_waist_angle(resultArray!) > utilities.right_waist_angle(resultArray!)) {
+            left_waist_score = utilities.left_waist(resultArray!, 120.0, 20, true)
+            right_waist_score = utilities.right_waist(resultArray!, 60.0, 20, true)
+        }
+        else {
+            left_waist_score = utilities.left_waist(resultArray!, 60.0, 20, true)
+            right_waist_score = utilities.right_waist(resultArray!, 120.0, 20, true)
+        }
+        
         let waist_score = [left_waist_score, right_waist_score].min()
         
         let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20, true)

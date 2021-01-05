@@ -110,21 +110,22 @@ extension ViewController: CameraFeedManagerDelegate {
         }
         
         let (result, _) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
-        let userSelectedPose = Pose.ParivrttaTrikonasana // select any one pose you like
+        let userSelectedPose = Pose.VirabhadrasanaC // select any one pose you like
         let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
         let score = feedback.getScore()
         let comments = feedback.getComments()
-        
+        let colorBit = feedback.getColorBit()
+            
         DispatchQueue.main.async {
             if result.score >= self.minScore {
                 self.pose.text = userSelectedPose.rawValue
                 self.score.text = String(score)
                 self.comment1.text = comments[0]
                 self.comment2.text = comments[1]
-                self.comment3.text = comments[2]
+//                self.comment3.text = comments[2]
                 
                 let position = self.cameraCapture.showCurrentInput()
-                self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: self.ll)
+                self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit)
             }
             else {
                 self.overlayview.clear()
