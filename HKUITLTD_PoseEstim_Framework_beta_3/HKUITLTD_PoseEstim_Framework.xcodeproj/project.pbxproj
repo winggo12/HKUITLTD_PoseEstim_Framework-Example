@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4308E61725A19F6B00B1EFD3 /* MarjarasanaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4308E61625A19F6B00B1EFD3 /* MarjarasanaC.swift */; };
+		4308E61925A1A2C800B1EFD3 /* MarjarasanaB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4308E61825A1A2C800B1EFD3 /* MarjarasanaB.swift */; };
+		4308E61F25A1A6FB00B1EFD3 /* UrdhvaMukhaSvanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4308E61E25A1A6FB00B1EFD3 /* UrdhvaMukhaSvanasana.swift */; };
 		4315E69224A5D82600B81FC3 /* Navasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E68424A5D82600B81FC3 /* Navasana.swift */; };
 		4315E69324A5D82600B81FC3 /* Ustrasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E68524A5D82600B81FC3 /* Ustrasana.swift */; };
 		4315E69724A5D82600B81FC3 /* ArdhaUttanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E68924A5D82600B81FC3 /* ArdhaUttanasana.swift */; };
@@ -21,6 +24,15 @@
 		4315E74024A616CE00B81FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73D24A616CE00B81FC3 /* Constants.swift */; };
 		4315E74124A616CE00B81FC3 /* tfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73E24A616CE00B81FC3 /* tfModel.swift */; };
 		4315E74224A616CE00B81FC3 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73F24A616CE00B81FC3 /* DeviceType.swift */; };
+		434C4A41259E04F300CE5E66 /* Padangushthasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A3E259E04F200CE5E66 /* Padangushthasana.swift */; };
+		434C4A43259E04F300CE5E66 /* Utkatasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A40259E04F300CE5E66 /* Utkatasana.swift */; };
+		434C4A45259F5B2000CE5E66 /* UtthitaPashvakonasanaB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A44259F5B2000CE5E66 /* UtthitaPashvakonasanaB.swift */; };
+		434C4A47259F681200CE5E66 /* VirabhadrasanaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A46259F681200CE5E66 /* VirabhadrasanaC.swift */; };
+		434C4A49259F6CD700CE5E66 /* UtthitaTrikonasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A48259F6CD700CE5E66 /* UtthitaTrikonasana.swift */; };
+		434C4A4B259F763E00CE5E66 /* VirabhadrasanaD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A4A259F763E00CE5E66 /* VirabhadrasanaD.swift */; };
+		434C4A4D259F79E000CE5E66 /* VirabhadrasanaA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A4C259F79E000CE5E66 /* VirabhadrasanaA.swift */; };
+		434C4A4F259F7A2700CE5E66 /* VirabhadrasanaB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A4E259F7A2700CE5E66 /* VirabhadrasanaB.swift */; };
+		434C4A51259F7DFA00CE5E66 /* UtthitaParsvakonasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C4A50259F7DF900CE5E66 /* UtthitaParsvakonasana.swift */; };
 		4358BFE524738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4358BFEE24738FA1008B4656 /* TensorFlowLiteC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358BFED24738FA1008B4656 /* TensorFlowLiteC.framework */; };
 		4358C00024738FC9008B4656 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4358BFF024738FC9008B4656 /* LICENSE */; };
@@ -43,6 +55,14 @@
 		4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */; };
 		4358C023247390F4008B4656 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C018247390F4008B4656 /* OverlayView.swift */; };
 		4358C029247394FE008B4656 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358C028247394FE008B4656 /* libc++.1.tbd */; };
+		435A5D0525A2BB3F00AE0237 /* Balasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D0425A2BB3F00AE0237 /* Balasana.swift */; };
+		435A5D0725A2CED200AE0237 /* ColorbitUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D0625A2CED200AE0237 /* ColorbitUtilities.swift */; };
+		435A5D0925A2F7EB00AE0237 /* PhalakasanaB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D0825A2F7EB00AE0237 /* PhalakasanaB.swift */; };
+		435A5D0B25A3046800AE0237 /* PhalakasanaA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D0A25A3046800AE0237 /* PhalakasanaA.swift */; };
+		435A5D0D25A30C9000AE0237 /* ArdhaVasisthasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D0C25A30C9000AE0237 /* ArdhaVasisthasana.swift */; };
+		435A5D0F25A321A500AE0237 /* ArdhaPurvattanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D0E25A321A500AE0237 /* ArdhaPurvattanasana.swift */; };
+		435A5D1225A42E1D00AE0237 /* Purvattanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D1125A42E1D00AE0237 /* Purvattanasana.swift */; };
+		435A5D1425A4301700AE0237 /* SetuBandhasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A5D1325A4301700AE0237 /* SetuBandhasana.swift */; };
 		43A62A6324A353EF00BDBD27 /* ModelAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */; };
 		43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB382224AD8BF700D17529 /* RunThisModel.swift */; };
 		43F14E9424AEE71D000C6059 /* DrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F14E9324AEE71D000C6059 /* DrawResult.swift */; };
@@ -64,13 +84,15 @@
 		4616D63524EE1FE200992513 /* UbhayaPadangushtasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D63424EE1FE200992513 /* UbhayaPadangushtasana.swift */; };
 		4616D63724EE25EE00992513 /* UtthitaHastaPadangusthasanaA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D63624EE25EE00992513 /* UtthitaHastaPadangusthasanaA.swift */; };
 		4616D63924EE275B00992513 /* UtthitaHastaPadangusthasanaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D63824EE275B00992513 /* UtthitaHastaPadangusthasanaC.swift */; };
-		4616D63B24EE287800992513 /* UtthitaParsvakonasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D63A24EE287800992513 /* UtthitaParsvakonasana.swift */; };
 		4616D72C24F36E6300992513 /* BadhaKonasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D72A24F36E6300992513 /* BadhaKonasana.swift */; };
 		4616D73224F3715000992513 /* Bhujangasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D73124F3715000992513 /* Bhujangasana.swift */; };
 		4616D7CD24F62A9F00992513 /* GiveFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4308E61625A19F6B00B1EFD3 /* MarjarasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaC.swift; sourceTree = "<group>"; };
+		4308E61825A1A2C800B1EFD3 /* MarjarasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaB.swift; sourceTree = "<group>"; };
+		4308E61E25A1A6FB00B1EFD3 /* UrdhvaMukhaSvanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrdhvaMukhaSvanasana.swift; sourceTree = "<group>"; };
 		4315E68424A5D82600B81FC3 /* Navasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navasana.swift; sourceTree = "<group>"; };
 		4315E68524A5D82600B81FC3 /* Ustrasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ustrasana.swift; sourceTree = "<group>"; };
 		4315E68924A5D82600B81FC3 /* ArdhaUttanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasana.swift; sourceTree = "<group>"; };
@@ -85,6 +107,15 @@
 		4315E73D24A616CE00B81FC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4315E73E24A616CE00B81FC3 /* tfModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
 		4315E73F24A616CE00B81FC3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		434C4A3E259E04F200CE5E66 /* Padangushthasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Padangushthasana.swift; sourceTree = "<group>"; };
+		434C4A40259E04F300CE5E66 /* Utkatasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utkatasana.swift; sourceTree = "<group>"; };
+		434C4A44259F5B2000CE5E66 /* UtthitaPashvakonasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaPashvakonasanaB.swift; sourceTree = "<group>"; };
+		434C4A46259F681200CE5E66 /* VirabhadrasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaC.swift; sourceTree = "<group>"; };
+		434C4A48259F6CD700CE5E66 /* UtthitaTrikonasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtthitaTrikonasana.swift; sourceTree = "<group>"; };
+		434C4A4A259F763E00CE5E66 /* VirabhadrasanaD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaD.swift; sourceTree = "<group>"; };
+		434C4A4C259F79E000CE5E66 /* VirabhadrasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaA.swift; sourceTree = "<group>"; };
+		434C4A4E259F7A2700CE5E66 /* VirabhadrasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaB.swift; sourceTree = "<group>"; };
+		434C4A50259F7DF900CE5E66 /* UtthitaParsvakonasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasana.swift; sourceTree = "<group>"; };
 		4358BFE024738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
 		4358BFE424738DA2008B4656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +140,14 @@
 		4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
 		4358C018247390F4008B4656 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4358C028247394FE008B4656 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
+		435A5D0425A2BB3F00AE0237 /* Balasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balasana.swift; sourceTree = "<group>"; };
+		435A5D0625A2CED200AE0237 /* ColorbitUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorbitUtilities.swift; sourceTree = "<group>"; };
+		435A5D0825A2F7EB00AE0237 /* PhalakasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhalakasanaB.swift; sourceTree = "<group>"; };
+		435A5D0A25A3046800AE0237 /* PhalakasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhalakasanaA.swift; sourceTree = "<group>"; };
+		435A5D0C25A30C9000AE0237 /* ArdhaVasisthasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasana.swift; sourceTree = "<group>"; };
+		435A5D0E25A321A500AE0237 /* ArdhaPurvattanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaPurvattanasana.swift; sourceTree = "<group>"; };
+		435A5D1125A42E1D00AE0237 /* Purvattanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purvattanasana.swift; sourceTree = "<group>"; };
+		435A5D1325A4301700AE0237 /* SetuBandhasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuBandhasana.swift; sourceTree = "<group>"; };
 		43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
 		43BB382224AD8BF700D17529 /* RunThisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
 		43F14E9324AEE71D000C6059 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
@@ -130,7 +169,6 @@
 		4616D63424EE1FE200992513 /* UbhayaPadangushtasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbhayaPadangushtasana.swift; sourceTree = "<group>"; };
 		4616D63624EE25EE00992513 /* UtthitaHastaPadangusthasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaHastaPadangusthasanaA.swift; sourceTree = "<group>"; };
 		4616D63824EE275B00992513 /* UtthitaHastaPadangusthasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaHastaPadangusthasanaC.swift; sourceTree = "<group>"; };
-		4616D63A24EE287800992513 /* UtthitaParsvakonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasana.swift; sourceTree = "<group>"; };
 		4616D72A24F36E6300992513 /* BadhaKonasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadhaKonasana.swift; sourceTree = "<group>"; };
 		4616D73124F3715000992513 /* Bhujangasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bhujangasana.swift; sourceTree = "<group>"; };
 		4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveFeedBack.swift; sourceTree = "<group>"; };
@@ -160,6 +198,10 @@
 		4315E68324A5B8D900B81FC3 /* ScoreCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				434C4A50259F7DF900CE5E66 /* UtthitaParsvakonasana.swift */,
+				434C4A48259F6CD700CE5E66 /* UtthitaTrikonasana.swift */,
+				434C4A3E259E04F200CE5E66 /* Padangushthasana.swift */,
+				434C4A40259E04F300CE5E66 /* Utkatasana.swift */,
 				43F919B225233FDA00B6A6E0 /* TPose.swift */,
 				4616D73124F3715000992513 /* Bhujangasana.swift */,
 				4616D62C24ED3C6F00992513 /* AdhoMukhaShivanasana.swift */,
@@ -182,8 +224,22 @@
 				4616D61E24EBF4BA00992513 /* UttanaPadasana.swift */,
 				4616D63624EE25EE00992513 /* UtthitaHastaPadangusthasanaA.swift */,
 				4616D63824EE275B00992513 /* UtthitaHastaPadangusthasanaC.swift */,
-				4616D63A24EE287800992513 /* UtthitaParsvakonasana.swift */,
 				4616D61724EBF4B900992513 /* Vrkshasana.swift */,
+				434C4A44259F5B2000CE5E66 /* UtthitaPashvakonasanaB.swift */,
+				434C4A46259F681200CE5E66 /* VirabhadrasanaC.swift */,
+				434C4A4A259F763E00CE5E66 /* VirabhadrasanaD.swift */,
+				434C4A4C259F79E000CE5E66 /* VirabhadrasanaA.swift */,
+				434C4A4E259F7A2700CE5E66 /* VirabhadrasanaB.swift */,
+				4308E61625A19F6B00B1EFD3 /* MarjarasanaC.swift */,
+				4308E61825A1A2C800B1EFD3 /* MarjarasanaB.swift */,
+				4308E61E25A1A6FB00B1EFD3 /* UrdhvaMukhaSvanasana.swift */,
+				435A5D0425A2BB3F00AE0237 /* Balasana.swift */,
+				435A5D0825A2F7EB00AE0237 /* PhalakasanaB.swift */,
+				435A5D0A25A3046800AE0237 /* PhalakasanaA.swift */,
+				435A5D0C25A30C9000AE0237 /* ArdhaVasisthasana.swift */,
+				435A5D0E25A321A500AE0237 /* ArdhaPurvattanasana.swift */,
+				435A5D1125A42E1D00AE0237 /* Purvattanasana.swift */,
+				435A5D1325A4301700AE0237 /* SetuBandhasana.swift */,
 			);
 			path = ScoreCalculator;
 			sourceTree = "<group>";
@@ -208,6 +264,7 @@
 				4315E6C924A60E3300B81FC3 /* CommentOfPose.swift */,
 				43F14E9324AEE71D000C6059 /* DrawResult.swift */,
 				4616D62A24EBF6D200992513 /* FeedbackUtilities.swift */,
+				435A5D0625A2CED200AE0237 /* ColorbitUtilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -480,17 +537,24 @@
 			files = (
 				4358C00924738FC9008B4656 /* Interpreter.swift in Sources */,
 				4616D63724EE25EE00992513 /* UtthitaHastaPadangusthasanaA.swift in Sources */,
+				435A5D0D25A30C9000AE0237 /* ArdhaVasisthasana.swift in Sources */,
 				4358C01E247390F4008B4656 /* CVPixelBufferExtension.swift in Sources */,
 				4616D63324EE1D5C00992513 /* Tuladandasana.swift in Sources */,
 				4315E74224A616CE00B81FC3 /* DeviceType.swift in Sources */,
 				4616D62824EBF4BA00992513 /* ParivrttaPashvakonasana.swift in Sources */,
 				4616D62924EBF4BA00992513 /* UttanaPadasana.swift in Sources */,
+				435A5D1225A42E1D00AE0237 /* Purvattanasana.swift in Sources */,
+				434C4A4B259F763E00CE5E66 /* VirabhadrasanaD.swift in Sources */,
 				4358C00824738FC9008B4656 /* CoreMLDelegate.swift in Sources */,
+				434C4A4F259F7A2700CE5E66 /* VirabhadrasanaB.swift in Sources */,
 				4616D62324EBF4BA00992513 /* Natarajasana.swift in Sources */,
 				4315E6BE24A609D900B81FC3 /* Keypoint.swift in Sources */,
 				4616D62B24EBF6D200992513 /* FeedbackUtilities.swift in Sources */,
 				4358C01D247390F4008B4656 /* CGSizeExtension.swift in Sources */,
+				4308E61725A19F6B00B1EFD3 /* MarjarasanaC.swift in Sources */,
 				4616D62224EBF4BA00992513 /* Vrkshasana.swift in Sources */,
+				4308E61925A1A2C800B1EFD3 /* MarjarasanaB.swift in Sources */,
+				435A5D0F25A321A500AE0237 /* ArdhaPurvattanasana.swift in Sources */,
 				43F919B325233FDA00B6A6E0 /* TPose.swift in Sources */,
 				4616D62724EBF4BA00992513 /* ParivrttaTrikonasana.swift in Sources */,
 				4358C00524738FC9008B4656 /* TensorFlowLite.swift in Sources */,
@@ -501,26 +565,35 @@
 				4315E6C824A60DA200B81FC3 /* Pose.swift in Sources */,
 				4616D62D24ED3C6F00992513 /* AdhoMukhaShivanasana.swift in Sources */,
 				4315E6BC24A609D900B81FC3 /* TimeResult.swift in Sources */,
+				435A5D0525A2BB3F00AE0237 /* Balasana.swift in Sources */,
 				4358C01C247390F4008B4656 /* CameraFeedManager.swift in Sources */,
 				43A62A6324A353EF00BDBD27 /* ModelAnalyzer.swift in Sources */,
 				4315E74024A616CE00B81FC3 /* Constants.swift in Sources */,
 				4616D63524EE1FE200992513 /* UbhayaPadangushtasana.swift in Sources */,
+				435A5D0925A2F7EB00AE0237 /* PhalakasanaB.swift in Sources */,
 				4358C00724738FC9008B4656 /* InterpreterError.swift in Sources */,
 				4315E6BF24A609D900B81FC3 /* BodyPart.swift in Sources */,
 				4616D62524EBF4BA00992513 /* CaturangaDandasana.swift in Sources */,
 				43F14E9424AEE71D000C6059 /* DrawResult.swift in Sources */,
+				434C4A4D259F79E000CE5E66 /* VirabhadrasanaA.swift in Sources */,
 				4616D63924EE275B00992513 /* UtthitaHastaPadangusthasanaC.swift in Sources */,
 				4358C01F247390F4008B4656 /* TFLiteExtension.swift in Sources */,
 				4358C023247390F4008B4656 /* OverlayView.swift in Sources */,
-				4616D63B24EE287800992513 /* UtthitaParsvakonasana.swift in Sources */,
+				434C4A45259F5B2000CE5E66 /* UtthitaPashvakonasanaB.swift in Sources */,
+				434C4A51259F7DFA00CE5E66 /* UtthitaParsvakonasana.swift in Sources */,
+				434C4A43259E04F300CE5E66 /* Utkatasana.swift in Sources */,
 				4315E74124A616CE00B81FC3 /* tfModel.swift in Sources */,
 				4358C00A24738FC9008B4656 /* MetalDelegate.swift in Sources */,
 				4616D61F24EBF4BA00992513 /* Dandasana.swift in Sources */,
 				4315E6C624A60D6700B81FC3 /* ResultToArray.swift in Sources */,
 				4315E69324A5D82600B81FC3 /* Ustrasana.swift in Sources */,
 				4616D62024EBF4BA00992513 /* UrdhvaDhanurasana.swift in Sources */,
+				435A5D0B25A3046800AE0237 /* PhalakasanaA.swift in Sources */,
+				4308E61F25A1A6FB00B1EFD3 /* UrdhvaMukhaSvanasana.swift in Sources */,
 				4616D7CD24F62A9F00992513 /* GiveFeedBack.swift in Sources */,
 				4358C01B247390F4008B4656 /* PreviewView.swift in Sources */,
+				435A5D1425A4301700AE0237 /* SetuBandhasana.swift in Sources */,
+				435A5D0725A2CED200AE0237 /* ColorbitUtilities.swift in Sources */,
 				4315E69224A5D82600B81FC3 /* Navasana.swift in Sources */,
 				4358C00624738FC9008B4656 /* Delegate.swift in Sources */,
 				4616D62F24ED486F00992513 /* ArdhaChandarasana.swift in Sources */,
@@ -528,9 +601,12 @@
 				4358C00424738FC9008B4656 /* Tensor.swift in Sources */,
 				4358C00224738FC9008B4656 /* QuantizationParameters.swift in Sources */,
 				43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */,
+				434C4A49259F6CD700CE5E66 /* UtthitaTrikonasana.swift in Sources */,
 				4616D73224F3715000992513 /* Bhujangasana.swift in Sources */,
+				434C4A47259F681200CE5E66 /* VirabhadrasanaC.swift in Sources */,
 				4358C00324738FC9008B4656 /* Model.swift in Sources */,
 				4315E6C024A609D900B81FC3 /* Line.swift in Sources */,
+				434C4A41259E04F300CE5E66 /* Padangushthasana.swift in Sources */,
 				4315E6C524A60D6700B81FC3 /* CalAngleDist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +740,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LFFWYBGK42;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -696,7 +772,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = LFFWYBGK42;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

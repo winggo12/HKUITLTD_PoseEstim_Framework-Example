@@ -23,8 +23,8 @@ class Utkatasana {
     private var resultArray: Array<Array<Double>>? = nil
 
     /** constant */
-    private let body_ratio = 0.1
-    private let time_ratio = 0.9
+    private let body_ratio = 0.4
+    private let time_ratio = 0.6
 
     /** score of body parts */
     private var leg_score: Double = 0.0
@@ -75,8 +75,8 @@ class Utkatasana {
     {
         let arm_score =  0.5*(utilities.left_arm(resultArray!, 180.0, 20.0, true) + utilities.right_arm(resultArray!, 180.0, 20.0, true))
         let shoulder_score = 0.5*(utilities.left_shoulder(resultArray!, 180.0, 20, true)+utilities.right_shoulder(resultArray!, 180.0, 20, true))
-        let waist_score = 0.5*(utilities.left_waist(resultArray!, 180.0, 20, true)+utilities.right_waist(resultArray!, 180.0, 20, true))
-        let leg_score = 0.5*(utilities.left_leg(resultArray!, 90.0, 20, true)+utilities.right_leg(resultArray!, 90.0, 20, true))
+        let waist_score = 0.5*(utilities.left_waist(resultArray!, 90.0, 10, true)+utilities.right_waist(resultArray!, 90.0, 10, true))
+        let leg_score = 0.5*(utilities.left_leg(resultArray!, 90.0, 10, true)+utilities.right_leg(resultArray!, 90.0, 10, true))
         
         let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
         

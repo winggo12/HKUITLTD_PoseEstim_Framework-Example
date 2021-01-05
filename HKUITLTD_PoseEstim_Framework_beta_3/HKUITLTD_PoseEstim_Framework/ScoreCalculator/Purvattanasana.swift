@@ -1,14 +1,14 @@
 //
-//  ArdhaPurvattanasana.swift
+//  Purvattanasana.swift
 //  HKUITLTD_PoseEstim_Framework
 //
-//  Created by hkuit155 on 4/1/2021.
+//  Created by hkuit155 on 5/1/2021.
 //  Copyright © 2021 Hong Kong Univisual Intelligent Technology Limited. All rights reserved.
 //
 
 import Foundation
 
-class ArdhaPurvattanasana{
+class Purvattanasana{
     
     private let utilities: FeedbackUtilities = FeedbackUtilities()
     private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
@@ -69,16 +69,16 @@ class ArdhaPurvattanasana{
 
     private func calculateScore(){
         
-        left_leg_score = utilities.left_leg(resultArray!, 90.0, 10.0, true)
-        right_leg_score = utilities.right_leg(resultArray!, 90.0, 10.0, true)
+        left_leg_score = utilities.left_leg(resultArray!, 180.0, 10.0, true)
+        right_leg_score = utilities.right_leg(resultArray!, 180.0, 10.0, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
         left_waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
         right_waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
         
-        left_shoulder_score = utilities.left_shoulder(resultArray!, 90.0, 10.0, true)
-        right_shoulder_score = utilities.right_shoulder(resultArray!, 90.0, 10.0, true)
+        left_shoulder_score = utilities.left_shoulder(resultArray!, 70.0, 10.0, true)
+        right_shoulder_score = utilities.right_shoulder(resultArray!, 70.0, 10.0, true)
         shoulder_score = 0.5*(left_shoulder_score + right_shoulder_score)
         
         left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
