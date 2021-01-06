@@ -34,7 +34,7 @@ class Navasana: YogaBase {
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = (left_arm_score + right_arm_score) * 0.5
 
-        waist_score =  FeedbackUtilities.right_waist(resultArray!, 90.0, 10.0, false)
+        waist_score = 0.5 * ( FeedbackUtilities.left_waist(resultArray!, 90.0, 10.0, false) + FeedbackUtilities.right_waist(resultArray!, 90.0, 10.0, false) )
 
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
         let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
@@ -49,9 +49,7 @@ class Navasana: YogaBase {
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: waist_score)
         
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_rw
-        let colorbitmergeString = String(colorbitmerge, radix: 2)
-        let intForIndex = 1
-        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         
         colorbit = Array(colorbitmergeString.substring(from: index))
         score = arm_ratio * arm_score + waist_ratio * waist_score + leg_ratio * leg_score

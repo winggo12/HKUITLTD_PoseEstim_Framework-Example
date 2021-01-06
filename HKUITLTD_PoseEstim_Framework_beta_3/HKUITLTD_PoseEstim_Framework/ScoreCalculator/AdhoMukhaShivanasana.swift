@@ -12,12 +12,15 @@ class AdhoMukhaShivanasana: YogaBase {
 
     /** constant */
     private let ratio = 1.0 / 3
-
+    private let arm_ratio = 0.1
+    private let shoulder_ratio = 0.2
+    private let waist_ratio = 0.6
+    private let leg_ratio = 0.1
     /** score of body parts */
     private var arm_score: Double = 0.0
-    private var leg_score: Double = 0.0
-    private var waist_score: Double = 0.0
     private var shoulder_score: Double = 0.0
+    private var waist_score: Double = 0.0
+    private var leg_score: Double = 0.0
     /** constructor */
     init(result: Result) {
         super.init()
@@ -31,7 +34,7 @@ class AdhoMukhaShivanasana: YogaBase {
     private func makeComment(){
         comment = Array<String>()
         comment!.append("$arm_score, The Straightness of the Arms " + FeedbackUtilities.comment(arm_score))
-        comment!.append("$arm_score, The Curvature of the Waist " + FeedbackUtilities.comment(waist_score))
+        comment!.append("$waist_score, The Curvature of the Waist " + FeedbackUtilities.comment(waist_score))
         comment!.append("$leg_score, The Distance between the Legs and the Hips " + FeedbackUtilities.comment(leg_score))
 
     }
@@ -67,11 +70,7 @@ class AdhoMukhaShivanasana: YogaBase {
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_lw | cb_rw | cb_ls | cb_rs
-        let colorbitmergeString = String(colorbitmerge, radix: 2)
-        let intForIndex = 1
-        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
-        
-        colorbit = Array(colorbitmergeString.substring(from: index))
+        colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         score = ratio * (arm_score + leg_score + waist_score)
         detailedscore = [arm_score, waist_score, leg_score]
         
