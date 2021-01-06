@@ -12,8 +12,8 @@ import Foundation
 class Utkatasana: YogaBase {
     
     /** constant */
-    private let body_ratio = 0.1
-    private let time_ratio = 0.9
+    private let body_ratio = 0.4
+    private let time_ratio = 0.6
 
     /** score of body parts */
     private var leg_score: Double = 0.0
@@ -57,6 +57,7 @@ class Utkatasana: YogaBase {
     
     private func start_timing()
     {
+
         let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         let arm_score =  0.5*( left_arm_score + right_arm_score )

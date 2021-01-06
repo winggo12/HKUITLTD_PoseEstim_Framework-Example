@@ -43,7 +43,20 @@ class FeedbackUtilities {
         return sqrt(out)
 
     }
+    
+    static public func cal_horizontal_dis(coor1: Array<Double>, coor2: Array<Double>) -> Double {
+        
+        let out = coor1[0]-coor2[0]
+        return out
 
+    }
+    
+    static public func cal_vertical_dis(coor1: Array<Double>, coor2: Array<Double>) -> Double {
+        
+        let out = coor1[1]-coor2[1]
+        return out
+
+    }
 
     static func comment(_ score: Double)-> String{
         if(score < 79.0){

@@ -3,4 +3,41 @@
    uuid = "1791BBAE-61AB-41FA-A2A2-8DE576BF4774"
    type = "1"
    version = "2.0">
+<<<<<<< HEAD
+=======
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C106BE7-48A8-4CDD-B15A-76E8AC02473F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HKUITLTD_PoseEstim_Framework/Camera Feed/CameraFeedManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "stopSession()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FEDECB8-3EB5-4A1F-BE24-8FE5DEAE042C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HKUITLTD_PoseEstim_Framework/PoseAnalyzer/GiveFeedBack.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "generateFeedback(user_input_result:user_input_pose:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+>>>>>>> origin/Luis
 </Bucket>

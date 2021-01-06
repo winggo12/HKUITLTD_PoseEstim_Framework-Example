@@ -12,8 +12,8 @@ import Foundation
 class Padangushthasana: YogaBase {
 
     /** constant */
-    private let body_ratio = 0.1
-    private let time_ratio = 0.9
+    private let body_ratio = 0.4
+    private let time_ratio = 0.6
 
     /** score of body parts */
     private var leg_score: Double = 0.0
