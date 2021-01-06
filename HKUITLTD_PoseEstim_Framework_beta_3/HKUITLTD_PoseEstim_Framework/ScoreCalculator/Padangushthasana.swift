@@ -101,11 +101,8 @@ class Padangushthasana: YogaBase {
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_ls | cb_rs | cb_lw | cb_rw
-        let colorbitmergeString = String(colorbitmerge, radix: 2)
-        let intForIndex = 1
-        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
         
-        colorbit = Array(colorbitmergeString.substring(from: index))
+        colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
     }
     
     private func cal_time_score(_ start_time: UInt64)-> Double{

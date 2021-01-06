@@ -13,7 +13,8 @@ public var current_posture = "navasana"
 //This is for simplifying the name of the yoga pose
 public enum Pose:String {
 
-    case ArdhaUttanasana = "Ardha Uttanasana"
+    case ArdhaUttanasanaLeft = "Ardha Uttanasana Left"
+    case ArdhaUttanasanaRight = "Ardha Uttanasana Right"
     case AdhoMukhaShivanasana = "Adho Mukha Shivanasana"
     case ArdhaChandarasana = "Ardha Chandarasana"
     
@@ -28,8 +29,10 @@ public enum Pose:String {
 
     case Halasana = "Halasana"
     
-    case MarjarasanaB = "MarjarasanaB"
-    case MarjarasanaC = "MarjarasanaC"
+    case MarjarasanaBLeft = "MarjarasanaB Left"
+    case MarjarasanaBRight = "MarjarasanaB Right"
+    case MarjarasanaCLeft = "MarjarasanaC Left"
+    case MarjarasanaCRight = "MarjarasanaC Right"
     
     case Natarajasana = "Natarajasana"
     case Navasana = "Navasana"
@@ -51,14 +54,21 @@ public enum Pose:String {
     case UtthitaHastaPadangusthasanaC = "Utthita Hasta Padangusthasana C"
     case UtthitaHastaPadangusthasanaA = "Utthita Hasta Padangusthasana A"
     case UrdhvaMukhaSvanasana = "Urdhva Mukha Svanasana"
-    case UtthitaParsvakonasana = "Utthita Parsvakonasana"
-    case UtthitaParsvakonasanaB = "Utthita Parsvakonasana B"
-    case UtthitaTrikonasana = "Utthita Trikonasana"
+    case UtthitaParsvakonasanaALeft = "Utthita Parsvakonasana A Left"
+    case UtthitaParsvakonasanaARight = "Utthita Parsvakonasana A Right"
+    case UtthitaParsvakonasanaBLeft = "Utthita Parsvakonasana B Left"
+    case UtthitaParsvakonasanaBRight = "Utthita Parsvakonasana B Right"
+    case UtthitaTrikonasanaLeft = "Utthita Trikonasana Left"
+    case UtthitaTrikonasanaRight = "Utthita Trikonasana Right"
     
-    case VirabhadrasanaA = "Virabhadrasana A"
-    case VirabhadrasanaB = "Virabhadrasana B"
-    case VirabhadrasanaC = "Virabhadrasana C"
-    case VirabhadrasanaD = "Virabhadrasana D"
+    case VirabhadrasanaALeft = "Virabhadrasana A Left"
+    case VirabhadrasanaARight = "Virabhadrasana A Right"
+    case VirabhadrasanaBLeft = "Virabhadrasana B Left"
+    case VirabhadrasanaBRight = "Virabhadrasana B Right"
+    case VirabhadrasanaCLeft = "Virabhadrasana C Left"
+    case VirabhadrasanaCRight = "Virabhadrasana C Right"
+    case VirabhadrasanaDLeft = "Virabhadrasana D Left"
+    case VirabhadrasanaDRight = "Virabhadrasana D Right"
     case Vrksasana = "Vrksasana"
     
     case TPose = "TPose"
