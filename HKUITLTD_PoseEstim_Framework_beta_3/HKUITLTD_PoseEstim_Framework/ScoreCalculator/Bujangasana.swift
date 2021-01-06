@@ -8,20 +8,7 @@
 
 import Foundation
 
-class Bujangasana{
-
-    private let utilities: FeedbackUtilities = FeedbackUtilities()
-    private let colorutilities: ColorFeedbackUtilities = ColorFeedbackUtilities()
-    
-    /** output */
-    private var comment: Array<String>? = nil
-    private var score: Double? = nil
-    private var detailedscore: Array<Double>? = nil
-    private var colorbit: Array<Character>? = nil
-    
-    /** input */
-    private var result: Result? = nil
-    private var resultArray: Array<Array<Double>>? = nil
+class Bujangasana: YogaBase{
 
     /** constant */
     private var arm_ratio: Double = 0.3
@@ -42,43 +29,37 @@ class Bujangasana{
     /** constructor */
     
     init(result: Result) {
+        super.init()
         self.result = result
         self.resultArray = result.classToArray()
         calculateScore()
         makeComment()
     }
 
-    /** getter */
-    func getScore()-> Double{ return score! }
-    func getComment()-> Array<String>{return comment!}
-    func getResult()-> Result{ return result!}
-    func getDetailedScore()-> Array<Double>{return detailedscore!}
-    func getColorBit()->Array<Character>{return colorbit!}
-    
     /** private method */
     private func makeComment(){
         comment = Array<String>()
-        comment!.append("$waist_score, The Posture of the Waist " + utilities.comment(waist_score))
-        comment!.append("$arm_score, The Posture of the Arms " + utilities.comment(arm_score))
+        comment!.append("$waist_score, The Posture of the Waist " + FeedbackUtilities.comment(waist_score))
+        comment!.append("$arm_score, The Posture of the Arms " + FeedbackUtilities.comment(arm_score))
 
     }
 
     private func calculateScore(){
         
 
-        left_arm_score = utilities.left_shoulder(resultArray!, 90.0, 20.0, true)
-        right_arm_score = utilities.right_shoulder(resultArray!, 90.0, 20.0, true)
+        left_arm_score = FeedbackUtilities.left_shoulder(resultArray!, 90.0, 20.0, true)
+        right_arm_score = FeedbackUtilities.right_shoulder(resultArray!, 90.0, 20.0, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
-        left_waist_score = utilities.left_waist(resultArray!, 100.0, 20.0, true)
-        right_waist_score = utilities.right_waist(resultArray!, 100.0, 20.0, true)
+        left_waist_score = FeedbackUtilities.left_waist(resultArray!, 100.0, 20.0, true)
+        right_waist_score = FeedbackUtilities.right_waist(resultArray!, 100.0, 20.0, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
         
-        let cb_la:UInt = colorutilities.left_arm(score: left_arm_score)
-        let cb_ra:UInt = colorutilities.right_arm(score: right_arm_score)
+        let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
+        let cb_ra:UInt = ColorFeedbackUtilities.right_arm(score: right_arm_score)
         
-        let cb_lw:UInt = colorutilities.left_waist(score: left_waist_score)
-        let cb_rw:UInt = colorutilities.right_waist(score: right_waist_score)
+        let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
+        let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
         let colorbitmerge: UInt = cb_la | cb_ra | cb_lw | cb_rw
         let colorbitmergeString = String(colorbitmerge, radix: 2)

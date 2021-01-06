@@ -37,6 +37,7 @@ public enum Pose:String {
     case Padangushthasana = "Padangushthasana"
     case ParivrttaPashvaKonasana = "Parivrtta Pashvakonasana"
     case ParivrttaTrikonasana = "Parivrtta Trikonasana"
+    case PhalakasanaB = "Phalakasana B"
     case PurnaShalabhasana = "Purna Shalabhasana"
 
     case Tuladandasana = "Tuladandasana"

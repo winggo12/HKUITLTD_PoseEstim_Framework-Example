@@ -110,7 +110,7 @@ extension ViewController: CameraFeedManagerDelegate {
         }
         
         let (result, _) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
-        let userSelectedPose = Pose.Utkatasana // select any one pose you like
+        let userSelectedPose = Pose.TPose // select any one pose you like
         let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
         let score = feedback.getScore()
         let comments = feedback.getComments()
@@ -121,7 +121,7 @@ extension ViewController: CameraFeedManagerDelegate {
                 self.pose.text = userSelectedPose.rawValue
                 self.score.text = String(score)
                 self.comment1.text = comments[0]
-                self.comment2.text = comments[1]
+//                self.comment2.text = comments[1]
 //                self.comment3.text = comments[2]
                 
                 let position = self.cameraCapture.showCurrentInput()

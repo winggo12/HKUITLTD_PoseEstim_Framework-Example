@@ -39,7 +39,7 @@ class Balasana: YogaBase{
 
     private func calculateScore(){
         
-        let leg_length = FeedbackUtilities.cal_dis(coor1: resultArray![7], coor2: resultArray![11])
+//        let leg_length = FeedbackUtilities.cal_dis(coor1: resultArray![7], coor2: resultArray![11])
         
         let hip_foot_dis = ( FeedbackUtilities.cal_dis(coor1: resultArray![7], coor2: resultArray![11]) + FeedbackUtilities.cal_dis(coor1: resultArray![8], coor2: resultArray![12]) )*0.5
         let chest_knee_dis = ( FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![9]) + FeedbackUtilities.cal_dis(coor1: resultArray![2], coor2: resultArray![10]) )*0.5
