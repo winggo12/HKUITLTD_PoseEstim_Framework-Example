@@ -172,7 +172,8 @@ class FeedbackUtilities {
     }
     
     func left_leg_angle(_ result:Array<Array<Double>>)-> Double{
-        return getAngle(result[9], result[7], result[13])
+//        return getAngle(result[9], result[7], result[13])
+        return getAngle(result[9], result[7], result[11])
     }
     
     func right_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{

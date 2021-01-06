@@ -12,6 +12,9 @@ import AVFoundation
 import os
 class ViewController: UIViewController {
     
+    var timingFlag: Bool?
+    var startTime: UInt64 = 0
+    
     @IBOutlet weak var overlayView: OverlayView!
     @IBOutlet weak var previewView: PreviewView!
     
@@ -86,6 +89,7 @@ class ViewController: UIViewController {
 
 
 extension ViewController: CameraFeedManagerDelegate {
+    
     func cameraFeedManagerDidEncounterSessionRunTimeError(_ manager: CameraFeedManager) {
         
     }
@@ -119,16 +123,24 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.TPose
+        let userselectedpose: Pose = Pose.Utkatasana
+
         if(givefeedback == nil){
             givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
+            
         }else{
-            givefeedback!.generateFeedback(user_input_result: result, user_input_pose: userselectedpose)
+            if (timingFlag == nil){
+                givefeedback!.generateFeedback(user_input_result: result, user_input_pose: userselectedpose)
+            }else{
+                givefeedback!.generateFeedback(user_input_result: result, user_input_pose: userselectedpose, startTiming: timingFlag!, startTime: self.startTime)
+            }
         }
 
         let score: Double = givefeedback!.getScore()
         let detailedscore: [Double] = givefeedback!.getDetailedScore()
         let comments: [String] = givefeedback!.getComments()
+        timingFlag = givefeedback!.getTimingFlag()
+        startTime = givefeedback!.getStartTime()
         
         DispatchQueue.main.async {
             if result.score < self.minimumScore {
@@ -140,8 +152,8 @@ extension ViewController: CameraFeedManagerDelegate {
             self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position)
 
         }
-        os_log("Pose: %s", userselectedpose.rawValue)
-        os_log("Score: %f", score)
+//        os_log("Pose: %s", userselectedpose.rawValue)
+//        os_log("Score: %f", score)
 //        os_log("Detailed Score: ")
 //        for s in detailedscore {
 //            os_log("%f",s)

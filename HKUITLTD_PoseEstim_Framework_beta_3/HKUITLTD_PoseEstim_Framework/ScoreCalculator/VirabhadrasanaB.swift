@@ -61,17 +61,24 @@ class VirabhadrasanaB {
 
     private func calculateScore(){
         
-        if ( utilities.left_leg_angle(resultArray!) > utilities.right_leg_angle(resultArray!) )
-        {
-            left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
-            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
-            
-        }
-        else
-        {
-            left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
-            right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
-        }
+//        if ( utilities.left_leg_angle(resultArray!) > utilities.right_leg_angle(resultArray!) )
+//        {
+//            left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+//            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+//
+//        }
+//        else
+//        {
+//            left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
+//            right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+//        }
+        
+        left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+        let left_leg_score2 = utilities.left_leg(resultArray!, 90.0, 20.0, true)
+        let right_leg_score2 = utilities.right_leg(resultArray!, 180.0, 20.0, true)
+        left_leg_score = max(left_leg_score, left_leg_score2)
+        right_leg_score = max(right_leg_score, right_leg_score2)
         
         leg_score = 0.5*(right_leg_score + left_leg_score)
         

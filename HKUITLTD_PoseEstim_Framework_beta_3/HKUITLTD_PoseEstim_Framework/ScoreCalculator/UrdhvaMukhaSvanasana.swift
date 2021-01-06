@@ -23,7 +23,8 @@ class UrdhvaMukhaSvanasana{
 
     /** constant */
     private var arm_ratio: Double = 0.1
-    private var waist_ratio: Double = 0.9
+    private var leg_ratio: Double = 0.1
+    private var waist_ratio: Double = 0.8
 
     /** score of body parts */
     private var shoulder_score: Double = 0.0
@@ -62,11 +63,9 @@ class UrdhvaMukhaSvanasana{
 
     private func calculateScore(){
         
-        left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
-        right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+        left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
-        
-        
         
         let left_arm_angle = utilities.getAngle(resultArray![6], resultArray![2], resultArray![12])
         let right_arm_angle = utilities.getAngle(resultArray![5], resultArray![1], resultArray![11])
@@ -74,12 +73,12 @@ class UrdhvaMukhaSvanasana{
         right_arm_score = utilities.angleToScore(right_arm_angle, 90, 10, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
-        left_waist_score = utilities.left_waist(resultArray!, 90.0, 20.0, true)
-        right_waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, true)
+        left_waist_score = utilities.left_waist(resultArray!, 140.0, 20.0, true)
+        right_waist_score = utilities.right_waist(resultArray!, 140.0, 20.0, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
         
-        score = arm_ratio*arm_score + waist_ratio*waist_score
-        detailedscore = [arm_score, waist_score]
+        score = leg_ratio*leg_score + arm_ratio*arm_score + waist_ratio*waist_score
+        detailedscore = [leg_score, arm_score, waist_score]
         
     }
 

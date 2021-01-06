@@ -53,14 +53,19 @@ class UtthitaTrikonasana {
     
     /** private method */
     private func calculateScore(){
-        let arm_score =  0.5*(utilities.left_arm(resultArray!, 180.0, 20.0, true) + utilities.right_arm(resultArray!, 180.0, 20.0, true))
-        var left_waist_score = utilities.left_waist(resultArray!, 180.0, 20, true)
+        arm_score =  0.5*(utilities.left_arm(resultArray!, 180.0, 20.0, true) + utilities.right_arm(resultArray!, 180.0, 20.0, true))
+        // to calculate scores in both orientations
+        var left_waist_score = utilities.left_waist(resultArray!, 90.0, 20, true)
         var right_waist_score = utilities.right_waist(resultArray!, 180.0, 20, true)
+        let left_waist_score2 = utilities.left_waist(resultArray!, 180.0, 20, true)
+        let right_waist_score2 = utilities.right_waist(resultArray!, 90.0, 20, true)
+        left_waist_score = max(left_waist_score, left_waist_score2)
+        right_waist_score = max(right_waist_score, right_waist_score2)
     
-        let waist_score = [left_waist_score, right_waist_score].min()
-        let leg_score = 0.5*(utilities.left_leg(resultArray!, 180.0, 20, true)+utilities.right_leg(resultArray!, 180.0, 20, true))
-        score = arm_ratio*arm_score + waist_ratio*waist_score! + leg_ratio*leg_score
-        detailedscore = [arm_score, waist_score!, leg_score]
+        waist_score = (left_waist_score + right_waist_score)/2
+        leg_score = 0.5*(utilities.left_leg(resultArray!, 180.0, 20, true)+utilities.right_leg(resultArray!, 180.0, 20, true))
+        score = arm_ratio*arm_score + waist_ratio*waist_score + leg_ratio*leg_score
+        detailedscore = [arm_score, waist_score, leg_score]
         
     }
     

@@ -62,12 +62,12 @@ class Bujangasana{
     private func calculateScore(){
         
 
-        left_arm_score = utilities.left_shoulder(resultArray!, 90.0, 20.0, true)
-        right_arm_score = utilities.right_shoulder(resultArray!, 90.0, 20.0, true)
+        left_arm_score = utilities.left_shoulder(resultArray!, 30.0, 5.0, true)
+        right_arm_score = utilities.right_shoulder(resultArray!, 30.0, 5.0, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
-        left_waist_score = utilities.left_waist(resultArray!, 100.0, 20.0, true)
-        right_waist_score = utilities.right_waist(resultArray!, 100.0, 20.0, true)
+        left_waist_score = utilities.left_waist(resultArray!, 150.0, 20.0, true)
+        right_waist_score = utilities.right_waist(resultArray!, 150.0, 20.0, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
         
         score = arm_ratio*arm_score + waist_ratio*waist_score

@@ -35,13 +35,15 @@ class Utkatasana {
     private var time_score: Double = 0.0
     
     /** unit = ns */
-    private var start_time: UInt64 = 0
+    private var start_time: UInt64
     private var timer_ns: UInt64 = 0
-    private var isStartTiming: Bool = false
+    private var isStartTiming: Bool
     
     /** constructor */
-    init(result: Result){
+    init(result: Result, timingFlag: Bool, start_time: UInt64){
         self.result = result
+        self.start_time = start_time
+        isStartTiming = timingFlag
         resultArray = result.classToArray()
         calculateScore()
         makeComment()
@@ -52,6 +54,8 @@ class Utkatasana {
     func getComment()-> Array<String> { return self.comment! }
     func getResult()-> Result { return self.result! }
     func getDetailedScore()-> Array<Double>{return detailedscore!}
+    func getTimingFlag()-> Bool { return isStartTiming }
+    func getStartTime()-> UInt64 { return self.start_time }
     
     /** private method */
     private func calculateScore(){
@@ -73,25 +77,19 @@ class Utkatasana {
     
     private func start_timing()
     {
-        let arm_score =  0.5*(utilities.left_arm(resultArray!, 180.0, 20.0, true) + utilities.right_arm(resultArray!, 180.0, 20.0, true))
-        let shoulder_score = 0.5*(utilities.left_shoulder(resultArray!, 180.0, 20, true)+utilities.right_shoulder(resultArray!, 180.0, 20, true))
-        let waist_score = 0.5*(utilities.left_waist(resultArray!, 180.0, 20, true)+utilities.right_waist(resultArray!, 180.0, 20, true))
-        let leg_score = 0.5*(utilities.left_leg(resultArray!, 90.0, 20, true)+utilities.right_leg(resultArray!, 90.0, 20, true))
+        arm_score =  0.5*(utilities.left_arm(resultArray!, 180.0, 20.0, true) + utilities.right_arm(resultArray!, 180.0, 20.0, true))
+        shoulder_score = 0.5*(utilities.left_shoulder(resultArray!, 180.0, 20, true)+utilities.right_shoulder(resultArray!, 180.0, 20, true))
+        waist_score = 0.5*(utilities.left_waist(resultArray!, 90.0, 20, true)+utilities.right_waist(resultArray!, 90.0, 20, true))
+        leg_score = 0.5*(utilities.left_leg(resultArray!, 90.0, 20, true)+utilities.right_leg(resultArray!, 90.0, 20, true))
         
-        let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
+//        let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
+        body_score = (arm_score + shoulder_score + waist_score + leg_score)/4
         
-        if(body_score! > 80.0)
+        if(body_score > 80.0 && !isStartTiming)
         {
-            if(!isStartTiming)
-            {
-                start_time = 0
-                start_time = DispatchTime.now().uptimeNanoseconds
-                isStartTiming = true
-            }
-        }
-        else{
-                start_time = 0
-                isStartTiming = false
+            start_time = DispatchTime.now().uptimeNanoseconds
+            isStartTiming = true
+            print("start? -> \(isStartTiming)")
         }
     }
     
@@ -99,6 +97,7 @@ class Utkatasana {
         if(isStartTiming){
             timer_ns = DispatchTime.now().uptimeNanoseconds - start_time
             let timer_s = Double(timer_ns) / 1_000_000_000
+            print("timer: \(timer_s) s")
             if(timer_s <= 20){
                 return 70.0
             }else if(timer_s <= 40){
@@ -109,7 +108,6 @@ class Utkatasana {
                 return 100.0
             }
         }else{
-            timer_ns = 0
             return 0.0
         }
 

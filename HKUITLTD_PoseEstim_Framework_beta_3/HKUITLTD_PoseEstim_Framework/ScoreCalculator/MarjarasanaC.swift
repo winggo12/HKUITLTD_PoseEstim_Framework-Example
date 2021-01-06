@@ -69,12 +69,12 @@ class MarjarasanaC{
         right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
-        left_arm_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, true)
-        right_arm_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
+        left_arm_score = utilities.left_shoulder(resultArray!, 70.0, 20.0, true)
+        right_arm_score = utilities.right_shoulder(resultArray!, 70.0, 20.0, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
-        left_waist_score = utilities.left_waist(resultArray!, 90.0, 20.0, true)
-        right_waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, true)
+        left_waist_score = utilities.left_waist(resultArray!, 110.0, 20.0, true)
+        right_waist_score = utilities.right_waist(resultArray!, 110.0, 20.0, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
         
         score = leg_ratio*leg_score + arm_ratio*arm_score + waist_ratio*waist_score

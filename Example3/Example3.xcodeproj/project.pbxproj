@@ -123,6 +123,21 @@
 		4616D78624F3728000992513 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4616D78724F3728000992513 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
 		4616D78824F3728000992513 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
+		84160D8A25A3059E00348DA0 /* UtthitaPashvakonasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaPashvakonasanaB.swift; sourceTree = "<group>"; };
+		84160D8C25A3059E00348DA0 /* UtthitaTrikonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaTrikonasana.swift; sourceTree = "<group>"; };
+		84160D8D25A3059E00348DA0 /* VirabhadrasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaA.swift; sourceTree = "<group>"; };
+		84160D8E25A3059E00348DA0 /* VirabhadrasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaB.swift; sourceTree = "<group>"; };
+		84160D8F25A3059E00348DA0 /* MarjarasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaC.swift; sourceTree = "<group>"; };
+		84160D9025A3059E00348DA0 /* Bujangasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bujangasana.swift; sourceTree = "<group>"; };
+		84160D9125A3059F00348DA0 /* UrdhvaMukhaSvanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrdhvaMukhaSvanasana.swift; sourceTree = "<group>"; };
+		84160D9225A3059F00348DA0 /* TPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPose.swift; sourceTree = "<group>"; };
+		84160D9325A3059F00348DA0 /* MarjarasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaB.swift; sourceTree = "<group>"; };
+		84160D9425A3059F00348DA0 /* VirabhadrasanaD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaD.swift; sourceTree = "<group>"; };
+		84160D9525A3059F00348DA0 /* PhalakasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhalakasanaB.swift; sourceTree = "<group>"; };
+		84160D9625A3059F00348DA0 /* VirabhadrasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaC.swift; sourceTree = "<group>"; };
+		84160D9725A3059F00348DA0 /* Padangushthasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padangushthasana.swift; sourceTree = "<group>"; };
+		84160D9825A3059F00348DA0 /* Balasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balasana.swift; sourceTree = "<group>"; };
+		84160D9925A3059F00348DA0 /* Utkatasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utkatasana.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,24 +415,39 @@
 				4616D77024F3728000992513 /* ArdhaChandarasana.swift */,
 				4616D77C24F3728000992513 /* ArdhaUttanasana.swift */,
 				4616D77D24F3728000992513 /* BadhaKonasana.swift */,
+				84160D9825A3059F00348DA0 /* Balasana.swift */,
 				4616D77924F3728000992513 /* Bhujangasana.swift */,
+				84160D9025A3059E00348DA0 /* Bujangasana.swift */,
 				4616D77324F3728000992513 /* CaturangaDandasana.swift */,
 				4616D77624F3728000992513 /* Dandasana.swift */,
 				4616D76F24F3728000992513 /* Halasana.swift */,
+				84160D9325A3059F00348DA0 /* MarjarasanaB.swift */,
+				84160D8F25A3059E00348DA0 /* MarjarasanaC.swift */,
 				4616D77B24F3728000992513 /* Natarajasana.swift */,
 				4616D78124F3728000992513 /* Navasana.swift */,
+				84160D9725A3059F00348DA0 /* Padangushthasana.swift */,
 				4616D78224F3728000992513 /* ParivrttaPashvakonasana.swift */,
 				4616D77724F3728000992513 /* ParivrttaTrikonasana.swift */,
+				84160D9525A3059F00348DA0 /* PhalakasanaB.swift */,
 				4616D77A24F3728000992513 /* Pose.swift */,
 				4616D77124F3728000992513 /* PurnaShalabhasana.swift */,
+				84160D9225A3059F00348DA0 /* TPose.swift */,
 				4616D76E24F3728000992513 /* Tuladandasana.swift */,
 				4616D77224F3728000992513 /* UbhayaPadangushtasana.swift */,
 				4616D77424F3728000992513 /* UrdhvaDhanurasana.swift */,
+				84160D9125A3059F00348DA0 /* UrdhvaMukhaSvanasana.swift */,
 				4616D77524F3728000992513 /* Ustrasana.swift */,
+				84160D9925A3059F00348DA0 /* Utkatasana.swift */,
 				4616D78424F3728000992513 /* UttanaPadasana.swift */,
 				4616D78324F3728000992513 /* UtthitaHastaPadangusthasanaA.swift */,
 				4616D78024F3728000992513 /* UtthitaHastaPadangusthasanaC.swift */,
 				4616D77824F3728000992513 /* UtthitaParsvakonasana.swift */,
+				84160D8A25A3059E00348DA0 /* UtthitaPashvakonasanaB.swift */,
+				84160D8C25A3059E00348DA0 /* UtthitaTrikonasana.swift */,
+				84160D8D25A3059E00348DA0 /* VirabhadrasanaA.swift */,
+				84160D8E25A3059E00348DA0 /* VirabhadrasanaB.swift */,
+				84160D9625A3059F00348DA0 /* VirabhadrasanaC.swift */,
+				84160D9425A3059F00348DA0 /* VirabhadrasanaD.swift */,
 				4616D77F24F3728000992513 /* Vrkshasana.swift */,
 			);
 			path = ScoreCalculator;
@@ -486,7 +516,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Hong Kong Univisual Intelligent Technology Limited";
 				TargetAttributes = {
 					43CD545424B4881300AD95D7 = {
@@ -628,6 +658,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -688,6 +719,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -721,7 +753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 75J7TVGUG8;
+				DEVELOPMENT_TEAM = LFFWYBGK42;
 				INFOPLIST_FILE = Example3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -740,7 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 75J7TVGUG8;
+				DEVELOPMENT_TEAM = LFFWYBGK42;
 				INFOPLIST_FILE = Example3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -759,7 +791,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UVPG4K6BB;
+				DEVELOPMENT_TEAM = LFFWYBGK42;
 				INFOPLIST_FILE = Example3UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -779,7 +811,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6UVPG4K6BB;
+				DEVELOPMENT_TEAM = LFFWYBGK42;
 				INFOPLIST_FILE = Example3UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -67,8 +67,8 @@ class MarjarasanaB{
         right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
-        left_arm_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, true)
-        right_arm_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, true)
+        left_arm_score = utilities.left_shoulder(resultArray!, 90.0, 20.0, true)
+        right_arm_score = utilities.right_shoulder(resultArray!, 90.0, 20.0, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
         left_waist_score = utilities.left_waist(resultArray!, 90.0, 20.0, true)

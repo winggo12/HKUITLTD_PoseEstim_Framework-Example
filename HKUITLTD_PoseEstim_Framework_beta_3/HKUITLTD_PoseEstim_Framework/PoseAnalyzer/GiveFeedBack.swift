@@ -18,17 +18,24 @@ public class GiveFeedBack{
     private var detailedscore:[Double] = [Double]()
     private var comments: [String] = [String]()
     private var vrksasana: Vrksasana? = nil
-    public init(user_input_result :Result,user_input_pose :Pose){
+    private var flag: Bool
+    private var start_time: UInt64
+    
+
+    public init(user_input_result :Result,user_input_pose :Pose, flag : Bool = false, start: UInt64 = 0){
         self.result = user_input_result
         self.currentPose = user_input_pose
         self.score = 0
         self.comments = [String]()
-        self.generateFeedback(user_input_result :user_input_result, user_input_pose :user_input_pose)
+        self.flag = flag
+        self.start_time = start
+        self.generateFeedback(user_input_result :user_input_result, user_input_pose :user_input_pose, startTiming : self.flag, startTime: self.start_time)
     }
     
-    public func generateFeedback(user_input_result :Result,user_input_pose :Pose){
+    public func generateFeedback(user_input_result :Result,user_input_pose :Pose, startTiming: Bool = false, startTime: UInt64 = 0){
         self.result = user_input_result
         self.currentPose = user_input_pose
+        
         switch currentPose {
             case Pose.ArdhaUttanasana:
                 let YogaPose = ArdhaUttanasana(result: self.result)
@@ -169,11 +176,16 @@ public class GiveFeedBack{
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+                
             case Pose.Utkatasana:
-                let YogaPose = Utkatasana(result: self.result)
+                let YogaPose = Utkatasana(result: self.result, timingFlag: self.flag, start_time: startTime)
                 score = YogaPose.getScore()
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
+                self.flag = YogaPose.getTimingFlag()
+                self.start_time  = YogaPose.getStartTime()
+                
+                
             case Pose.UrdhvaMukhaSvanasana:
                 let YogaPose = UrdhvaMukhaSvanasana(result: self.result)
                 score = YogaPose.getScore()
@@ -227,10 +239,13 @@ public class GiveFeedBack{
                 comments = YogaPose.getComment()
                 detailedscore = YogaPose.getDetailedScore()
 
-            }
         }
+    }
 
-        public func getScore() -> Double {return self.score}
-        public func getComments() -> [String] {return self.comments}
-        public func getDetailedScore() -> [Double] {return self.detailedscore}
+    public func getScore() -> Double {return self.score}
+    public func getComments() -> [String] {return self.comments}
+    public func getDetailedScore() -> [Double] {return self.detailedscore}
+    public func getTimingFlag() -> Bool {return self.flag}
+    public func getStartTime() -> UInt64 { return self.start_time}
+    
 }

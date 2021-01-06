@@ -58,21 +58,31 @@ class VirabhadrasanaC {
 
     private func calculateScore(){
         
-        if  utilities.left_waist_angle(resultArray!) > utilities.right_waist_angle(resultArray!)
-        {
-            left_waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
-            right_waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, true)
-            left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
-            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
-            
-        }
-        else
-        {
-            left_waist_score = utilities.left_waist(resultArray!, 90.0, 20.0, true)
-            right_waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
-            left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
-            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
-        }
+//        if  utilities.left_waist_angle(resultArray!) > utilities.right_waist_angle(resultArray!)
+//        {
+//            left_waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
+//            right_waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, true)
+//            left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+//            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+//
+//        }
+//        else
+//        {
+//            left_waist_score = utilities.left_waist(resultArray!, 90.0, 20.0, true)
+//            right_waist_score = utilities.right_waist(resultArray!, 180.0, 20.0, true)
+//            left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
+//            right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
+//        }
+        
+        left_waist_score = utilities.left_waist(resultArray!, 180.0, 20.0, true)
+        right_waist_score = utilities.right_waist(resultArray!, 90.0, 20.0, true)
+        let left_waist_score2 = utilities.left_waist(resultArray!, 90.0, 20.0, true)
+        let right_waist_score2 = utilities.right_waist(resultArray!, 180.0, 20.0, true)
+        left_waist_score = max(left_waist_score, left_waist_score2)
+        right_waist_score = max(right_waist_score, right_waist_score2)
+        
+        left_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, true)
+        right_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, true)
         
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         leg_score = 0.5*(right_leg_score + left_leg_score)
