@@ -50,8 +50,6 @@ class Navasana: YogaBase {
         
         let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_rw
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
-        
-        colorbit = Array(colorbitmergeString.substring(from: index))
         score = arm_ratio * arm_score + waist_ratio * waist_score + leg_ratio * leg_score
         detailedscore = [arm_score, waist_score, leg_score]
     }
