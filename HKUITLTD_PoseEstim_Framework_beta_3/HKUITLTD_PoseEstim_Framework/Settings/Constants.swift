@@ -1,5 +1,4 @@
 
-
 public enum Constants {
   // MARK: - Constants related to the image processing
   public static let bgraPixel = (channels: 4, alphaComponent: 3, lastBgrComponent: 2)

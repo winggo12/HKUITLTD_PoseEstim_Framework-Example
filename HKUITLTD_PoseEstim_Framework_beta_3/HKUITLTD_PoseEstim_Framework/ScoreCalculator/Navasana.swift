@@ -7,18 +7,7 @@
 //
 import Foundation
 
-class Navasana {
-
-    private let utilities: FeedbackUtilities = FeedbackUtilities()
-
-    /** output */
-    private var comment : Array<String>? = nil
-    private var score : Double? = nil
-    private var detailedscore: Array<Double>? = nil
-
-    /** input */
-    private var result: Result? = nil
-    private var resultArray: Array<Array<Double>>? = nil
+class Navasana: YogaBase {
 
     /** constant */
     private let waist_ratio: Double = 0.33
@@ -32,31 +21,37 @@ class Navasana {
 
     /** constructor */
     init(result: Result){
+        super.init()
         self.result = result
         resultArray = result.classToArray()
         calculateScore()
         makeComment()
     }
 
-    /** getter */
-    func getScore()-> Double { return  self.score! }
-    func getDetailedScore()-> Array<Double>{return detailedscore!}
-    func getComment()-> Array<String> { return self.comment! }
-
-    func getResult()-> Result { return self.result! }
-
     /** private method */
     private func calculateScore(){
-        let left_arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, true)
-        let right_arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = (left_arm_score + right_arm_score) * 0.5
 
-        waist_score =  utilities.right_waist(resultArray!, 90.0, 10.0, false)
+        waist_score = 0.5 * ( FeedbackUtilities.left_waist(resultArray!, 90.0, 10.0, false) + FeedbackUtilities.right_waist(resultArray!, 90.0, 10.0, false) )
 
-        let right_leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, true)
-        let left_leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
         leg_score = 0.5 * (right_leg_score + left_leg_score)
 
+        let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
+        let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
+        
+        let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
+        let cb_ra:UInt = ColorFeedbackUtilities.right_arm(score: right_arm_score)
+        
+        let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: waist_score)
+        
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_rw
+        colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
+        
+        colorbit = Array(colorbitmergeString.substring(from: index))
         score = arm_ratio * arm_score + waist_ratio * waist_score + leg_ratio * leg_score
         detailedscore = [arm_score, waist_score, leg_score]
     }
@@ -65,9 +60,9 @@ class Navasana {
     private func makeComment(){
 
         comment =  Array<String>()
-        comment!.append("The Straightness of the Arms " + utilities.comment( arm_score))
-        comment!.append("The Waist-to-Thigh Distance " + utilities.comment( waist_score))
-        comment!.append("The Straightness of the Legs " + utilities.comment( leg_score))
+        comment!.append("The Straightness of the Arms " + FeedbackUtilities.comment( arm_score))
+        comment!.append("The Waist-to-Thigh Distance " + FeedbackUtilities.comment( waist_score))
+        comment!.append("The Straightness of the Legs " + FeedbackUtilities.comment( leg_score))
 
     }
 }

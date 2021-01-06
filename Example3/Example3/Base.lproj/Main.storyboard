@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQb-GG-seM" customClass="PreviewView" customModule="HKUITLTD_PoseEstim_Framework">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view opaque="NO" alpha="0.33000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wS-JDh" customClass="OverlayView" customModule="HKUITLTD_PoseEstim_Framework">
                                         <rect key="frame" x="34" y="162" width="700" height="700"/>
@@ -30,13 +29,21 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-7N-7Kx">
                                         <rect key="frame" x="183.66666666666666" y="698" width="47" height="30"/>
-                                        <state key="normal" title="Switch"/>
+                <state key="normal" title="Switch"/>
                                         <connections>
                                             <action selector="switchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9e-Tw-gDo"/>
                                         </connections>
                                     </button>
+                                    <view opaque="NO" alpha="0.33000000000000002" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wS-JDh" customClass="OverlayView" customModule="HKUITLTD_PoseEstim_Framework">
+                                        <rect key="frame" x="8" y="150" width="398" height="427"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="3JG-v0-j84"/>
+                                            <constraint firstAttribute="height" constant="400" id="Oae-X6-7fD"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="5I3-7N-7Kx" firstAttribute="centerX" secondItem="KQb-GG-seM" secondAttribute="centerX" id="36m-Sx-98p"/>
                                     <constraint firstItem="qgO-wS-JDh" firstAttribute="centerX" secondItem="KQb-GG-seM" secondAttribute="centerX" id="9Vr-ku-aXI"/>
@@ -45,8 +52,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KQb-GG-seM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8G5-v8-fmQ"/>
                             <constraint firstItem="KQb-GG-seM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EpW-P2-0ZR"/>
@@ -54,6 +60,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KQb-GG-seM" secondAttribute="trailing" id="YHd-BL-89v"/>
                             <constraint firstItem="KQb-GG-seM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hQz-F9-Y8n"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="overlayView" destination="qgO-wS-JDh" id="9fN-3K-DK4"/>
@@ -62,15 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="137.68115942028987"/>
+            <point key="canvasLocation" x="130.43478260869566" y="136.95652173913044"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

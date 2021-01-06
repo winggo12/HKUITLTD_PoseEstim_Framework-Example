@@ -9,18 +9,7 @@
 import Foundation
 
 
-class UtthitaParsvakonasana {
-    
-    private let utilities: FeedbackUtilities = FeedbackUtilities()
-
-    /** output */
-    private var comment: Array<String>? = nil
-    private var score: Double? = nil
-    private var detailedscore: Array<Double>? = nil
-
-    /** input */
-    private var result: Result? = nil
-    private var resultArray: Array<Array<Double>>? = nil
+class UtthitaParsvakonasana: YogaBase {
 
     /** constant */
     private let leg_ratio = 0.5
@@ -34,38 +23,58 @@ class UtthitaParsvakonasana {
     private var right_angle_leg_score: Double = 0.0
     private var shoulder_score: Double = 0.0
     private var direction: Int = -1
+    
+    private var colorbitmerge: UInt = 0
 
     /** constructor */
     init(result: Result){
+        super.init()
         self.result = result
         resultArray = result.classToArray()
         calculateScore()
         makeComment()
     }
-
-    /** getter */
-    func getScore()-> Double { return self.score! }
-    func getComment()-> Array<String> { return self.comment! }
-    func getResult()-> Result { return self.result! }
-    func getDetailedScore()-> Array<Double>{return detailedscore!}
+    
     /** private method */
     private func calculateScore(){
 
-        direction = utilities.decideDirection(resultArray!)
+        direction = FeedbackUtilities.decideDirection(resultArray!)
         switch(direction){
             case 6:
-                right_angle_leg_score = utilities.left_leg(resultArray!, 90.0, 20.0, false)
-                leg_score = utilities.right_leg(resultArray!, 180.0, 20.0, false)
-                arm_score = utilities.right_arm(resultArray!, 180.0, 20.0, false)
-                shoulder_score = utilities.right_shoulder(resultArray!, 180.0, 20.0, false)
-                waist_score =  utilities.right_waist(resultArray!, 180.0, 20.0, false)
+                right_angle_leg_score = FeedbackUtilities.left_leg(resultArray!, 90.0, 20.0, false)
+                leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, false)
+                arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, false)
+                shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20.0, false)
+                waist_score =  FeedbackUtilities.right_waist(resultArray!, 180.0, 20.0, false)
             default:
-                right_angle_leg_score = utilities.right_leg(resultArray!, 90.0, 20.0, false)
-                leg_score = utilities.left_leg(resultArray!, 180.0, 20.0, false)
-                arm_score = utilities.left_arm(resultArray!, 180.0, 20.0, false)
-                shoulder_score = utilities.left_shoulder(resultArray!, 180.0, 20.0, false)
-                waist_score =  utilities.left_waist(resultArray!, 180.0, 20.0, false)
+                right_angle_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 20.0, false)
+                leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, false)
+                arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, false)
+                shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 180.0, 20.0, false)
+                waist_score =  FeedbackUtilities.left_waist(resultArray!, 180.0, 20.0, false)
         }
+        
+        if (direction == 6) {
+            let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: right_angle_leg_score)
+            let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: leg_score)
+            let cb_a:UInt = ColorFeedbackUtilities.right_arm(score: arm_score)
+            let cb_s:UInt = ColorFeedbackUtilities.right_shoulder(score: shoulder_score)
+            let cb_w:UInt = ColorFeedbackUtilities.right_waist(score: waist_score)
+            colorbitmerge = cb_ll | cb_rl | cb_a | cb_s | cb_w
+        }
+        else {
+            let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: leg_score)
+            let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_angle_leg_score)
+            let cb_a:UInt = ColorFeedbackUtilities.left_arm(score: arm_score)
+            let cb_s:UInt = ColorFeedbackUtilities.left_shoulder(score: shoulder_score)
+            let cb_w:UInt = ColorFeedbackUtilities.left_waist(score: waist_score)
+            colorbitmerge = cb_ll | cb_rl | cb_a | cb_s | cb_w
+        }
+        let colorbitmergeString = String(colorbitmerge, radix: 2)
+        let intForIndex = 1
+        let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)
+        
+        colorbit = Array(colorbitmergeString.substring(from: index))
         score = arm_ratio / 2 * (leg_score + shoulder_score) + waist_ratio * waist_score + leg_ratio / 2 * (right_angle_leg_score + leg_score)
         detailedscore = [arm_score, waist_score, leg_score, right_angle_leg_score]
     }
@@ -83,12 +92,9 @@ class UtthitaParsvakonasana {
                 str = "left"
                 str1 = "right"
         }
-        comment!.append("The Straightness of the Arms " + utilities.comment(arm_score))
-        comment!.append("The Straightness from shoulder to knee " + utilities.comment(waist_score))
-        comment!.append("The Straightness of the " + str + " leg " + utilities.comment(leg_score))
-        comment!.append("The Curvature of the " + str1 + " leg " + utilities.comment(right_angle_leg_score))
+        comment!.append("The Straightness of the Arms " + FeedbackUtilities.comment(arm_score))
+        comment!.append("The Straightness from shoulder to knee " + FeedbackUtilities.comment(waist_score))
+        comment!.append("The Straightness of the " + str + " leg " + FeedbackUtilities.comment(leg_score))
+        comment!.append("The Curvature of the " + str1 + " leg " + FeedbackUtilities.comment(right_angle_leg_score))
     }
-
-
-
 }

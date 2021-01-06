@@ -4,7 +4,7 @@ import AVFoundation
 /// UIView for rendering inference output.
 public class OverlayView: UIView {
 
-    private var fail = [Int]()
+    private var fail = [Character]()
     public var dots = [CGPoint]()
     public var lines = [Line]()
     public var shapes = [CAShapeLayer]()
@@ -38,7 +38,7 @@ public class OverlayView: UIView {
         
         linePath.lineWidth = Traits.line.width
         if (index < 12 && fail.count > 0) {
-            if (fail[index] == 1) {
+            if (fail[index] == "1") {
                 Traits.line.color = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
             }
             else {
@@ -72,7 +72,7 @@ public class OverlayView: UIView {
         super.setNeedsDisplay()
     }
 
-    public func drawResult(result: Result, bounds: CGRect, position: AVCaptureDevice.Position, wrong: [Int]){
+    public func drawResult(result: Result, bounds: CGRect, position: AVCaptureDevice.Position, wrong: [Character]){
         
         let width = bounds.maxX
         
