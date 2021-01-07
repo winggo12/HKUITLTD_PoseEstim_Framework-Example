@@ -11,9 +11,9 @@ import Foundation
 class MarjarasanaCLeft: YogaBase{
 
     /** constant */
-    private let shoulder_ratio:Double = 0.0
-    private let waist_ratio:Double = 0.0
-    private let knee_ratio:Double = 0.0
+    private let shoulder_ratio:Double = 0.3
+    private let waist_ratio:Double = 0.3
+    private let knee_ratio:Double = 0.4
 
     /** score of body parts */
     private var shoulder_score:Double = 0.0

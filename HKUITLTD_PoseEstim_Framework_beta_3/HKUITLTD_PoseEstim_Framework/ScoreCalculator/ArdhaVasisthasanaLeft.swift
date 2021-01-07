@@ -12,7 +12,7 @@ class ArdhaVasisthasanaLeft: YogaBase{
 
     /** constant */
     private var waist_ratio: Double = 0.3
-    private var l_hand_shoulder_r_hand_ratio: Double = 0.4
+    private var l_hand_shoulder_r_hand_ratio: Double = 0.3
     private var l_shoulder_hand_foot_ratio: Double = 0.4
 
     /** score of body parts */

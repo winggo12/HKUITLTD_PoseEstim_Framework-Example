@@ -58,12 +58,12 @@ class Utkatasana: YogaBase {
     private func start_timing()
     {
 
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 160.0, 20.0, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 160.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         let arm_score =  0.5*( left_arm_score + right_arm_score )
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 180.0, 20, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 160.0, 20, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 160.0, 20, true)
         let shoulder_score = 0.5*( left_shoulder_score + right_shoulder_score )
         
         let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90.0, 10, true)

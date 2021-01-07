@@ -37,7 +37,7 @@ class UtthitaTrikonasanaLeft: YogaBase {
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         let arm_score =  0.5*( left_arm_score + right_arm_score )
 
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 60.0, 20, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 60.0, 10, true)
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 120.0, 20, true)
         let waist_score = [left_waist_score, right_waist_score].min()
         
