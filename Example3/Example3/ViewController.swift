@@ -129,6 +129,7 @@ extension ViewController: CameraFeedManagerDelegate {
         let score: Double = givefeedback!.getScore()
         let detailedscore: [Double] = givefeedback!.getDetailedScore()
         let comments: [String] = givefeedback!.getComments()
+        let colorbit = givefeedback!.getColorBit()
         
         DispatchQueue.main.async {
             if result.score < self.minimumScore {
@@ -137,7 +138,7 @@ extension ViewController: CameraFeedManagerDelegate {
             }
             
             let position = self.cameraCapture.showCurrentInput()
-            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: [1])
+            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: colorbit)
 
         }
         os_log("Pose: %s", userselectedpose.rawValue)
