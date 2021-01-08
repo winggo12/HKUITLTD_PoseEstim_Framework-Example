@@ -119,7 +119,7 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.MarjarasanaB
+        let userselectedpose: Pose = Pose.Balasana
         if(givefeedback == nil){
             givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
         }else{
@@ -137,7 +137,7 @@ extension ViewController: CameraFeedManagerDelegate {
             }
             
             let position = self.cameraCapture.showCurrentInput()
-            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: [1])
+            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: Array(repeating: "1", count: 12))
 
         }
         os_log("Pose: %s", userselectedpose.rawValue)
