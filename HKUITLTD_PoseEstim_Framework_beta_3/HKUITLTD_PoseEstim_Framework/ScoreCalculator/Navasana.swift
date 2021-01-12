@@ -7,12 +7,14 @@
 //
 import Foundation
 
+
+//船式
 class Navasana: YogaBase {
 
     /** constant */
-    private let waist_ratio: Double = 0.33
-    private let leg_ratio: Double = 0.33
-    private let arm_ratio: Double = 0.33
+    private let waist_ratio: Double = 0.6
+    private let leg_ratio: Double = 0.2
+    private let arm_ratio: Double = 0.2
 
     /** score of body parts */
     private var arm_score: Double = 0.0
@@ -34,7 +36,9 @@ class Navasana: YogaBase {
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = (left_arm_score + right_arm_score) * 0.5
 
-        waist_score = 0.5 * ( FeedbackUtilities.left_waist(resultArray!, 90.0, 10.0, false) + FeedbackUtilities.right_waist(resultArray!, 90.0, 10.0, false) )
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90.0, 20.0, false)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90.0, 20.0, false)
+        waist_score = 0.5 * (left_waist_score + right_waist_score)
 
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
         let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)

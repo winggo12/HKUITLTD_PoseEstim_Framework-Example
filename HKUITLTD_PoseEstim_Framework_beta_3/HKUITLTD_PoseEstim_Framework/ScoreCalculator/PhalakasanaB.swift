@@ -8,17 +8,18 @@
 
 import Foundation
 
+//侧板式B
 class PhalakasanaB: YogaBase{
 
         /** constant */
         private var shoulder_ratio: Double = 0.4
         private var leg_ratio: Double = 0.2
-        private var hand_elbow_foot_ratio: Double = 0.4
+        private var waist_ratio: Double = 0.4
 
         /** score of body parts */
         private var shoulder_score: Double = 0.0
         private var leg_score: Double = 0.0
-        private var hand_elbow_foot_score: Double = 0.0
+        private var waist_score: Double = 0.0
     
         /** constructor */
         
@@ -33,7 +34,7 @@ class PhalakasanaB: YogaBase{
         /** private method */
         private func makeComment(){
             comment = Array<String>()
-            comment!.append("$waist_score, Distance between Hand,Elbow,Foot and Ground " + FeedbackUtilities.comment(hand_elbow_foot_score))
+            comment!.append("$waist_score, The Posture of the Waist " + FeedbackUtilities.comment(waist_score))
             comment!.append("$shoulder_score, The Posture of the Shoulder " + FeedbackUtilities.comment(shoulder_score))
             comment!.append("$shoulder_score, The Posture of the Leg " + FeedbackUtilities.comment(leg_score))
 
@@ -45,15 +46,13 @@ class PhalakasanaB: YogaBase{
             let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
             leg_score = 0.5*(right_leg_score + left_leg_score)
             
-            let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90.0, 10.0, true)
-            let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90.0, 10.0, true)
+            let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90.0, 20.0, true)
+            let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90.0, 20.0, true)
             shoulder_score = 0.5*(left_shoulder_score + right_shoulder_score)
             
-            let left_hand_elbow_foot_angle = FeedbackUtilities.getAngle(resultArray![7], resultArray![3], resultArray![11])
-            let left_hand_elbow_foot_score = FeedbackUtilities.angleToScore(left_hand_elbow_foot_angle, 180, 20, true)
-            let right_hand_elbow_foot_angle = FeedbackUtilities.getAngle(resultArray![8], resultArray![4], resultArray![12])
-            let right_hand_elbow_foot_score = FeedbackUtilities.angleToScore(left_hand_elbow_foot_angle, 180, 20, true)
-            hand_elbow_foot_score = 0.5 * (left_hand_elbow_foot_score + right_hand_elbow_foot_score)
+            let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 20.0, true)
+            let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 20.0, true)
+            waist_score = 0.5 * (left_waist_score + right_waist_score)
             
             let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
             let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
@@ -64,8 +63,8 @@ class PhalakasanaB: YogaBase{
             let colorbitmerge: UInt = cb_ll | cb_rl | cb_ls | cb_rs
             colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
             
-            score = shoulder_ratio*shoulder_score + leg_ratio*leg_score + hand_elbow_foot_ratio*hand_elbow_foot_score
-            detailedscore = [shoulder_score, leg_score, hand_elbow_foot_score]
+            score = shoulder_ratio * shoulder_score + leg_ratio * leg_score + waist_ratio * waist_score
+            detailedscore = [shoulder_score, leg_score, waist_score]
             
         }
 

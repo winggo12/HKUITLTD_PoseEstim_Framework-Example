@@ -39,14 +39,14 @@ public class OverlayView: UIView {
         linePath.lineWidth = Traits.line.width
         if (index < 12 && fail.count > 0) {
             if (fail[index] == "1") {
-                Traits.line.color = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
+                Traits.line.color = UIColor(red: 1, green: 0, blue: 0, alpha: 1.0)
             }
             else {
-                Traits.line.color = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.6)
+                Traits.line.color = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1.0)
             }
         }
         else {
-            Traits.line.color = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.6)
+            Traits.line.color = UIColor(red: 0, green: 0.6, blue: 0, alpha: 1.0)
         }
         Traits.line.color.setStroke()
 

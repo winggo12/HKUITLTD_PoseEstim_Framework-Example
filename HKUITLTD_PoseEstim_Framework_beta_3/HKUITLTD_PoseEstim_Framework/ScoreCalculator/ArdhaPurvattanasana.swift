@@ -8,16 +8,15 @@
 
 import Foundation
 
+//半东方伸展式
 class ArdhaPurvattanasana: YogaBase{
 
     /** constant */
-    private var leg_ratio: Double = 0.3
-    private var waist_ratio: Double = 0.3
-    private var shoulder_ratio: Double = 0.3
-    private var arm_ratio: Double = 0.1
+    private var leg_ratio: Double = 0.4
+    private var waist_ratio: Double = 0.4
+    private var arm_ratio: Double = 0.2
 
     /** score of body parts */
-    private var shoulder_score: Double = 0.0
     private var arm_score: Double = 0.0
     private var leg_score: Double = 0.0
     private var waist_score: Double = 0.0
@@ -43,17 +42,13 @@ class ArdhaPurvattanasana: YogaBase{
 
     private func calculateScore(){
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 90.0, 10.0, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 10.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 90.0, 20.0, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 20.0, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
         let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 20.0, true)
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 20.0, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
-        
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90.0, 10.0, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90.0, 10.0, true)
-        shoulder_score = 0.5*(left_shoulder_score + right_shoulder_score)
         
         let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
@@ -65,17 +60,14 @@ class ArdhaPurvattanasana: YogaBase{
         let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
-        let cb_ls:UInt = ColorFeedbackUtilities.left_shoulder(score: left_shoulder_score)
-        let cb_rs:UInt = ColorFeedbackUtilities.right_shoulder(score: right_shoulder_score)
-        
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
         let cb_ra:UInt = ColorFeedbackUtilities.right_arm(score: right_arm_score)
         
-        let colorbitmerge: UInt =  cb_ll | cb_rl | cb_lw | cb_rw | cb_ls | cb_rs | cb_la | cb_ra
+        let colorbitmerge: UInt =  cb_ll | cb_rl | cb_lw | cb_rw | cb_la | cb_ra
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         
-        score = leg_ratio*leg_score + arm_ratio*arm_score + waist_ratio*waist_score + shoulder_ratio*shoulder_score
-        detailedscore = [leg_score, waist_score, shoulder_score, arm_score]
+        score = leg_ratio*leg_score + arm_ratio*arm_score + waist_ratio*waist_score
+        detailedscore = [arm_score, waist_score, leg_score]
         
     }
 

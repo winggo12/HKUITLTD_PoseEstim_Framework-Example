@@ -10,6 +10,7 @@ import UIKit
 import HKUITLTD_PoseEstim_Framework
 import AVFoundation
 import os
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
@@ -64,7 +65,6 @@ class ViewController: UIViewController {
         let screenHeight = screenSize.height
         let orientation: UIDeviceOrientation = UIDevice.current.orientation
 //        print(orientation)Label(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/, systemImage: /*@START_MENU_TOKEN@*/"42.circle"/*@END_MENU_TOKEN@*/)
-
         switch (orientation) {
         case .portrait:
             previewView.previewLayer.connection?.videoOrientation = .portrait
@@ -119,7 +119,7 @@ extension ViewController: CameraFeedManagerDelegate {
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.Balasana
+        let userselectedpose: Pose = Pose.VirabhadrasanaC
         if(givefeedback == nil){
             givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
         }else{
@@ -129,6 +129,7 @@ extension ViewController: CameraFeedManagerDelegate {
         let score: Double = givefeedback!.getScore()
         let detailedscore: [Double] = givefeedback!.getDetailedScore()
         let comments: [String] = givefeedback!.getComments()
+        let colorbit = givefeedback!.getColorBit()
         
         DispatchQueue.main.async {
             if result.score < self.minimumScore {
@@ -137,22 +138,21 @@ extension ViewController: CameraFeedManagerDelegate {
             }
             
             let position = self.cameraCapture.showCurrentInput()
-            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: Array(repeating: "1", count: 12))
+            self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: colorbit)
 
         }
-        os_log("Pose: %s", userselectedpose.rawValue)
+//        os_log("Pose: %s", userselectedpose.rawValue)
         os_log("Score: %f", score)
         os_log("Detailed Score: ")
         for s in detailedscore {
             os_log("%f",s)
         }
-        os_log("Comments: ")
-        for comment in comments {
-            os_log("%s", comment)
-        }
+//        os_log("Comments: ")
+//        for comment in comments {
+//            os_log("%s", comment)
+//        }
 
   }
     
 }
-
 

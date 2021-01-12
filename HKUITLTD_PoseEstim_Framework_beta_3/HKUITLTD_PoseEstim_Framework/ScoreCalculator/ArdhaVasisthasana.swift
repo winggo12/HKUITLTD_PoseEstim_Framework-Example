@@ -8,17 +8,18 @@
 
 import Foundation
 
-class ArdhaVasisthasanaLeft: YogaBase{
+//半瓦希斯塔式
+class ArdhaVasisthasana: YogaBase{
 
     /** constant */
     private var waist_ratio: Double = 0.3
-    private var l_hand_shoulder_r_hand_ratio: Double = 0.4
-    private var l_shoulder_hand_foot_ratio: Double = 0.4
+    private var l_hand_shoulder_r_hand_ratio: Double = 0.3
+    private var shoulder_hand_foot_ratio: Double = 0.4
 
     /** score of body parts */
     private var waist_score: Double = 0.0
     private var l_hand_shoulder_r_hand_score: Double = 0.0
-    private var l_shoulder_hand_foot_score: Double = 0.0
+    private var shoulder_hand_foot_score: Double = 0.0
 
     /** constructor */
     
@@ -34,7 +35,7 @@ class ArdhaVasisthasanaLeft: YogaBase{
     private func makeComment(){
         comment = Array<String>()
         comment!.append("$waist_score, Thw Posture of Waist  " + FeedbackUtilities.comment(waist_score))
-        comment!.append("$shoulder_score, The Angle of Leg,Arm and Shoulder  " + FeedbackUtilities.comment(l_shoulder_hand_foot_score))
+        comment!.append("$shoulder_score, The Angle of Leg,Arm and Shoulder  " + FeedbackUtilities.comment(shoulder_hand_foot_score))
         comment!.append("$arm_score, The Posture of Arm " + FeedbackUtilities.comment(l_hand_shoulder_r_hand_score))
     }
 
@@ -48,10 +49,13 @@ class ArdhaVasisthasanaLeft: YogaBase{
         l_hand_shoulder_r_hand_score = FeedbackUtilities.angleToScore(l_hand_shoulder_r_hand_angle, 180, 20, true)
         
         let l_shoulder_hand_foot_angle = FeedbackUtilities.getAngle(resultArray![5], resultArray![1], resultArray![11])
-        l_shoulder_hand_foot_score = FeedbackUtilities.angleToScore(l_shoulder_hand_foot_angle, 90, 10, true)
+        let l_shoulder_hand_foot_score = FeedbackUtilities.angleToScore(l_shoulder_hand_foot_angle, 90, 20, true)
+        let r_shoulder_hand_foot_angle = FeedbackUtilities.getAngle(resultArray![6], resultArray![2], resultArray![12])
+        let r_shoulder_hand_foot_score = FeedbackUtilities.angleToScore(r_shoulder_hand_foot_angle, 90, 20, true)
+        shoulder_hand_foot_score = max(l_shoulder_hand_foot_score, r_shoulder_hand_foot_score)
 
-        let cb_lh:UInt = ColorFeedbackUtilities.left_leg(score: l_hand_shoulder_r_hand_score)
-        let cb_rh:UInt = ColorFeedbackUtilities.right_leg(score: l_hand_shoulder_r_hand_score)
+        let cb_lh:UInt = ColorFeedbackUtilities.left_arm(score: l_hand_shoulder_r_hand_score)
+        let cb_rh:UInt = ColorFeedbackUtilities.right_arm(score: l_hand_shoulder_r_hand_score)
         
         let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
@@ -59,8 +63,8 @@ class ArdhaVasisthasanaLeft: YogaBase{
         let colorbitmerge: UInt = cb_lh | cb_rh | cb_lw | cb_rw
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         
-        score = waist_ratio*waist_score + l_shoulder_hand_foot_ratio*l_shoulder_hand_foot_score + l_hand_shoulder_r_hand_ratio*l_hand_shoulder_r_hand_score
-        detailedscore = [waist_score, l_shoulder_hand_foot_score, l_hand_shoulder_r_hand_score]
+        score = waist_ratio * waist_score + shoulder_hand_foot_ratio * shoulder_hand_foot_score + l_hand_shoulder_r_hand_ratio * l_hand_shoulder_r_hand_score
+        detailedscore = [waist_score, l_hand_shoulder_r_hand_score, shoulder_hand_foot_score]
         
     }
 

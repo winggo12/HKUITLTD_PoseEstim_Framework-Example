@@ -281,6 +281,24 @@ class FeedbackUtilities {
         return getAngle(result[8], result[2], result[10])
     }
     
+    
+    static func left_arm_ankle(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+        let left_wrist = result[5]
+        let left_elbow = result[3]
+        let left_ankle = result[11]
+        let angle = getAngle(left_elbow, left_wrist, left_ankle)
+        return angleToScore(angle, fullMarkAngle, step, excat)
+    }
+    
+    static func right_arm_ankle(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+        let right_wrist = result[6]
+        let right_elbow = result[4]
+        let right_ankle = result[12]
+        let angle = getAngle(right_elbow, right_wrist, right_ankle)
+        return angleToScore(angle, fullMarkAngle, step, excat)
+    }
+    
+    
     static func right_left_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_hip = result[7]
         let left_knee = result[9]

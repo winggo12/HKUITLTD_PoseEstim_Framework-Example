@@ -8,11 +8,12 @@
 
 import Foundation
 
+//上弓式
 class UrdhvaDhanurasana: YogaBase {
     
     /** constant */
-    private var arm_ratio: Double = 0.3
-    private var hand_foot_distance_ratio: Double = 0.3
+    private var arm_ratio: Double = 0.4
+    private var hand_foot_distance_ratio: Double = 0.2
     private var shoulder_hand_foot_ratio: Double = 0.4
     
     /** score of body parts */
@@ -43,16 +44,16 @@ class UrdhvaDhanurasana: YogaBase {
 
     private func calculateScore(){
         
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 90.0, 10.0, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 90.0, 10.0, true)
+        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
+        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
         let shoulder_hand_foot_angle = 0.5 * ( FeedbackUtilities.getAngle(resultArray![5], resultArray![1], resultArray![11]) + FeedbackUtilities.getAngle(resultArray![6], resultArray![2], resultArray![12]) )
-        shoulder_hand_foot_score = FeedbackUtilities.angleToScore(shoulder_hand_foot_angle, 180, 20, true)
+        shoulder_hand_foot_score = FeedbackUtilities.angleToScore(shoulder_hand_foot_angle, 90, 10, true)
         
-        let hand_length = 0.5 * (FeedbackUtilities.cal_dis(coor1: resultArray![9], coor2: resultArray![11]) +  FeedbackUtilities.cal_dis(coor1: resultArray![10], coor2: resultArray![12]) )
+        let arm_length = 0.5 * (FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![5]) +  FeedbackUtilities.cal_dis(coor1: resultArray![2], coor2: resultArray![6]) )
         let distance = 0.5 * (FeedbackUtilities.cal_dis(coor1: resultArray![5], coor2: resultArray![11]) + FeedbackUtilities.cal_dis(coor1: resultArray![6], coor2: resultArray![12]) )
-        hand_foot_distance_score = FeedbackUtilities.disToScore(distance, hand_length*0.8, hand_length*0.2, true)
+        hand_foot_distance_score = FeedbackUtilities.disToScore(distance, arm_length, arm_length*0.3, true)
         
 
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
@@ -69,8 +70,8 @@ class UrdhvaDhanurasana: YogaBase {
         let colorbitmerge: UInt =  cb_la | cb_ra | cb_lhd | cb_rhd | cb_lfd | cb_rfd
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         
-        score = arm_ratio*arm_score + hand_foot_distance_ratio*hand_foot_distance_score + hand_foot_distance_ratio*hand_foot_distance_score
-        detailedscore = [arm_score, hand_foot_distance_score, hand_foot_distance_score]
+        score = arm_ratio * arm_score + hand_foot_distance_ratio * hand_foot_distance_score + shoulder_hand_foot_ratio * shoulder_hand_foot_score
+        detailedscore = [arm_score, hand_foot_distance_score, shoulder_hand_foot_score]
         
     }
 

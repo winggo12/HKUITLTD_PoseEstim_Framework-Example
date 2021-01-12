@@ -8,6 +8,7 @@
 
 import Foundation
 
+//上犬式
 class UrdhvaMukhaSvanasana: YogaBase{
 
     /** constant */
@@ -51,10 +52,10 @@ class UrdhvaMukhaSvanasana: YogaBase{
         let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 45.0, 10.0, true)
         shoulder_score = 0.5*(left_shoulder_score + right_shoulder_score)
         
-        let left_hand_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![7], resultArray![5], resultArray![11])
+        let left_hand_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![9], resultArray![5], resultArray![11])
         let left_hand_knee_foot_score = FeedbackUtilities.angleToScore(left_hand_knee_foot_angle, 180, 20, true)
-        let right_hand_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![8], resultArray![6], resultArray![12])
-        let right_hand_knee_foot_score = FeedbackUtilities.angleToScore(left_hand_knee_foot_angle, 180, 20, true)
+        let right_hand_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![10], resultArray![6], resultArray![12])
+        let right_hand_knee_foot_score = FeedbackUtilities.angleToScore(right_hand_knee_foot_angle, 180, 20, true)
         hand_knee_foot_score = 0.5 * (left_hand_knee_foot_score + right_hand_knee_foot_score)
         
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
@@ -68,7 +69,7 @@ class UrdhvaMukhaSvanasana: YogaBase{
         
         let colorbitmerge: UInt = cb_la | cb_ra | cb_ls | cb_rs | cb_lw | cb_rw | cb_ll | cb_rl
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
-        score = arm_ratio*arm_score + shoulder_ratio*shoulder_score
+        score = arm_ratio * arm_score + shoulder_ratio * shoulder_score + hand_knee_foot_ratio * hand_knee_foot_score
         detailedscore = [arm_score, shoulder_score, hand_knee_foot_score]
         
     }

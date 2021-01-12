@@ -8,7 +8,9 @@
 
 import Foundation
 import os
-class VirabhadrasanaBRight: YogaBase {
+
+//战士式B
+class VirabhadrasanaB: YogaBase {
 
     /** constant */
     private let knee_ratio:Double = 0.4
@@ -38,24 +40,40 @@ class VirabhadrasanaBRight: YogaBase {
 
     private func calculateScore(){
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90, 10, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90, 10, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90, 20, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90, 20, true)
         shoulder_score = 0.5 * ( left_shoulder_score + right_shoulder_score )
         
-        waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 10, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90, 20, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 20, true)
+        waist_score = max(left_waist_score, right_waist_score)
         
-        knee_score = FeedbackUtilities.right_leg(resultArray!, 90, 10, true)
-                
-        let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: knee_score)
+        let left_knee_score = FeedbackUtilities.left_leg(resultArray!, 90, 20, true)
+        let right_knee_score = FeedbackUtilities.right_leg(resultArray!, 90, 20, true)
+        knee_score = max(left_knee_score, right_knee_score)
+             
+        let cb_l:UInt
+        if left_knee_score > right_knee_score {
+            cb_l = ColorFeedbackUtilities.left_leg(score: knee_score)
+        }else {
+            cb_l = ColorFeedbackUtilities.right_leg(score: knee_score)
+        }
+        
         let cb_ls:UInt = ColorFeedbackUtilities.left_shoulder(score: left_shoulder_score)
         let cb_rs:UInt = ColorFeedbackUtilities.right_shoulder(score: right_shoulder_score)
-        let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: waist_score)
         
-        let colorbitmerge: UInt = cb_rl | cb_ls | cb_rs | cb_rw
+        let cb_w:UInt
+        if left_waist_score > right_waist_score {
+            cb_w = ColorFeedbackUtilities.left_waist(score: waist_score)
+        }else {
+            cb_w = ColorFeedbackUtilities.right_waist(score: waist_score)
+        }
+        
+        let colorbitmerge: UInt = cb_l | cb_ls | cb_rs | cb_w
         
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         score = shoulder_ratio*shoulder_score + waist_ratio*waist_score + knee_ratio*knee_score
-        detailedscore = [shoulder_score, waist_score, knee_score]
+        detailedscore = [waist_score, knee_score, shoulder_score]
     }
 
 }

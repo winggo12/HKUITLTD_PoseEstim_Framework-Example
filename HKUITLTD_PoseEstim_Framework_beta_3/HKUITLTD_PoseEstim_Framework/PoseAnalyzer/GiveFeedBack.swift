@@ -42,45 +42,57 @@ public class GiveFeedBack{
         /** Pose with colorbit: Balasana, MarjarB,C, Padangushthasana, PhalakasanaB, UrdhvaMukhaSvansana, Utkatasana, UtthitaPashvakonasanaB
                           UtthitaTrikonasana, VirabhadrasanaABCD*/
         switch currentPose {
-            case Pose.ArdhaUttanasanaLeft:
-                YogaPose = ArdhaUttanasanaLeft(result: self.result)
-            case Pose.ArdhaUttanasanaRight:
-                YogaPose = ArdhaUttanasanaRight(result: self.result)
                 
             case Pose.AdhoMukhaShivanasana:
                  YogaPose = AdhoMukhaShivanasana(result: self.result)
-           
+                
+            case Pose.ArdhaPurvattanasana:
+                 YogaPose = ArdhaPurvattanasana(result: self.result)
+                
+            case Pose.ArdhaUttanasana:
+                YogaPose = ArdhaUttanasana(result: self.result)
+                
+            case Pose.ArdhaVasisthasana:
+                YogaPose = ArdhaVasisthasana(result: self.result)
+                
             case Pose.Balasana:
                  YogaPose = Balasana(result: self.result)
        
-            case Pose.MarjarasanaBLeft:
-                 YogaPose = MarjarasanaBLeft(result: self.result)
-            case Pose.MarjarasanaBRight:
-                 YogaPose = MarjarasanaBRight(result: self.result)
+            case Pose.Bujangasana:
+                 YogaPose = Bujangasana(result: self.result)
+            
+            case Pose.MarjarasanaB:
+                 YogaPose = MarjarasanaB(result: self.result)
                 
-            case Pose.MarjarasanaCLeft:
-                 YogaPose = MarjarasanaCLeft(result: self.result)
-            case Pose.MarjarasanaCRight:
-                 YogaPose = MarjarasanaCRight(result: self.result)
+            case Pose.MarjarasanaC:
+                 YogaPose = MarjarasanaC(result: self.result)
            
             case Pose.Navasana:
                  YogaPose = Navasana(result: self.result)
  
             case Pose.Padangushthasana:
                  YogaPose = Padangushthasana(result: self.result)
+                
+            case Pose.PhalakasanaB:
+                 YogaPose = PhalakasanaB(result: self.result)
  
+            case Pose.PhalakasanaA:
+                 YogaPose = PhalakasanaA(result: self.result)
+                
+            case Pose.Purvattanasana:
+                 YogaPose = Purvattanasana(result: self.result)
+                    
+            case Pose.SetuBandhasana:
+                 YogaPose = SetuBandhasana(result: self.result)
+                
             case Pose.UrdhvaDhanurasana:
                  YogaPose = UrdhvaDhanurasana(result: self.result)
 
-            case Pose.UtthitaParsvakonasanaALeft:
-                 YogaPose = UtthitaParsvakonasanaALeft(result: self.result)
-            case Pose.UtthitaParsvakonasanaARight:
-                 YogaPose = UtthitaParsvakonasanaARight(result: self.result)
+            case Pose.UtthitaParsvakonasanaA:
+                 YogaPose = UtthitaParsvakonasanaA(result: self.result)
 
-            case Pose.UtthitaParsvakonasanaBLeft:
-                 YogaPose = UtthitaPashvakonasanaBLeft(result: self.result)
-            case Pose.UtthitaParsvakonasanaBRight:
-                 YogaPose = UtthitaPashvakonasanaBRight(result: self.result)
+            case Pose.UtthitaParsvakonasanaB:
+                 YogaPose = UtthitaParsvakonasanaB(result: self.result)
                 
             case Pose.Utkatasana:
                  YogaPose = Utkatasana(result: self.result)
@@ -88,30 +100,20 @@ public class GiveFeedBack{
             case Pose.UrdhvaMukhaSvanasana:
                  YogaPose = UrdhvaMukhaSvanasana(result: self.result)
                 
-            case Pose.UtthitaTrikonasanaLeft:
-                 YogaPose = UtthitaTrikonasanaLeft(result: self.result)
-            case Pose.UtthitaTrikonasanaRight:
-                 YogaPose = UtthitaTrikonasanaRight(result: self.result)
+            case Pose.UtthitaTrikonasana:
+                 YogaPose = UtthitaTrikonasana(result: self.result)
                 
-            case Pose.VirabhadrasanaALeft:
-                 YogaPose = VirabhadrasanaALeft(result: self.result)
-            case Pose.VirabhadrasanaARight:
-                 YogaPose = VirabhadrasanaARight(result: self.result)
+            case Pose.VirabhadrasanaA:
+                 YogaPose = VirabhadrasanaA(result: self.result)
                 
-            case Pose.VirabhadrasanaBLeft:
-                 YogaPose = VirabhadrasanaBLeft(result: self.result)
-            case Pose.VirabhadrasanaBRight:
-                 YogaPose = VirabhadrasanaBRight(result: self.result)
+            case Pose.VirabhadrasanaB:
+                 YogaPose = VirabhadrasanaB(result: self.result)
                 
-            case Pose.VirabhadrasanaCLeft:
-                 YogaPose = VirabhadrasanaCLeft(result: self.result)
-            case Pose.VirabhadrasanaCRight:
-                 YogaPose = VirabhadrasanaCRight(result: self.result)
+            case Pose.VirabhadrasanaC:
+                 YogaPose = VirabhadrasanaC(result: self.result)
                 
-            case Pose.VirabhadrasanaDLeft:
-                 YogaPose = VirabhadrasanaDLeft(result: self.result)
-            case Pose.VirabhadrasanaDRight:
-                 YogaPose = VirabhadrasanaDRight(result: self.result)
+            case Pose.VirabhadrasanaD:
+                 YogaPose = VirabhadrasanaD(result: self.result)
 
             case Pose.TPose:
                  YogaPose = TPose(result: self.result)

@@ -8,12 +8,14 @@
 
 import Foundation
 
-
+//大脚趾站立山式
 class Padangushthasana: YogaBase {
 
     /** constant */
-    private let body_ratio = 0.4
-    private let time_ratio = 0.6
+    private let arm_ratio: Double = 0.3
+    private let shoulder_ratio: Double = 0.3
+    private let waist_ratio: Double = 0.2
+    private let leg_ratio: Double = 0.2
 
     /** score of body parts */
     private var leg_score: Double = 0.0
@@ -42,8 +44,8 @@ class Padangushthasana: YogaBase {
         
         start_timing()
         time_score = cal_time_score(start_time)
-        score = time_ratio * time_score + body_ratio * body_score
-        detailedscore = [body_score, time_score]
+        score = arm_ratio * arm_score + shoulder_ratio * shoulder_score + waist_ratio * waist_score + leg_ratio * leg_score
+        detailedscore = [arm_score, shoulder_score, waist_score, leg_score]
         
     }
     
@@ -59,19 +61,19 @@ class Padangushthasana: YogaBase {
     {
         let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
-        let arm_score =  0.5*( left_arm_score + right_arm_score )
+        arm_score =  0.5 * (left_arm_score + right_arm_score)
         
         let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 180.0, 20, true)
         let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20, true)
-        let shoulder_score = 0.5*( left_shoulder_score + right_shoulder_score)
+        shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         
         let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 20, true)
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 20, true)
-        let waist_score = 0.5*( left_waist_score + right_shoulder_score)
+        waist_score = 0.5 * (left_waist_score + right_shoulder_score)
         
         let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20, true)
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20, true)
-        let leg_score = 0.5*( left_leg_score + right_leg_score )
+        leg_score = 0.5 * (left_leg_score + right_leg_score)
         
         let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
         if(body_score! > 80.0)
