@@ -14,18 +14,18 @@
 		43ABD6B3253046CE00C61C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B1253046CE00C61C97 /* Main.storyboard */; };
 		43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B4253046D100C61C97 /* Assets.xcassets */; };
 		43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B6253046D100C61C97 /* LaunchScreen.storyboard */; };
-		43BF2F9525A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF2F9425A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework */; };
-		43BF2F9625A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF2F9425A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43F03F7325A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */; };
+		43F03F7425A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		43BF2F9725A702FA00F1D51C /* Embed Frameworks */ = {
+		43F03F7525A8088400C1EB7F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43BF2F9625A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
+				43F03F7425A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43BF2F9525A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
+				43F03F7325A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +109,7 @@
 				43ABD6A4253046CE00C61C97 /* Sources */,
 				43ABD6A5253046CE00C61C97 /* Frameworks */,
 				43ABD6A6253046CE00C61C97 /* Resources */,
-				43BF2F9725A702FA00F1D51C /* Embed Frameworks */,
+				43F03F7525A8088400C1EB7F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

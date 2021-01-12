@@ -44,9 +44,9 @@ class UtthitaParsvakonasanaALeft: YogaBase {
         let leg_angle = FeedbackUtilities.getAngle(resultArray![8], resultArray![12], resultArray![9])
         leg_angle_score = FeedbackUtilities.angleToScore(leg_angle, 120, 10, true)
         
-        let leg_length = FeedbackUtilities.cal_dis(coor1: resultArray![12], coor2: resultArray![8])
+        let arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![4], coor2: resultArray![6])
         let left_elbow_knee_dis = FeedbackUtilities.cal_dis(coor1: resultArray![3], coor2: resultArray![9])
-        left_elbow_knee_dis_score = FeedbackUtilities.disToScore(left_elbow_knee_dis, 0.5 * leg_length, 0.2 * leg_length, true)
+        left_elbow_knee_dis_score = FeedbackUtilities.disToScore(left_elbow_knee_dis, 0.1 * arm_length, 0.2 * arm_length, true)
         
         let cb_ra = ColorFeedbackUtilities.right_arm(score: right_arm_score)
         let cb_rl = ColorFeedbackUtilities.right_leg(score: right_leg_score)

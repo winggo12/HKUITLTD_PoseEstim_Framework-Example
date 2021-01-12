@@ -37,9 +37,9 @@ class ArdhaUttanasanaLeft: YogaBase {
 
         let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
        
-        let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![5])
+        let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![3], coor2: resultArray![5])
         let left_wrist_ankle_dis = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![11])
-        let left_wrist_ankle_dis_score = FeedbackUtilities.disToScore(left_wrist_ankle_dis, 0.5 * left_arm_length, 0.2 * left_arm_length, true)
+        let left_wrist_ankle_dis_score = FeedbackUtilities.disToScore(left_wrist_ankle_dis, 0.1 * left_arm_length, 0.2 * left_arm_length, true)
         
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
         

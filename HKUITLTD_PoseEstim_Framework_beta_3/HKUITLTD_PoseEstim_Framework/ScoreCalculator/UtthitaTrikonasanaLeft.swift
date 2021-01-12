@@ -45,9 +45,9 @@ class UtthitaTrikonasanaLeft: YogaBase {
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20, true)
         let leg_score = 0.5*( left_leg_score + right_leg_score )
         
-        let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![5])
+        let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![3], coor2: resultArray![5])
         let left_wrist_ankle_dis = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![11])
-        let left_wrist_ankle_dis_score = FeedbackUtilities.disToScore(left_wrist_ankle_dis, 0.5 * left_arm_length, 0.2 * left_arm_length, true)
+        let left_wrist_ankle_dis_score = FeedbackUtilities.disToScore(left_wrist_ankle_dis, 0.1 * left_arm_length, 0.2 * left_arm_length, true)
         
         let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
         let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
