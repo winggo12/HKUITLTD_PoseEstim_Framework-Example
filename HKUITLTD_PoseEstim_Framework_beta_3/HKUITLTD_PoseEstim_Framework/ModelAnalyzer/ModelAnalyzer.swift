@@ -195,116 +195,204 @@ public class ModelAnalyzer {
     // MARK: Find position of each key point
     // Finds the (row, col) locations of where the keypoints are most likely to be. The highest
     // `heats[0, row, col, keypoint]` value, the more likely `keypoint` being located in (`row`, `col`).
-// MARK: Single thread code
-//    let keypointPositions = (0..<tfModel.output.keypointSize).map { keypoint -> (Int, Int) in
-//    var maxValue = heats[0, 0, 0, keypoint]
-//    var maxRow = 0
-//    var maxCol = 0
-//    for row in 0..<tfModel.output.height {
-//      for col in 0..<tfModel.output.width {
-//        if heats[0, row, col, keypoint] > maxValue {
-//          maxValue = heats[0, row, col, keypoint]
-//          maxRow = row
-//          maxCol = col
-//        }
-//      }
-//    }
-//    return (maxRow, maxCol)
-//  }
+    
+    // MARK: Single thread code
+    //    let keypointPositions = (0..<tfModel.output.keypointSize).map { keypoint -> (Int, Int) in
+    //    var maxValue = heats[0, 0, 0, keypoint]
+    //    var maxRow = 0
+    //    var maxCol = 0
+    //    for row in 0..<tfModel.output.height {
+    //      for col in 0..<tfModel.output.width {
+    //        if heats[0, row, col, keypoint] > maxValue {
+    //          maxValue = heats[0, row, col, keypoint]
+    //          maxRow = row
+    //          maxCol = col
+    //        }
+    //      }
+    //    }
+    //    return (maxRow, maxCol)
+    //  }
     
     // MARK: Multithread code
-    var kps1 = [(Int, Int)]()
-    var kps2 = [(Int, Int)]()
-    var kps3 = [(Int, Int)]()
-    var kps4 = [(Int, Int)]()
-
-    self.g.enter()
-    self.q.async {
-        kps1 = (0..<3).map { keypoint -> (Int, Int) in
-        var maxValue = heats[0, 0, 0, keypoint]
-        var maxRow = 0
-        var maxCol = 0
-        for row in 0..<tfModel.output.height {
-          for col in 0..<tfModel.output.width {
-            if heats[0, row, col, keypoint] > maxValue {
-              maxValue = heats[0, row, col, keypoint]
-              maxRow = row
-              maxCol = col
+//    var kps1 = [(Int, Int)]()
+//    var kps2 = [(Int, Int)]()
+//    var kps3 = [(Int, Int)]()
+//    var kps4 = [(Int, Int)]()
+//
+//    self.g.enter()
+//    self.q.async {
+//        kps1 = (0..<3).map { keypoint -> (Int, Int) in
+//        var maxValue = heats[0, 0, 0, keypoint]
+//        var maxRow = 0
+//        var maxCol = 0
+//        for row in 0..<tfModel.output.height {
+//          for col in 0..<tfModel.output.width {
+//            if heats[0, row, col, keypoint] > maxValue {
+//              maxValue = heats[0, row, col, keypoint]
+//              maxRow = row
+//              maxCol = col
+//            }
+//          }
+//        }
+//        return (maxRow, maxCol)
+//      }
+//        print(1)
+//        self.g.leave()
+//    }
+//    self.g.enter()
+//    self.q.async {
+//        kps2 = (3..<6).map { keypoint -> (Int, Int) in
+//        var maxValue = heats[0, 0, 0, keypoint]
+//        var maxRow = 0
+//        var maxCol = 0
+//        for row in 0..<tfModel.output.height {
+//          for col in 0..<tfModel.output.width {
+//            if heats[0, row, col, keypoint] > maxValue {
+//              maxValue = heats[0, row, col, keypoint]
+//              maxRow = row
+//              maxCol = col
+//            }
+//          }
+//        }
+//        return (maxRow, maxCol)
+//      }
+//        print(2)
+//        self.g.leave()
+//    }
+//    self.g.enter()
+//    self.q.async {
+//        kps3 = (6..<9).map { keypoint -> (Int, Int) in
+//        var maxValue = heats[0, 0, 0, keypoint]
+//        var maxRow = 0
+//        var maxCol = 0
+//        for row in 0..<tfModel.output.height {
+//          for col in 0..<tfModel.output.width {
+//            if heats[0, row, col, keypoint] > maxValue {
+//              maxValue = heats[0, row, col, keypoint]
+//              maxRow = row
+//              maxCol = col
+//            }
+//          }
+//        }
+//        return (maxRow, maxCol)
+//      }
+//        print(3)
+//        self.g.leave()
+//    }
+//    self.g.enter()
+//    self.q.async {
+//        kps4 = (9..<13).map { keypoint -> (Int, Int) in
+//        var maxValue = heats[0, 0, 0, keypoint]
+//        var maxRow = 0
+//        var maxCol = 0
+//        for row in 0..<tfModel.output.height {
+//          for col in 0..<tfModel.output.width {
+//            if heats[0, row, col, keypoint] > maxValue {
+//              maxValue = heats[0, row, col, keypoint]
+//              maxRow = row
+//              maxCol = col
+//            }
+//          }
+//        }
+//        return (maxRow, maxCol)
+//      }
+//        print(4)
+//        self.g.leave()
+//    }
+//    self.g.wait()
+//    let keypointPositions = kps1 + kps2 + kps3 + kps4
+    
+    // MARK: Multithread code II
+        let keypointPositions = (0..<tfModel.output.keypointSize).map { keypoint -> (Int, Int) in
+            var quad1 = (0, 0)
+            var quad1_score:Float32 = 0.0
+            var quad2 = (0, 0)
+            var quad2_score:Float32 = 0.0
+            var quad3 = (0, 0)
+            var quad3_score:Float32 = 0.0
+            var quad4 = (0, 0)
+            var quad4_score:Float32 = 0.0
+            var maxValue = heats[0, 0, 0, keypoint]
+            var maxRow = 0
+            var maxCol = 0
+            self.g.enter()
+            self.q.async {
+                for row in 0..<28 {
+                    for col in 0..<28 {
+                        if heats[0, row, col, keypoint] > maxValue {
+                          maxValue = heats[0, row, col, keypoint]
+                          maxRow = row
+                          maxCol = col
+                        }
+                    }
+                }
+                quad1 = (maxRow, maxCol)
+                quad1_score = maxValue
+                self.g.leave()
             }
-          }
-        }
-        return (maxRow, maxCol)
-      }
-        print(1)
-        self.g.leave()
-    }
-    self.g.enter()
-    self.q.async {
-        kps2 = (3..<6).map { keypoint -> (Int, Int) in
-        var maxValue = heats[0, 0, 0, keypoint]
-        var maxRow = 0
-        var maxCol = 0
-        for row in 0..<tfModel.output.height {
-          for col in 0..<tfModel.output.width {
-            if heats[0, row, col, keypoint] > maxValue {
-              maxValue = heats[0, row, col, keypoint]
-              maxRow = row
-              maxCol = col
+            self.g.enter()
+            self.q.async {
+                for row in 28..<56 {
+                    for col in 0..<28 {
+                        if heats[0, row, col, keypoint] > maxValue {
+                          maxValue = heats[0, row, col, keypoint]
+                          maxRow = row
+                          maxCol = col
+                        }
+                    }
+                }
+                quad2 = (maxRow, maxCol)
+                quad2_score = maxValue
+                self.g.leave()
             }
-          }
-        }
-        return (maxRow, maxCol)
-      }
-        print(2)
-        self.g.leave()
-    }
-    self.g.enter()
-    self.q.async {
-        kps3 = (6..<9).map { keypoint -> (Int, Int) in
-        var maxValue = heats[0, 0, 0, keypoint]
-        var maxRow = 0
-        var maxCol = 0
-        for row in 0..<tfModel.output.height {
-          for col in 0..<tfModel.output.width {
-            if heats[0, row, col, keypoint] > maxValue {
-              maxValue = heats[0, row, col, keypoint]
-              maxRow = row
-              maxCol = col
+            self.g.enter()
+            self.q.async {
+                for row in 0..<28 {
+                    for col in 28..<56 {
+                        if heats[0, row, col, keypoint] > maxValue {
+                          maxValue = heats[0, row, col, keypoint]
+                          maxRow = row
+                          maxCol = col
+                        }
+                    }
+                }
+                quad3 = (maxRow, maxCol)
+                quad3_score = maxValue
+                self.g.leave()
             }
-          }
-        }
-        return (maxRow, maxCol)
-      }
-        print(3)
-        self.g.leave()
-    }
-    self.g.enter()
-    self.q.async {
-        kps4 = (9..<13).map { keypoint -> (Int, Int) in
-        var maxValue = heats[0, 0, 0, keypoint]
-        var maxRow = 0
-        var maxCol = 0
-        for row in 0..<tfModel.output.height {
-          for col in 0..<tfModel.output.width {
-            if heats[0, row, col, keypoint] > maxValue {
-              maxValue = heats[0, row, col, keypoint]
-              maxRow = row
-              maxCol = col
+            self.g.enter()
+            self.q.async {
+                for row in 28..<56 {
+                    for col in 28..<56 {
+                        if heats[0, row, col, keypoint] > maxValue {
+                          maxValue = heats[0, row, col, keypoint]
+                          maxRow = row
+                          maxCol = col
+                        }
+                    }
+                }
+                quad4 = (maxRow, maxCol)
+                quad4_score = maxValue
+                self.g.leave()
             }
-          }
-        }
-        return (maxRow, maxCol)
+            g.wait()
+            let compVal = [quad1_score, quad2_score, quad3_score, quad4_score]
+            let compCoord = [quad1, quad2, quad3, quad4]
+            let maxVal = compVal.max()
+            var i = 0
+            for score in compVal {
+                if score == maxVal {
+                    return compCoord[i]
+                }
+                i += 1
+            }
+            return (0, 0)
       }
-        print(4)
-        self.g.leave()
-    }
-    self.g.wait()
-//    print("All tasks finished")
-    let keypointPositions = kps1 + kps2 + kps3 + kps4
-//    print(keypointPositions.count)
-
+    
+    
     let finPosProcessingTime = Date().timeIntervalSince(findPosTime) * 1000
     print("extract time: ", finPosProcessingTime)
+//    print(keypointPositions)
 
     // MARK: Calculates total confidence score
     // Calculates total confidence score of each key position.
