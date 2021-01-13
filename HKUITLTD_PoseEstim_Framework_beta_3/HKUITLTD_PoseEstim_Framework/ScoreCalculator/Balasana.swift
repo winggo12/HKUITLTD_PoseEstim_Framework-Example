@@ -50,8 +50,10 @@ class Balasana: YogaBase{
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 30, 10, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         
-        let left_arm_ankle_score = FeedbackUtilities.left_arm_ankle(resultArray!, 180, 10, true)
-        let right_arm_ankle_score = FeedbackUtilities.right_arm_ankle(resultArray!, 180, 10, true)
+        let left_arm_ankle_angle = FeedbackUtilities.getAngle(resultArray![9], resultArray![11], resultArray![5])
+        let left_arm_ankle_score = FeedbackUtilities.angleToScore(left_arm_ankle_angle, 180, 10, true)
+        let right_arm_ankle_angle = FeedbackUtilities.getAngle(resultArray![10], resultArray![12], resultArray![6])
+        let right_arm_ankle_score = FeedbackUtilities.angleToScore(right_arm_ankle_angle, 180, 10, true)
         arm_ankle_score = 0.5 * (left_arm_ankle_score + right_arm_ankle_score)
         
         let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)

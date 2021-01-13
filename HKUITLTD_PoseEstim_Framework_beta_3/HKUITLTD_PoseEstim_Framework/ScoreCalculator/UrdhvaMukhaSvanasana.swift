@@ -48,8 +48,8 @@ class UrdhvaMukhaSvanasana: YogaBase{
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score = 0.5*(left_arm_score + right_arm_score)
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 45.0, 10.0, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 45.0, 10.0, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 45.0, 15.0, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 45.0, 15.0, true)
         shoulder_score = 0.5*(left_shoulder_score + right_shoulder_score)
         
         let left_hand_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![9], resultArray![5], resultArray![11])

@@ -35,11 +35,11 @@ class ArdhaUttanasana: YogaBase {
         let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180, 20, true)
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180, 20, true)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 45, 10, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 45, 10, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 45, 15, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 45, 15, true)
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 10.0, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 10.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
        
 //        let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![5])
 //        let left_wrist_ankle_dis = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![11])
