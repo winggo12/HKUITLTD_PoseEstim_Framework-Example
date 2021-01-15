@@ -63,7 +63,7 @@ class Padangushthasana: YogaBase {
         
         let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 20, true)
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 20, true)
-        waist_score = 0.5 * (left_waist_score + right_shoulder_score)
+        waist_score = 0.5 * (left_waist_score + right_waist_score)
         
         let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20, true)
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20, true)
@@ -93,7 +93,7 @@ class Padangushthasana: YogaBase {
         let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
-        let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_ls | cb_rs | cb_lw | cb_rw
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_lw | cb_rw
         
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
     }
