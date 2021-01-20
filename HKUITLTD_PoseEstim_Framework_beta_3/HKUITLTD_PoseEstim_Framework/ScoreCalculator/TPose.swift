@@ -3,16 +3,14 @@ import os
 class TPose:YogaBase {
 
     /** constant */
-    private let right_leg_ratio: Double = 0.1
-    private let left_leg_ratio: Double = 0.1
-    private let left_arm_ratio: Double = 0.4
-    private let right_arm_ratio: Double = 0.4
+    private let arm_ratio: Double = 0.3
+    private let shoulder_ratio: Double = 0.4
+    private let leg_ratio: Double = 0.3
 
     /** score of body parts */
-    private var left_arm_score: Double = 0.0
-    private var left_leg_score: Double = 0.0
-    private var right_arm_score: Double = 0.0
-    private var right_leg_score: Double = 0.0
+    private var arm_score: Double = 0.0
+    private var shoulder_score: Double = 0.0
+    private var leg_score: Double = 0.0
 
     /** constructor */
     init(result: Result){
@@ -28,10 +26,15 @@ class TPose:YogaBase {
         
         let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180, 20, true)
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180, 20, true)
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90, 10, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90, 10, true)
+        arm_score = 0.5 * (left_arm_score + right_arm_score)
+        
+        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90, 20, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90, 20, true)
+        shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
+        
         let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180, 20, true)
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180, 20, true)
+        leg_score = 0.5 * (left_leg_score + right_leg_score)
         
         let cb_la = ColorFeedbackUtilities.left_arm(score: left_arm_score)
         let cb_ra = ColorFeedbackUtilities.right_arm(score: right_arm_score)
@@ -47,8 +50,8 @@ class TPose:YogaBase {
 
         colorbit = Array(colorbitmergeString.substring(from: index))
         
-        score = left_leg_ratio * left_leg_score + right_leg_ratio * right_leg_score + left_arm_ratio * left_arm_score + right_arm_ratio * right_arm_score
-        detailedscore = [left_leg_score, right_leg_score, left_arm_score, right_arm_score]
+        score = leg_ratio * leg_score + arm_ratio * arm_score + shoulder_ratio * shoulder_score
+        detailedscore = [arm_score, shoulder_score, leg_score]
     }
 
     private func makeComment()->Array<String>{
