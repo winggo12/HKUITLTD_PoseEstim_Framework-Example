@@ -1,8 +1,8 @@
 //
-//  CaptureViewController.swift
+//  DualViewController.swift
 //  Example3
 //
-//  Created by admin on 26/01/2021.
+//  Created by admin on 27/01/2021.
 //  Copyright © 2021 Hong Kong Univisual Intelligent Technology Limited. All rights reserved.
 //
 
@@ -11,8 +11,9 @@ import UIKit
 import AVFoundation
 import HKUITLTD_PoseEstim_Framework
 
-    
-class CaptureViewController: UIViewController {
+
+
+class DualViewController: UIViewController {
     
     // Captured View & Estimated Pose View
     @IBOutlet weak var previewView: PreviewView!
@@ -31,12 +32,21 @@ class CaptureViewController: UIViewController {
     private var givefeedback: GiveFeedBack? = nil
     
     
+    // Disable Auto-Rotation of View
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configurationSucceed = cameraCapture.startConfiguration()
-        
+
         cameraCapture.delegate = self
         
         if configurationSucceed {
@@ -88,7 +98,7 @@ class CaptureViewController: UIViewController {
 }
  
 
-extension CaptureViewController: PoseEstimationDelegate {
+extension DualViewController: PoseEstimationDelegate {
     
     func poseEstimation(_ manager: CameraCapture, didOutput pixelBuffer: CVPixelBuffer) {
 
@@ -135,6 +145,7 @@ extension CaptureViewController: PoseEstimationDelegate {
 
     
 }
+
 
 
 

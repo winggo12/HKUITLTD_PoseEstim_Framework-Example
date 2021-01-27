@@ -70,7 +70,6 @@ public class CameraCapture: NSObject {
         congfigureSession()
         
         self.previewView.session = captureSession
-        self.previewView.previewLayer.videoGravity = .resizeAspectFill
         
         return setupResult == .success
         
@@ -246,6 +245,8 @@ public class CameraCapture: NSObject {
         
         captureSession.addInput(videoDeviceInput)
         self.videoDeviceInput = videoDeviceInput
+        
+        self.previewView.previewLayer.videoGravity = .resizeAspectFill
         
         return true
     }

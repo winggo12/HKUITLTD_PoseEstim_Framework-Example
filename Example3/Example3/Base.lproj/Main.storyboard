@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OEV-zK-hgq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGr-Yr-QvM">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -118,23 +118,62 @@
             </objects>
             <point key="canvasLocation" x="-947.66355140186909" y="137.36501079913609"/>
         </scene>
-        <!--View Controller-->
+        <!--Dual View Controller-->
         <scene sceneID="e6g-gd-9NN">
             <objects>
-                <viewController id="hGr-Yr-QvM" sceneMemberID="viewController">
+                <viewController id="hGr-Yr-QvM" customClass="DualViewController" customModule="Example3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0Z-Ys-pUu">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNk-kF-Spz" userLabel="Preview View" customClass="PreviewView" customModule="HKUITLTD_PoseEstim_Framework">
+                                <rect key="frame" x="24" y="60" width="381" height="387"/>
+                                <subviews>
+                                    <view opaque="NO" alpha="0.33000000000000002" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIo-1s-hPO" userLabel="Overlay View" customClass="OverlayView" customModule="HKUITLTD_PoseEstim_Framework">
+                                        <rect key="frame" x="0.0" y="8" width="381" height="371"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstItem="lIo-1s-hPO" firstAttribute="leading" secondItem="BNk-kF-Spz" secondAttribute="leading" id="0K2-9e-XQJ"/>
+                                    <constraint firstItem="lIo-1s-hPO" firstAttribute="centerX" secondItem="BNk-kF-Spz" secondAttribute="centerX" id="JNY-9c-cgq"/>
+                                    <constraint firstItem="lIo-1s-hPO" firstAttribute="bottom" secondItem="BNk-kF-Spz" secondAttribute="bottomMargin" id="qYG-yj-Q56"/>
+                                    <constraint firstItem="lIo-1s-hPO" firstAttribute="top" secondItem="BNk-kF-Spz" secondAttribute="topMargin" id="x7a-EO-sJz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-Hk-zsb" userLabel="Video View">
+                                <rect key="frame" x="24" y="463" width="381" height="387"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rMj-f5-f3l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BNk-kF-Spz" secondAttribute="bottom" constant="479" id="Esl-Su-rFz"/>
+                            <constraint firstItem="sbg-Hk-zsb" firstAttribute="trailing" secondItem="BNk-kF-Spz" secondAttribute="trailing" id="N5M-cK-AEy"/>
+                            <constraint firstItem="BNk-kF-Spz" firstAttribute="top" secondItem="rMj-f5-f3l" secondAttribute="top" constant="16" id="Rwf-Kb-2AG"/>
+                            <constraint firstItem="sbg-Hk-zsb" firstAttribute="leading" secondItem="BNk-kF-Spz" secondAttribute="leading" id="ZOu-Vr-YPy"/>
+                            <constraint firstItem="BNk-kF-Spz" firstAttribute="leading" secondItem="rMj-f5-f3l" secondAttribute="leading" constant="24" id="bKm-Nd-TjJ"/>
+                            <constraint firstItem="rMj-f5-f3l" firstAttribute="bottom" secondItem="sbg-Hk-zsb" secondAttribute="bottom" constant="42" id="pCS-LS-PxN"/>
+                            <constraint firstItem="sbg-Hk-zsb" firstAttribute="top" secondItem="BNk-kF-Spz" secondAttribute="bottom" constant="16" id="r00-Vm-tfg"/>
+                            <constraint firstItem="BNk-kF-Spz" firstAttribute="centerX" secondItem="S0Z-Ys-pUu" secondAttribute="centerX" id="tkQ-Vt-nZ3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="overlayView" destination="lIo-1s-hPO" id="57Q-jh-W3T"/>
+                        <outlet property="previewView" destination="BNk-kF-Spz" id="stD-AZ-Bnq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qad-er-9pQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2107" y="137"/>
+            <point key="canvasLocation" x="-2107.1274298056155" y="135.98130841121494"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
