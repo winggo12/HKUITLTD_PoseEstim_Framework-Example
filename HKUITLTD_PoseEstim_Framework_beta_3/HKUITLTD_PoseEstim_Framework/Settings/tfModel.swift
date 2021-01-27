@@ -9,6 +9,7 @@
 import Foundation
 
 var ModelName = "mobilnetv2False2020-05-11-12-17-45"
+//var ModelName = "mobilenetv2False2021-01-15-10-55-41"
 
 // MARK: - Information about the model file.
 public typealias FileInfo = (name: String, extension: String)

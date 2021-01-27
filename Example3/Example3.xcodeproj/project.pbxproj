@@ -16,6 +16,8 @@
 		43CD547024B4881500AD95D7 /* Example3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD546F24B4881500AD95D7 /* Example3UITests.swift */; };
 		4616D78E24F3728C00992513 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4616D78D24F3728000992513 /* HKUITLTD_PoseEstim_Framework.framework */; };
 		4616D78F24F3728C00992513 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4616D78D24F3728000992513 /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		841F1CD825BFFD6D003F6E73 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F1CD725BFFD6D003F6E73 /* CaptureViewController.swift */; };
+		84756C1125C13ADD0098BC8D /* CameraCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84756C1025C13ADD0098BC8D /* CameraCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,7 @@
 		4616D78624F3728000992513 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4616D78724F3728000992513 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
 		4616D78824F3728000992513 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
+		841F1CD725BFFD6D003F6E73 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		8425594325A5C34000709AAA /* VirabhadrasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaB.swift; sourceTree = "<group>"; };
 		8425594625A5C34100709AAA /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
 		8425594A25A5C34100709AAA /* Balasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balasana.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		8473AE2725AC59F40021CCA6 /* UtthitaParsvakonasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasanaA.swift; sourceTree = "<group>"; };
 		8473AE3225AC60D50021CCA6 /* UtthitaParsvakonasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasanaB.swift; sourceTree = "<group>"; };
 		8473AE4025AC641A0021CCA6 /* UtthitaTrikonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaTrikonasana.swift; sourceTree = "<group>"; };
+		84756C1025C13ADD0098BC8D /* CameraCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCapture.swift; sourceTree = "<group>"; };
 		84B5A1FA25A864B100D12563 /* MarjarasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +181,8 @@
 				43CD546124B4881500AD95D7 /* Assets.xcassets */,
 				43CD546324B4881500AD95D7 /* LaunchScreen.storyboard */,
 				43CD546624B4881500AD95D7 /* Info.plist */,
+				841F1CD725BFFD6D003F6E73 /* CaptureViewController.swift */,
+				84756C1025C13ADD0098BC8D /* CameraCapture.swift */,
 			);
 			path = Example3;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CD545D24B4881300AD95D7 /* ViewController.swift in Sources */,
+				841F1CD825BFFD6D003F6E73 /* CaptureViewController.swift in Sources */,
 				43CD545924B4881300AD95D7 /* AppDelegate.swift in Sources */,
+				84756C1125C13ADD0098BC8D /* CameraCapture.swift in Sources */,
 				43CD545B24B4881300AD95D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

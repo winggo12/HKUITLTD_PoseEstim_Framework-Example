@@ -33,11 +33,11 @@ class ViewController: UIViewController {
     private let minimumScore: Float = 0.6
     
     private var givefeedback: GiveFeedBack? = nil
-
+    
     @IBAction func switchBtn(_ sender: Any) {
         self.cameraCapture.switchCamera()
     }
-
+    
     
     override func viewDidLoad() {
         
@@ -45,26 +45,27 @@ class ViewController: UIViewController {
         //Initialize the AI Model Interface and Camera Capture
         thisModel = RunthisModel()
         cameraCapture.delegate = self
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      cameraCapture.checkCameraConfigurationAndStartSession()
+        super.viewWillAppear(animated)
+        cameraCapture.checkCameraConfigurationAndStartSession()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
-      cameraCapture.stopSession()
+        cameraCapture.stopSession()
     }
+    
     override func viewDidLayoutSubviews() {
         overlayViewFrame = overlayView.frame
         previewViewFrame = previewView.frame
-
+        
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         let orientation: UIDeviceOrientation = UIDevice.current.orientation
-//        print(orientation)Label(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/, systemImage: /*@START_MENU_TOKEN@*/"42.circle"/*@END_MENU_TOKEN@*/)
+        //        print(orientation)Label(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/, systemImage: /*@START_MENU_TOKEN@*/"42.circle"/*@END_MENU_TOKEN@*/)
         switch (orientation) {
         case .portrait:
             previewView.previewLayer.connection?.videoOrientation = .portrait
@@ -74,14 +75,14 @@ class ViewController: UIViewController {
             previewView.previewLayer.connection?.videoOrientation = .portraitUpsideDown
         case .landscapeLeft:
             previewView.previewLayer.connection?.videoOrientation = .landscapeRight
-
+            
         default:
             previewView.previewLayer.connection?.videoOrientation = .portrait
         }
         
     }
-
-
+    
+    
 }
 
 
@@ -105,7 +106,7 @@ extension ViewController: CameraFeedManagerDelegate {
     func presentCameraPermissionsDeniedAlert(_ manager: CameraFeedManager) {
         
     }
-
+    
     //Obtain the CVPixelBuffer of the Image
     func cameraFeedManager(_ manager: CameraFeedManager, didOutput pixelBuffer: CVPixelBuffer) {
         
@@ -113,19 +114,19 @@ extension ViewController: CameraFeedManagerDelegate {
             
             self.overlayViewFrame = self.overlayView.frame
             self.previewViewFrame = self.previewView.frame
-
+            
         }
         
         let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
         //let (result,times) = (thisModel?.Run(pb: pixelBuffer, olv: overlayViewFrame!, pv: previewViewFrame!))!
         
-        let userselectedpose: Pose = Pose.UrdhvaDhanurasana
+        let userselectedpose: Pose = Pose.TPose
         if(givefeedback == nil){
             givefeedback = GiveFeedBack(user_input_result: result, user_input_pose: userselectedpose)
         }else{
             givefeedback!.generateFeedback(user_input_result: result, user_input_pose: userselectedpose)
         }
-
+        
         let score: Double = givefeedback!.getScore()
         let detailedscore: [Double] = givefeedback!.getDetailedScore()
         let comments: [String] = givefeedback!.getComments()
@@ -139,20 +140,20 @@ extension ViewController: CameraFeedManagerDelegate {
             
             let position = self.cameraCapture.showCurrentInput()
             self.overlayView.drawResult(result: result, bounds: self.overlayView.bounds, position: position, wrong: colorbit)
-
+            
         }
-//        os_log("Pose: %s", userselectedpose.rawValue)
+        //        os_log("Pose: %s", userselectedpose.rawValue)
         os_log("Score: %f", score)
         os_log("Detailed Score: ")
         for s in detailedscore {
             os_log("%f",s)
         }
-//        os_log("Comments: ")
-//        for comment in comments {
-//            os_log("%s", comment)
-//        }
-
-  }
+        //        os_log("Comments: ")
+        //        for comment in comments {
+        //            os_log("%s", comment)
+        //        }
+        
+    }
     
 }
 

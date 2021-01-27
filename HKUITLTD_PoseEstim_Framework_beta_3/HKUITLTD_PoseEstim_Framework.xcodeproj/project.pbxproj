@@ -72,6 +72,7 @@
 		840E68FB25ABF108004671EA /* PhalakasanaA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E68FA25ABF108004671EA /* PhalakasanaA.swift */; };
 		844C835C25A82EBD00CD5729 /* ArdhaUttanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C835B25A82EBD00CD5729 /* ArdhaUttanasana.swift */; };
 		844C837125A85F4600CD5729 /* MarjarasanaB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C837025A85F4600CD5729 /* MarjarasanaB.swift */; };
+		846D47E425B1603E00563391 /* mobilenetv2False2021-01-15-10-55-41.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 846D47E325B1603E00563391 /* mobilenetv2False2021-01-15-10-55-41.tflite */; };
 		846FBE1725AD3D1A008F4FFE /* ArdhaPurvattanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FBE1625AD3D1A008F4FFE /* ArdhaPurvattanasana.swift */; };
 		846FBE2E25AD44EA008F4FFE /* ArdhaVasisthasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FBE2D25AD44EA008F4FFE /* ArdhaVasisthasana.swift */; };
 		846FBE3F25AD46D9008F4FFE /* Purvattanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FBE3E25AD46D9008F4FFE /* Purvattanasana.swift */; };
@@ -144,6 +145,7 @@
 		840E68FA25ABF108004671EA /* PhalakasanaA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhalakasanaA.swift; sourceTree = "<group>"; };
 		844C835B25A82EBD00CD5729 /* ArdhaUttanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasana.swift; sourceTree = "<group>"; };
 		844C837025A85F4600CD5729 /* MarjarasanaB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarjarasanaB.swift; sourceTree = "<group>"; };
+		846D47E325B1603E00563391 /* mobilenetv2False2021-01-15-10-55-41.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilenetv2False2021-01-15-10-55-41.tflite"; sourceTree = "<group>"; };
 		846FBE1625AD3D1A008F4FFE /* ArdhaPurvattanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaPurvattanasana.swift; sourceTree = "<group>"; };
 		846FBE2D25AD44EA008F4FFE /* ArdhaVasisthasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasana.swift; sourceTree = "<group>"; };
 		846FBE3E25AD46D9008F4FFE /* Purvattanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purvattanasana.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		4358C014247390F4008B4656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				846D47E325B1603E00563391 /* mobilenetv2False2021-01-15-10-55-41.tflite */,
 				4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
 				4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
 			);
@@ -497,6 +500,7 @@
 			files = (
 				4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */,
 				4358C021247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
+				846D47E425B1603E00563391 /* mobilenetv2False2021-01-15-10-55-41.tflite in Resources */,
 				4358C00124738FC9008B4656 /* README.md in Resources */,
 				4358C00024738FC9008B4656 /* LICENSE in Resources */,
 			);
