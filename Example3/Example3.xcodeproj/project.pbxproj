@@ -19,6 +19,7 @@
 		841F1CD825BFFD6D003F6E73 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F1CD725BFFD6D003F6E73 /* CaptureViewController.swift */; };
 		84756C1125C13ADD0098BC8D /* CameraCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84756C1025C13ADD0098BC8D /* CameraCapture.swift */; };
 		84756C1625C15D2F0098BC8D /* DualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84756C1525C15D2F0098BC8D /* DualViewController.swift */; };
+		84756C2325C28AFD0098BC8D /* Videos in Resources */ = {isa = PBXBuildFile; fileRef = 84756C2125C28AFD0098BC8D /* Videos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		8473AE4025AC641A0021CCA6 /* UtthitaTrikonasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaTrikonasana.swift; sourceTree = "<group>"; };
 		84756C1025C13ADD0098BC8D /* CameraCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCapture.swift; sourceTree = "<group>"; };
 		84756C1525C15D2F0098BC8D /* DualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualViewController.swift; sourceTree = "<group>"; };
+		84756C2125C28AFD0098BC8D /* Videos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Videos; sourceTree = "<group>"; };
 		84B5A1FA25A864B100D12563 /* MarjarasanaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 		43CD544C24B4881300AD95D7 = {
 			isa = PBXGroup;
 			children = (
+				84756C2125C28AFD0098BC8D /* Videos */,
 				43CD545724B4881300AD95D7 /* Example3 */,
 				43CD546E24B4881500AD95D7 /* Example3UITests */,
 				43CD545624B4881300AD95D7 /* Products */,
@@ -555,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84756C2325C28AFD0098BC8D /* Videos in Resources */,
 				43CD546524B4881500AD95D7 /* LaunchScreen.storyboard in Resources */,
 				43CD546224B4881500AD95D7 /* Assets.xcassets in Resources */,
 				43CD546024B4881300AD95D7 /* Main.storyboard in Resources */,

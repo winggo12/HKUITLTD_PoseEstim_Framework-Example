@@ -32,19 +32,20 @@ class DualViewController: UIViewController {
     private var givefeedback: GiveFeedBack? = nil
     
     
-    // Disable Auto-Rotation of View
-    override var shouldAutorotate: Bool {
+    /// - Tag:  Disable Auto-Rotation of View
+    // Note: For iPad, you must do extra setting in .xcodeproj
+    open override var shouldAutorotate: Bool {
         return false
     }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configurationSucceed = cameraCapture.startConfiguration()
 
         cameraCapture.delegate = self
@@ -57,7 +58,7 @@ class DualViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         cameraCapture.runSession()
         
     }
@@ -72,7 +73,7 @@ class DualViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
+
         cameraCapture.rotateScreen()
         
     }

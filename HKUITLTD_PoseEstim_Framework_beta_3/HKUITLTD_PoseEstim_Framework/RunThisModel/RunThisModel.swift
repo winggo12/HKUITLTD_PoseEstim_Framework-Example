@@ -55,7 +55,7 @@ public class RunthisModel{
           os_log("Cannot get inference result.", type: .error)
           return (DummyResult,DummyTime)
         }
-        print("Times: ", times)
+//        print("Times: ", times)
         return (result, times)
     }
 }
