@@ -1,9 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework">
-   </FileRef>
+   <Group
+      location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework"
+      name = "HKUITLTD_PoseEstim_Framework">
+      <Group
+         location = "group:Settings"
+         name = "Settings">
+         <FileRef
+            location = "group:Constants.swift">
+         </FileRef>
+         <FileRef
+            location = "group:tfModel.swift">
+         </FileRef>
+         <FileRef
+            location = "group:DeviceType.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:RunThisModel"
+         name = "RunThisModel">
+         <FileRef
+            location = "group:RunThisModel.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:PoseAnalyzer"
+         name = "PoseAnalyzer">
+         <FileRef
+            location = "group:GiveFeedBack.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:TensorFlowLiteSwift"
+         name = "TensorFlowLiteSwift">
+         <FileRef
+            location = "group:LICENSE">
+         </FileRef>
+         <FileRef
+            location = "group:README.md">
+         </FileRef>
+         <Group
+            location = "group:tensorflow"
+            name = "tensorflow">
+            <Group
+               location = "group:lite"
+               name = "lite">
+               <Group
+                  location = "group:experimental"
+                  name = "experimental">
+                  <Group
+                     location = "group:swift"
+                     name = "swift">
+                     <Group
+                        location = "group:Sources"
+                        name = "Sources">
+                        <FileRef
+                           location = "group:QuantizationParameters.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:Model.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:Tensor.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:TensorFlowLite.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:Delegate.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:InterpreterError.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:CoreMLDelegate.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:Interpreter.swift">
+                        </FileRef>
+                        <FileRef
+                           location = "group:MetalDelegate.swift">
+                        </FileRef>
+                     </Group>
+                  </Group>
+               </Group>
+            </Group>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:HKUITLTD_PoseEstim_Framework.h">
+      </FileRef>
+      <Group
+         location = "group:ModelAnalyzer"
+         name = "ModelAnalyzer">
+         <FileRef
+            location = "group:ModelAnalyzer.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Utils"
+         name = "Utils">
+         <FileRef
+            location = "group:CalAngleDist.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ResultToArray.swift">
+         </FileRef>
+         <FileRef
+            location = "group:DrawResult.swift">
+         </FileRef>
+         <FileRef
+            location = "group:FeedbackUtilities.swift">
+         </FileRef>
+         <FileRef
+            location = "group:GetCGRect.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ColorbitUtilities.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CommentOfPose.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:CustomObjects"
+         name = "CustomObjects">
+         <FileRef
+            location = "group:TimeResult.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Keypoint.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Shape.swift">
+         </FileRef>
+         <FileRef
+            location = "group:BodyPart.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Line.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Extensions"
+         name = "Extensions">
+         <FileRef
+            location = "group:CGSizeExtension.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CVPixelBufferExtension.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TFLiteExtension.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Model"
+         name = "Model">
+         <FileRef
+            location = "group:posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite">
+         </FileRef>
+         <FileRef
+            location = "group:mobilnetv2False2020-05-11-12-17-45.tflite">
+         </FileRef>
+         <FileRef
+            location = "group:mobilenetv2False21280_V2.tflite">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:TensorFlowLiteC"
+         name = "TensorFlowLiteC">
+         <Group
+            location = "group:Frameworks"
+            name = "Frameworks">
+            <Group
+               location = "group:TensorFlowLiteC.framework"
+               name = "TensorFlowLiteC.framework">
+               <Group
+                  location = "group:Headers"
+                  name = "Headers">
+                  <FileRef
+                     location = "group:coreml_delegate.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:TensorFlowLiteC.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:c_api.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:common.h">
+                  </FileRef>
+                  <FileRef
+                     location = "group:metal_delegate.h">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:TensorFlowLiteC">
+               </FileRef>
+               <Group
+                  location = "group:Modules"
+                  name = "Modules">
+                  <FileRef
+                     location = "group:module.modulemap">
+                  </FileRef>
+               </Group>
+            </Group>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Views"
+         name = "Views">
+         <FileRef
+            location = "group:OverlayView.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+      <Group
+         location = "group:ScoreCalculator"
+         name = "ScoreCalculator">
+         <FileRef
+            location = "group:ArdhaUttanasanaLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UtthitaParsvakonasanaALeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ArdhaVasisthasanaLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaDRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaALeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MarjarasanaBRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaARight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MarjarasanaBLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UrdhvaDhanurasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:PhalakasanaA.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UtthitaPashvakonasanaBRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Balasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UtthitaPashvakonasanaBLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Pose.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaCRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ArdhaUttanasanaRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Purvattanasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:PhalakasanaB.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MarjarasanaCLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ArdhaPurvattanasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MarjarasanaCRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaCLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:AdhoMukhaShivanasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TPose.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SetuBandhasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Navasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:YogaBase.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UtthitaTrikonasanaRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Padangushthasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaBRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaBLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ArdhaVasisthasanaRight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UtthitaTrikonasanaLeft.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Utkatasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UrdhvaMukhaSvanasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Bujangasana.swift">
+         </FileRef>
+         <FileRef
+            location = "group:UtthitaParsvakonasanaARight.swift">
+         </FileRef>
+         <FileRef
+            location = "group:VirabhadrasanaDLeft.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Camera Feed"
+         name = "Camera Feed">
+         <FileRef
+            location = "group:PreviewView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:CameraFeedManager.swift">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:../../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj">
    </FileRef>

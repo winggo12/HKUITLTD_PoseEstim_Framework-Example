@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4395B6622547B1BF000C895B /* HKUITLTD_PoseEstim_Framework in Resources */ = {isa = PBXBuildFile; fileRef = 4395B65B2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework */; };
 		43ABD6AC253046CE00C61C97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABD6AB253046CE00C61C97 /* AppDelegate.swift */; };
 		43ABD6AE253046CE00C61C97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABD6AD253046CE00C61C97 /* SceneDelegate.swift */; };
 		43ABD6B0253046CE00C61C97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABD6AF253046CE00C61C97 /* ViewController.swift */; };
 		43ABD6B3253046CE00C61C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B1253046CE00C61C97 /* Main.storyboard */; };
 		43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B4253046D100C61C97 /* Assets.xcassets */; };
 		43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B6253046D100C61C97 /* LaunchScreen.storyboard */; };
-		43F03F7325A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */; };
-		43F03F7425A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43F040FE25B955CD00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F040FD25B955CC00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework */; };
+		43F040FF25B955CD00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43F040FD25B955CC00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43F03F7425A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
+				43F040FF25B955CD00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,8 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4395B65B2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HKUITLTD_PoseEstim_Framework; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework; sourceTree = "<group>"; };
 		43ABD6A8253046CE00C61C97 /* tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ABD6AB253046CE00C61C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43ABD6AD253046CE00C61C97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +40,7 @@
 		43ABD6B4253046D100C61C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43ABD6B7253046D100C61C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43ABD6B9253046D100C61C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43BF2F9425A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F040FD25B955CC00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43F03F7325A8088400C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
+				43F040FE25B955CD00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +58,7 @@
 		4309A03125A3043100F630BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43BF2F9425A702FA00F1D51C /* HKUITLTD_PoseEstim_Framework.framework */,
-				4309A03225A3043100F630BF /* HKUITLTD_PoseEstim_Framework.framework */,
+				43F040FD25B955CC00C1EB7F /* HKUITLTD_PoseEstim_Framework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,7 +66,6 @@
 		43ABD69F253046CE00C61C97 = {
 			isa = PBXGroup;
 			children = (
-				4395B65B2547B1BF000C895B /* HKUITLTD_PoseEstim_Framework */,
 				43ABD6AA253046CE00C61C97 /* tutorial */,
 				43ABD6A9253046CE00C61C97 /* Products */,
 				4309A03125A3043100F630BF /* Frameworks */,
@@ -159,7 +154,6 @@
 			files = (
 				43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */,
 				43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */,
-				4395B6622547B1BF000C895B /* HKUITLTD_PoseEstim_Framework in Resources */,
 				43ABD6B3253046CE00C61C97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +323,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial112233;
+				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial11223;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -350,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial112233;
+				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial11223;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -61,6 +61,7 @@
 		435A5D0925A2F7EB00AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D0B25A3046800AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D1425A4301700AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4372072D25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4372072C25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite */; };
 		4396A97125A463E0000ECD58 /* YogaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A97025A463E0000ECD58 /* YogaBase.swift */; };
 		4396A98A25A56938000ECD58 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C010247390F4008B4656 /* CVPixelBufferExtension.swift */; };
 		4396A98C25A5694C000ECD58 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73F24A616CE00B81FC3 /* DeviceType.swift */; };
@@ -143,6 +144,7 @@
 		4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
 		4358C018247390F4008B4656 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4358C028247394FE008B4656 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
+		4372072C25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenetv2False21280_V2.tflite; sourceTree = "<group>"; };
 		4396A97025A463E0000ECD58 /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
 		4396A99225A56A18000ECD58 /* PhalakasanaA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhalakasanaA.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/PhalakasanaA.swift; sourceTree = SOURCE_ROOT; };
 		4396A99425A56A18000ECD58 /* ArdhaPurvattanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArdhaPurvattanasana.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/ArdhaPurvattanasana.swift; sourceTree = SOURCE_ROOT; };
@@ -410,6 +412,7 @@
 		4358C014247390F4008B4656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4372072C25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite */,
 				4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
 				4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
 			);
@@ -527,6 +530,7 @@
 				4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */,
 				4358C021247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
 				4358C00124738FC9008B4656 /* README.md in Resources */,
+				4372072D25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite in Resources */,
 				4358C00024738FC9008B4656 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,6 +33,25 @@ class ViewController: UIViewController {
         self.cameraCapture.switchCamera()
     }
     
+    @IBAction func useCamera(_ sender: Any) {
+        for layer in self.previewView.layer.sublayers! {
+             if layer.name == "photo" {
+                  layer.removeFromSuperlayer()
+             }
+         }
+        self.cameraCapture.checkCameraConfigurationAndStartSession()
+    }
+    @IBAction func usePhoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            showPhotoPicker(type: .photoLibrary)
+            self.cameraCapture.stopSession()
+        } else {
+            showErrorAlert(title: "Error", message: "Photo Album is unavailable")
+        }
+    }
+    private var alertController:UIAlertController?
+    private let conQueue = DispatchQueue(label: "detect queue", attributes: .concurrent)
+    
     private var overlayViewFrame:CGRect?
     private var previewViewFrame:CGRect?
     
@@ -108,29 +127,137 @@ extension ViewController: CameraFeedManagerDelegate {
             self.overlayViewFrame = self.overlayview.frame
             self.previewViewFrame = self.previewView.frame
         }
-        
-        let (result, _) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
-        let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
-        let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
-        let score = feedback.getScore()
-        let comments = feedback.getComments()
-        let colorBit = feedback.getColorBit()
-            
-        DispatchQueue.main.async {
-            if result.score >= self.minScore {
-                self.pose.text = userSelectedPose.rawValue
-                self.score.text = String(score)
-                self.comment1.text = comments[0]
-//                self.comment2.text = comments[1]
-//                self.comment3.text = comments[2]
+        self.conQueue.sync {
+            let (result, _) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
+            let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
+            let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
+            let score = feedback.getScore()
+            let comments = feedback.getComments()
+            let colorBit = feedback.getColorBit()
                 
-                let position = self.cameraCapture.showCurrentInput()
-                self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit)
-            }
-            else {
-                self.overlayview.clear()
-                return
+            DispatchQueue.main.async {
+                if result.score >= self.minScore {
+                    self.pose.text = userSelectedPose.rawValue
+                    self.score.text = String(score)
+                    self.comment1.text = comments[0]
+    //                self.comment2.text = comments[1]
+    //                self.comment3.text = comments[2]
+                    
+                    let position = self.cameraCapture.showCurrentInput()
+                    self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit, isPhoto: false)
+                }
+                else {
+                    self.overlayview.clear()
+                    return
+                }
             }
         }
     }
 }
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.cameraCapture.checkCameraConfigurationAndStartSession()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) {
+            photoLibraryOutput(image: image)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func showErrorAlert(title: String, message: String) {
+        if let ac = alertController {
+            ac.title = title
+            ac.message = message
+        } else {
+            alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController!.addAction(cancel)
+        }
+        self.present(alertController!, animated: true, completion: nil)
+    }
+    
+    func showPhotoPicker(type: UIImagePickerController.SourceType) {
+        let photoPicker = UIImagePickerController()
+        photoPicker.sourceType = type
+        photoPicker.allowsEditing = false
+        photoPicker.delegate = self
+        self.present(photoPicker, animated: true, completion: nil)
+    }
+    
+    func buffer(from image: UIImage) -> CVPixelBuffer? {
+      let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
+      var pixelBuffer : CVPixelBuffer?
+      let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(image.size.width), Int(image.size.height), kCVPixelFormatType_32BGRA, attrs, &pixelBuffer)
+      guard (status == kCVReturnSuccess) else {
+        return nil
+      }
+
+      CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+      let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
+
+      let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+      let context = CGContext(data: pixelData, width: Int(image.size.width), height: Int(image.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+
+      context?.translateBy(x: 0, y: image.size.height)
+      context?.scaleBy(x: 1.0, y: -1.0)
+
+      UIGraphicsPushContext(context!)
+      image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+      UIGraphicsPopContext()
+      CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+
+      return pixelBuffer
+    }
+    
+    func photoLibraryOutput(image: UIImage) {
+        DispatchQueue.main.async {
+            self.overlayViewFrame = self.overlayview.frame
+            self.previewViewFrame = self.previewView.frame
+        }
+        
+        //MARK: Need an UIImage to CVPixelBuffer function
+        
+        self.conQueue.sync {
+            let (result, _) = (thisModel?.Run(pb: self.buffer(from: image)!, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
+            let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
+            let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
+            let score = feedback.getScore()
+//            let comments = feedback.getComments()
+            let colorBit = feedback.getColorBit()
+                
+            DispatchQueue.main.async {
+                if result.score >= self.minScore {
+                    self.pose.text = userSelectedPose.rawValue
+                    self.score.text = String(score)
+//                    self.comment1.text = comments[0]
+                    
+                    let position = self.cameraCapture.showCurrentInput()
+                    
+                    
+                    let photoLayer: CALayer = {
+                        let layer = CALayer()
+                        let view = image.cgImage
+                        layer.name = "photo"
+                        layer.frame = self.previewViewFrame!
+                        layer.contents = view
+                        layer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+                        return layer
+                    }()
+                    self.previewView.layer.addSublayer(photoLayer)
+                    
+                    
+                    self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit, isPhoto: true)
+                }
+                else {
+                    self.overlayview.clear()
+                    return
+                }
+            }
+        }
+    } //photoLibraryOutput
+} //UIImagePickerControllerDelegate, UINavigationControllerDelegate
