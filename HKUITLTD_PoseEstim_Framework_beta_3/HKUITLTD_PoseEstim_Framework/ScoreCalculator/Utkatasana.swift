@@ -12,9 +12,9 @@ import Foundation
 class Utkatasana: YogaBase {
     
     /** constant */
-    private let arm_ratio = 0.2
-    private let shoulder_ratio = 0.3
-    private let waist_ratio = 0.2
+    private let arm_ratio = 0.3
+//    private let shoulder_ratio = 0.3
+    private let waist_ratio = 0.4
     private let leg_ratio = 0.3
 
     /** score of body parts */
@@ -41,14 +41,13 @@ class Utkatasana: YogaBase {
     private func calculateScore(){
         
         start_timing()
-        score = arm_ratio * arm_score + shoulder_ratio * shoulder_score + waist_ratio * waist_score + leg_ratio * leg_score
-        detailedscore = [arm_score, shoulder_score, waist_score, leg_score]
+        score = arm_ratio * arm_score + waist_ratio * waist_score + leg_ratio * leg_score
+        detailedscore = [arm_score, waist_score, leg_score]
         
     }
     
     private func makeComment(){
         comment = Array<String>()
-        
         comment!.append("Upperbody's posture  " + FeedbackUtilities.comment(score!))
         comment!.append("The time of standing: " + String(Double(timer_ns) / 1_000_000_000))
 
@@ -61,10 +60,6 @@ class Utkatasana: YogaBase {
         let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
         arm_score =  0.5 * (left_arm_score + right_arm_score)
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 180.0, 20, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20, true)
-        shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
-        
         let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90.0, 20, true)
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90.0, 20, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
@@ -73,7 +68,7 @@ class Utkatasana: YogaBase {
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 20, true)
         leg_score = 0.5 * (left_leg_score + right_leg_score)
         
-        let body_score = [arm_score,shoulder_score,waist_score,leg_score].min()
+        let body_score = [arm_score,waist_score,leg_score].min()
         if(body_score! > 80.0)
         {
             if(!isStartTiming)
@@ -94,13 +89,10 @@ class Utkatasana: YogaBase {
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)
         let cb_ra:UInt = ColorFeedbackUtilities.right_arm(score: right_arm_score)
         
-        let cb_ls:UInt = ColorFeedbackUtilities.left_shoulder(score: left_shoulder_score)
-        let cb_rs:UInt = ColorFeedbackUtilities.right_shoulder(score: right_shoulder_score)
-        
         let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
-        let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_ls | cb_rs | cb_lw | cb_rw
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_la | cb_ra | cb_lw | cb_rw
         let colorbitmergeString = String(colorbitmerge, radix: 2)
         let intForIndex = 1
         let index = colorbitmergeString.index(colorbitmergeString.startIndex, offsetBy: intForIndex)

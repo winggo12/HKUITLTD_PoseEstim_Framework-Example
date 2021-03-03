@@ -12,14 +12,12 @@ import Foundation
 class Balasana: YogaBase{
 
     /** constant */
-    private var waist_ratio: Double = 0.4
-    private var leg_ratio: Double = 0.4
-    private var arm_ankle_ratio: Double = 0.2
+    private var waist_ratio: Double = 0.5
+    private var leg_ratio: Double = 0.5
 
     /** score of body parts */
     private var waist_score: Double = 0.0
     private var leg_score: Double = 0.0
-    private var arm_ankle_score: Double = 0.0
 
     /** constructor */
     
@@ -50,26 +48,17 @@ class Balasana: YogaBase{
         let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 30, 10, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         
-        let left_arm_ankle_angle = FeedbackUtilities.getAngle(resultArray![9], resultArray![11], resultArray![5])
-        let left_arm_ankle_score = FeedbackUtilities.angleToScore(left_arm_ankle_angle, 180, 10, true)
-        let right_arm_ankle_angle = FeedbackUtilities.getAngle(resultArray![10], resultArray![12], resultArray![6])
-        let right_arm_ankle_score = FeedbackUtilities.angleToScore(right_arm_ankle_angle, 180, 10, true)
-        arm_ankle_score = 0.5 * (left_arm_ankle_score + right_arm_ankle_score)
-        
         let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
         let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)
         
         let cb_lw:UInt = ColorFeedbackUtilities.left_waist(score: left_waist_score)
         let cb_rw:UInt = ColorFeedbackUtilities.right_waist(score: right_waist_score)
         
-        let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_ankle_score)
-        let cb_ra:UInt = ColorFeedbackUtilities.right_arm(score: right_arm_ankle_score)
-        
-        let colorbitmerge: UInt = cb_ll | cb_rl | cb_lw | cb_rw | cb_la | cb_ra
+        let colorbitmerge: UInt = cb_ll | cb_rl | cb_lw | cb_rw
         colorbit = ColorFeedbackUtilities.uint_to_array(colorbitmerge: colorbitmerge)
         
-        score = waist_ratio * waist_score + leg_ratio * leg_score + arm_ankle_ratio * arm_ankle_score
-        detailedscore = [waist_score, leg_score, arm_ankle_score]
+        score = waist_ratio * waist_score + leg_ratio * leg_score
+        detailedscore = [waist_score, leg_score]
         
     }
     
