@@ -1,0 +1,16 @@
+PODS:
+  - OpalImagePicker (3.0.0)
+
+DEPENDENCIES:
+  - OpalImagePicker
+
+SPEC REPOS:
+  trunk:
+    - OpalImagePicker
+
+SPEC CHECKSUMS:
+  OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
+
+PODFILE CHECKSUM: 00eda6bef3858b2328fed099de08c56d2d7ccc8b
+
+COCOAPODS: 1.10.0

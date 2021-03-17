@@ -81,6 +81,8 @@
 		4396A9EA25A5BEB2000ECD58 /* ArdhaVasisthasanaLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A9E825A5BEB2000ECD58 /* ArdhaVasisthasanaLeft.swift */; };
 		43A62A6324A353EF00BDBD27 /* ModelAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */; };
 		43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB382224AD8BF700D17529 /* RunThisModel.swift */; };
+		43DA7F8325E62A6A00C5DE0D /* EvaluateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA7F8225E62A6A00C5DE0D /* EvaluateUtils.swift */; };
+		43DA7F8625E62A8900C5DE0D /* Coco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA7F8525E62A8900C5DE0D /* Coco.swift */; };
 		43F14E9424AEE71D000C6059 /* DrawResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F14E9324AEE71D000C6059 /* DrawResult.swift */; };
 		43F919B325233FDA00B6A6E0 /* TPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F919B225233FDA00B6A6E0 /* TPose.swift */; };
 		4616D62024EBF4BA00992513 /* UrdhvaDhanurasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D61524EBF4B900992513 /* UrdhvaDhanurasana.swift */; };
@@ -164,6 +166,8 @@
 		4396A9E825A5BEB2000ECD58 /* ArdhaVasisthasanaLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasanaLeft.swift; sourceTree = "<group>"; };
 		43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
 		43BB382224AD8BF700D17529 /* RunThisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
+		43DA7F8225E62A6A00C5DE0D /* EvaluateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateUtils.swift; sourceTree = "<group>"; };
+		43DA7F8525E62A8900C5DE0D /* Coco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coco.swift; sourceTree = "<group>"; };
 		43F14E9324AEE71D000C6059 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
 		43F919B225233FDA00B6A6E0 /* TPose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPose.swift; sourceTree = "<group>"; };
 		4616D61524EBF4B900992513 /* UrdhvaDhanurasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrdhvaDhanurasana.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				4315E6B824A609D900B81FC3 /* BodyPart.swift */,
 				4315E6B924A609D900B81FC3 /* Line.swift */,
 				435012AE255BC239007382F3 /* Shape.swift */,
+				43DA7F8525E62A8900C5DE0D /* Coco.swift */,
 			);
 			name = CustomObjects;
 			path = HKUITLTD_PoseEstim_Framework/CustomObjects;
@@ -262,6 +267,7 @@
 				4315E6C924A60E3300B81FC3 /* CommentOfPose.swift */,
 				43F14E9324AEE71D000C6059 /* DrawResult.swift */,
 				4616D62A24EBF6D200992513 /* FeedbackUtilities.swift */,
+				43DA7F8225E62A6A00C5DE0D /* EvaluateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				4315E6BF24A609D900B81FC3 /* BodyPart.swift in Sources */,
 				4396A98C25A5694C000ECD58 /* DeviceType.swift in Sources */,
 				43F14E9424AEE71D000C6059 /* DrawResult.swift in Sources */,
+				43DA7F8625E62A8900C5DE0D /* Coco.swift in Sources */,
 				4358C01F247390F4008B4656 /* TFLiteExtension.swift in Sources */,
 				4309A01A25A3039500F630BF /* VirabhadrasanaBLeft.swift in Sources */,
 				4358C023247390F4008B4656 /* OverlayView.swift in Sources */,
@@ -609,6 +616,7 @@
 				4358C00424738FC9008B4656 /* Tensor.swift in Sources */,
 				4358C00224738FC9008B4656 /* QuantizationParameters.swift in Sources */,
 				43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */,
+				43DA7F8325E62A6A00C5DE0D /* EvaluateUtils.swift in Sources */,
 				435012AF255BC239007382F3 /* Shape.swift in Sources */,
 				4309A01D25A3039500F630BF /* PhalakasanaB.swift in Sources */,
 				4358C00324738FC9008B4656 /* Model.swift in Sources */,

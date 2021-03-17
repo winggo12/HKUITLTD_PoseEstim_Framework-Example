@@ -72,15 +72,12 @@ public class OverlayView: UIView {
         super.setNeedsDisplay()
     }
 
-    public func drawResult(result: Result, bounds: CGRect, position: AVCaptureDevice.Position, wrong: [Character], isPhoto: Bool){
+    public func drawResult(result: Result, bounds: CGRect, position: AVCaptureDevice.Position, wrong: [Character]){
         
         let width = bounds.maxX
         
         var mdots: [CGPoint] = []
         var mlines: [Line] = []
-        
-        var tdots: [CGPoint] = []
-        var tlines: [Line] = []
         
         if (position == .front) {
             for dot in result.dots {
@@ -101,21 +98,8 @@ public class OverlayView: UIView {
                 mlines.append(Line(from: mlineFrom, to: mlineTo))
             }
         }
-        if isPhoto {
-            for dot in mdots {
-                tdots.append(CGPoint(x: dot.x, y: dot.y + 40))
-            }
-            for line in mlines {
-                let mlineFrom = CGPoint(x: line.from.x, y: line.from.y + 40)
-                let mlineTo = CGPoint(x: line.to.x, y: line.to.y + 40)
-                tlines.append(Line(from: mlineFrom, to: mlineTo))
-            }
-        } else {
-            tdots = mdots
-            tlines = mlines
-        }
-        self.dots = tdots
-        self.lines = tlines
+        self.dots = mdots
+        self.lines = mlines
         self.fail = wrong
 //        self.shapes = result.shapes
         super.setNeedsDisplay()

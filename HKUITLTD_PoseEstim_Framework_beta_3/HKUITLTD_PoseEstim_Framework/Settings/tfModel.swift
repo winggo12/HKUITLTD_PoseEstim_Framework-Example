@@ -8,7 +8,8 @@
 
 import Foundation
 
-var ModelName = "mobilnetv2False2020-05-11-12-17-45"
+//var ModelName = "resnet18False_yoga224_55"
+var ModelName = "mobilnetv2False2020-05-11-12-17-45"//resnet18False2021-02-18-10-23-20"
 
 // MARK: - Information about the model file.
 public typealias FileInfo = (name: String, extension: String)

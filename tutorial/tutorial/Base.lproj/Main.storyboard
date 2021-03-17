@@ -134,7 +134,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIh-pM-EPG">
-                                <rect key="frame" x="187" y="660" width="41" height="30"/>
+                                <rect key="frame" x="186.66666666666666" y="660" width="41" height="30"/>
                                 <state key="normal" title="Photo"/>
                                 <connections>
                                     <action selector="usePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="60E-pP-2mh"/>
@@ -144,18 +144,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ope-zM-VDt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7un-mE-kT3"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7un-mE-kT3"/>
                             <constraint firstAttribute="bottom" secondItem="vnM-pc-8VR" secondAttribute="bottom" constant="84" id="DQa-j2-gVX"/>
-                            <constraint firstItem="ope-zM-VDt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dtu-G8-xhv"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dtu-G8-xhv"/>
                             <constraint firstItem="vnM-pc-8VR" firstAttribute="top" secondItem="6Y2-An-5oK" secondAttribute="bottom" constant="79" id="Myz-cZ-iTy"/>
-                            <constraint firstItem="ope-zM-VDt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O5h-C3-GFw"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="O5h-C3-GFw"/>
                             <constraint firstAttribute="bottom" secondItem="DT8-4U-uDs" secondAttribute="bottom" constant="8" id="P0e-6M-QBK"/>
                             <constraint firstItem="DT8-4U-uDs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pak-97-02b"/>
                             <constraint firstItem="ope-zM-VDt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UQ7-Q5-3vL"/>
                             <constraint firstItem="vnM-pc-8VR" firstAttribute="centerX" secondItem="6Y2-An-5oK" secondAttribute="centerX" id="VLT-7o-K4E"/>
                             <constraint firstItem="vnM-pc-8VR" firstAttribute="centerX" secondItem="DT8-4U-uDs" secondAttribute="centerX" id="cAt-AU-Ewx"/>
                             <constraint firstItem="OIh-pM-EPG" firstAttribute="top" secondItem="vnM-pc-8VR" secondAttribute="bottom" constant="8" id="cbZ-65-seM"/>
-                            <constraint firstItem="ope-zM-VDt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nnh-RC-q3x"/>
+                            <constraint firstItem="ope-zM-VDt" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="nnh-RC-q3x"/>
                             <constraint firstItem="ope-zM-VDt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tzh-y1-Vha"/>
                             <constraint firstItem="vnM-pc-8VR" firstAttribute="centerX" secondItem="OIh-pM-EPG" secondAttribute="centerX" id="xyh-q6-HOx"/>
                         </constraints>

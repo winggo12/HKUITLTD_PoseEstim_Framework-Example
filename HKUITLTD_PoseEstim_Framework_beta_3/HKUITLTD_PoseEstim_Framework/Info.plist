@@ -18,5 +18,9 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires gallery access</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 </dict>
 </plist>

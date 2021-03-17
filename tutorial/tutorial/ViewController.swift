@@ -8,9 +8,24 @@
 import UIKit
 import AVFoundation
 import HKUITLTD_PoseEstim_Framework
+import OpalImagePicker
+import Photos
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, OpalImagePickerControllerDelegate {
 
+    // MARK: - TEST USE
+    var imageCnt = 0
+    let documentInteractionController = UIDocumentInteractionController()
+    let jsoner = EvaluateUtils()
+    var pickerDismissed: Bool = false
+    var processFinished: Bool = false
+    var nameList: [String] = [String]()
+    @IBAction func outputJson(_ sender: UIBarButtonItem) {
+        let _ = jsoner.genJson()
+//        self.share(url: filePath)
+    }
+    // MARK: -
+    
     /// Test Cases
     public let la = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     public let ra = [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
@@ -42,12 +57,31 @@ class ViewController: UIViewController {
         self.cameraCapture.checkCameraConfigurationAndStartSession()
     }
     @IBAction func usePhoto(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            showPhotoPicker(type: .photoLibrary)
-            self.cameraCapture.stopSession()
-        } else {
-            showErrorAlert(title: "Error", message: "Photo Album is unavailable")
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            showPhotoPicker(type: .photoLibrary)
+//            self.cameraCapture.stopSession()
+//        } else {
+//            showErrorAlert(title: "Error", message: "Photo Album is unavailable")
+//        }
+        self.cameraCapture.stopSession()
+        let imagePicker = OpalImagePickerController()
+        imagePicker.imagePickerDelegate = self
+        presentOpalImagePickerController(imagePicker, animated: true, select: { (assets) in
+            //Save Images, update UI
+            let imageSet = self.getAssetThumbnail(assets: assets)
+            self.detectImageSet(images: imageSet)
+            //Dismiss Controller
+            imagePicker.dismiss(animated: true, completion: nil)
+            self.pickerDismissed = true
+            if self.processFinished {
+                self.processFinished = false
+                self.pickerDismissed = false
+                self.showFinished()
+            }
+        }, cancel: {
+           //Cancel action?
+            
+       })
     }
     private var alertController:UIAlertController?
     private let conQueue = DispatchQueue(label: "detect queue", attributes: .concurrent)
@@ -98,8 +132,60 @@ class ViewController: UIViewController {
             previewView.previewLayer.connection?.videoOrientation = .portrait
         }
     }
+    
+    // MARK: - self function
+    func getAssetThumbnail(assets: [PHAsset]) -> [UIImage] {
+        self.nameList.removeAll()
+        var arrayOfImages = [UIImage]()
+        for asset in assets {
+            let manager = PHImageManager.default()
+            let option = PHImageRequestOptions()
+            var image = UIImage()
+            option.isSynchronous = true
+            manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                image = result!
+                arrayOfImages.append(image)
+            })
+            self.nameList.append(asset.originalFilename ?? "nil")
+        }
+        return arrayOfImages
+    }
+    
+    func detectImageSet(images: [UIImage]) {
+        self.conQueue.sync {
+            jsoner.clearImageData()
+            for index in 0..<images.count {
+                let (resSw, _) = (thisModel?.Run(pb: self.buffer(from: images[index])!, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
+                jsoner.addImageData(data: resSw, name: self.nameList[index], cnt: self.imageCnt)
+                self.imageCnt += 1
+            }
+            self.processFinished = true
+            // Show alert when finished
+            if self.pickerDismissed {
+                self.pickerDismissed = false
+                self.processFinished = false
+                showFinished()
+            }
+        }
+    }
+    
+    func showFinished() {
+        let finishAlert = UIAlertController(title: "Finished processing", message: "Do you want to save the result as JSON file?", preferredStyle: .alert)
+        let saveOption = UIAlertAction(title: "Save", style: .default) { (_) in
+            let filePath = self.jsoner.genJson()
+//            self.share(url: filePath)
+         }
+        let cancelOption = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        finishAlert.addAction(cancelOption)
+        finishAlert.addAction(saveOption)
+        self.present(finishAlert, animated: true, completion: nil)
+    }
+    
+    
+    
+    // MARK: -
 
-}
+} // ViewController
 
 extension ViewController: CameraFeedManagerDelegate {
     func cameraFeedManagerDidEndSessionInterruption(_ manager: CameraFeedManager) {
@@ -144,7 +230,7 @@ extension ViewController: CameraFeedManagerDelegate {
     //                self.comment3.text = comments[2]
                     
                     let position = self.cameraCapture.showCurrentInput()
-                    self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit, isPhoto: false)
+                    self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit)
                 }
                 else {
                     self.overlayview.clear()
@@ -251,7 +337,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                     self.previewView.layer.addSublayer(photoLayer)
                     
                     
-                    self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit, isPhoto: true)
+                    self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit)
                 }
                 else {
                     self.overlayview.clear()
@@ -261,3 +347,34 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
     } //photoLibraryOutput
 } //UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+// MARK: - OpalImagePicker
+
+extension PHAsset {
+    var originalFilename: String? {
+        return PHAssetResource.assetResources(for: self).first?.originalFilename
+    }
+}
+extension ViewController: UIDocumentInteractionControllerDelegate {
+    /// If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        guard let navVC = self.navigationController else {
+            return self
+        }
+        return navVC
+    }
+    func share(url: URL) {
+        documentInteractionController.url = url
+        documentInteractionController.uti = url.typeIdentifier ?? "public.data, public.content"
+        documentInteractionController.name = url.localizedName ?? url.lastPathComponent
+        documentInteractionController.presentPreview(animated: true)
+    }
+}
+extension URL {
+    var typeIdentifier: String? {
+        return (try? resourceValues(forKeys: [.typeIdentifierKey]))?.typeIdentifier
+    }
+    var localizedName: String? {
+        return (try? resourceValues(forKeys: [.localizedNameKey]))?.localizedName
+    }
+}
