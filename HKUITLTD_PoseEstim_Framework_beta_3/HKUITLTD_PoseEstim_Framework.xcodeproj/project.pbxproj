@@ -34,6 +34,13 @@
 		4315E6CA24A60E3300B81FC3 /* CommentOfPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E6C924A60E3300B81FC3 /* CommentOfPose.swift */; };
 		4315E74024A616CE00B81FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73D24A616CE00B81FC3 /* Constants.swift */; };
 		4315E74124A616CE00B81FC3 /* tfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73E24A616CE00B81FC3 /* tfModel.swift */; };
+		4339EE08260987C500DB00C8 /* mobilenetv2False_33.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4339EE07260987C500DB00C8 /* mobilenetv2False_33.tflite */; };
+		434D89CF2608A1DD006CAD0E /* resnet18False_mpii112_33.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 434D89CE2608A1DD006CAD0E /* resnet18False_mpii112_33.tflite */; };
+		434D89DA2608A2C7006CAD0E /* resnet18False_mpii112_35.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 434D89D82608A2C6006CAD0E /* resnet18False_mpii112_35.tflite */; };
+		434D89DB2608A2C7006CAD0E /* resnet18False_mpii112_38.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 434D89D92608A2C6006CAD0E /* resnet18False_mpii112_38.tflite */; };
+		434D89E82608A450006CAD0E /* resnet18False_yoga112_40.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 434D89E52608A450006CAD0E /* resnet18False_yoga112_40.tflite */; };
+		434D89E92608A450006CAD0E /* resnet18False_yoga112_50.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 434D89E62608A450006CAD0E /* resnet18False_yoga112_50.tflite */; };
+		434D89EA2608A450006CAD0E /* resnet18False_yoga112_38.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 434D89E72608A450006CAD0E /* resnet18False_yoga112_38.tflite */; };
 		435012AF255BC239007382F3 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435012AE255BC239007382F3 /* Shape.swift */; };
 		4358BFE524738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4358BFEE24738FA1008B4656 /* TensorFlowLiteC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358BFED24738FA1008B4656 /* TensorFlowLiteC.framework */; };
@@ -61,6 +68,12 @@
 		435A5D0925A2F7EB00AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D0B25A3046800AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D1425A4301700AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		435EE4BA26086AC600BBC5B2 /* mv2False_yogatrain224_64_33.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435EE4B926086AC600BBC5B2 /* mv2False_yogatrain224_64_33.tflite */; };
+		435EE4D72608795E00BBC5B2 /* mv2False_yoga224_13.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435EE4D22608795E00BBC5B2 /* mv2False_yoga224_13.tflite */; };
+		435EE4D82608795E00BBC5B2 /* mv2False_yoga224_25.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435EE4D32608795E00BBC5B2 /* mv2False_yoga224_25.tflite */; };
+		435EE4D92608795E00BBC5B2 /* mv2False_yoga224_21.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435EE4D42608795E00BBC5B2 /* mv2False_yoga224_21.tflite */; };
+		435EE4DA2608795E00BBC5B2 /* mv2False_yoga224_15.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435EE4D52608795E00BBC5B2 /* mv2False_yoga224_15.tflite */; };
+		435EE4DB2608795E00BBC5B2 /* mv2False_yoga224_28.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 435EE4D62608795E00BBC5B2 /* mv2False_yoga224_28.tflite */; };
 		4372072D25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4372072C25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite */; };
 		4396A97125A463E0000ECD58 /* YogaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A97025A463E0000ECD58 /* YogaBase.swift */; };
 		4396A98A25A56938000ECD58 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C010247390F4008B4656 /* CVPixelBufferExtension.swift */; };
@@ -121,6 +134,13 @@
 		4315E73D24A616CE00B81FC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4315E73E24A616CE00B81FC3 /* tfModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
 		4315E73F24A616CE00B81FC3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		4339EE07260987C500DB00C8 /* mobilenetv2False_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenetv2False_33.tflite; sourceTree = "<group>"; };
+		434D89CE2608A1DD006CAD0E /* resnet18False_mpii112_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = resnet18False_mpii112_33.tflite; path = ../../../../../Downloads/mpii_112/resnet18False_mpii112_33.tflite; sourceTree = "<group>"; };
+		434D89D82608A2C6006CAD0E /* resnet18False_mpii112_35.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = resnet18False_mpii112_35.tflite; path = ../../../../../Downloads/mpii_112/resnet18False_mpii112_35.tflite; sourceTree = "<group>"; };
+		434D89D92608A2C6006CAD0E /* resnet18False_mpii112_38.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = resnet18False_mpii112_38.tflite; path = ../../../../../Downloads/mpii_112/resnet18False_mpii112_38.tflite; sourceTree = "<group>"; };
+		434D89E52608A450006CAD0E /* resnet18False_yoga112_40.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = resnet18False_yoga112_40.tflite; sourceTree = "<group>"; };
+		434D89E62608A450006CAD0E /* resnet18False_yoga112_50.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = resnet18False_yoga112_50.tflite; sourceTree = "<group>"; };
+		434D89E72608A450006CAD0E /* resnet18False_yoga112_38.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = resnet18False_yoga112_38.tflite; sourceTree = "<group>"; };
 		435012AE255BC239007382F3 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		4358BFE024738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
@@ -146,6 +166,12 @@
 		4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
 		4358C018247390F4008B4656 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4358C028247394FE008B4656 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
+		435EE4B926086AC600BBC5B2 /* mv2False_yogatrain224_64_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yogatrain224_64_33.tflite; sourceTree = "<group>"; };
+		435EE4D22608795E00BBC5B2 /* mv2False_yoga224_13.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yoga224_13.tflite; path = ../../../../../Downloads/yogatrain_224_256/mv2False_yoga224_13.tflite; sourceTree = "<group>"; };
+		435EE4D32608795E00BBC5B2 /* mv2False_yoga224_25.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yoga224_25.tflite; path = ../../../../../Downloads/yogatrain_224_256/mv2False_yoga224_25.tflite; sourceTree = "<group>"; };
+		435EE4D42608795E00BBC5B2 /* mv2False_yoga224_21.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yoga224_21.tflite; path = ../../../../../Downloads/yogatrain_224_256/mv2False_yoga224_21.tflite; sourceTree = "<group>"; };
+		435EE4D52608795E00BBC5B2 /* mv2False_yoga224_15.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yoga224_15.tflite; path = ../../../../../Downloads/yogatrain_224_256/mv2False_yoga224_15.tflite; sourceTree = "<group>"; };
+		435EE4D62608795E00BBC5B2 /* mv2False_yoga224_28.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yoga224_28.tflite; path = ../../../../../Downloads/yogatrain_224_256/mv2False_yoga224_28.tflite; sourceTree = "<group>"; };
 		4372072C25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenetv2False21280_V2.tflite; sourceTree = "<group>"; };
 		4396A97025A463E0000ECD58 /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
 		4396A99225A56A18000ECD58 /* PhalakasanaA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhalakasanaA.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/PhalakasanaA.swift; sourceTree = SOURCE_ROOT; };
@@ -418,6 +444,19 @@
 		4358C014247390F4008B4656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4339EE07260987C500DB00C8 /* mobilenetv2False_33.tflite */,
+				434D89E72608A450006CAD0E /* resnet18False_yoga112_38.tflite */,
+				434D89E52608A450006CAD0E /* resnet18False_yoga112_40.tflite */,
+				434D89E62608A450006CAD0E /* resnet18False_yoga112_50.tflite */,
+				434D89D82608A2C6006CAD0E /* resnet18False_mpii112_35.tflite */,
+				434D89D92608A2C6006CAD0E /* resnet18False_mpii112_38.tflite */,
+				434D89CE2608A1DD006CAD0E /* resnet18False_mpii112_33.tflite */,
+				435EE4D22608795E00BBC5B2 /* mv2False_yoga224_13.tflite */,
+				435EE4D52608795E00BBC5B2 /* mv2False_yoga224_15.tflite */,
+				435EE4D42608795E00BBC5B2 /* mv2False_yoga224_21.tflite */,
+				435EE4D32608795E00BBC5B2 /* mv2False_yoga224_25.tflite */,
+				435EE4D62608795E00BBC5B2 /* mv2False_yoga224_28.tflite */,
+				435EE4B926086AC600BBC5B2 /* mv2False_yogatrain224_64_33.tflite */,
 				4372072C25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite */,
 				4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
 				4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
@@ -533,10 +572,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435EE4DB2608795E00BBC5B2 /* mv2False_yoga224_28.tflite in Resources */,
+				434D89E92608A450006CAD0E /* resnet18False_yoga112_50.tflite in Resources */,
+				434D89EA2608A450006CAD0E /* resnet18False_yoga112_38.tflite in Resources */,
 				4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */,
 				4358C021247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
+				435EE4D72608795E00BBC5B2 /* mv2False_yoga224_13.tflite in Resources */,
 				4358C00124738FC9008B4656 /* README.md in Resources */,
+				434D89CF2608A1DD006CAD0E /* resnet18False_mpii112_33.tflite in Resources */,
+				434D89DA2608A2C7006CAD0E /* resnet18False_mpii112_35.tflite in Resources */,
+				435EE4BA26086AC600BBC5B2 /* mv2False_yogatrain224_64_33.tflite in Resources */,
+				434D89E82608A450006CAD0E /* resnet18False_yoga112_40.tflite in Resources */,
+				435EE4D82608795E00BBC5B2 /* mv2False_yoga224_25.tflite in Resources */,
+				435EE4DA2608795E00BBC5B2 /* mv2False_yoga224_15.tflite in Resources */,
+				4339EE08260987C500DB00C8 /* mobilenetv2False_33.tflite in Resources */,
 				4372072D25C3AFAC008A0556 /* mobilenetv2False21280_V2.tflite in Resources */,
+				435EE4D92608795E00BBC5B2 /* mv2False_yoga224_21.tflite in Resources */,
+				434D89DB2608A2C7006CAD0E /* resnet18False_mpii112_38.tflite in Resources */,
 				4358C00024738FC9008B4656 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

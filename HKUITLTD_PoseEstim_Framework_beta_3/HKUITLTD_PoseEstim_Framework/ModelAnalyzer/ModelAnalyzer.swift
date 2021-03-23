@@ -47,7 +47,7 @@ public class ModelAnalyzer {
         ofType: tfModel.file.extension
       )
     else {
-      fatalError("Failed to load the model file with name: \(tfModel.file.name).")
+      fatalError("Failed to load the model file with name: \(tfModel.file.name)")
 
     }
 
@@ -317,8 +317,8 @@ public class ModelAnalyzer {
             var maxCol = 0
             self.g.enter()
             self.q.async {
-                for row in 0..<28 {
-                    for col in 0..<28 {
+                for row in 0..<Int(tfModel.output.width/2) {
+                    for col in 0..<Int(tfModel.output.height/2) {
                         if heats[0, row, col, keypoint] > maxValue {
                           maxValue = heats[0, row, col, keypoint]
                           maxRow = row
@@ -332,8 +332,8 @@ public class ModelAnalyzer {
             }
             self.g.enter()
             self.q.async {
-                for row in 28..<56 {
-                    for col in 0..<28 {
+                for row in Int(tfModel.output.width/2)..<tfModel.output.width {
+                    for col in 0..<Int(tfModel.output.height/2) {
                         if heats[0, row, col, keypoint] > maxValue {
                           maxValue = heats[0, row, col, keypoint]
                           maxRow = row
@@ -347,8 +347,8 @@ public class ModelAnalyzer {
             }
             self.g.enter()
             self.q.async {
-                for row in 0..<28 {
-                    for col in 28..<56 {
+                for row in 0..<Int(tfModel.output.width/2) {
+                    for col in Int(tfModel.output.height/2)..<tfModel.output.height {
                         if heats[0, row, col, keypoint] > maxValue {
                           maxValue = heats[0, row, col, keypoint]
                           maxRow = row
@@ -362,8 +362,8 @@ public class ModelAnalyzer {
             }
             self.g.enter()
             self.q.async {
-                for row in 28..<56 {
-                    for col in 28..<56 {
+                for row in Int(tfModel.output.width/2)..<tfModel.output.width {
+                    for col in Int(tfModel.output.height/2)..<tfModel.output.height {
                         if heats[0, row, col, keypoint] > maxValue {
                           maxValue = heats[0, row, col, keypoint]
                           maxRow = row

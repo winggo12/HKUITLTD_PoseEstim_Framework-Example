@@ -47,7 +47,6 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
     @IBAction func switchCamera(_ sender: UIButton) {
         self.cameraCapture.switchCamera()
     }
-    
     @IBAction func useCamera(_ sender: Any) {
         for layer in self.previewView.layer.sublayers! {
              if layer.name == "photo" {
@@ -95,7 +94,7 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
     var threadCount: Int = Constants.defaultThreadCount
     var delegate: Delegates = Constants.defaultDelegate
     
-    private let minScore: Float = 0.6
+    private let minScore: Float = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()

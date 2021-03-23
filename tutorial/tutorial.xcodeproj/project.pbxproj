@@ -43,6 +43,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		435EE4C32608767800BBC5B2 /* mv2False_yogatrain224_64_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yogatrain224_64_33.tflite; path = ../../../../../Downloads/yogatrain_224_64/mv2False_yogatrain224_64_33.tflite; sourceTree = "<group>"; };
+		435EE4C82608783700BBC5B2 /* mv2False_yoga224_28.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_28.tflite; sourceTree = "<group>"; };
+		435EE4C92608783700BBC5B2 /* mv2False_yoga224_21.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_21.tflite; sourceTree = "<group>"; };
+		435EE4CA2608783700BBC5B2 /* mv2False_yoga224_25.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_25.tflite; sourceTree = "<group>"; };
+		435EE4CB2608783700BBC5B2 /* mv2False_yoga224_15.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_15.tflite; sourceTree = "<group>"; };
+		435EE4CC2608783800BBC5B2 /* mv2False_yoga224_13.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_13.tflite; sourceTree = "<group>"; };
 		436C0C9225DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436C0CF925DE107A00329384 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HKUITLTD_PoseEstim_Framework.xcodeproj; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
 		436C0D5125DE10DC00329384 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -321,6 +327,12 @@
 		436C0D7E25DE10DC00329384 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				435EE4CC2608783800BBC5B2 /* mv2False_yoga224_13.tflite */,
+				435EE4CB2608783700BBC5B2 /* mv2False_yoga224_15.tflite */,
+				435EE4C92608783700BBC5B2 /* mv2False_yoga224_21.tflite */,
+				435EE4CA2608783700BBC5B2 /* mv2False_yoga224_25.tflite */,
+				435EE4C82608783700BBC5B2 /* mv2False_yoga224_28.tflite */,
+				435EE4C32608767800BBC5B2 /* mv2False_yogatrain224_64_33.tflite */,
 				436C0D7F25DE10DC00329384 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
 				436C0D8025DE10DC00329384 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
 				436C0D8125DE10DC00329384 /* mobilenetv2False21280_V2.tflite */,
