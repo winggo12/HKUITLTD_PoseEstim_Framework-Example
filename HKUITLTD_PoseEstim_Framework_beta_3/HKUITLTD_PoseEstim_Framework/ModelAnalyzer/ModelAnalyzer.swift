@@ -409,8 +409,8 @@ public class ModelAnalyzer {
         var xCoord = Float32(0)
     // MARK: Change the output if the model has both heatmap and offset
         if(tfModel.output.offsetSize != 0){
-            yCoord = Float32(y) / Float32(tfModel.output.height - 1) * Float32(tfModel.input.height)+heats[0, x, y, index+26]
-            xCoord = Float32(x) / Float32(tfModel.output.width - 1) * Float32(tfModel.input.width)+heats[0, x, y, index+13]}
+            yCoord = Float32(y) / Float32(tfModel.output.height - 1) * Float32(tfModel.input.height)+heats[0, x, y, index+tfModel.output.offsetSize]
+            xCoord = Float32(x) / Float32(tfModel.output.width - 1) * Float32(tfModel.input.width)+heats[0, x, y, index+tfModel.output.keypointSize]}
         else{
             yCoord = Float32(y) / Float32(tfModel.output.height - 1) * Float32(tfModel.input.height)
             xCoord = Float32(x) / Float32(tfModel.output.width - 1) * Float32(tfModel.input.width)
@@ -424,7 +424,7 @@ public class ModelAnalyzer {
     var result = Result(dots: [], lines: [],shapes: [], score: totalScore)
     var bodyPartToDotMap = [BodyPart: CGPoint]()
     for (index, part) in BodyPart.allCases.enumerated() {
-        if index < 13
+        if index < tfModel.output.keypointSize
         {
             let position = CGPoint(
               x: CGFloat(coords[index].x) * viewSize.width / CGFloat(tfModel.input.width),
@@ -436,13 +436,17 @@ public class ModelAnalyzer {
         }
     }
     
+//    var bodyLines:[(from: BodyPart, to: BodyPart)]
+//    bodyLines = tfModel.output.keypointSize == 13 ? BodyPart.lines13 : BodyPart.lines9
     do {
-      try result.lines = BodyPart.lines.map { map throws -> Line in
+        try result.lines = BodyPart.lines13.map { map throws -> Line in
         guard let from = bodyPartToDotMap[map.from] else {
-          throw PostprocessError.missingBodyPart(of: map.from)
+//          throw PostprocessError.missingBodyPart(of: map.from)
+            return Line(from: CGPoint.zero, to: CGPoint.zero)
         }
         guard let to = bodyPartToDotMap[map.to] else {
-          throw PostprocessError.missingBodyPart(of: map.to)
+//          throw PostprocessError.missingBodyPart(of: map.to)
+            return Line(from: CGPoint.zero, to: CGPoint.zero)
         }
         return Line(from: from, to: to)
       }

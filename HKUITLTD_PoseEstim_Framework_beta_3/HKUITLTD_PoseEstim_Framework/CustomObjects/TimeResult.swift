@@ -20,9 +20,9 @@ public struct Result {
     public var shapes: [CAShapeLayer]
   public var score: Float
 }
-private let DummyDotsArray = [CGPoint](repeating:CGPoint(x:0,y:0),count:13) //CGPoint(x:0,y:0)
+private let DummyDotsArray = [CGPoint](repeating:CGPoint(x:0,y:0),count:tfModel.output.keypointSize) //CGPoint(x:0,y:0)
 private let DummyLine = Line(from: CGPoint(x:0,y:0),to: CGPoint(x:0,y:0))
-private let DummyLinesArray = [Line](repeating: DummyLine, count: 12)
+private let DummyLinesArray = [Line](repeating: DummyLine, count: tfModel.output.keypointSize-1)
 private let DummyScore = Float(0.01)
 
 private let DummyShape = [CAShapeLayer()]

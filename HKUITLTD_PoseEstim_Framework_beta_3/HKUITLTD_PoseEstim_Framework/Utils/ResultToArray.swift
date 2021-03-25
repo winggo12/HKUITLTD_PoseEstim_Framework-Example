@@ -9,9 +9,9 @@
 import Foundation
 
 public func ResultToArray(result:Result)->Array<Array<Double>>{
-var kps: Array<Array<Double>> = [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12]]
+var kps: Array<Array<Double>> = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
 
-for i in 0...12 {
+    for i in 0...(tfModel.output.keypointSize-1) {
     kps[i][0] = Double(result.dots[i].x)
     kps[i][1] = Double(result.dots[i].y)
 }
@@ -21,8 +21,8 @@ for i in 0...12 {
 
 extension Result{
     public func classToArray()->Array<Array<Double>>{
-        var returnArray: Array<Array<Double>> = [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12]]
-        for i in 0...12 {
+        var returnArray: Array<Array<Double>> = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+        for i in 0...(tfModel.output.keypointSize-1) {
             returnArray[i][0] = Double(self.dots[i].x)
             returnArray[i][1] = Double(self.dots[i].y)
         }

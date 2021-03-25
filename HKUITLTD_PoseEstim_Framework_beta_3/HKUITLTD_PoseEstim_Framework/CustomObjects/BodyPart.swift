@@ -32,7 +32,17 @@ public enum BodyPart: String, CaseIterable {
     case RIGHT_BODY_CEN = "right_body_cen"
 
   /// List of lines connecting each part.
-  public static let lines = [
+  public static let lines9 = [    (from: BodyPart.LEFT_WRIST, to: BodyPart.LEFT_ELBOW),
+                                  (from: BodyPart.LEFT_ELBOW, to: BodyPart.LEFT_SHOULDER),
+                                  (from: BodyPart.LEFT_SHOULDER, to: BodyPart.RIGHT_SHOULDER),
+                                  (from: BodyPart.RIGHT_SHOULDER, to: BodyPart.RIGHT_ELBOW),
+                                  (from: BodyPart.RIGHT_ELBOW, to: BodyPart.RIGHT_WRIST),
+                                  (from: BodyPart.LEFT_SHOULDER, to: BodyPart.LEFT_HIP),
+                                  (from: BodyPart.LEFT_HIP, to: BodyPart.RIGHT_HIP),
+                                  (from: BodyPart.RIGHT_HIP, to: BodyPart.RIGHT_SHOULDER)
+  ]
+    
+  public static let lines13 = [
     // Foundamental Lines
     (from: BodyPart.LEFT_WRIST, to: BodyPart.LEFT_ELBOW),
     (from: BodyPart.LEFT_ELBOW, to: BodyPart.LEFT_SHOULDER),
