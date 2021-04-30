@@ -42,7 +42,10 @@ public enum Pose:String {
     case PhalakasanaA = "Phalakasana A"
     case PurnaShalabhasana = "Purna Shalabhasana"
     case Purvattanasana = "Purvattanasana"
-
+    
+    case RaiseLeftArm = "Raise Left Arm"
+    case RaiseRightArm = "Raise Right Arm"
+    
     case SetuBandhasana = "Setu Bandhasana"
     
     case Tuladandasana = "Tuladandasana"

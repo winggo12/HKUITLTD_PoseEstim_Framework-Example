@@ -81,7 +81,13 @@ public class GiveFeedBack{
                 
             case Pose.Purvattanasana:
                  YogaPose = Purvattanasana(result: self.result)
-                    
+            
+            case Pose.RaiseLeftArm:
+                YogaPose = RaiseLeftArm(result: self.result)
+            
+            case Pose.RaiseRightArm:
+                YogaPose = RaiseRightArm(result: self.result)
+            
             case Pose.SetuBandhasana:
                  YogaPose = SetuBandhasana(result: self.result)
                 
