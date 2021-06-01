@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0627232B260C790400B1C746 /* mobilenetv2False_rehab_9.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 0627232A260C790400B1C746 /* mobilenetv2False_rehab_9.tflite */; };
 		4309A01A25A3039500F630BF /* VirabhadrasanaBLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4309A00C25A3039400F630BF /* VirabhadrasanaBLeft.swift */; };
 		4309A01B25A3039500F630BF /* Padangushthasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4309A00D25A3039400F630BF /* Padangushthasana.swift */; };
 		4309A01C25A3039500F630BF /* Bujangasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4309A00E25A3039400F630BF /* Bujangasana.swift */; };
@@ -35,10 +34,9 @@
 		4315E6CA24A60E3300B81FC3 /* CommentOfPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E6C924A60E3300B81FC3 /* CommentOfPose.swift */; };
 		4315E74024A616CE00B81FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73D24A616CE00B81FC3 /* Constants.swift */; };
 		4315E74124A616CE00B81FC3 /* tfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73E24A616CE00B81FC3 /* tfModel.swift */; };
-		4339EE08260987C500DB00C8 /* mobilenetv2False_33.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4339EE07260987C500DB00C8 /* mobilenetv2False_33.tflite */; };
+		4318DACA2639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4318DAC92639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite */; };
 		435012AF255BC239007382F3 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435012AE255BC239007382F3 /* Shape.swift */; };
 		4358BFE524738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4358BFEE24738FA1008B4656 /* TensorFlowLiteC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358BFED24738FA1008B4656 /* TensorFlowLiteC.framework */; };
 		4358C00024738FC9008B4656 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4358BFF024738FC9008B4656 /* LICENSE */; };
 		4358C00124738FC9008B4656 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4358BFF124738FC9008B4656 /* README.md */; };
 		4358C00224738FC9008B4656 /* QuantizationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358BFF724738FC9008B4656 /* QuantizationParameters.swift */; };
@@ -54,8 +52,6 @@
 		4358C01C247390F4008B4656 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C00D247390F4008B4656 /* CameraFeedManager.swift */; };
 		4358C01D247390F4008B4656 /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C00F247390F4008B4656 /* CGSizeExtension.swift */; };
 		4358C01F247390F4008B4656 /* TFLiteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C011247390F4008B4656 /* TFLiteExtension.swift */; };
-		4358C021247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */; };
-		4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */; };
 		4358C023247390F4008B4656 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C018247390F4008B4656 /* OverlayView.swift */; };
 		4358C029247394FE008B4656 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358C028247394FE008B4656 /* libc++.1.tbd */; };
 		435A5D0525A2BB3F00AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -63,6 +59,10 @@
 		435A5D0925A2F7EB00AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D0B25A3046800AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D1425A4301700AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		43702C612632C60100D2CA10 /* mobilenetv2False_25.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C5D2632C60100D2CA10 /* mobilenetv2False_25.tflite */; };
+		43702C622632C60100D2CA10 /* mobilenetv2False_28.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C5E2632C60100D2CA10 /* mobilenetv2False_28.tflite */; };
+		43702C632632C60100D2CA10 /* mobilenetv2False_33.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C5F2632C60100D2CA10 /* mobilenetv2False_33.tflite */; };
+		43702C642632C60100D2CA10 /* mobilenetv2False_15.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C602632C60100D2CA10 /* mobilenetv2False_15.tflite */; };
 		4396A97125A463E0000ECD58 /* YogaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A97025A463E0000ECD58 /* YogaBase.swift */; };
 		4396A98A25A56938000ECD58 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C010247390F4008B4656 /* CVPixelBufferExtension.swift */; };
 		4396A98C25A5694C000ECD58 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73F24A616CE00B81FC3 /* DeviceType.swift */; };
@@ -81,6 +81,8 @@
 		4396A9E925A5BEB2000ECD58 /* ArdhaVasisthasanaRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A9E725A5BEB2000ECD58 /* ArdhaVasisthasanaRight.swift */; };
 		4396A9EA25A5BEB2000ECD58 /* ArdhaVasisthasanaLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A9E825A5BEB2000ECD58 /* ArdhaVasisthasanaLeft.swift */; };
 		43A62A6324A353EF00BDBD27 /* ModelAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */; };
+		43B61840265B4E5700C393C8 /* TensorFlowLiteC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358BFED24738FA1008B4656 /* TensorFlowLiteC.framework */; };
+		43B61844265B4E8300C393C8 /* TensorFlowLiteC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B61843265B4E8300C393C8 /* TensorFlowLiteC.framework */; };
 		43BB382324AD8BF700D17529 /* RunThisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB382224AD8BF700D17529 /* RunThisModel.swift */; };
 		43DA7F8325E62A6A00C5DE0D /* EvaluateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA7F8225E62A6A00C5DE0D /* EvaluateUtils.swift */; };
 		43DA7F8625E62A8900C5DE0D /* Coco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA7F8525E62A8900C5DE0D /* Coco.swift */; };
@@ -93,7 +95,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0627232A260C790400B1C746 /* mobilenetv2False_rehab_9.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenetv2False_rehab_9.tflite; sourceTree = "<group>"; };
 		4309A00C25A3039400F630BF /* VirabhadrasanaBLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaBLeft.swift; sourceTree = "<group>"; };
 		4309A00D25A3039400F630BF /* Padangushthasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Padangushthasana.swift; sourceTree = "<group>"; };
 		4309A00E25A3039400F630BF /* Bujangasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bujangasana.swift; sourceTree = "<group>"; };
@@ -123,7 +124,7 @@
 		4315E73D24A616CE00B81FC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4315E73E24A616CE00B81FC3 /* tfModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
 		4315E73F24A616CE00B81FC3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
-		4339EE07260987C500DB00C8 /* mobilenetv2False_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenetv2False_33.tflite; sourceTree = "<group>"; };
+		4318DAC92639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mobilenetv2False2021-03-26-10-46-16.tflite"; path = "../../../../../Downloads/mobilenetv2False2021-03-26-10-46-16.tflite"; sourceTree = "<group>"; };
 		435012AE255BC239007382F3 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		4358BFE024738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
@@ -145,10 +146,12 @@
 		4358C00F247390F4008B4656 /* CGSizeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
 		4358C010247390F4008B4656 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
 		4358C011247390F4008B4656 /* TFLiteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLiteExtension.swift; sourceTree = "<group>"; };
-		4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite; sourceTree = "<group>"; };
-		4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
 		4358C018247390F4008B4656 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4358C028247394FE008B4656 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
+		43702C5D2632C60100D2CA10 /* mobilenetv2False_25.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_25.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_25.tflite; sourceTree = "<group>"; };
+		43702C5E2632C60100D2CA10 /* mobilenetv2False_28.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_28.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_28.tflite; sourceTree = "<group>"; };
+		43702C5F2632C60100D2CA10 /* mobilenetv2False_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_33.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_33.tflite; sourceTree = "<group>"; };
+		43702C602632C60100D2CA10 /* mobilenetv2False_15.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_15.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_15.tflite; sourceTree = "<group>"; };
 		4396A97025A463E0000ECD58 /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
 		4396A99225A56A18000ECD58 /* PhalakasanaA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhalakasanaA.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/PhalakasanaA.swift; sourceTree = SOURCE_ROOT; };
 		4396A99425A56A18000ECD58 /* ArdhaPurvattanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArdhaPurvattanasana.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/ArdhaPurvattanasana.swift; sourceTree = SOURCE_ROOT; };
@@ -167,6 +170,7 @@
 		4396A9E725A5BEB2000ECD58 /* ArdhaVasisthasanaRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasanaRight.swift; sourceTree = "<group>"; };
 		4396A9E825A5BEB2000ECD58 /* ArdhaVasisthasanaLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasanaLeft.swift; sourceTree = "<group>"; };
 		43A62A6224A353EF00BDBD27 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
+		43B61843265B4E8300C393C8 /* TensorFlowLiteC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TensorFlowLiteC.framework; path = HKUITLTD_PoseEstim_Framework/TensorFlowLiteC/Frameworks/TensorFlowLiteC.framework; sourceTree = "<group>"; };
 		43BB382224AD8BF700D17529 /* RunThisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
 		43DA7F8225E62A6A00C5DE0D /* EvaluateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluateUtils.swift; sourceTree = "<group>"; };
 		43DA7F8525E62A8900C5DE0D /* Coco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coco.swift; sourceTree = "<group>"; };
@@ -184,8 +188,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B61844265B4E8300C393C8 /* TensorFlowLiteC.framework in Frameworks */,
 				4358C029247394FE008B4656 /* libc++.1.tbd in Frameworks */,
-				4358BFEE24738FA1008B4656 /* TensorFlowLiteC.framework in Frameworks */,
+				43B61840265B4E5700C393C8 /* TensorFlowLiteC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +425,11 @@
 		4358C014247390F4008B4656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0627232A260C790400B1C746 /* mobilenetv2False_rehab_9.tflite */,
-				4339EE07260987C500DB00C8 /* mobilenetv2False_33.tflite */,
-				4358C015247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
-				4358C016247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
+				4318DAC92639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite */,
+				43702C602632C60100D2CA10 /* mobilenetv2False_15.tflite */,
+				43702C5D2632C60100D2CA10 /* mobilenetv2False_25.tflite */,
+				43702C5E2632C60100D2CA10 /* mobilenetv2False_28.tflite */,
+				43702C5F2632C60100D2CA10 /* mobilenetv2False_33.tflite */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 		4358C027247394FE008B4656 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43B61843265B4E8300C393C8 /* TensorFlowLiteC.framework */,
 				4358C028247394FE008B4656 /* libc++.1.tbd */,
 			);
 			name = Frameworks;
@@ -536,12 +543,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4358C022247390F4008B4656 /* mobilnetv2False2020-05-11-12-17-45.tflite in Resources */,
-				4358C021247390F4008B4656 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
 				4358C00124738FC9008B4656 /* README.md in Resources */,
-				4339EE08260987C500DB00C8 /* mobilenetv2False_33.tflite in Resources */,
-				0627232B260C790400B1C746 /* mobilenetv2False_rehab_9.tflite in Resources */,
+				43702C632632C60100D2CA10 /* mobilenetv2False_33.tflite in Resources */,
 				4358C00024738FC9008B4656 /* LICENSE in Resources */,
+				43702C642632C60100D2CA10 /* mobilenetv2False_15.tflite in Resources */,
+				4318DACA2639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite in Resources */,
+				43702C612632C60100D2CA10 /* mobilenetv2False_25.tflite in Resources */,
+				43702C622632C60100D2CA10 /* mobilenetv2False_28.tflite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,7 +766,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y38U99Y3F9;
+				DEVELOPMENT_TEAM = 2Y6TZAJ694;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -769,7 +777,7 @@
 				);
 				INFOPLIST_FILE = HKUITLTD_PoseEstim_Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -791,7 +799,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y38U99Y3F9;
+				DEVELOPMENT_TEAM = 2Y6TZAJ694;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -802,7 +810,7 @@
 				);
 				INFOPLIST_FILE = HKUITLTD_PoseEstim_Framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -16,12 +16,13 @@
 		43ABD6B3253046CE00C61C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B1253046CE00C61C97 /* Main.storyboard */; };
 		43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B4253046D100C61C97 /* Assets.xcassets */; };
 		43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B6253046D100C61C97 /* LaunchScreen.storyboard */; };
+		43B6184C265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework in Resources */ = {isa = PBXBuildFile; fileRef = 43B61845265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		436C0CFD25DE107A00329384 /* PBXContainerItemProxy */ = {
+		43B6184A265B4EEA00C393C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 436C0CF925DE107A00329384 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
+			containerPortal = 43B61846265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4358BFE024738DA2008B4656;
 			remoteInfo = HKUITLTD_PoseEstim_Framework;
@@ -43,93 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		435EE4C32608767800BBC5B2 /* mv2False_yogatrain224_64_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mv2False_yogatrain224_64_33.tflite; path = ../../../../../Downloads/yogatrain_224_64/mv2False_yogatrain224_64_33.tflite; sourceTree = "<group>"; };
-		435EE4C82608783700BBC5B2 /* mv2False_yoga224_28.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_28.tflite; sourceTree = "<group>"; };
-		435EE4C92608783700BBC5B2 /* mv2False_yoga224_21.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_21.tflite; sourceTree = "<group>"; };
-		435EE4CA2608783700BBC5B2 /* mv2False_yoga224_25.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_25.tflite; sourceTree = "<group>"; };
-		435EE4CB2608783700BBC5B2 /* mv2False_yoga224_15.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_15.tflite; sourceTree = "<group>"; };
-		435EE4CC2608783800BBC5B2 /* mv2False_yoga224_13.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mv2False_yoga224_13.tflite; sourceTree = "<group>"; };
 		436C0C9225DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		436C0CF925DE107A00329384 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HKUITLTD_PoseEstim_Framework.xcodeproj; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
-		436C0D5125DE10DC00329384 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		436C0D5225DE10DC00329384 /* tfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
-		436C0D5325DE10DC00329384 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
-		436C0D5525DE10DC00329384 /* RunThisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunThisModel.swift; sourceTree = "<group>"; };
-		436C0D5725DE10DC00329384 /* GiveFeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveFeedBack.swift; sourceTree = "<group>"; };
-		436C0D5925DE10DC00329384 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		436C0D5A25DE10DC00329384 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		436C0D6025DE10DC00329384 /* QuantizationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantizationParameters.swift; sourceTree = "<group>"; };
-		436C0D6125DE10DC00329384 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		436C0D6225DE10DC00329384 /* Tensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
-		436C0D6325DE10DC00329384 /* TensorFlowLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorFlowLite.swift; sourceTree = "<group>"; };
-		436C0D6425DE10DC00329384 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
-		436C0D6525DE10DC00329384 /* InterpreterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterError.swift; sourceTree = "<group>"; };
-		436C0D6625DE10DC00329384 /* CoreMLDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLDelegate.swift; sourceTree = "<group>"; };
-		436C0D6725DE10DC00329384 /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
-		436C0D6825DE10DC00329384 /* MetalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDelegate.swift; sourceTree = "<group>"; };
-		436C0D6925DE10DC00329384 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
-		436C0D6B25DE10DC00329384 /* ModelAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnalyzer.swift; sourceTree = "<group>"; };
-		436C0D6D25DE10DC00329384 /* CalAngleDist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalAngleDist.swift; sourceTree = "<group>"; };
-		436C0D6E25DE10DC00329384 /* ResultToArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultToArray.swift; sourceTree = "<group>"; };
-		436C0D6F25DE10DC00329384 /* DrawResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawResult.swift; sourceTree = "<group>"; };
-		436C0D7025DE10DC00329384 /* FeedbackUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUtilities.swift; sourceTree = "<group>"; };
-		436C0D7125DE10DC00329384 /* GetCGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCGRect.swift; sourceTree = "<group>"; };
-		436C0D7225DE10DC00329384 /* ColorbitUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorbitUtilities.swift; sourceTree = "<group>"; };
-		436C0D7325DE10DC00329384 /* CommentOfPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentOfPose.swift; sourceTree = "<group>"; };
-		436C0D7525DE10DC00329384 /* TimeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeResult.swift; sourceTree = "<group>"; };
-		436C0D7625DE10DC00329384 /* Keypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypoint.swift; sourceTree = "<group>"; };
-		436C0D7725DE10DC00329384 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
-		436C0D7825DE10DC00329384 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
-		436C0D7925DE10DC00329384 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		436C0D7B25DE10DC00329384 /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
-		436C0D7C25DE10DC00329384 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
-		436C0D7D25DE10DC00329384 /* TFLiteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFLiteExtension.swift; sourceTree = "<group>"; };
-		436C0D7F25DE10DC00329384 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite; sourceTree = "<group>"; };
-		436C0D8025DE10DC00329384 /* mobilnetv2False2020-05-11-12-17-45.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilnetv2False2020-05-11-12-17-45.tflite"; sourceTree = "<group>"; };
-		436C0D8125DE10DC00329384 /* mobilenetv2False21280_V2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenetv2False21280_V2.tflite; sourceTree = "<group>"; };
-		436C0D8425DE10DC00329384 /* TensorFlowLiteC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TensorFlowLiteC.framework; sourceTree = "<group>"; };
-		436C0D8625DE10DC00329384 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
-		436C0D8725DE10DC00329384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		436C0D8925DE10DC00329384 /* ArdhaUttanasanaLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasanaLeft.swift; sourceTree = "<group>"; };
-		436C0D8A25DE10DC00329384 /* UtthitaParsvakonasanaALeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasanaALeft.swift; sourceTree = "<group>"; };
-		436C0D8B25DE10DC00329384 /* ArdhaVasisthasanaLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasanaLeft.swift; sourceTree = "<group>"; };
-		436C0D8C25DE10DC00329384 /* VirabhadrasanaDRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaDRight.swift; sourceTree = "<group>"; };
-		436C0D8D25DE10DC00329384 /* VirabhadrasanaALeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaALeft.swift; sourceTree = "<group>"; };
-		436C0D8E25DE10DC00329384 /* MarjarasanaBRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaBRight.swift; sourceTree = "<group>"; };
-		436C0D8F25DE10DC00329384 /* VirabhadrasanaARight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaARight.swift; sourceTree = "<group>"; };
-		436C0D9025DE10DC00329384 /* MarjarasanaBLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaBLeft.swift; sourceTree = "<group>"; };
-		436C0D9125DE10DC00329384 /* UrdhvaDhanurasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrdhvaDhanurasana.swift; sourceTree = "<group>"; };
-		436C0D9225DE10DC00329384 /* PhalakasanaA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhalakasanaA.swift; sourceTree = "<group>"; };
-		436C0D9325DE10DC00329384 /* UtthitaPashvakonasanaBRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaPashvakonasanaBRight.swift; sourceTree = "<group>"; };
-		436C0D9425DE10DC00329384 /* Balasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balasana.swift; sourceTree = "<group>"; };
-		436C0D9525DE10DC00329384 /* UtthitaPashvakonasanaBLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaPashvakonasanaBLeft.swift; sourceTree = "<group>"; };
-		436C0D9625DE10DC00329384 /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
-		436C0D9725DE10DC00329384 /* VirabhadrasanaCRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaCRight.swift; sourceTree = "<group>"; };
-		436C0D9825DE10DC00329384 /* ArdhaUttanasanaRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaUttanasanaRight.swift; sourceTree = "<group>"; };
-		436C0D9925DE10DC00329384 /* Purvattanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purvattanasana.swift; sourceTree = "<group>"; };
-		436C0D9A25DE10DC00329384 /* PhalakasanaB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhalakasanaB.swift; sourceTree = "<group>"; };
-		436C0D9B25DE10DC00329384 /* MarjarasanaCLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaCLeft.swift; sourceTree = "<group>"; };
-		436C0D9C25DE10DC00329384 /* ArdhaPurvattanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaPurvattanasana.swift; sourceTree = "<group>"; };
-		436C0D9D25DE10DC00329384 /* MarjarasanaCRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarjarasanaCRight.swift; sourceTree = "<group>"; };
-		436C0D9E25DE10DC00329384 /* VirabhadrasanaCLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaCLeft.swift; sourceTree = "<group>"; };
-		436C0D9F25DE10DC00329384 /* AdhoMukhaShivanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhoMukhaShivanasana.swift; sourceTree = "<group>"; };
-		436C0DA025DE10DC00329384 /* TPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPose.swift; sourceTree = "<group>"; };
-		436C0DA125DE10DC00329384 /* SetuBandhasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetuBandhasana.swift; sourceTree = "<group>"; };
-		436C0DA225DE10DC00329384 /* Navasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navasana.swift; sourceTree = "<group>"; };
-		436C0DA325DE10DC00329384 /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
-		436C0DA425DE10DC00329384 /* UtthitaTrikonasanaRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaTrikonasanaRight.swift; sourceTree = "<group>"; };
-		436C0DA525DE10DC00329384 /* Padangushthasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padangushthasana.swift; sourceTree = "<group>"; };
-		436C0DA625DE10DC00329384 /* VirabhadrasanaBRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaBRight.swift; sourceTree = "<group>"; };
-		436C0DA725DE10DC00329384 /* VirabhadrasanaBLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaBLeft.swift; sourceTree = "<group>"; };
-		436C0DA825DE10DC00329384 /* ArdhaVasisthasanaRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArdhaVasisthasanaRight.swift; sourceTree = "<group>"; };
-		436C0DA925DE10DC00329384 /* UtthitaTrikonasanaLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaTrikonasanaLeft.swift; sourceTree = "<group>"; };
-		436C0DAA25DE10DC00329384 /* Utkatasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utkatasana.swift; sourceTree = "<group>"; };
-		436C0DAB25DE10DC00329384 /* UrdhvaMukhaSvanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrdhvaMukhaSvanasana.swift; sourceTree = "<group>"; };
-		436C0DAC25DE10DC00329384 /* Bujangasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bujangasana.swift; sourceTree = "<group>"; };
-		436C0DAD25DE10DC00329384 /* UtthitaParsvakonasanaARight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasanaARight.swift; sourceTree = "<group>"; };
-		436C0DAE25DE10DC00329384 /* VirabhadrasanaDLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirabhadrasanaDLeft.swift; sourceTree = "<group>"; };
-		436C0DB025DE10DC00329384 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
-		436C0DB125DE10DC00329384 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
 		43ABD6A8253046CE00C61C97 /* tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ABD6AB253046CE00C61C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43ABD6AD253046CE00C61C97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +53,8 @@
 		43ABD6B4253046D100C61C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43ABD6B7253046D100C61C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43ABD6B9253046D100C61C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43B61845265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HKUITLTD_PoseEstim_Framework; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework; sourceTree = "<group>"; };
+		43B61846265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HKUITLTD_PoseEstim_Framework.xcodeproj; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
 		AD704EA7E3D2B47704282F2D /* Pods-tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorial.release.xcconfig"; path = "Target Support Files/Pods-tutorial/Pods-tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		B1B394FB7F78566BECC1A377 /* Pods_tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D1FBED65FC5897DC34E4FC /* Pods-tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorial.debug.xcconfig"; path = "Target Support Files/Pods-tutorial/Pods-tutorial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,264 +82,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		436C0CFA25DE107A00329384 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				436C0CFE25DE107A00329384 /* HKUITLTD_PoseEstim_Framework.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		436C0D4F25DE10DC00329384 /* HKUITLTD_PoseEstim_Framework */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5025DE10DC00329384 /* Settings */,
-				436C0D5425DE10DC00329384 /* RunThisModel */,
-				436C0D5625DE10DC00329384 /* PoseAnalyzer */,
-				436C0D5825DE10DC00329384 /* TensorFlowLiteSwift */,
-				436C0D6925DE10DC00329384 /* HKUITLTD_PoseEstim_Framework.h */,
-				436C0D6A25DE10DC00329384 /* ModelAnalyzer */,
-				436C0D6C25DE10DC00329384 /* Utils */,
-				436C0D7425DE10DC00329384 /* CustomObjects */,
-				436C0D7A25DE10DC00329384 /* Extensions */,
-				436C0D7E25DE10DC00329384 /* Model */,
-				436C0D8225DE10DC00329384 /* TensorFlowLiteC */,
-				436C0D8525DE10DC00329384 /* Views */,
-				436C0D8725DE10DC00329384 /* Info.plist */,
-				436C0D8825DE10DC00329384 /* ScoreCalculator */,
-				436C0DAF25DE10DC00329384 /* Camera Feed */,
-			);
-			name = HKUITLTD_PoseEstim_Framework;
-			path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework;
-			sourceTree = "<group>";
-		};
-		436C0D5025DE10DC00329384 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5125DE10DC00329384 /* Constants.swift */,
-				436C0D5225DE10DC00329384 /* tfModel.swift */,
-				436C0D5325DE10DC00329384 /* DeviceType.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		436C0D5425DE10DC00329384 /* RunThisModel */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5525DE10DC00329384 /* RunThisModel.swift */,
-			);
-			path = RunThisModel;
-			sourceTree = "<group>";
-		};
-		436C0D5625DE10DC00329384 /* PoseAnalyzer */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5725DE10DC00329384 /* GiveFeedBack.swift */,
-			);
-			path = PoseAnalyzer;
-			sourceTree = "<group>";
-		};
-		436C0D5825DE10DC00329384 /* TensorFlowLiteSwift */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5925DE10DC00329384 /* LICENSE */,
-				436C0D5A25DE10DC00329384 /* README.md */,
-				436C0D5B25DE10DC00329384 /* tensorflow */,
-			);
-			path = TensorFlowLiteSwift;
-			sourceTree = "<group>";
-		};
-		436C0D5B25DE10DC00329384 /* tensorflow */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5C25DE10DC00329384 /* lite */,
-			);
-			path = tensorflow;
-			sourceTree = "<group>";
-		};
-		436C0D5C25DE10DC00329384 /* lite */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5D25DE10DC00329384 /* experimental */,
-			);
-			path = lite;
-			sourceTree = "<group>";
-		};
-		436C0D5D25DE10DC00329384 /* experimental */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5E25DE10DC00329384 /* swift */,
-			);
-			path = experimental;
-			sourceTree = "<group>";
-		};
-		436C0D5E25DE10DC00329384 /* swift */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D5F25DE10DC00329384 /* Sources */,
-			);
-			path = swift;
-			sourceTree = "<group>";
-		};
-		436C0D5F25DE10DC00329384 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D6025DE10DC00329384 /* QuantizationParameters.swift */,
-				436C0D6125DE10DC00329384 /* Model.swift */,
-				436C0D6225DE10DC00329384 /* Tensor.swift */,
-				436C0D6325DE10DC00329384 /* TensorFlowLite.swift */,
-				436C0D6425DE10DC00329384 /* Delegate.swift */,
-				436C0D6525DE10DC00329384 /* InterpreterError.swift */,
-				436C0D6625DE10DC00329384 /* CoreMLDelegate.swift */,
-				436C0D6725DE10DC00329384 /* Interpreter.swift */,
-				436C0D6825DE10DC00329384 /* MetalDelegate.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		436C0D6A25DE10DC00329384 /* ModelAnalyzer */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D6B25DE10DC00329384 /* ModelAnalyzer.swift */,
-			);
-			path = ModelAnalyzer;
-			sourceTree = "<group>";
-		};
-		436C0D6C25DE10DC00329384 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D6D25DE10DC00329384 /* CalAngleDist.swift */,
-				436C0D6E25DE10DC00329384 /* ResultToArray.swift */,
-				436C0D6F25DE10DC00329384 /* DrawResult.swift */,
-				436C0D7025DE10DC00329384 /* FeedbackUtilities.swift */,
-				436C0D7125DE10DC00329384 /* GetCGRect.swift */,
-				436C0D7225DE10DC00329384 /* ColorbitUtilities.swift */,
-				436C0D7325DE10DC00329384 /* CommentOfPose.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		436C0D7425DE10DC00329384 /* CustomObjects */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D7525DE10DC00329384 /* TimeResult.swift */,
-				436C0D7625DE10DC00329384 /* Keypoint.swift */,
-				436C0D7725DE10DC00329384 /* Shape.swift */,
-				436C0D7825DE10DC00329384 /* BodyPart.swift */,
-				436C0D7925DE10DC00329384 /* Line.swift */,
-			);
-			path = CustomObjects;
-			sourceTree = "<group>";
-		};
-		436C0D7A25DE10DC00329384 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D7B25DE10DC00329384 /* CGSizeExtension.swift */,
-				436C0D7C25DE10DC00329384 /* CVPixelBufferExtension.swift */,
-				436C0D7D25DE10DC00329384 /* TFLiteExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		436C0D7E25DE10DC00329384 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				435EE4CC2608783800BBC5B2 /* mv2False_yoga224_13.tflite */,
-				435EE4CB2608783700BBC5B2 /* mv2False_yoga224_15.tflite */,
-				435EE4C92608783700BBC5B2 /* mv2False_yoga224_21.tflite */,
-				435EE4CA2608783700BBC5B2 /* mv2False_yoga224_25.tflite */,
-				435EE4C82608783700BBC5B2 /* mv2False_yoga224_28.tflite */,
-				435EE4C32608767800BBC5B2 /* mv2False_yogatrain224_64_33.tflite */,
-				436C0D7F25DE10DC00329384 /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
-				436C0D8025DE10DC00329384 /* mobilnetv2False2020-05-11-12-17-45.tflite */,
-				436C0D8125DE10DC00329384 /* mobilenetv2False21280_V2.tflite */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		436C0D8225DE10DC00329384 /* TensorFlowLiteC */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D8325DE10DC00329384 /* Frameworks */,
-			);
-			path = TensorFlowLiteC;
-			sourceTree = "<group>";
-		};
-		436C0D8325DE10DC00329384 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D8425DE10DC00329384 /* TensorFlowLiteC.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		436C0D8525DE10DC00329384 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D8625DE10DC00329384 /* OverlayView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		436C0D8825DE10DC00329384 /* ScoreCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				436C0D8925DE10DC00329384 /* ArdhaUttanasanaLeft.swift */,
-				436C0D8A25DE10DC00329384 /* UtthitaParsvakonasanaALeft.swift */,
-				436C0D8B25DE10DC00329384 /* ArdhaVasisthasanaLeft.swift */,
-				436C0D8C25DE10DC00329384 /* VirabhadrasanaDRight.swift */,
-				436C0D8D25DE10DC00329384 /* VirabhadrasanaALeft.swift */,
-				436C0D8E25DE10DC00329384 /* MarjarasanaBRight.swift */,
-				436C0D8F25DE10DC00329384 /* VirabhadrasanaARight.swift */,
-				436C0D9025DE10DC00329384 /* MarjarasanaBLeft.swift */,
-				436C0D9125DE10DC00329384 /* UrdhvaDhanurasana.swift */,
-				436C0D9225DE10DC00329384 /* PhalakasanaA.swift */,
-				436C0D9325DE10DC00329384 /* UtthitaPashvakonasanaBRight.swift */,
-				436C0D9425DE10DC00329384 /* Balasana.swift */,
-				436C0D9525DE10DC00329384 /* UtthitaPashvakonasanaBLeft.swift */,
-				436C0D9625DE10DC00329384 /* Pose.swift */,
-				436C0D9725DE10DC00329384 /* VirabhadrasanaCRight.swift */,
-				436C0D9825DE10DC00329384 /* ArdhaUttanasanaRight.swift */,
-				436C0D9925DE10DC00329384 /* Purvattanasana.swift */,
-				436C0D9A25DE10DC00329384 /* PhalakasanaB.swift */,
-				436C0D9B25DE10DC00329384 /* MarjarasanaCLeft.swift */,
-				436C0D9C25DE10DC00329384 /* ArdhaPurvattanasana.swift */,
-				436C0D9D25DE10DC00329384 /* MarjarasanaCRight.swift */,
-				436C0D9E25DE10DC00329384 /* VirabhadrasanaCLeft.swift */,
-				436C0D9F25DE10DC00329384 /* AdhoMukhaShivanasana.swift */,
-				436C0DA025DE10DC00329384 /* TPose.swift */,
-				436C0DA125DE10DC00329384 /* SetuBandhasana.swift */,
-				436C0DA225DE10DC00329384 /* Navasana.swift */,
-				436C0DA325DE10DC00329384 /* YogaBase.swift */,
-				436C0DA425DE10DC00329384 /* UtthitaTrikonasanaRight.swift */,
-				436C0DA525DE10DC00329384 /* Padangushthasana.swift */,
-				436C0DA625DE10DC00329384 /* VirabhadrasanaBRight.swift */,
-				436C0DA725DE10DC00329384 /* VirabhadrasanaBLeft.swift */,
-				436C0DA825DE10DC00329384 /* ArdhaVasisthasanaRight.swift */,
-				436C0DA925DE10DC00329384 /* UtthitaTrikonasanaLeft.swift */,
-				436C0DAA25DE10DC00329384 /* Utkatasana.swift */,
-				436C0DAB25DE10DC00329384 /* UrdhvaMukhaSvanasana.swift */,
-				436C0DAC25DE10DC00329384 /* Bujangasana.swift */,
-				436C0DAD25DE10DC00329384 /* UtthitaParsvakonasanaARight.swift */,
-				436C0DAE25DE10DC00329384 /* VirabhadrasanaDLeft.swift */,
-			);
-			path = ScoreCalculator;
-			sourceTree = "<group>";
-		};
-		436C0DAF25DE10DC00329384 /* Camera Feed */ = {
-			isa = PBXGroup;
-			children = (
-				436C0DB025DE10DC00329384 /* PreviewView.swift */,
-				436C0DB125DE10DC00329384 /* CameraFeedManager.swift */,
-			);
-			path = "Camera Feed";
-			sourceTree = "<group>";
-		};
 		43ABD69F253046CE00C61C97 = {
 			isa = PBXGroup;
 			children = (
-				436C0D4F25DE10DC00329384 /* HKUITLTD_PoseEstim_Framework */,
-				436C0CF925DE107A00329384 /* HKUITLTD_PoseEstim_Framework.xcodeproj */,
+				43B61845265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework */,
+				43B61846265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.xcodeproj */,
 				43ABD6AA253046CE00C61C97 /* tutorial */,
 				43ABD6A9253046CE00C61C97 /* Products */,
 				4309A03125A3043100F630BF /* Frameworks */,
@@ -450,6 +114,14 @@
 				43ABD6B9253046D100C61C97 /* Info.plist */,
 			);
 			path = tutorial;
+			sourceTree = "<group>";
+		};
+		43B61847265B4EEA00C393C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43B6184B265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C7D140030654E7271EBB1A22 /* Pods */ = {
@@ -511,8 +183,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 436C0CFA25DE107A00329384 /* Products */;
-					ProjectRef = 436C0CF925DE107A00329384 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
+					ProductGroup = 43B61847265B4EEA00C393C8 /* Products */;
+					ProjectRef = 43B61846265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -523,11 +195,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		436C0CFE25DE107A00329384 /* HKUITLTD_PoseEstim_Framework.framework */ = {
+		43B6184B265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = HKUITLTD_PoseEstim_Framework.framework;
-			remoteRef = 436C0CFD25DE107A00329384 /* PBXContainerItemProxy */;
+			remoteRef = 43B6184A265B4EEA00C393C8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -539,6 +211,7 @@
 			files = (
 				43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */,
 				43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */,
+				43B6184C265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework in Resources */,
 				43ABD6B3253046CE00C61C97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,14 +417,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y38U99Y3F9;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = tutorial/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial112334;
+				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -766,14 +440,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y38U99Y3F9;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = tutorial/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial112334;
+				PRODUCT_BUNDLE_IDENTIFIER = Tutorial.tutorial.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

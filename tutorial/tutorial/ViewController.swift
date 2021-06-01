@@ -37,6 +37,7 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
     public let rw = [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0]
     ///
     
+    @IBOutlet weak var grayView: UIImageView!
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var overlayview: OverlayView!
     @IBOutlet weak var comment1: UILabel!
@@ -56,12 +57,6 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
         self.cameraCapture.checkCameraConfigurationAndStartSession()
     }
     @IBAction func usePhoto(_ sender: Any) {
-//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-//            showPhotoPicker(type: .photoLibrary)
-//            self.cameraCapture.stopSession()
-//        } else {
-//            showErrorAlert(title: "Error", message: "Photo Album is unavailable")
-//        }
         self.cameraCapture.stopSession()
         let imagePicker = OpalImagePickerController()
         imagePicker.imagePickerDelegate = self
@@ -82,6 +77,7 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
             
        })
     }
+    
     private var alertController:UIAlertController?
     private let conQueue = DispatchQueue(label: "detect queue", attributes: .concurrent)
     
@@ -180,6 +176,18 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
         self.present(finishAlert, animated: true, completion: nil)
     }
     
+    func grayscale(image: UIImage) -> UIImage? {
+        let context = CIContext(options: nil)
+        if let filter = CIFilter(name: "CIPhotoEffectMono") {
+            filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
+            if let output = filter.outputImage {
+                if let cgImage = context.createCGImage(output, from: output.extent) {
+                    return UIImage(cgImage: cgImage)
+                }
+            }
+        }
+        return nil
+    }
     
     
     // MARK: -
@@ -236,6 +244,12 @@ extension ViewController: CameraFeedManagerDelegate {
                     return
                 }
             }
+        }
+    }
+    
+    func grayImageManager(imageOutput: UIImage?) {
+        DispatchQueue.main.async {
+            self.grayView.image = imageOutput
         }
     }
 }

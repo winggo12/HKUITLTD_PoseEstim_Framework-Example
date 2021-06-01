@@ -167,10 +167,8 @@ public class ModelAnalyzer {
       * tfModel.input.height * tfModel.input.width
       * tfModel.input.channelSize
     guard
-      let inputData = thumbnail.rgbData(
-        byteCount: byteCount,
-        isModelQuantized: tfModel.isQuantized
-      )
+        
+        let inputData = tfModel.color == 1 ? thumbnail.rgbData(byteCount: byteCount, isModelQuantized: tfModel.isQuantized) : thumbnail.grayscale()
     else {
       os_log("Failed to convert the image buffer to RGB data.", type: .error)
       return nil
@@ -317,6 +315,10 @@ public class ModelAnalyzer {
             var maxCol = 0
             self.g.enter()
             self.q.async {
+                
+                let startTime: Date = Date()
+                let processingTime: TimeInterval
+
                 for row in 0..<Int(tfModel.output.width/2) {
                     for col in 0..<Int(tfModel.output.height/2) {
                         if heats[0, row, col, keypoint] > maxValue {
@@ -328,10 +330,16 @@ public class ModelAnalyzer {
                 }
                 quad1 = (maxRow, maxCol)
                 quad1_score = maxValue
+                
+                processingTime = Date().timeIntervalSince(startTime) * 1000
+//                print("Block A time: \(processingTime)")
+                
                 self.g.leave()
             }
             self.g.enter()
             self.q.async {
+                let startTime: Date = Date()
+                let processingTime: TimeInterval
                 for row in Int(tfModel.output.width/2)..<tfModel.output.width {
                     for col in 0..<Int(tfModel.output.height/2) {
                         if heats[0, row, col, keypoint] > maxValue {
@@ -343,10 +351,14 @@ public class ModelAnalyzer {
                 }
                 quad2 = (maxRow, maxCol)
                 quad2_score = maxValue
+                processingTime = Date().timeIntervalSince(startTime) * 1000
+//                print("Block B time: \(processingTime)")
                 self.g.leave()
             }
             self.g.enter()
             self.q.async {
+                let startTime: Date = Date()
+                let processingTime: TimeInterval
                 for row in 0..<Int(tfModel.output.width/2) {
                     for col in Int(tfModel.output.height/2)..<tfModel.output.height {
                         if heats[0, row, col, keypoint] > maxValue {
@@ -358,10 +370,14 @@ public class ModelAnalyzer {
                 }
                 quad3 = (maxRow, maxCol)
                 quad3_score = maxValue
+                processingTime = Date().timeIntervalSince(startTime) * 1000
+//                print("Block C time: \(processingTime)")
                 self.g.leave()
             }
             self.g.enter()
             self.q.async {
+                let startTime: Date = Date()
+                let processingTime: TimeInterval
                 for row in Int(tfModel.output.width/2)..<tfModel.output.width {
                     for col in Int(tfModel.output.height/2)..<tfModel.output.height {
                         if heats[0, row, col, keypoint] > maxValue {
@@ -373,6 +389,8 @@ public class ModelAnalyzer {
                 }
                 quad4 = (maxRow, maxCol)
                 quad4_score = maxValue
+                processingTime = Date().timeIntervalSince(startTime) * 1000
+//                print("Block D time: \(processingTime)")
                 self.g.leave()
             }
             g.wait()

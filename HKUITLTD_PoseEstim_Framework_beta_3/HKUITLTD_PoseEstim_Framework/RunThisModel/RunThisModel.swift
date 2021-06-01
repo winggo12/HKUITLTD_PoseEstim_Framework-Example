@@ -43,8 +43,8 @@ public class RunthisModel{
         previewviewframe = pv
         let modelInputRange = overlayviewframe!.applying(
         previewviewframe!.size.transformKeepAspect(toFitIn: pb.size))
-        overlayViewHeight = Float(olv.height)
-        overlayViewWidth = Float(olv.width)
+//        overlayViewHeight = Float(olv.height)
+//        overlayViewWidth = Float(olv.width)
         // Run PoseNet model.
         guard
             let (result, times) = self.modelAnalyzer?.runPoseNet(

@@ -67,11 +67,20 @@
                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="shadowOffset" width="1" height="0.0"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2md-h1-A1S">
+                                        <rect key="frame" x="8" y="600" width="150" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="Kda-T1-9jI"/>
+                                            <constraint firstAttribute="width" constant="150" id="gb0-Dr-UJk"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="6jj-qC-d5I" firstAttribute="top" secondItem="ACn-S0-Arg" secondAttribute="bottom" constant="8" id="2or-F6-iZf"/>
                                     <constraint firstItem="ACn-S0-Arg" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="DmJ-2A-EAv"/>
+                                    <constraint firstItem="2md-h1-A1S" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="PAT-PB-TgI"/>
+                                    <constraint firstAttribute="bottom" secondItem="2md-h1-A1S" secondAttribute="bottom" constant="8" id="SRX-6L-avK"/>
                                     <constraint firstItem="bAK-ve-Gd5" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="WjH-5u-vbe"/>
                                     <constraint firstItem="6jj-qC-d5I" firstAttribute="leading" secondItem="ope-zM-VDt" secondAttribute="leading" constant="8" id="cde-WP-Xdc"/>
                                     <constraint firstItem="bAK-ve-Gd5" firstAttribute="top" secondItem="6jj-qC-d5I" secondAttribute="bottom" constant="8" id="kgc-oZ-pQ9"/>
@@ -164,6 +173,7 @@
                         <outlet property="comment1" destination="ACn-S0-Arg" id="qZL-cF-uXm"/>
                         <outlet property="comment2" destination="6jj-qC-d5I" id="sDH-K3-oNW"/>
                         <outlet property="comment3" destination="bAK-ve-Gd5" id="mQg-dO-Shf"/>
+                        <outlet property="grayView" destination="2md-h1-A1S" id="qOb-VT-sDs"/>
                         <outlet property="overlayview" destination="6Y2-An-5oK" id="pql-61-TbE"/>
                         <outlet property="pose" destination="xbU-7g-1O0" id="qpl-nO-jJo"/>
                         <outlet property="previewView" destination="ope-zM-VDt" id="k80-IR-tAp"/>
@@ -172,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="34.782608695652179" y="93.750000000000014"/>
         </scene>
     </scenes>
     <resources>

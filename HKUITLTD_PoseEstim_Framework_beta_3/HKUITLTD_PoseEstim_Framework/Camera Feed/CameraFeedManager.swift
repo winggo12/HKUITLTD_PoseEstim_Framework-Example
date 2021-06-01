@@ -13,6 +13,7 @@ import os
   @objc optional func cameraFeedManager(
     _ manager: CameraFeedManager, didOutput pixelBuffer: CVPixelBuffer
   )
+  func grayImageManager(imageOutput: UIImage?)
 
   /// This method initimates that a session runtime error occured.
   func cameraFeedManagerDidEncounterSessionRunTimeError(_ manager: CameraFeedManager)
@@ -212,6 +213,7 @@ public class CameraFeedManager: NSObject {
     videoDataOutput.alwaysDiscardsLateVideoFrames = true
     videoDataOutput.videoSettings = [
       String(kCVPixelBufferPixelFormatTypeKey): kCMPixelFormat_32BGRA
+        
     ]
 
     if session.canAddOutput(videoDataOutput) {
@@ -343,14 +345,15 @@ extension CameraFeedManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         connection.videoOrientation = AVCaptureVideoOrientation(rawValue: orientationValue)!;
     // Converts the CMSampleBuffer to a CVPixelBuffer.
         
-    let pixelBuffer: CVPixelBuffer? = CMSampleBufferGetImageBuffer(sampleBuffer)
+        let pixelBuffer: CVPixelBuffer? = CMSampleBufferGetImageBuffer(sampleBuffer)
+        let grayImage: UIImage? = pixelBuffer?.getUIImage() ?? nil
         
-        
-    guard let imagePixelBuffer = pixelBuffer else {
+        guard let imagePixelBuffer = pixelBuffer else {
       return
     }
 
     // Delegates the pixel buffer to the ViewController.
-    delegate?.cameraFeedManager?(self, didOutput: imagePixelBuffer)
+        delegate?.cameraFeedManager?(self, didOutput: imagePixelBuffer)
+        delegate?.grayImageManager(imageOutput: grayImage)
   }
 }
