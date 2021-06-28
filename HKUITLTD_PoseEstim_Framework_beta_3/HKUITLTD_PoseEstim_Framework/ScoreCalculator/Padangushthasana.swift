@@ -57,16 +57,16 @@ class Padangushthasana: YogaBase {
     
     private func start_timing()
     {
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 180.0, 10.0, true)
+        let right_arm_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 180.0, 10.0, true)
         arm_score =  0.5 * (left_arm_score + right_arm_score)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 20, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 20, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 10.0, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 10.0, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20, true)
+        let left_leg_score = FeedbackUtilities.left_body(resultArray!, 180.0, 10.0, true)
+        let right_leg_score = FeedbackUtilities.right_body(resultArray!, 180.0, 10.0, true)
         leg_score = 0.5 * (left_leg_score + right_leg_score)
         
         let body_score = [arm_score,waist_score,leg_score].min()

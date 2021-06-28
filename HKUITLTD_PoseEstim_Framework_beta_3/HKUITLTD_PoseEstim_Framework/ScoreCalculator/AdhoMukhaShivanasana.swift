@@ -12,10 +12,10 @@ import Foundation
 class AdhoMukhaShivanasana: YogaBase {
 
     /** constant */
-    private let arm_ratio = 0.2
+    private let arm_ratio = 0.3
 //    private let shoulder_ratio = 0.2
-    private let waist_ratio = 0.6
-    private let leg_ratio = 0.2
+    private let waist_ratio = 0.4
+    private let leg_ratio = 0.3
     /** score of body parts */
     private var arm_score: Double = 0.0
 //    private var shoulder_score: Double = 0.0
@@ -45,16 +45,16 @@ class AdhoMukhaShivanasana: YogaBase {
 //        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 180.0, 20.0, true)
 //        shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 180.0, 10, true)
+        let right_arm_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 180.0, 10, true)
         arm_score = 0.5 * (left_arm_score + right_arm_score)
 
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 10.0, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 10.0, true)
         leg_score = 0.5 * (left_leg_score + right_leg_score)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90.0, 10.0, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90.0, 10.0, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90, 20.0, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 20.0, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         
         let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)

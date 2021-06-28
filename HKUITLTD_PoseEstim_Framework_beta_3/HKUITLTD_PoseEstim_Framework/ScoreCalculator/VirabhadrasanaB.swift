@@ -13,9 +13,9 @@ import os
 class VirabhadrasanaB: YogaBase {
 
     /** constant */
-    private let knee_ratio:Double = 0.4
+    private let knee_ratio:Double = 0.3
     private let waist_ratio:Double = 0.4
-    private let shoulder_ratio:Double = 0.2
+    private let shoulder_ratio:Double = 0.3
 
     /** score of body parts */
     private var knee_score:Double = 0.0
@@ -40,16 +40,16 @@ class VirabhadrasanaB: YogaBase {
 
     private func calculateScore(){
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90, 20, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90, 20, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 90, 10, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 90, 10, true)
         shoulder_score = 0.5 * ( left_shoulder_score + right_shoulder_score )
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90, 20, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 20, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90, 10, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 10, true)
         waist_score = max(left_waist_score, right_waist_score)
         
-        let left_knee_score = FeedbackUtilities.left_leg(resultArray!, 90, 20, true)
-        let right_knee_score = FeedbackUtilities.right_leg(resultArray!, 90, 20, true)
+        let left_knee_score = FeedbackUtilities.left_leg(resultArray!, 90, 10, true)
+        let right_knee_score = FeedbackUtilities.right_leg(resultArray!, 90, 10, true)
         knee_score = max(left_knee_score, right_knee_score)
              
         let cb_l:UInt

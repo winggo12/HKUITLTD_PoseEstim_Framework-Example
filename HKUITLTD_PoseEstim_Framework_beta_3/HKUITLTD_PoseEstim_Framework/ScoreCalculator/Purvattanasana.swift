@@ -41,16 +41,16 @@ class Purvattanasana: YogaBase{
 
     private func calculateScore(){
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 10, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 10, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 20.0, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 20.0, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180.0, 10, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180.0, 10, true)
         waist_score = 0.5*(left_waist_score + right_waist_score)
         
         let shoulder_hand_leg_angle = 0.5 * ( FeedbackUtilities.getAngle(resultArray![5], resultArray![1], resultArray![11]) + FeedbackUtilities.getAngle(resultArray![6], resultArray![2], resultArray![12]) )
-        shoulder_hand_leg_score = FeedbackUtilities.angleToScore(shoulder_hand_leg_angle, 90, 20, true)
+        shoulder_hand_leg_score = FeedbackUtilities.angleToScore(shoulder_hand_leg_angle, 90, 10, true)
         
         let cb_ll:UInt = ColorFeedbackUtilities.left_leg(score: left_leg_score)
         let cb_rl:UInt = ColorFeedbackUtilities.right_leg(score: right_leg_score)

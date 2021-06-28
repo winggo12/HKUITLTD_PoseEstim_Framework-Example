@@ -46,16 +46,16 @@ class SetuBandhasana: YogaBase{
         let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 90.0, 20.0, true)
         leg_score = 0.5*(right_leg_score + left_leg_score)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 150.0, 20.0, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 150.0, 20.0, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 180, 10.0, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 180, 10.0, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
       
         let left_leg_length = FeedbackUtilities.cal_dis(coor1: resultArray![9], coor2: resultArray![11])
         let right_leg_length = FeedbackUtilities.cal_dis(coor1: resultArray![10], coor2: resultArray![12])
         let left_distance = FeedbackUtilities.cal_dis(coor1: resultArray![5], coor2: resultArray![11])
         let right_distance = FeedbackUtilities.cal_dis(coor1: resultArray![6], coor2: resultArray![12])
-        let left_hand_foot_distance_score = FeedbackUtilities.disToScore(left_distance, left_leg_length*0.5, left_leg_length*0.2, true)
-        let right_hand_foot_distance_score = FeedbackUtilities.disToScore(right_distance, right_leg_length*0.5, right_leg_length*0.2, true)
+        let left_hand_foot_distance_score = FeedbackUtilities.disToScore(left_distance, left_leg_length*0.1, left_leg_length*0.2, true)
+        let right_hand_foot_distance_score = FeedbackUtilities.disToScore(right_distance, right_leg_length*0.1, right_leg_length*0.2, true)
         hand_foot_distance_score = 0.5 * (left_hand_foot_distance_score + right_hand_foot_distance_score)
         
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_hand_foot_distance_score)

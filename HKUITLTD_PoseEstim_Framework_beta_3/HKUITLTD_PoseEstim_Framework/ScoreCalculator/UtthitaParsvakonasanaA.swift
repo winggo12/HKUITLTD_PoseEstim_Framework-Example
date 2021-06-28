@@ -35,12 +35,12 @@ class UtthitaParsvakonasanaA: YogaBase {
     /** private method */
     private func calculateScore(){
 
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180, 20, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180, 20, true)
+        let left_arm_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 150, 20, true)
+        let right_arm_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 150, 20, true)
         arm_score = max(left_arm_score, right_arm_score)
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180, 20, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180, 20, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180, 10, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180, 10, true)
         leg_score = max(left_leg_score, right_leg_score)
     
         let right_leg_length = FeedbackUtilities.cal_dis(coor1: resultArray![12], coor2: resultArray![8])

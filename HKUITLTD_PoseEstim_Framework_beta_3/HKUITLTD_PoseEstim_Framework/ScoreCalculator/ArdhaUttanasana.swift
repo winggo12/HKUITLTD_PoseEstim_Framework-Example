@@ -11,9 +11,9 @@ import Foundation
 class ArdhaUttanasana: YogaBase {
 
     /** constant */
-    private let arm_ratio:Double = 0.2
+    private let arm_ratio:Double = 0.3
     private let leg_ratio:Double = 0.3
-    private let waist_ratio:Double = 0.5
+    private let waist_ratio:Double = 0.4
 //    private let arm_leg_dis_ratio = 0.4
 
     /** constructor */
@@ -32,14 +32,14 @@ class ArdhaUttanasana: YogaBase {
 
     private func calculateScore(){
         
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180, 20, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180, 20, true)
+        let left_arm_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 90, 10, true)
+        let right_arm_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 90, 10, true)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 45, 15, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 45, 15, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 45, 10, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 45, 10, true)
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20.0, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20.0, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 10, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 10, true)
        
 //        let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![5])
 //        let left_wrist_ankle_dis = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![11])

@@ -8,7 +8,7 @@
 
 import Foundation
 
-var score_thresh: Double = 80
+var score_thresh: Double = 70
 class ColorFeedbackUtilities {
 
     static public func left_arm(score: Double) -> UInt{

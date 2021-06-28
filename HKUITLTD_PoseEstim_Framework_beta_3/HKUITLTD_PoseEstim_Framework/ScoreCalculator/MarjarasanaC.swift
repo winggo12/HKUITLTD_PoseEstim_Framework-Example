@@ -39,12 +39,12 @@ class MarjarasanaC: YogaBase{
 
     private func calculateScore(){
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 90, 20, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 90, 20, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 90, 10, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 90, 10, true)
         shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         
-        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90, 20, true)
-        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 20, true)
+        let left_waist_score = FeedbackUtilities.left_waist(resultArray!, 90, 10, true)
+        let right_waist_score = FeedbackUtilities.right_waist(resultArray!, 90, 10, true)
         waist_score = 0.5 * (left_waist_score + right_waist_score)
         
         let left_knee_score = FeedbackUtilities.left_leg(resultArray!, 90, 10, true)

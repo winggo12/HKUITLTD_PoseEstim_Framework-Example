@@ -38,12 +38,12 @@ class UtthitaTrikonasana: YogaBase {
     /** private method */
     private func calculateScore(){
 
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 180.0, 20.0, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 180.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_shoulder_by_hsh(resultArray!, 90, 20.0, true)
+        let right_arm_score = FeedbackUtilities.right_shoulder_by_hsh(resultArray!, 90, 20.0, true)
         arm_score =  0.5*( left_arm_score + right_arm_score )
         
-        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 20, true)
-        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 20, true)
+        let left_leg_score = FeedbackUtilities.left_leg(resultArray!, 180.0, 10, true)
+        let right_leg_score = FeedbackUtilities.right_leg(resultArray!, 180.0, 10, true)
         leg_score = 0.5*( left_leg_score + right_leg_score )
         
         let left_arm_length = FeedbackUtilities.cal_dis(coor1: resultArray![1], coor2: resultArray![5])

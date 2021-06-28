@@ -44,18 +44,18 @@ class Bujangasana: YogaBase{
     private func calculateScore(){
         
 
-        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 90.0, 20.0, true)
-        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 90.0, 20.0, true)
+        let left_arm_score = FeedbackUtilities.left_arm(resultArray!, 90.0, 10.0, true)
+        let right_arm_score = FeedbackUtilities.right_arm(resultArray!, 90.0, 10.0, true)
         arm_score = 0.5 * (left_arm_score + right_arm_score)
         
-        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 45.0, 15.0, true)
-        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 45.0, 15.0, true)
+        let left_shoulder_score = FeedbackUtilities.left_shoulder(resultArray!, 60.0, 10.0, true)
+        let right_shoulder_score = FeedbackUtilities.right_shoulder(resultArray!, 60.0, 10.0, true)
         shoulder_score = 0.5 * (left_shoulder_score + right_shoulder_score)
         
         let left_elbow_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![7], resultArray![3], resultArray![11])
-        let left_elbow_knee_foot_score = FeedbackUtilities.angleToScore(left_elbow_knee_foot_angle, 150, 20, true)
+        let left_elbow_knee_foot_score = FeedbackUtilities.angleToScore(left_elbow_knee_foot_angle, 180, 20, true)
         let right_elbow_knee_foot_angle = FeedbackUtilities.getAngle(resultArray![8], resultArray![4], resultArray![12])
-        let right_elbow_knee_foot_score = FeedbackUtilities.angleToScore(right_elbow_knee_foot_angle, 150, 20, true)
+        let right_elbow_knee_foot_score = FeedbackUtilities.angleToScore(right_elbow_knee_foot_angle, 180, 20, true)
         elbow_knee_foot_score = 0.5 * (left_elbow_knee_foot_score + right_elbow_knee_foot_score)
         
         let cb_la:UInt = ColorFeedbackUtilities.left_arm(score: left_arm_score)

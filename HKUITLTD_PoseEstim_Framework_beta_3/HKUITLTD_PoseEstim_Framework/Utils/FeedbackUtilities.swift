@@ -172,9 +172,36 @@ class FeedbackUtilities {
             }
         }
     }
-
+    
 
     /** analyze different parts of body and give a score */
+    static func left_body(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+        let left_shoulder = result[1]
+        let left_hip = result[7]
+        let left_ankle = result[11]
+
+        let angle = getAngle(left_hip, left_ankle, left_shoulder)
+        return angleToScore(angle, fullMarkAngle, step, excat)
+    }
+    
+    static func left_body_angle(_ result:Array<Array<Double>>)-> Double{
+        return getAngle(result[7], result[11], result[1])
+    }
+    
+    static func right_body(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+        let right_shoulder = result[2]
+        let right_hip = result[8]
+        let right_ankle = result[12]
+
+        let angle = getAngle(right_hip, right_ankle, right_shoulder)
+        return angleToScore(angle, fullMarkAngle, step, excat)
+    }
+    
+    static func right_body_angle(_ result:Array<Array<Double>>)-> Double{
+        return getAngle(result[8], result[12], result[2])
+    }
+    
+    
     static func left_leg(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_knee = result[9]
         let left_hip = result[7]
@@ -226,6 +253,7 @@ class FeedbackUtilities {
         return getAngle(result[4], result[2], result[6])
     }
     
+    
     static func waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
         let left_shoulder = result[2]
         let left_hip = result[8]
@@ -242,7 +270,19 @@ class FeedbackUtilities {
     }
     
     static func left_shoulder_angle(_ result:Array<Array<Double>>)-> Double{
-        return getAngle(result[1], result[7], result[3])
+        return getAngle(result[1], result[7], result[5])
+    }
+
+    static func left_shoulder_by_hsh(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+        let left_shoulder = result[1]
+        let left_hip = result[7]
+        let left_hand = result[5]
+        let angle = getAngle(left_shoulder, left_hip, left_hand)
+        return angleToScore(angle, fullMarkAngle, step, excat)
+    }
+    
+    static func left_shoulder_by_hsh_angle(_ result:Array<Array<Double>>)-> Double{
+        return getAngle(result[1], result[7], result[5])
     }
     
     static func right_shoulder(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
@@ -255,6 +295,18 @@ class FeedbackUtilities {
     
     static func right_shoulder_angle(_ result:Array<Array<Double>>)-> Double{
         return getAngle(result[2], result[8], result[4])
+    }
+    
+    static func right_shoulder_by_hsh(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
+        let right_shoulder = result[2]
+        let right_hip = result[8]
+        let right_hand = result[6]
+        let angle = getAngle(right_shoulder, right_hip, right_hand)
+        return angleToScore(angle, fullMarkAngle, step, excat)
+    }
+    
+    static func right_shoulder_by_hsh_angle(_ result:Array<Array<Double>>)-> Double{
+        return getAngle(result[2], result[8], result[6])
     }
     
     static func left_waist(_ result:Array<Array<Double>>, _ fullMarkAngle: Double, _ step: Double, _ excat:Bool)-> Double{
