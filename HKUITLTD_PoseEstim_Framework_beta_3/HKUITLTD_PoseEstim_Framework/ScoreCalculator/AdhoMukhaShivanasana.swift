@@ -33,9 +33,9 @@ class AdhoMukhaShivanasana: YogaBase {
     /** private method */
     private func makeComment(){
         comment = Array<String>()
-        comment!.append("$arm_score, The Straightness of the Arms " + FeedbackUtilities.comment(arm_score))
-        comment!.append("$waist_score, The Curvature of the Waist " + FeedbackUtilities.comment(waist_score))
-        comment!.append("$leg_score, The Distance between the Legs and the Hips " + FeedbackUtilities.comment(leg_score))
+        comment!.append("\(arm_score), The Straightness of the Arms " + FeedbackUtilities.comment(arm_score))
+        comment!.append("\(waist_score), The Curvature of the Waist " + FeedbackUtilities.comment(waist_score))
+        comment!.append("\(leg_score), The Distance between the Legs and the Hips " + FeedbackUtilities.comment(leg_score))
 
     }
 

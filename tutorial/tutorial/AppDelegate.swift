@@ -8,7 +8,7 @@
 import UIKit
 
 @available(iOS 13.0, *)
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 

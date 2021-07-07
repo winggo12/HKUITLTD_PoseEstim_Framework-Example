@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1434A1C5133B0C955B00B84F /* Pods_tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B394FB7F78566BECC1A377 /* Pods_tutorial.framework */; };
+		1F8A057B2667308300D5C8EF /* PoseSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A057A2667308300D5C8EF /* PoseSelectTableViewController.swift */; };
+		1F8A057F2667345300D5C8EF /* PoseSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A057E2667345300D5C8EF /* PoseSelectTableViewCell.swift */; };
 		436C0C9325DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436C0C9225DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework */; };
 		436C0C9425DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 436C0C9225DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43ABD6AC253046CE00C61C97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABD6AB253046CE00C61C97 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 		43ABD6B5253046D100C61C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B4253046D100C61C97 /* Assets.xcassets */; };
 		43ABD6B8253046D100C61C97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ABD6B6253046D100C61C97 /* LaunchScreen.storyboard */; };
 		43B6184C265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework in Resources */ = {isa = PBXBuildFile; fileRef = 43B61845265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework */; };
+		461D3FCC267C630800DA828A /* PoseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D3FCB267C630800DA828A /* PoseCollectionViewController.swift */; };
+		461D3FCE267C632200DA828A /* PoseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D3FCD267C632200DA828A /* PoseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F8A057A2667308300D5C8EF /* PoseSelectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseSelectTableViewController.swift; sourceTree = "<group>"; };
+		1F8A057E2667345300D5C8EF /* PoseSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseSelectTableViewCell.swift; sourceTree = "<group>"; };
 		436C0C9225DE104100329384 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ABD6A8253046CE00C61C97 /* tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43ABD6AB253046CE00C61C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 		43ABD6B9253046D100C61C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43B61845265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HKUITLTD_PoseEstim_Framework; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework; sourceTree = "<group>"; };
 		43B61846265B4EEA00C393C8 /* HKUITLTD_PoseEstim_Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HKUITLTD_PoseEstim_Framework.xcodeproj; path = ../HKUITLTD_PoseEstim_Framework_beta_3/HKUITLTD_PoseEstim_Framework.xcodeproj; sourceTree = "<group>"; };
+		461D3FCB267C630800DA828A /* PoseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCollectionViewController.swift; sourceTree = "<group>"; };
+		461D3FCD267C632200DA828A /* PoseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD704EA7E3D2B47704282F2D /* Pods-tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorial.release.xcconfig"; path = "Target Support Files/Pods-tutorial/Pods-tutorial.release.xcconfig"; sourceTree = "<group>"; };
 		B1B394FB7F78566BECC1A377 /* Pods_tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D1FBED65FC5897DC34E4FC /* Pods-tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorial.debug.xcconfig"; path = "Target Support Files/Pods-tutorial/Pods-tutorial.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,11 +115,15 @@
 			children = (
 				43ABD6AB253046CE00C61C97 /* AppDelegate.swift */,
 				43ABD6AD253046CE00C61C97 /* SceneDelegate.swift */,
+				1F8A057A2667308300D5C8EF /* PoseSelectTableViewController.swift */,
+				1F8A057E2667345300D5C8EF /* PoseSelectTableViewCell.swift */,
 				43ABD6AF253046CE00C61C97 /* ViewController.swift */,
 				43ABD6B1253046CE00C61C97 /* Main.storyboard */,
 				43ABD6B4253046D100C61C97 /* Assets.xcassets */,
 				43ABD6B6253046D100C61C97 /* LaunchScreen.storyboard */,
 				43ABD6B9253046D100C61C97 /* Info.plist */,
+				461D3FCB267C630800DA828A /* PoseCollectionViewController.swift */,
+				461D3FCD267C632200DA828A /* PoseCollectionViewCell.swift */,
 			);
 			path = tutorial;
 			sourceTree = "<group>";
@@ -265,8 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8A057B2667308300D5C8EF /* PoseSelectTableViewController.swift in Sources */,
 				43ABD6B0253046CE00C61C97 /* ViewController.swift in Sources */,
 				43ABD6AC253046CE00C61C97 /* AppDelegate.swift in Sources */,
+				461D3FCC267C630800DA828A /* PoseCollectionViewController.swift in Sources */,
+				461D3FCE267C632200DA828A /* PoseCollectionViewCell.swift in Sources */,
+				1F8A057F2667345300D5C8EF /* PoseSelectTableViewCell.swift in Sources */,
 				43ABD6AE253046CE00C61C97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

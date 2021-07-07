@@ -34,7 +34,6 @@
 		4315E6CA24A60E3300B81FC3 /* CommentOfPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E6C924A60E3300B81FC3 /* CommentOfPose.swift */; };
 		4315E74024A616CE00B81FC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73D24A616CE00B81FC3 /* Constants.swift */; };
 		4315E74124A616CE00B81FC3 /* tfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73E24A616CE00B81FC3 /* tfModel.swift */; };
-		4318DACA2639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 4318DAC92639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite */; };
 		435012AF255BC239007382F3 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435012AE255BC239007382F3 /* Shape.swift */; };
 		4358BFE524738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4358C00024738FC9008B4656 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4358BFF024738FC9008B4656 /* LICENSE */; };
@@ -59,10 +58,6 @@
 		435A5D0925A2F7EB00AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D0B25A3046800AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		435A5D1425A4301700AE0237 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		43702C612632C60100D2CA10 /* mobilenetv2False_25.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C5D2632C60100D2CA10 /* mobilenetv2False_25.tflite */; };
-		43702C622632C60100D2CA10 /* mobilenetv2False_28.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C5E2632C60100D2CA10 /* mobilenetv2False_28.tflite */; };
-		43702C632632C60100D2CA10 /* mobilenetv2False_33.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C5F2632C60100D2CA10 /* mobilenetv2False_33.tflite */; };
-		43702C642632C60100D2CA10 /* mobilenetv2False_15.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 43702C602632C60100D2CA10 /* mobilenetv2False_15.tflite */; };
 		4396A97125A463E0000ECD58 /* YogaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396A97025A463E0000ECD58 /* YogaBase.swift */; };
 		4396A98A25A56938000ECD58 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358C010247390F4008B4656 /* CVPixelBufferExtension.swift */; };
 		4396A98C25A5694C000ECD58 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315E73F24A616CE00B81FC3 /* DeviceType.swift */; };
@@ -92,6 +87,11 @@
 		4616D62B24EBF6D200992513 /* FeedbackUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D62A24EBF6D200992513 /* FeedbackUtilities.swift */; };
 		4616D62D24ED3C6F00992513 /* AdhoMukhaShivanasana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D62C24ED3C6F00992513 /* AdhoMukhaShivanasana.swift */; };
 		4616D7CD24F62A9F00992513 /* GiveFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */; };
+		46E4DAD52665EACF00DC5DDE /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 46E4DAB12665EACF00DC5DDE /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */; };
+		46E4DAD62665EACF00DC5DDE /* resnet18False_yoga112_38.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 46E4DAB32665EACF00DC5DDE /* resnet18False_yoga112_38.tflite */; };
+		46E4DAD72665EACF00DC5DDE /* resnet18False_yoga112_50.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 46E4DAB42665EACF00DC5DDE /* resnet18False_yoga112_50.tflite */; };
+		46E4DAD82665EACF00DC5DDE /* resnet18False_yoga112_40.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 46E4DAB52665EACF00DC5DDE /* resnet18False_yoga112_40.tflite */; };
+		46E4DAEA2665EACF00DC5DDE /* mobilenetv2False2021-03-26-10-46-16.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 46E4DAC72665EACF00DC5DDE /* mobilenetv2False2021-03-26-10-46-16.tflite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,7 +124,6 @@
 		4315E73D24A616CE00B81FC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4315E73E24A616CE00B81FC3 /* tfModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfModel.swift; sourceTree = "<group>"; };
 		4315E73F24A616CE00B81FC3 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
-		4318DAC92639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = "mobilenetv2False2021-03-26-10-46-16.tflite"; path = "../../../../../Downloads/mobilenetv2False2021-03-26-10-46-16.tflite"; sourceTree = "<group>"; };
 		435012AE255BC239007382F3 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		4358BFE024738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HKUITLTD_PoseEstim_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4358BFE324738DA2008B4656 /* HKUITLTD_PoseEstim_Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKUITLTD_PoseEstim_Framework.h; sourceTree = "<group>"; };
@@ -148,10 +147,6 @@
 		4358C011247390F4008B4656 /* TFLiteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLiteExtension.swift; sourceTree = "<group>"; };
 		4358C018247390F4008B4656 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4358C028247394FE008B4656 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
-		43702C5D2632C60100D2CA10 /* mobilenetv2False_25.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_25.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_25.tflite; sourceTree = "<group>"; };
-		43702C5E2632C60100D2CA10 /* mobilenetv2False_28.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_28.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_28.tflite; sourceTree = "<group>"; };
-		43702C5F2632C60100D2CA10 /* mobilenetv2False_33.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_33.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_33.tflite; sourceTree = "<group>"; };
-		43702C602632C60100D2CA10 /* mobilenetv2False_15.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = mobilenetv2False_15.tflite; path = ../../../../../Downloads/mv2/mobilenetv2False_15.tflite; sourceTree = "<group>"; };
 		4396A97025A463E0000ECD58 /* YogaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBase.swift; sourceTree = "<group>"; };
 		4396A99225A56A18000ECD58 /* PhalakasanaA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhalakasanaA.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/PhalakasanaA.swift; sourceTree = SOURCE_ROOT; };
 		4396A99425A56A18000ECD58 /* ArdhaPurvattanasana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArdhaPurvattanasana.swift; path = HKUITLTD_PoseEstim_Framework/ScoreCalculator/ArdhaPurvattanasana.swift; sourceTree = SOURCE_ROOT; };
@@ -181,6 +176,11 @@
 		4616D62C24ED3C6F00992513 /* AdhoMukhaShivanasana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhoMukhaShivanasana.swift; sourceTree = "<group>"; };
 		4616D63A24EE287800992513 /* UtthitaParsvakonasanaALeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtthitaParsvakonasanaALeft.swift; sourceTree = "<group>"; };
 		4616D7CC24F62A9F00992513 /* GiveFeedBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveFeedBack.swift; sourceTree = "<group>"; };
+		46E4DAB12665EACF00DC5DDE /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite; sourceTree = "<group>"; };
+		46E4DAB32665EACF00DC5DDE /* resnet18False_yoga112_38.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = resnet18False_yoga112_38.tflite; sourceTree = "<group>"; };
+		46E4DAB42665EACF00DC5DDE /* resnet18False_yoga112_50.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = resnet18False_yoga112_50.tflite; sourceTree = "<group>"; };
+		46E4DAB52665EACF00DC5DDE /* resnet18False_yoga112_40.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = resnet18False_yoga112_40.tflite; sourceTree = "<group>"; };
+		46E4DAC72665EACF00DC5DDE /* mobilenetv2False2021-03-26-10-46-16.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobilenetv2False2021-03-26-10-46-16.tflite"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +310,7 @@
 		4358BFE224738DA2008B4656 /* HKUITLTD_PoseEstim_Framework */ = {
 			isa = PBXGroup;
 			children = (
+				46E4DAB02665EACF00DC5DDE /* Model */,
 				43BB382124AD8BF700D17529 /* RunThisModel */,
 				4315E73C24A616CE00B81FC3 /* Settings */,
 				4315E6C224A60D6700B81FC3 /* Utils */,
@@ -319,7 +320,6 @@
 				4315E67E24A5A6B200B81FC3 /* PoseAnalyzer */,
 				4358C00B247390F4008B4656 /* Camera Feed */,
 				4358C00E247390F4008B4656 /* Extensions */,
-				4358C014247390F4008B4656 /* Model */,
 				4358C017247390F4008B4656 /* Views */,
 				4358BFEF24738FC9008B4656 /* TensorFlowLiteSwift */,
 				4358BFEB24738FA1008B4656 /* TensorFlowLiteC */,
@@ -422,18 +422,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4358C014247390F4008B4656 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4318DAC92639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite */,
-				43702C602632C60100D2CA10 /* mobilenetv2False_15.tflite */,
-				43702C5D2632C60100D2CA10 /* mobilenetv2False_25.tflite */,
-				43702C5E2632C60100D2CA10 /* mobilenetv2False_28.tflite */,
-				43702C5F2632C60100D2CA10 /* mobilenetv2False_33.tflite */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		4358C017247390F4008B4656 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +460,26 @@
 				43BB382224AD8BF700D17529 /* RunThisModel.swift */,
 			);
 			path = RunThisModel;
+			sourceTree = "<group>";
+		};
+		46E4DAB02665EACF00DC5DDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46E4DAB12665EACF00DC5DDE /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite */,
+				46E4DAB22665EACF00DC5DDE /* yogatrain_112 */,
+				46E4DAC72665EACF00DC5DDE /* mobilenetv2False2021-03-26-10-46-16.tflite */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46E4DAB22665EACF00DC5DDE /* yogatrain_112 */ = {
+			isa = PBXGroup;
+			children = (
+				46E4DAB32665EACF00DC5DDE /* resnet18False_yoga112_38.tflite */,
+				46E4DAB42665EACF00DC5DDE /* resnet18False_yoga112_50.tflite */,
+				46E4DAB52665EACF00DC5DDE /* resnet18False_yoga112_40.tflite */,
+			);
+			path = yogatrain_112;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,13 +551,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E4DAD52665EACF00DC5DDE /* posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite in Resources */,
+				46E4DAEA2665EACF00DC5DDE /* mobilenetv2False2021-03-26-10-46-16.tflite in Resources */,
 				4358C00124738FC9008B4656 /* README.md in Resources */,
-				43702C632632C60100D2CA10 /* mobilenetv2False_33.tflite in Resources */,
+				46E4DAD82665EACF00DC5DDE /* resnet18False_yoga112_40.tflite in Resources */,
 				4358C00024738FC9008B4656 /* LICENSE in Resources */,
-				43702C642632C60100D2CA10 /* mobilenetv2False_15.tflite in Resources */,
-				4318DACA2639121F0061ED40 /* mobilenetv2False2021-03-26-10-46-16.tflite in Resources */,
-				43702C612632C60100D2CA10 /* mobilenetv2False_25.tflite in Resources */,
-				43702C622632C60100D2CA10 /* mobilenetv2False_28.tflite in Resources */,
+				46E4DAD62665EACF00DC5DDE /* resnet18False_yoga112_38.tflite in Resources */,
+				46E4DAD72665EACF00DC5DDE /* resnet18False_yoga112_50.tflite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,7 +774,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2Y6TZAJ694;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -799,7 +807,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2Y6TZAJ694;
+				DEVELOPMENT_TEAM = 75J7TVGUG8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

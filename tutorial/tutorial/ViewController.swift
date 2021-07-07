@@ -90,6 +90,8 @@ class ViewController: UIViewController, OpalImagePickerControllerDelegate {
     var threadCount: Int = Constants.defaultThreadCount
     var delegate: Delegates = Constants.defaultDelegate
     
+    var userSelectedPose: Pose = Pose.VirabhadrasanaALeft
+    
     private let minScore: Float = 0.3
     
     override func viewDidLoad() {
@@ -222,7 +224,7 @@ extension ViewController: CameraFeedManagerDelegate {
         }
         self.conQueue.sync {
             let (result, _) = (thisModel?.Run(pb: pixelBuffer, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
-            let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
+//            let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
             let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
             let score = feedback.getScore()
             let comments = feedback.getComments()
@@ -230,11 +232,17 @@ extension ViewController: CameraFeedManagerDelegate {
                 
             DispatchQueue.main.async {
                 if result.score >= self.minScore {
-                    self.pose.text = userSelectedPose.rawValue
+                    self.pose.text = self.userSelectedPose.rawValue
                     self.score.text = String(score)
-                    self.comment1.text = comments[0]
-    //                self.comment2.text = comments[1]
-    //                self.comment3.text = comments[2]
+                    if comments.count > 0{
+                        self.comment1.text = comments[0]
+                        if comments.count > 1 {
+                            self.comment2.text = comments[1]
+                            if comments.count > 2 {
+                                self.comment3.text = comments[2]
+                            }
+                        }
+                    }
                     
                     let position = self.cameraCapture.showCurrentInput()
                     self.overlayview.drawResult(result: result, bounds: self.overlayview.bounds, position: position, wrong: colorBit)
@@ -323,7 +331,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         self.conQueue.sync {
             let (result, _) = (thisModel?.Run(pb: self.buffer(from: image)!, olv: self.overlayViewFrame!, pv: self.previewViewFrame!))!
-            let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
+//            let userSelectedPose = Pose.VirabhadrasanaALeft // select any one pose you like
             let feedback = GiveFeedBack(user_input_result: result, user_input_pose: userSelectedPose)
             let score = feedback.getScore()
 //            let comments = feedback.getComments()
@@ -331,7 +339,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 
             DispatchQueue.main.async {
                 if result.score >= self.minScore {
-                    self.pose.text = userSelectedPose.rawValue
+                    self.pose.text = self.userSelectedPose.rawValue
                     self.score.text = String(score)
 //                    self.comment1.text = comments[0]
                     
